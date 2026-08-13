@@ -1,0 +1,178 @@
+{
+  "checkpoint": "checkpoints/fog_10m_addition_strict_best.pt",
+  "checkpoint_step": 800,
+  "split": "all",
+  "examples": 80,
+  "reasoning_steps": 4,
+  "decoder_mode": "memory-only",
+  "interventions": {
+    "normal": {
+      "correct": 5,
+      "count": 80,
+      "exact_match": 0.0625,
+      "seconds": 1.5143172930002038,
+      "samples": [
+        {
+          "source_row": null,
+          "prediction": "16",
+          "target": "30",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "18",
+          "target": "20",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "18",
+          "target": "24",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "11",
+          "target": "19",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "19",
+          "target": "31",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "16",
+          "target": "4",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "1",
+          "target": "22",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "15",
+          "target": "23",
+          "correct": false
+        }
+      ]
+    },
+    "zero": {
+      "correct": 4,
+      "count": 80,
+      "exact_match": 0.05,
+      "seconds": 0.705126871000175,
+      "samples": [
+        {
+          "source_row": null,
+          "prediction": "23",
+          "target": "30",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "23",
+          "target": "20",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "23",
+          "target": "24",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "23",
+          "target": "19",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "23",
+          "target": "31",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "23",
+          "target": "4",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "23",
+          "target": "22",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "23",
+          "target": "23",
+          "correct": true
+        }
+      ]
+    },
+    "shuffle": {
+      "correct": 1,
+      "count": 80,
+      "exact_match": 0.0125,
+      "seconds": 0.6840305090008769,
+      "samples": [
+        {
+          "source_row": null,
+          "prediction": "14",
+          "target": "30",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "16",
+          "target": "20",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "18",
+          "target": "24",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "18",
+          "target": "19",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "11",
+          "target": "31",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "19",
+          "target": "4",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "16",
+          "target": "22",
+          "correct": false
+        },
+        {
+          "source_row": null,
+          "prediction": "1",
+          "target": "23",
+          "correct": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "architecture_version": "query_bound_v2",
+  "batch_size": 32,
+  "data_seed": 20260813,
+  "eval": {
+    "normal": {
+      "accuracy": 1.0,
+      "address_entropy": 0.01600051362765953,
+      "address_hit_accuracy": 1.0,
+      "correct": 1024,
+      "correct_address_mass": 0.9982731342315674,
+      "count": 1024,
+      "intervention": "normal",
+      "nll": 6.467704504728317,
+      "split": "validation",
+      "stream_sha256": "219d042b76b90d98be3570c1665ccd0480560bb1b2400556acb1e1217573dbeb"
+    },
+    "query_cyclic": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 1024,
+      "intervention": "query_cyclic",
+      "nll": 13.57724404335022,
+      "split": "validation",
+      "stream_sha256": "219d042b76b90d98be3570c1665ccd0480560bb1b2400556acb1e1217573dbeb"
+    },
+    "target_deranged": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 1024,
+      "intervention": "target_deranged",
+      "nll": 13.130732357501984,
+      "split": "validation",
+      "stream_sha256": "219d042b76b90d98be3570c1665ccd0480560bb1b2400556acb1e1217573dbeb"
+    },
+    "zero": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 1024,
+      "intervention": "zero",
+      "nll": 9.01091194152832,
+      "split": "validation",
+      "stream_sha256": "219d042b76b90d98be3570c1665ccd0480560bb1b2400556acb1e1217573dbeb"
+    }
+  },
+  "experiment": "fog_10m_token_binding_v2",
+  "init_checkpoint": "checkpoints/fog_binding_v2_10m_migrated_seed1_fp32.pt",
+  "init_sha256": "bfe12a338da6cda47460d4b6792adeed7dddc04651f17581e34f3ebda5df9b93",
+  "oracle_vocab_copy": {
+    "accuracy": 1.0,
+    "correct": 8192,
+    "count": 8192,
+    "minimum_logit_margin": 0.5791110992431641
+  },
+  "parameters": 10000039,
+  "protocol": {
+    "bucket_rule": "blake2b(mapping) % 10: train=0..7, validation=8, test=9",
+    "checked_examples": {
+      "test": 1024,
+      "train": 1280,
+      "validation": 1024
+    },
+    "overlap": {
+      "train_test": 0,
+      "train_validation": 0,
+      "validation_test": 0
+    },
+    "partition_key": "mapping permutation only",
+    "unique_mappings": {
+      "test": 895,
+      "train": 1253,
+      "validation": 922
+    }
+  },
+  "reasoning_steps": 1,
+  "steps": 40,
+  "test_split_touched": false,
+  "trace": [
+    {
+      "batch_accuracy": 0.75,
+      "binding_score_scale": 22.103416442871094,
+      "grad_norm": 0.3686082363128662,
+      "loss": 10.259770393371582,
+      "step": 1
+    },
+    {
+      "batch_accuracy": 0.875,
+      "binding_score_scale": 53.119163513183594,
+      "grad_norm": 4.039517402648926,
+      "loss": 9.710183143615723,
+      "step": 10
+    },
+    {
+      "batch_accuracy": 1.0,
+      "binding_score_scale": 138.2574005126953,
+      "grad_norm": 0.09193231910467148,
+      "loss": 5.976855278015137,
+      "step": 20
+    },
+    {
+      "batch_accuracy": 1.0,
+      "binding_score_scale": 200.0,
+      "grad_norm": 0.0,
+      "loss": 6.416260719299316,
+      "step": 30
+    },
+    {
+      "batch_accuracy": 1.0,
+      "binding_score_scale": 200.0,
+      "grad_norm": 0.0,
+      "loss": 6.8814897537231445,
+      "step": 40
+    }
+  ],
+  "train_scope": "sharpness",
+  "train_seconds": 29.60237300299923,
+  "trainable_parameters": 1
+}

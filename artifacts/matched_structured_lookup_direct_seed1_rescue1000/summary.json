@@ -1,0 +1,284 @@
+{
+  "arguments": {
+    "batch_size": 64,
+    "checkpoint_eval_output": null,
+    "compare_rank": 16,
+    "d_ff": 128,
+    "d_model": 64,
+    "data_seed": 20260812,
+    "device": "cpu",
+    "eval_batch_size": 128,
+    "evaluate_checkpoint": null,
+    "evaluation_split": "validation",
+    "fixed_orthogonal_keys": true,
+    "latent_slots": 4,
+    "learning_rate": 0.01,
+    "log_every": 100,
+    "memory_slots": 8,
+    "n_heads": 4,
+    "n_layers": 2,
+    "output_dir": "artifacts/matched_structured_lookup_direct_seed1_rescue1000",
+    "planner_ff": 128,
+    "protocol_check_examples": 512,
+    "reasoning_steps": 2,
+    "seeds": [
+      1
+    ],
+    "steps": 1000,
+    "table_size": 8,
+    "test_examples": 512,
+    "threads": 4,
+    "validation_examples": 512,
+    "variants": [
+      "direct"
+    ],
+    "weight_decay": 0.0
+  },
+  "experiment": "matched_structured_permutation_lookup_v1",
+  "initialization_pairing": {
+    "1": {
+      "exact_match": true,
+      "scheme": "sha256(seed, full_parameter_name)_v1",
+      "shared_parameter_entries": 69696,
+      "shared_state_sha256": "37dce4ea24c6c13a58eb291a00d0f2f4a1c49bdd9bb0810bef46fccdbc241c04",
+      "shared_tensor_count": 28,
+      "shared_tensor_names": [
+        "backbone.blocks.0.attn.in_proj_bias",
+        "backbone.blocks.0.attn.in_proj_weight",
+        "backbone.blocks.0.attn.out_proj.bias",
+        "backbone.blocks.0.attn.out_proj.weight",
+        "backbone.blocks.0.ff.0.bias",
+        "backbone.blocks.0.ff.0.weight",
+        "backbone.blocks.0.ff.2.bias",
+        "backbone.blocks.0.ff.2.weight",
+        "backbone.blocks.0.n1.weight",
+        "backbone.blocks.0.n2.weight",
+        "backbone.blocks.1.attn.in_proj_bias",
+        "backbone.blocks.1.attn.in_proj_weight",
+        "backbone.blocks.1.attn.out_proj.bias",
+        "backbone.blocks.1.attn.out_proj.weight",
+        "backbone.blocks.1.ff.0.bias",
+        "backbone.blocks.1.ff.0.weight",
+        "backbone.blocks.1.ff.2.bias",
+        "backbone.blocks.1.ff.2.weight",
+        "backbone.blocks.1.n1.weight",
+        "backbone.blocks.1.n2.weight",
+        "backbone.kind.weight",
+        "backbone.out_norm.weight",
+        "backbone.pos.weight",
+        "classifier.weight",
+        "key.weight",
+        "query_type",
+        "row_type",
+        "value.weight"
+      ],
+      "variants": [
+        "direct"
+      ]
+    }
+  },
+  "model_config": {
+    "compare_rank": 16,
+    "d_ff": 128,
+    "d_model": 64,
+    "dropout": 0.0,
+    "fixed_orthogonal_keys": true,
+    "initializer_range": 0.02,
+    "latent_slots": 4,
+    "max_seq_len": 18,
+    "memory_slots": 8,
+    "n_heads": 4,
+    "n_layers": 2,
+    "n_reasoning_modes": 4,
+    "planner_ff": 128,
+    "reasoning_steps": 2
+  },
+  "parameter_counts": {
+    "1": {
+      "direct": {
+        "answer_bos": 0,
+        "fog_only": 0,
+        "forward_active": 69696,
+        "shared_structured_stack": 69696,
+        "total": 69696,
+        "trainable": 69184
+      }
+    }
+  },
+  "protocol_check": {
+    "bucket_rule": "blake2b(mapping) % 10: train=0..7, validation=8, test=9",
+    "checked_examples": {
+      "test": 512,
+      "train": 512,
+      "validation": 512
+    },
+    "overlap": {
+      "train_test": 0,
+      "train_validation": 0,
+      "validation_test": 0
+    },
+    "partition_key": "mapping permutation only",
+    "unique_mappings": {
+      "test": 482,
+      "train": 510,
+      "validation": 479
+    }
+  },
+  "results": {
+    "1": {
+      "direct": {
+        "batch_size": 64,
+        "data_seed": 20260812,
+        "eval": {
+          "normal": {
+            "accuracy": 0.384765625,
+            "correct": 197,
+            "count": 512,
+            "intervention": "normal",
+            "nll": 1.3166508972644806,
+            "seconds": 0.14758425499894656,
+            "split": "validation",
+            "stream_sha256": "f181b2f37eb563c9e5067f629410fff27626f2f2e99d82dda9ab4fe6e9af222b"
+          }
+        },
+        "evaluation_split": "validation",
+        "experiment": "matched_structured_permutation_lookup_v1",
+        "initialization_pairing": {
+          "exact_match": true,
+          "scheme": "sha256(seed, full_parameter_name)_v1",
+          "shared_parameter_entries": 69696,
+          "shared_state_sha256": "37dce4ea24c6c13a58eb291a00d0f2f4a1c49bdd9bb0810bef46fccdbc241c04",
+          "shared_tensor_count": 28,
+          "shared_tensor_names": [
+            "backbone.blocks.0.attn.in_proj_bias",
+            "backbone.blocks.0.attn.in_proj_weight",
+            "backbone.blocks.0.attn.out_proj.bias",
+            "backbone.blocks.0.attn.out_proj.weight",
+            "backbone.blocks.0.ff.0.bias",
+            "backbone.blocks.0.ff.0.weight",
+            "backbone.blocks.0.ff.2.bias",
+            "backbone.blocks.0.ff.2.weight",
+            "backbone.blocks.0.n1.weight",
+            "backbone.blocks.0.n2.weight",
+            "backbone.blocks.1.attn.in_proj_bias",
+            "backbone.blocks.1.attn.in_proj_weight",
+            "backbone.blocks.1.attn.out_proj.bias",
+            "backbone.blocks.1.attn.out_proj.weight",
+            "backbone.blocks.1.ff.0.bias",
+            "backbone.blocks.1.ff.0.weight",
+            "backbone.blocks.1.ff.2.bias",
+            "backbone.blocks.1.ff.2.weight",
+            "backbone.blocks.1.n1.weight",
+            "backbone.blocks.1.n2.weight",
+            "backbone.kind.weight",
+            "backbone.out_norm.weight",
+            "backbone.pos.weight",
+            "classifier.weight",
+            "key.weight",
+            "query_type",
+            "row_type",
+            "value.weight"
+          ],
+          "variants": [
+            "direct"
+          ]
+        },
+        "model_seed": 1,
+        "parameters": {
+          "answer_bos": 0,
+          "fog_only": 0,
+          "forward_active": 69696,
+          "shared_structured_stack": 69696,
+          "total": 69696,
+          "trainable": 69184
+        },
+        "steps": 1000,
+        "trace": [
+          {
+            "batch_accuracy": 0.171875,
+            "grad_norm": 1.304957389831543,
+            "loss": 2.0858073234558105,
+            "step": 1
+          },
+          {
+            "batch_accuracy": 0.078125,
+            "grad_norm": 0.5253409743309021,
+            "loss": 2.109837055206299,
+            "step": 100
+          },
+          {
+            "batch_accuracy": 0.28125,
+            "grad_norm": 6.600142002105713,
+            "loss": 1.7576576471328735,
+            "step": 200
+          },
+          {
+            "batch_accuracy": 0.34375,
+            "grad_norm": 1.6526859998703003,
+            "loss": 1.5892014503479004,
+            "step": 300
+          },
+          {
+            "batch_accuracy": 0.3125,
+            "grad_norm": 1.3590413331985474,
+            "loss": 1.4843783378601074,
+            "step": 400
+          },
+          {
+            "batch_accuracy": 0.3125,
+            "grad_norm": 0.764894425868988,
+            "loss": 1.4595614671707153,
+            "step": 500
+          },
+          {
+            "batch_accuracy": 0.359375,
+            "grad_norm": 0.21307246387004852,
+            "loss": 1.4239404201507568,
+            "step": 600
+          },
+          {
+            "batch_accuracy": 0.359375,
+            "grad_norm": 9.576523780822754,
+            "loss": 1.5759268999099731,
+            "step": 700
+          },
+          {
+            "batch_accuracy": 0.3125,
+            "grad_norm": 0.3094741702079773,
+            "loss": 1.4898183345794678,
+            "step": 800
+          },
+          {
+            "batch_accuracy": 0.25,
+            "grad_norm": 0.27609938383102417,
+            "loss": 1.4757575988769531,
+            "step": 900
+          },
+          {
+            "batch_accuracy": 0.421875,
+            "grad_norm": 0.14903883635997772,
+            "loss": 1.362659215927124,
+            "step": 1000
+          }
+        ],
+        "train_examples": 64000,
+        "train_online_accuracy": 0.319328125,
+        "train_seconds": 24.048581215000013,
+        "training_stream_sha256": "0c6f590fff6861e235f952390bbd8970c2741c0127d08d3fab91415675f095d2",
+        "variant": "direct"
+      }
+    }
+  },
+  "shared_streams": {
+    "training_sha256": "0c6f590fff6861e235f952390bbd8970c2741c0127d08d3fab91415675f095d2",
+    "validation_sha256": "f181b2f37eb563c9e5067f629410fff27626f2f2e99d82dda9ab4fe6e9af222b"
+  },
+  "task": {
+    "chance_accuracy": 0.125,
+    "prompt_length": 9,
+    "query_representation": "key(query) + query_type (one vector)",
+    "row_representation": "key(src) + value(dst) + row_type (one vector)",
+    "split_rule": "mapping-only blake2b bucket, 80/10/10",
+    "table_size": 8
+  }
+}

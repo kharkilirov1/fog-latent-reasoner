@@ -1,0 +1,10 @@
+{
+  "dataset": "roneneldan/TinyStories",
+  "config": "default",
+  "split": "train",
+  "offset": 0,
+  "limit": 3000,
+  "source_total_rows": 2119719,
+  "sha256": "445c316f3d0868156ce2c910c924edc7534866bfc22b8b9f8437deed9ecf5fce",
+  "viewer_endpoint": "https://datasets-server.huggingface.co/rows"
+}

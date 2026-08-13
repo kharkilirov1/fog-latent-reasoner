@@ -1,0 +1,104 @@
+{
+  "architecture_version": "query_bound_v2",
+  "batch_size": 32,
+  "data_seed": 20260813,
+  "eval": {
+    "normal": {
+      "accuracy": 1.0,
+      "address_entropy": 0.22911670058965683,
+      "address_hit_accuracy": 1.0,
+      "correct": 1024,
+      "correct_address_mass": 0.9649100303649902,
+      "count": 1024,
+      "intervention": "normal",
+      "nll": 6.485601484775543,
+      "split": "validation",
+      "stream_sha256": "219d042b76b90d98be3570c1665ccd0480560bb1b2400556acb1e1217573dbeb"
+    },
+    "query_cyclic": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 1024,
+      "intervention": "query_cyclic",
+      "nll": 13.42900276184082,
+      "split": "validation",
+      "stream_sha256": "219d042b76b90d98be3570c1665ccd0480560bb1b2400556acb1e1217573dbeb"
+    },
+    "target_deranged": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 1024,
+      "intervention": "target_deranged",
+      "nll": 12.989961802959442,
+      "split": "validation",
+      "stream_sha256": "219d042b76b90d98be3570c1665ccd0480560bb1b2400556acb1e1217573dbeb"
+    },
+    "zero": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 1024,
+      "intervention": "zero",
+      "nll": 9.01091194152832,
+      "split": "validation",
+      "stream_sha256": "219d042b76b90d98be3570c1665ccd0480560bb1b2400556acb1e1217573dbeb"
+    }
+  },
+  "experiment": "fog_10m_token_binding_v2",
+  "init_checkpoint": "checkpoints/fog_binding_v2_10m_migrated_seed0_fp32.pt",
+  "init_sha256": "f1801e5a60efb84401b445d7c80b73227ef77c73580d5021570ec19ea4cbb58d",
+  "oracle_vocab_copy": {
+    "accuracy": 1.0,
+    "correct": 8192,
+    "count": 8192,
+    "minimum_logit_margin": 0.5791110992431641
+  },
+  "parameters": 10000039,
+  "protocol": {
+    "bucket_rule": "blake2b(mapping) % 10: train=0..7, validation=8, test=9",
+    "checked_examples": {
+      "test": 1024,
+      "train": 1280,
+      "validation": 1024
+    },
+    "overlap": {
+      "train_test": 0,
+      "train_validation": 0,
+      "validation_test": 0
+    },
+    "partition_key": "mapping permutation only",
+    "unique_mappings": {
+      "test": 895,
+      "train": 1253,
+      "validation": 922
+    }
+  },
+  "reasoning_steps": 1,
+  "steps": 40,
+  "test_split_touched": false,
+  "trace": [
+    {
+      "batch_accuracy": 0.25,
+      "binding_score_scale": 22.103416442871094,
+      "grad_norm": 0.2034991979598999,
+      "loss": 10.345894813537598,
+      "step": 1
+    },
+    {
+      "batch_accuracy": 1.0,
+      "binding_score_scale": 200.0,
+      "grad_norm": 0.0,
+      "loss": 5.975674152374268,
+      "step": 25
+    },
+    {
+      "batch_accuracy": 1.0,
+      "binding_score_scale": 200.0,
+      "grad_norm": 0.0,
+      "loss": 6.895899772644043,
+      "step": 40
+    }
+  ],
+  "train_scope": "sharpness",
+  "train_seconds": 28.32888544400339,
+  "trainable_parameters": 1
+}

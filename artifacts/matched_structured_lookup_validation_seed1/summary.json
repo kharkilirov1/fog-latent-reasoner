@@ -1,0 +1,616 @@
+{
+  "arguments": {
+    "batch_size": 128,
+    "compare_rank": 16,
+    "d_ff": 128,
+    "d_model": 64,
+    "data_seed": 20260812,
+    "device": "cpu",
+    "eval_batch_size": 128,
+    "evaluation_split": "validation",
+    "latent_slots": 4,
+    "learning_rate": 0.003,
+    "log_every": 100,
+    "memory_slots": 8,
+    "n_heads": 4,
+    "n_layers": 2,
+    "output_dir": "artifacts/matched_structured_lookup_validation_seed1",
+    "planner_ff": 128,
+    "protocol_check_examples": 2048,
+    "reasoning_steps": 2,
+    "seeds": [
+      1
+    ],
+    "steps": 1000,
+    "table_size": 8,
+    "test_examples": 1024,
+    "threads": 3,
+    "validation_examples": 1024,
+    "variants": [
+      "direct",
+      "fog_full",
+      "fog_strict"
+    ],
+    "weight_decay": 0.01
+  },
+  "experiment": "matched_structured_permutation_lookup_v1",
+  "initialization_pairing": {
+    "1": {
+      "exact_match": true,
+      "scheme": "sha256(seed, full_parameter_name)_v1",
+      "shared_parameter_entries": 69696,
+      "shared_state_sha256": "8bb807057a07769d3aa535ba7946768abdb105e030f7dd3140b2088088f99e29",
+      "shared_tensor_count": 28,
+      "shared_tensor_names": [
+        "backbone.blocks.0.attn.in_proj_bias",
+        "backbone.blocks.0.attn.in_proj_weight",
+        "backbone.blocks.0.attn.out_proj.bias",
+        "backbone.blocks.0.attn.out_proj.weight",
+        "backbone.blocks.0.ff.0.bias",
+        "backbone.blocks.0.ff.0.weight",
+        "backbone.blocks.0.ff.2.bias",
+        "backbone.blocks.0.ff.2.weight",
+        "backbone.blocks.0.n1.weight",
+        "backbone.blocks.0.n2.weight",
+        "backbone.blocks.1.attn.in_proj_bias",
+        "backbone.blocks.1.attn.in_proj_weight",
+        "backbone.blocks.1.attn.out_proj.bias",
+        "backbone.blocks.1.attn.out_proj.weight",
+        "backbone.blocks.1.ff.0.bias",
+        "backbone.blocks.1.ff.0.weight",
+        "backbone.blocks.1.ff.2.bias",
+        "backbone.blocks.1.ff.2.weight",
+        "backbone.blocks.1.n1.weight",
+        "backbone.blocks.1.n2.weight",
+        "backbone.kind.weight",
+        "backbone.out_norm.weight",
+        "backbone.pos.weight",
+        "classifier.weight",
+        "key.weight",
+        "query_type",
+        "row_type",
+        "value.weight"
+      ],
+      "variants": [
+        "direct",
+        "fog_full",
+        "fog_strict"
+      ]
+    }
+  },
+  "model_config": {
+    "compare_rank": 16,
+    "d_ff": 128,
+    "d_model": 64,
+    "dropout": 0.0,
+    "initializer_range": 0.02,
+    "latent_slots": 4,
+    "max_seq_len": 18,
+    "memory_slots": 8,
+    "n_heads": 4,
+    "n_layers": 2,
+    "n_reasoning_modes": 4,
+    "planner_ff": 128,
+    "reasoning_steps": 2
+  },
+  "parameter_counts": {
+    "1": {
+      "direct": {
+        "fog_only": 0,
+        "forward_active": 69696,
+        "shared_structured_stack": 69696,
+        "total": 69696
+      },
+      "fog_full": {
+        "fog_only": 70020,
+        "forward_active": 139716,
+        "shared_structured_stack": 69696,
+        "total": 139716
+      },
+      "fog_strict": {
+        "fog_only": 70020,
+        "forward_active": 139716,
+        "shared_structured_stack": 69696,
+        "total": 139716
+      }
+    }
+  },
+  "protocol_check": {
+    "bucket_rule": "blake2b(mapping) % 10: train=0..7, validation=8, test=9",
+    "checked_examples": {
+      "test": 1024,
+      "train": 2048,
+      "validation": 1024
+    },
+    "overlap": {
+      "train_test": 0,
+      "train_validation": 0,
+      "validation_test": 0
+    },
+    "partition_key": "mapping permutation only",
+    "unique_mappings": {
+      "test": 913,
+      "train": 1986,
+      "validation": 904
+    }
+  },
+  "results": {
+    "1": {
+      "direct": {
+        "batch_size": 128,
+        "data_seed": 20260812,
+        "eval": {
+          "normal": {
+            "accuracy": 0.341796875,
+            "correct": 350,
+            "count": 1024,
+            "intervention": "normal",
+            "nll": 1.503843292593956,
+            "seconds": 0.3182494480024616,
+            "split": "validation",
+            "stream_sha256": "8511d71e5198e78e5ea8b2ba31c3784833ee4bc7a529345bab1aab3e37794f82"
+          }
+        },
+        "evaluation_split": "validation",
+        "experiment": "matched_structured_permutation_lookup_v1",
+        "initialization_pairing": {
+          "exact_match": true,
+          "scheme": "sha256(seed, full_parameter_name)_v1",
+          "shared_parameter_entries": 69696,
+          "shared_state_sha256": "8bb807057a07769d3aa535ba7946768abdb105e030f7dd3140b2088088f99e29",
+          "shared_tensor_count": 28,
+          "shared_tensor_names": [
+            "backbone.blocks.0.attn.in_proj_bias",
+            "backbone.blocks.0.attn.in_proj_weight",
+            "backbone.blocks.0.attn.out_proj.bias",
+            "backbone.blocks.0.attn.out_proj.weight",
+            "backbone.blocks.0.ff.0.bias",
+            "backbone.blocks.0.ff.0.weight",
+            "backbone.blocks.0.ff.2.bias",
+            "backbone.blocks.0.ff.2.weight",
+            "backbone.blocks.0.n1.weight",
+            "backbone.blocks.0.n2.weight",
+            "backbone.blocks.1.attn.in_proj_bias",
+            "backbone.blocks.1.attn.in_proj_weight",
+            "backbone.blocks.1.attn.out_proj.bias",
+            "backbone.blocks.1.attn.out_proj.weight",
+            "backbone.blocks.1.ff.0.bias",
+            "backbone.blocks.1.ff.0.weight",
+            "backbone.blocks.1.ff.2.bias",
+            "backbone.blocks.1.ff.2.weight",
+            "backbone.blocks.1.n1.weight",
+            "backbone.blocks.1.n2.weight",
+            "backbone.kind.weight",
+            "backbone.out_norm.weight",
+            "backbone.pos.weight",
+            "classifier.weight",
+            "key.weight",
+            "query_type",
+            "row_type",
+            "value.weight"
+          ],
+          "variants": [
+            "direct",
+            "fog_full",
+            "fog_strict"
+          ]
+        },
+        "model_seed": 1,
+        "parameters": {
+          "fog_only": 0,
+          "forward_active": 69696,
+          "shared_structured_stack": 69696,
+          "total": 69696
+        },
+        "steps": 1000,
+        "trace": [
+          {
+            "batch_accuracy": 0.125,
+            "grad_norm": 0.9061561822891235,
+            "loss": 2.075138807296753,
+            "step": 1
+          },
+          {
+            "batch_accuracy": 0.15625,
+            "grad_norm": 0.7543032169342041,
+            "loss": 2.095771551132202,
+            "step": 100
+          },
+          {
+            "batch_accuracy": 0.1484375,
+            "grad_norm": 0.4842371344566345,
+            "loss": 2.0792787075042725,
+            "step": 200
+          },
+          {
+            "batch_accuracy": 0.046875,
+            "grad_norm": 0.6950389742851257,
+            "loss": 2.0996692180633545,
+            "step": 300
+          },
+          {
+            "batch_accuracy": 0.125,
+            "grad_norm": 0.3982381820678711,
+            "loss": 2.081808567047119,
+            "step": 400
+          },
+          {
+            "batch_accuracy": 0.1953125,
+            "grad_norm": 1.1292542219161987,
+            "loss": 1.9654052257537842,
+            "step": 500
+          },
+          {
+            "batch_accuracy": 0.1953125,
+            "grad_norm": 0.8252153992652893,
+            "loss": 1.847383737564087,
+            "step": 600
+          },
+          {
+            "batch_accuracy": 0.2421875,
+            "grad_norm": 0.6230714917182922,
+            "loss": 1.770828127861023,
+            "step": 700
+          },
+          {
+            "batch_accuracy": 0.296875,
+            "grad_norm": 0.7667033076286316,
+            "loss": 1.590248942375183,
+            "step": 800
+          },
+          {
+            "batch_accuracy": 0.2890625,
+            "grad_norm": 1.7265609502792358,
+            "loss": 1.555733323097229,
+            "step": 900
+          },
+          {
+            "batch_accuracy": 0.2890625,
+            "grad_norm": 1.2471847534179688,
+            "loss": 1.5640064477920532,
+            "step": 1000
+          }
+        ],
+        "train_examples": 128000,
+        "train_online_accuracy": 0.2064765625,
+        "train_seconds": 43.692454908999935,
+        "training_stream_sha256": "9d2f5cdcd44895ce1a146da4a650d00d93628dacebe854a27ac675edb726762a",
+        "variant": "direct"
+      },
+      "fog_full": {
+        "batch_size": 128,
+        "data_seed": 20260812,
+        "eval": {
+          "normal": {
+            "accuracy": 0.1181640625,
+            "correct": 121,
+            "count": 1024,
+            "intervention": "normal",
+            "nll": 2.0802621245384216,
+            "seconds": 0.8637376359984046,
+            "split": "validation",
+            "stream_sha256": "8511d71e5198e78e5ea8b2ba31c3784833ee4bc7a529345bab1aab3e37794f82"
+          },
+          "target_deranged_shuffle": {
+            "accuracy": 0.1181640625,
+            "correct": 121,
+            "count": 1024,
+            "intervention": "target_deranged_shuffle",
+            "nll": 2.0802621245384216,
+            "seconds": 1.083305936997931,
+            "split": "validation",
+            "stream_sha256": "8511d71e5198e78e5ea8b2ba31c3784833ee4bc7a529345bab1aab3e37794f82"
+          },
+          "zero": {
+            "accuracy": 0.1181640625,
+            "correct": 121,
+            "count": 1024,
+            "intervention": "zero",
+            "nll": 2.080261707305908,
+            "seconds": 5.416928154998459,
+            "split": "validation",
+            "stream_sha256": "8511d71e5198e78e5ea8b2ba31c3784833ee4bc7a529345bab1aab3e37794f82"
+          }
+        },
+        "evaluation_split": "validation",
+        "experiment": "matched_structured_permutation_lookup_v1",
+        "initialization_pairing": {
+          "exact_match": true,
+          "scheme": "sha256(seed, full_parameter_name)_v1",
+          "shared_parameter_entries": 69696,
+          "shared_state_sha256": "8bb807057a07769d3aa535ba7946768abdb105e030f7dd3140b2088088f99e29",
+          "shared_tensor_count": 28,
+          "shared_tensor_names": [
+            "backbone.blocks.0.attn.in_proj_bias",
+            "backbone.blocks.0.attn.in_proj_weight",
+            "backbone.blocks.0.attn.out_proj.bias",
+            "backbone.blocks.0.attn.out_proj.weight",
+            "backbone.blocks.0.ff.0.bias",
+            "backbone.blocks.0.ff.0.weight",
+            "backbone.blocks.0.ff.2.bias",
+            "backbone.blocks.0.ff.2.weight",
+            "backbone.blocks.0.n1.weight",
+            "backbone.blocks.0.n2.weight",
+            "backbone.blocks.1.attn.in_proj_bias",
+            "backbone.blocks.1.attn.in_proj_weight",
+            "backbone.blocks.1.attn.out_proj.bias",
+            "backbone.blocks.1.attn.out_proj.weight",
+            "backbone.blocks.1.ff.0.bias",
+            "backbone.blocks.1.ff.0.weight",
+            "backbone.blocks.1.ff.2.bias",
+            "backbone.blocks.1.ff.2.weight",
+            "backbone.blocks.1.n1.weight",
+            "backbone.blocks.1.n2.weight",
+            "backbone.kind.weight",
+            "backbone.out_norm.weight",
+            "backbone.pos.weight",
+            "classifier.weight",
+            "key.weight",
+            "query_type",
+            "row_type",
+            "value.weight"
+          ],
+          "variants": [
+            "direct",
+            "fog_full",
+            "fog_strict"
+          ]
+        },
+        "model_seed": 1,
+        "parameters": {
+          "fog_only": 70020,
+          "forward_active": 139716,
+          "shared_structured_stack": 69696,
+          "total": 139716
+        },
+        "steps": 1000,
+        "trace": [
+          {
+            "batch_accuracy": 0.15625,
+            "grad_norm": 0.6299197673797607,
+            "loss": 2.070709466934204,
+            "step": 1
+          },
+          {
+            "batch_accuracy": 0.15625,
+            "grad_norm": 0.7763987183570862,
+            "loss": 2.0964901447296143,
+            "step": 100
+          },
+          {
+            "batch_accuracy": 0.1484375,
+            "grad_norm": 0.5173395872116089,
+            "loss": 2.079413890838623,
+            "step": 200
+          },
+          {
+            "batch_accuracy": 0.046875,
+            "grad_norm": 0.7809482216835022,
+            "loss": 2.103339433670044,
+            "step": 300
+          },
+          {
+            "batch_accuracy": 0.125,
+            "grad_norm": 0.44558316469192505,
+            "loss": 2.0822269916534424,
+            "step": 400
+          },
+          {
+            "batch_accuracy": 0.1328125,
+            "grad_norm": 0.22853289544582367,
+            "loss": 2.0778191089630127,
+            "step": 500
+          },
+          {
+            "batch_accuracy": 0.15625,
+            "grad_norm": 0.2850843369960785,
+            "loss": 2.0840084552764893,
+            "step": 600
+          },
+          {
+            "batch_accuracy": 0.1328125,
+            "grad_norm": 0.25218838453292847,
+            "loss": 2.079214096069336,
+            "step": 700
+          },
+          {
+            "batch_accuracy": 0.1328125,
+            "grad_norm": 0.10762869566679001,
+            "loss": 2.0817482471466064,
+            "step": 800
+          },
+          {
+            "batch_accuracy": 0.1015625,
+            "grad_norm": 0.05825072154402733,
+            "loss": 2.0798065662384033,
+            "step": 900
+          },
+          {
+            "batch_accuracy": 0.09375,
+            "grad_norm": 0.04150918871164322,
+            "loss": 2.0781006813049316,
+            "step": 1000
+          }
+        ],
+        "train_examples": 128000,
+        "train_online_accuracy": 0.1250390625,
+        "train_seconds": 158.4523736379997,
+        "training_stream_sha256": "9d2f5cdcd44895ce1a146da4a650d00d93628dacebe854a27ac675edb726762a",
+        "variant": "fog_full"
+      },
+      "fog_strict": {
+        "batch_size": 128,
+        "data_seed": 20260812,
+        "eval": {
+          "normal": {
+            "accuracy": 0.1181640625,
+            "correct": 121,
+            "count": 1024,
+            "intervention": "normal",
+            "nll": 2.0803405344486237,
+            "seconds": 1.3013941070021247,
+            "split": "validation",
+            "stream_sha256": "8511d71e5198e78e5ea8b2ba31c3784833ee4bc7a529345bab1aab3e37794f82"
+          },
+          "target_deranged_shuffle": {
+            "accuracy": 0.1181640625,
+            "correct": 121,
+            "count": 1024,
+            "intervention": "target_deranged_shuffle",
+            "nll": 2.0803405344486237,
+            "seconds": 1.5110894200006442,
+            "split": "validation",
+            "stream_sha256": "8511d71e5198e78e5ea8b2ba31c3784833ee4bc7a529345bab1aab3e37794f82"
+          },
+          "zero": {
+            "accuracy": 0.1181640625,
+            "correct": 121,
+            "count": 1024,
+            "intervention": "zero",
+            "nll": 2.0803322792053223,
+            "seconds": 1.198647212000651,
+            "split": "validation",
+            "stream_sha256": "8511d71e5198e78e5ea8b2ba31c3784833ee4bc7a529345bab1aab3e37794f82"
+          }
+        },
+        "evaluation_split": "validation",
+        "experiment": "matched_structured_permutation_lookup_v1",
+        "initialization_pairing": {
+          "exact_match": true,
+          "scheme": "sha256(seed, full_parameter_name)_v1",
+          "shared_parameter_entries": 69696,
+          "shared_state_sha256": "8bb807057a07769d3aa535ba7946768abdb105e030f7dd3140b2088088f99e29",
+          "shared_tensor_count": 28,
+          "shared_tensor_names": [
+            "backbone.blocks.0.attn.in_proj_bias",
+            "backbone.blocks.0.attn.in_proj_weight",
+            "backbone.blocks.0.attn.out_proj.bias",
+            "backbone.blocks.0.attn.out_proj.weight",
+            "backbone.blocks.0.ff.0.bias",
+            "backbone.blocks.0.ff.0.weight",
+            "backbone.blocks.0.ff.2.bias",
+            "backbone.blocks.0.ff.2.weight",
+            "backbone.blocks.0.n1.weight",
+            "backbone.blocks.0.n2.weight",
+            "backbone.blocks.1.attn.in_proj_bias",
+            "backbone.blocks.1.attn.in_proj_weight",
+            "backbone.blocks.1.attn.out_proj.bias",
+            "backbone.blocks.1.attn.out_proj.weight",
+            "backbone.blocks.1.ff.0.bias",
+            "backbone.blocks.1.ff.0.weight",
+            "backbone.blocks.1.ff.2.bias",
+            "backbone.blocks.1.ff.2.weight",
+            "backbone.blocks.1.n1.weight",
+            "backbone.blocks.1.n2.weight",
+            "backbone.kind.weight",
+            "backbone.out_norm.weight",
+            "backbone.pos.weight",
+            "classifier.weight",
+            "key.weight",
+            "query_type",
+            "row_type",
+            "value.weight"
+          ],
+          "variants": [
+            "direct",
+            "fog_full",
+            "fog_strict"
+          ]
+        },
+        "model_seed": 1,
+        "parameters": {
+          "fog_only": 70020,
+          "forward_active": 139716,
+          "shared_structured_stack": 69696,
+          "total": 139716
+        },
+        "steps": 1000,
+        "trace": [
+          {
+            "batch_accuracy": 0.1328125,
+            "grad_norm": 0.8343533873558044,
+            "loss": 2.079326629638672,
+            "step": 1
+          },
+          {
+            "batch_accuracy": 0.15625,
+            "grad_norm": 0.7657461166381836,
+            "loss": 2.0966174602508545,
+            "step": 100
+          },
+          {
+            "batch_accuracy": 0.1484375,
+            "grad_norm": 0.46760836243629456,
+            "loss": 2.0789177417755127,
+            "step": 200
+          },
+          {
+            "batch_accuracy": 0.046875,
+            "grad_norm": 0.6105061769485474,
+            "loss": 2.0989747047424316,
+            "step": 300
+          },
+          {
+            "batch_accuracy": 0.125,
+            "grad_norm": 0.31900161504745483,
+            "loss": 2.080681324005127,
+            "step": 400
+          },
+          {
+            "batch_accuracy": 0.1328125,
+            "grad_norm": 0.16297902166843414,
+            "loss": 2.0780587196350098,
+            "step": 500
+          },
+          {
+            "batch_accuracy": 0.1015625,
+            "grad_norm": 0.19323676824569702,
+            "loss": 2.0831027030944824,
+            "step": 600
+          },
+          {
+            "batch_accuracy": 0.1328125,
+            "grad_norm": 0.17283836007118225,
+            "loss": 2.0815303325653076,
+            "step": 700
+          },
+          {
+            "batch_accuracy": 0.1328125,
+            "grad_norm": 0.07156014442443848,
+            "loss": 2.0811569690704346,
+            "step": 800
+          },
+          {
+            "batch_accuracy": 0.1015625,
+            "grad_norm": 0.030317867174744606,
+            "loss": 2.0798511505126953,
+            "step": 900
+          },
+          {
+            "batch_accuracy": 0.09375,
+            "grad_norm": 0.02571645751595497,
+            "loss": 2.0782737731933594,
+            "step": 1000
+          }
+        ],
+        "train_examples": 128000,
+        "train_online_accuracy": 0.124734375,
+        "train_seconds": 192.50003114300125,
+        "training_stream_sha256": "9d2f5cdcd44895ce1a146da4a650d00d93628dacebe854a27ac675edb726762a",
+        "variant": "fog_strict"
+      }
+    }
+  },
+  "shared_streams": {
+    "training_sha256": "9d2f5cdcd44895ce1a146da4a650d00d93628dacebe854a27ac675edb726762a",
+    "validation_sha256": "8511d71e5198e78e5ea8b2ba31c3784833ee4bc7a529345bab1aab3e37794f82"
+  },
+  "task": {
+    "chance_accuracy": 0.125,
+    "prompt_length": 9,
+    "query_representation": "key(query) + query_type (one vector)",
+    "row_representation": "key(src) + value(dst) + row_type (one vector)",
+    "split_rule": "mapping-only blake2b bucket, 80/10/10",
+    "table_size": 8
+  }
+}

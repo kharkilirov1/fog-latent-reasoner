@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "date": "2026-08-12",
+  "purpose": "End-to-end execution check, not a quality benchmark",
+  "runtime": {
+    "device": "cpu",
+    "precision": "fp32",
+    "torch": "2.9.1+cpu",
+    "omp_threads": 1,
+    "mkl_threads": 1
+  },
+  "model": {
+    "parameters": 10035848,
+    "vocab_size": 8192,
+    "d_model": 320,
+    "layers": 4,
+    "heads": 5,
+    "ffn": 1344,
+    "latent_slots": 4,
+    "reasoning_steps": 4,
+    "memory_slots": 8,
+    "compare_rank": 80,
+    "max_seq_len": 512,
+    "tied_embedding_head": true,
+    "compression_active_at_steps": [3, 4]
+  },
+  "tokenizer": {
+    "kind": "lossless-byte-fallback-with-reserved-ids",
+    "vocab_size": 8192,
+    "sha256": "fc4232727fd3634ba665deca9680dc0e8f876c7c6651a9387299d76966d2323e",
+    "note": "Ready offline; train the corpus BPE command before a serious run for efficiency."
+  },
+  "initialized_checkpoint": {
+    "path": "../../checkpoints/fog_10m_init.pt",
+    "sha256": "32d0ce97277f5ced824533383607ea5b386ffced59489de1f63ea03a8cef2530",
+    "portable_torch_load": true,
+    "tokenizer_hash_verified": true
+  },
+  "pretrain_smoke": {
+    "fixture": "../../examples/tinystories_smoke.txt",
+    "sequence_length": 64,
+    "optimizer_steps": 2,
+    "step_1": {
+      "train_loss": 9.059463500976562,
+      "target_tokens": 209,
+      "gradient_norm_before_clip": 12.138683319091797,
+      "tokens_per_second": 209.2648430742216,
+      "validation_loss": 7.870401859283447
+    },
+    "resumed_step_2": {
+      "train_loss": 7.927828788757324,
+      "cumulative_target_tokens": 431,
+      "gradient_norm_before_clip": 5.99836540222168,
+      "tokens_per_second": 244.24950517384045,
+      "validation_loss": 7.800721645355225
+    },
+    "checkpoint_resume_succeeded": true
+  },
+  "sft_smoke": {
+    "fixture": "../../examples/gsm8k_smoke.jsonl",
+    "decoder_mode": "memory-only",
+    "target_mode": "final",
+    "optimizer_steps": 1,
+    "train_loss": 9.045272827148438,
+    "target_tokens": 3,
+    "gradient_norm_before_clip": 51.141136169433594,
+    "target_tokens_per_second": 2.017873786556271,
+    "validation_loss": 7.971565246582031,
+    "all_values_finite": true
+  },
+  "bundled_release_verifier": {
+    "command": "python verify_release.py --forward-backward",
+    "latent_loss": 8.82690715789795,
+    "compressor_gradient_norm": 18.687679290771484,
+    "passed": true
+  },
+  "automatic_tests": {
+    "passed": 21,
+    "failed": 0,
+    "covered": [
+      "exact parameter count",
+      "tied weights without optimizer duplicates",
+      "left/right padding invariance",
+      "answer-only vocabulary logits",
+      "manual masked cross entropy parity",
+      "compressor gradients",
+      "bit-exact checkpoint resume",
+      "BPE and offline tokenizer round trips",
+      "local and Hugging Face data contracts"
+    ]
+  },
+  "external_download": {
+    "official_metadata_verified": true,
+    "live_python_download_in_this_sandbox": false,
+    "reason": "Outbound network approval was unavailable in the execution sandbox.",
+    "local_backend_executed": true
+  }
+}

@@ -1,0 +1,402 @@
+{
+  "schema_version": 1,
+  "date": "2026-08-12",
+  "report": "../../EXPERIMENT_REPORT_V2.md",
+  "scope": "Exploratory CPU mechanistic checks run before freezing a 10M-parameter candidate architecture",
+  "runtime": {
+    "device": "cpu",
+    "cpu": "Intel Xeon Platinum 8370C",
+    "available_logical_cpus": 9,
+    "torch_version": "2.13.0+cu130",
+    "torch_threads_per_run": 4,
+    "note": "Some probes were run concurrently. Recorded wall-clock seconds are evidence of completion, not a valid speed comparison."
+  },
+  "fixed_operator_task": {
+    "description": "The prompt contains an operator and start state but omits hop count. The target is the state after L applications; R=L is the only source of hop count. The strict decoder sees one neutral TASK token plus latent memory.",
+    "n_states": 8,
+    "operators": 3,
+    "operator_shifts": [1, 2, 3],
+    "id_depths": [1, 2, 3, 4],
+    "ood_depths": [5, 6, 7, 8],
+    "examples_per_depth": 24,
+    "examples_per_split": 96,
+    "chance_accuracy": 0.125,
+    "base_model_config": {
+      "vocab_size": 15,
+      "d_model": 48,
+      "n_heads": 4,
+      "n_layers": 1,
+      "d_ff": 96,
+      "max_seq_len": 32,
+      "dropout": 0.0,
+      "initializer_range": 0.02,
+      "latent_slots": 4,
+      "reasoning_steps": 4,
+      "compare_rank": 12,
+      "planner_ff": 96,
+      "memory_slots": 4,
+      "n_reasoning_modes": 3,
+      "diversity_weight": 0.001,
+      "route_entropy_weight": 0.0
+    },
+    "optimizer": {
+      "name": "AdamW",
+      "learning_rate": 0.003,
+      "betas": [0.9, 0.95],
+      "eps": 1e-08,
+      "weight_decay": 0.01,
+      "gradient_clip_norm": 1.0,
+      "scheduler": null
+    },
+    "curriculum": [
+      {"step_start_inclusive": 0, "step_end_exclusive": 300, "active_depths": [1]},
+      {"step_start_inclusive": 300, "step_end_exclusive": 800, "active_depths": [1, 2]},
+      {"step_start_inclusive": 800, "step_end_exclusive": null, "active_depths": [1, 2, 3, 4]}
+    ],
+    "run_seed_sensitivity": {
+      "qualification": "Preliminary joint model/data-seed and run-length sensitivity, not a controlled five-seed robustness estimate",
+      "runs": [
+        {
+          "run_id": "strict_seed0",
+          "source": "artifacts/finite_state_bottleneck_seed0/metrics.json",
+          "decoder_bottleneck": true,
+          "model_seed": 0,
+          "data_seed": 1101,
+          "steps": 2200,
+          "batch_size": 128,
+          "parameters": 60675,
+          "train_seconds": 123.29871781899965,
+          "selected_step": 1000,
+          "id": {
+            "accuracy": 1.0,
+            "correct": 96,
+            "count": 96,
+            "by_depth": {"1": 1.0, "2": 1.0, "3": 1.0, "4": 1.0}
+          },
+          "ood": {
+            "accuracy": 0.75,
+            "correct": 72,
+            "count": 96,
+            "by_depth": {"5": 0.875, "6": 0.8333333333333334, "7": 0.75, "8": 0.5416666666666666}
+          },
+          "interventions": {
+            "id_memory_zero_accuracy": 0.125,
+            "id_memory_shuffle_accuracy": 0.0,
+            "ood_correct_R_accuracy": 0.75,
+            "ood_forced_R1_accuracy": 0.08333333333333333,
+            "ood_forced_R4_accuracy": 0.08333333333333333
+          }
+        },
+        {
+          "run_id": "strict_seed1",
+          "source": "/tmp/fog_seed1/metrics.json and /tmp/fog_seed1/recurrent.pt during the run session",
+          "decoder_bottleneck": true,
+          "model_seed": 1,
+          "data_seed": 2101,
+          "steps": 1200,
+          "batch_size": 128,
+          "parameters": 60675,
+          "train_seconds": 70.13368803499998,
+          "selected_step": 1200,
+          "id": {
+            "accuracy": 0.9583333333333334,
+            "correct": 92,
+            "count": 96,
+            "by_depth": {"1": 0.9583333333333334, "2": 1.0, "3": 0.9583333333333334, "4": 0.9166666666666666}
+          },
+          "ood": {
+            "accuracy": 0.4375,
+            "correct": 42,
+            "count": 96,
+            "by_depth": {"5": 0.625, "6": 0.4166666666666667, "7": 0.3333333333333333, "8": 0.375}
+          },
+          "interventions": {
+            "id_memory_zero_accuracy": 0.125,
+            "id_memory_shuffle_accuracy": 0.010416666666666666,
+            "ood_correct_R_accuracy": 0.4375,
+            "ood_forced_R1_accuracy": 0.09375,
+            "ood_forced_R4_accuracy": 0.08333333333333333
+          }
+        },
+        {
+          "run_id": "strict_seed2",
+          "source": "/tmp/fog_seed2/metrics.json and /tmp/fog_seed2/recurrent.pt during the run session",
+          "decoder_bottleneck": true,
+          "model_seed": 2,
+          "data_seed": 3101,
+          "steps": 1200,
+          "batch_size": 128,
+          "parameters": 60675,
+          "train_seconds": 72.79147106400069,
+          "selected_step": 1,
+          "id": {
+            "accuracy": 0.13541666666666666,
+            "correct": 13,
+            "count": 96,
+            "by_depth": {"1": 0.16666666666666666, "2": 0.125, "3": 0.125, "4": 0.125}
+          },
+          "ood": {
+            "accuracy": 0.125,
+            "correct": 12,
+            "count": 96,
+            "by_depth": {"5": 0.125, "6": 0.125, "7": 0.125, "8": 0.125}
+          },
+          "interventions": {
+            "id_memory_zero_accuracy": 0.125,
+            "id_memory_shuffle_accuracy": 0.10416666666666667,
+            "ood_correct_R_accuracy": 0.125,
+            "ood_forced_R1_accuracy": 0.13541666666666666,
+            "ood_forced_R4_accuracy": 0.125
+          }
+        }
+      ],
+      "observed_id_at_least_0_95": 2,
+      "observed_runs": 3,
+      "conclusion": "At least one run collapsed to chance. Robustness is not established; data seeds and run lengths were not held fixed across all three runs."
+    },
+    "historical_full_prompt_run": {
+      "source": "artifacts/finite_state_seed0/metrics.json",
+      "qualification": "Historical diagnostic only. It predates the final context-query change, has 58,323 rather than 60,675 parameters, and is not a controlled bottleneck-only ablation.",
+      "decoder_bottleneck": false,
+      "model_seed": 0,
+      "data_seed": 1101,
+      "steps": 1600,
+      "batch_size": 128,
+      "parameters": 58323,
+      "id_accuracy": 0.9895833333333334,
+      "id_memory_zero_accuracy": 0.25,
+      "id_memory_shuffle_accuracy": 0.8125,
+      "ood_accuracy": 0.09375,
+      "interpretation": "The high shuffled-memory ID score is consistent with a prompt-plus-depth shortcut, but causality cannot be assigned to the decoder bottleneck alone because the architecture snapshots differ."
+    }
+  },
+  "dynamic_one_hop_probe": {
+    "description": "Every training and evaluation example contains a freshly sampled random 8-state permutation. Only one transition is requested. Source states are implicit fixed table positions in the serialized prompt.",
+    "prompt_layout": ["DB", "destination_at_source_0", "destination_at_source_1", "...", "destination_at_source_7", "QUERY", "start_state", "STEPS", "length_1", "END"],
+    "n_states": 8,
+    "chance_accuracy": 0.125,
+    "train_steps": 1000,
+    "batch_size": 128,
+    "model_seed": 0,
+    "train_base_seed": 1101,
+    "evaluation_base_seed": 99001,
+    "evaluation_count": 2048,
+    "optimizer": {
+      "name": "AdamW",
+      "learning_rate": 0.003,
+      "betas": [0.9, 0.95],
+      "weight_decay": 0.01,
+      "gradient_clip_norm": 1.0,
+      "scheduler": null
+    },
+    "shared_model_config": {
+      "vocab_size": 26,
+      "d_model": 48,
+      "n_heads": 4,
+      "d_ff": 96,
+      "max_seq_len": 128,
+      "dropout": 0.0,
+      "initializer_range": 0.02,
+      "latent_slots": 4,
+      "reasoning_steps_used": 1,
+      "compare_rank": 12,
+      "planner_ff": 96,
+      "memory_slots": 4,
+      "n_reasoning_modes": 3,
+      "diversity_weight": 0.001,
+      "route_entropy_weight": 0.0
+    },
+    "runs": [
+      {
+        "run_id": "implicit_position_strict_L1",
+        "decoder_prompt": "one DB token",
+        "decoder_bottleneck": true,
+        "n_layers": 1,
+        "parameters": 65811,
+        "final_train_ce": 2.0828330516815186,
+        "evaluation_accuracy": 0.119140625,
+        "correct": 244,
+        "count": 2048
+      },
+      {
+        "run_id": "implicit_position_full_prompt_L1",
+        "decoder_prompt": "original full prompt",
+        "decoder_bottleneck": false,
+        "n_layers": 1,
+        "parameters": 65811,
+        "final_train_ce": 2.0818419456481934,
+        "evaluation_accuracy": 0.119140625,
+        "correct": 244,
+        "count": 2048
+      },
+      {
+        "run_id": "implicit_position_strict_L2",
+        "decoder_prompt": "one DB token",
+        "decoder_bottleneck": true,
+        "n_layers": 2,
+        "parameters": 84675,
+        "final_train_ce": 2.0831563472747803,
+        "evaluation_accuracy": 0.1181640625,
+        "correct": 242,
+        "count": 2048
+      },
+      {
+        "run_id": "implicit_position_strict_L3",
+        "decoder_prompt": "one DB token",
+        "decoder_bottleneck": true,
+        "n_layers": 3,
+        "parameters": 103539,
+        "final_train_ce": 2.082476854324341,
+        "evaluation_accuracy": 0.1181640625,
+        "correct": 242,
+        "count": 2048
+      }
+    ],
+    "conclusion": "NO-GO. The current serialized interface did not learn even unseen one-hop operator lookup, with or without the strict bottleneck, and adding backbone layers did not fix it."
+  },
+  "latent_slot_sweep": {
+    "description": "Exploratory one-factor K changes on the strict fixed-operator task. All settings other than latent_slots use the fixed task base config.",
+    "shared_training": {
+      "steps": 1200,
+      "batch_size": 128,
+      "data_seed": 1101,
+      "log_every": 200,
+      "decoder_bottleneck": true,
+      "optimizer": "same as fixed_operator_task.optimizer"
+    },
+    "runs": [
+      {
+        "run_id": "K1_seed0",
+        "source": "/tmp/fog_probe_k1_s0/recurrent.pt during the run session",
+        "latent_slots": 1,
+        "model_seed": 0,
+        "parameters": 60531,
+        "train_seconds": 51.41943711000022,
+        "selected_step": 1,
+        "id_accuracy": 0.125,
+        "id_correct": 12,
+        "id_count": 96,
+        "ood_accuracy": 0.0,
+        "ood_correct": 0,
+        "ood_count": 96
+      },
+      {
+        "run_id": "K1_seed2",
+        "source": "/tmp/fog_probe_k1_s2/recurrent.pt during the run session",
+        "latent_slots": 1,
+        "model_seed": 2,
+        "parameters": 60531,
+        "train_seconds": 50.852160712000114,
+        "selected_step": 1,
+        "id_accuracy": 0.125,
+        "id_correct": 12,
+        "id_count": 96,
+        "ood_accuracy": 0.125,
+        "ood_correct": 12,
+        "ood_count": 96
+      },
+      {
+        "run_id": "K2_seed0",
+        "source": "/tmp/fog_probe_k2_s0/recurrent.pt during the run session",
+        "latent_slots": 2,
+        "model_seed": 0,
+        "parameters": 60579,
+        "train_seconds": 76.15652934100035,
+        "selected_step": 1,
+        "id_accuracy": 0.125,
+        "id_correct": 12,
+        "id_count": 96,
+        "ood_accuracy": 0.125,
+        "ood_correct": 12,
+        "ood_count": 96
+      },
+      {
+        "run_id": "K4_seed0_reference",
+        "source": "artifacts/finite_state_bottleneck_seed0/metrics.json",
+        "latent_slots": 4,
+        "model_seed": 0,
+        "data_seed": 1101,
+        "steps": 2200,
+        "parameters": 60675,
+        "train_seconds": 123.29871781899965,
+        "selected_step": 1000,
+        "id_accuracy": 1.0,
+        "id_correct": 96,
+        "id_count": 96,
+        "ood_accuracy": 0.75,
+        "ood_correct": 72,
+        "ood_count": 96,
+        "qualification": "Reference, not a matched 1200-step K-sweep run."
+      },
+      {
+        "run_id": "K8_seed0",
+        "source": "/tmp/fog_probe_k8_s0/recurrent.pt during the run session",
+        "latent_slots": 8,
+        "model_seed": 0,
+        "parameters": 60867,
+        "train_seconds": 91.22575105299984,
+        "selected_step": 1,
+        "id_accuracy": 0.125,
+        "id_correct": 12,
+        "id_count": 96,
+        "ood_accuracy": 0.125,
+        "ood_correct": 12,
+        "ood_count": 96
+      }
+    ],
+    "rng_caveat": "This sweep is not paired. Changing the shape of the early planner query parameter consumes a different number of random draws and shifts initialization of later tensors. Equal integer seeds therefore do not imply equal shared weights. K=4 was also run for a different total number of steps. These runs reveal instability but do not establish that K=4 is intrinsically optimal.",
+    "timing_caveat": "K1 seed0/seed2 and K2/K8 were run in concurrent pairs on one 9-CPU host. Do not use train_seconds as a throughput ranking."
+  },
+  "latent_diagnostics": {
+    "description": "Diagnostics on exhaustive depth-4 prompts, averaged over the four recurrent steps. Seed2 refers to its selected step-1 checkpoint.",
+    "runs": [
+      {
+        "run_id": "strict_seed0",
+        "selected_step": 1000,
+        "mean_off_diagonal_slot_cosine": 0.9999204725027084,
+        "minimum_step_mean_cosine": 0.9999145865440369,
+        "maximum_step_mean_cosine": 0.9999301433563232
+      },
+      {
+        "run_id": "strict_seed1",
+        "selected_step": 1200,
+        "mean_off_diagonal_slot_cosine": 0.9999702572822571,
+        "minimum_step_mean_cosine": 0.9999580383300781,
+        "maximum_step_mean_cosine": 0.9999822974205017
+      },
+      {
+        "run_id": "strict_seed2",
+        "selected_step": 1,
+        "mean_off_diagonal_slot_cosine": 0.9996592700481415,
+        "minimum_step_mean_cosine": 0.9994896650314331,
+        "maximum_step_mean_cosine": 0.9998904466629028
+      }
+    ],
+    "conclusion": "The four slot directions are nearly collinear in all inspected selected checkpoints. K positions may still differ through small components and sequence position; these measurements do not prove four independent thought workspaces."
+  },
+  "unrun_cells": {
+    "compare_rank_sweep": "n/a",
+    "memory_slot_sweep": "n/a",
+    "conditioning_ablation": "n/a",
+    "paired_initialization_slot_sweep": "n/a",
+    "explicit_key_value_dynamic_operator": "n/a",
+    "dynamic_multihop_after_one_hop_gate": "n/a"
+  },
+  "acceptance_gates_for_next_round": {
+    "seed_robustness": "With data seed and steps fixed: at least 4/5 model seeds reach ID >= 0.95, worst-seed ID >= 0.90, and median OOD >= 0.50.",
+    "dynamic_one_hop": "At least 0.90 accuracy on unseen operator tables across three model seeds.",
+    "dynamic_multihop": "After one-hop passes: unseen-table ID >= 0.80 and depths 5-8 OOD >= 0.40.",
+    "causal_memory_use": "For successful strict runs, zeroing or cross-example shuffling memory lowers accuracy by at least 0.50 absolute.",
+    "resource_selection": "Use name-stable or common-state initialization; choose a Pareto-minimal K/r/N only after matched multi-seed runs."
+  },
+  "go_no_go": {
+    "validated_10m_architecture_freeze": "NO-GO",
+    "experimental_10m_candidate_and_real_data_pipeline": "GO, only if explicitly labelled unvalidated/experimental",
+    "blocking_reasons": [
+      "A strict fixed-operator run collapsed to chance.",
+      "The current dynamic serialized operator interface failed unseen one-hop lookup.",
+      "The K sweep is confounded by non-paired RNG and unequal total steps.",
+      "Compare-rank, memory-capacity, conditioning, and explicit-key/value dynamic-operator cells remain unrun."
+    ]
+  }
+}

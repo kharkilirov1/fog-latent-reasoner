@@ -1,0 +1,73 @@
+{
+  "batch_size": 64,
+  "data_seed": 20260812,
+  "eval": {
+    "normal": {
+      "accuracy": 0.14453125,
+      "correct": 37,
+      "count": 256,
+      "intervention": "normal",
+      "nll": 2.0792808532714844,
+      "seconds": 0.13879914099743473,
+      "split": "validation",
+      "stream_sha256": "ea56c982406ff2d9c03f5a3bcc38e212e890e16c50dfe9261561b3bee89d9816"
+    }
+  },
+  "evaluation_split": "validation",
+  "experiment": "matched_permutation_lookup_v1",
+  "initialization": {
+    "scheme": "sha256(seed, full_parameter_name)_v1",
+    "shared_state_sha256": "e2c6b9335d45b8629e0a8460717dae7d81a09c9088454020e50f2784628a744c",
+    "whole_model_sha256": "e2c6b9335d45b8629e0a8460717dae7d81a09c9088454020e50f2784628a744c"
+  },
+  "model_seed": 0,
+  "parameters": {
+    "shared_lexical_backbone": 72512,
+    "total": 72512,
+    "trainable": 72512
+  },
+  "steps": 50,
+  "trace": [
+    {
+      "batch_accuracy": 0.0,
+      "grad_norm": 5.278627395629883,
+      "loss": 3.2360191345214844,
+      "step": 1
+    },
+    {
+      "batch_accuracy": 0.21875,
+      "grad_norm": 1.1080073118209839,
+      "loss": 2.230656862258911,
+      "step": 10
+    },
+    {
+      "batch_accuracy": 0.125,
+      "grad_norm": 0.9847884774208069,
+      "loss": 2.1197285652160645,
+      "step": 20
+    },
+    {
+      "batch_accuracy": 0.125,
+      "grad_norm": 1.471712589263916,
+      "loss": 2.1294307708740234,
+      "step": 30
+    },
+    {
+      "batch_accuracy": 0.140625,
+      "grad_norm": 1.1240476369857788,
+      "loss": 2.125244140625,
+      "step": 40
+    },
+    {
+      "batch_accuracy": 0.125,
+      "grad_norm": 0.9931964874267578,
+      "loss": 2.107369899749756,
+      "step": 50
+    }
+  ],
+  "train_examples": 3200,
+  "train_online_accuracy": 0.1284375,
+  "train_seconds": 1.863964477997797,
+  "training_stream_sha256": "8105aa648f14f6021587f676f1cba8a0ac1a77083f921a1472b886577afbca72",
+  "variant": "direct"
+}

@@ -1,0 +1,66 @@
+{
+  "checkpoint": "checkpoints/fog_10m_gsm8k_cot_full_best.pt",
+  "checkpoint_step": 400,
+  "split": "validation",
+  "examples": 128,
+  "reasoning_steps": 4,
+  "decoder_mode": "full",
+  "interventions": {
+    "normal": {
+      "correct": 0,
+      "count": 128,
+      "exact_match": 0.0,
+      "seconds": 267.0109020359996,
+      "samples": [
+        {
+          "source_row": 964,
+          "prediction": "The <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<12=12=12=12=12=12=12=12>>>>>>>>>>>>12.\n\n\n\n\nThe total of 12 =12=12=1",
+          "target": "4",
+          "correct": false
+        },
+        {
+          "source_row": 18,
+          "prediction": "The <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<12=12=12=12=12=12=12=12=12>>>>>>>>>1222220 = =2=120.\nThe 120 =12",
+          "target": "16",
+          "correct": false
+        },
+        {
+          "source_row": 184,
+          "prediction": "The <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<10*20*2=12=12=12=10>>>>>>>>120.\n\n\n\n\nThe total of 200=10=10=10=10=",
+          "target": "3750",
+          "correct": false
+        },
+        {
+          "source_row": 392,
+          "prediction": "The <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<12=12=12=12=12=12>>>>>>>>>>>12=1222.\n\n\n\nThe =12=12=12=12=20=12",
+          "target": "135",
+          "correct": false
+        },
+        {
+          "source_row": 149,
+          "prediction": "The <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<12=12=12=12=12=12=12=12=12>>>>>>>>>>>122222222222222 =122222",
+          "target": "4",
+          "correct": false
+        },
+        {
+          "source_row": 843,
+          "prediction": "The <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<12=12=12=12=12=12=12=12=12=12=12=12=12=12=12>>>>>>>>>>>>",
+          "target": "15",
+          "correct": false
+        },
+        {
+          "source_row": 53,
+          "prediction": "The <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<12=12=12=12=12=12=12=12=12=12=12=12>>>>>>>>>>>12 =12220\n\n\n",
+          "target": "36",
+          "correct": false
+        },
+        {
+          "source_row": 950,
+          "prediction": "The <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<12=12=12=12=12=12=12=12=12=122=12=12>>>>>>>>>>>122.\n\n\n\n",
+          "target": "270",
+          "correct": false
+        }
+      ]
+    }
+  }
+}

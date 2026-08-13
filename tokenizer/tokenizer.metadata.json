@@ -1,0 +1,13 @@
+{
+  "vocab_size": 8192,
+  "kind": "byte-fallback-with-reserved-ids",
+  "dataset_id": null,
+  "revision": null,
+  "max_samples": 0,
+  "special_tokens": {
+    "pad": "<pad>",
+    "bos": "<bos>",
+    "eos": "<eos>",
+    "unk": "<unk>"
+  }
+}

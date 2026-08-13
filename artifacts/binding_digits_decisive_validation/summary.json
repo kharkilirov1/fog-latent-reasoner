@@ -1,0 +1,249 @@
+{
+  "experiment": "fog_exact_multidigit_binding_v1",
+  "runs": [
+    {
+      "eval": {
+        "normal": {
+          "digit_accuracy": 1.0,
+          "exact": 1024,
+          "exact_match": 1.0,
+          "examples": 1024,
+          "intervention": "normal",
+          "nll_per_digit": 0.0006172187859192491,
+          "split": "validation"
+        },
+        "query_deranged": {
+          "digit_accuracy": 0.21044921875,
+          "exact": 119,
+          "exact_match": 0.1162109375,
+          "examples": 1024,
+          "intervention": "query_deranged",
+          "nll_per_digit": 7.535363614559174,
+          "split": "validation"
+        },
+        "target_deranged": {
+          "digit_accuracy": 0.10009765625,
+          "exact": 0,
+          "exact_match": 0.0,
+          "examples": 1024,
+          "intervention": "target_deranged",
+          "nll_per_digit": 8.642355799674988,
+          "split": "validation"
+        },
+        "zero": {
+          "digit_accuracy": 0.09619140625,
+          "exact": 1,
+          "exact_match": 0.0009765625,
+          "examples": 1024,
+          "intervention": "zero",
+          "nll_per_digit": 2.3025853633880615,
+          "split": "validation"
+        }
+      },
+      "experiment": "fog_exact_multidigit_binding_v1",
+      "seed": 0,
+      "steps": 200,
+      "task": {
+        "digits": 4,
+        "radix": 10,
+        "table_size": 8
+      },
+      "trace": [
+        {
+          "batch_exact": 0.015625,
+          "grad_norm": 0.2049344778060913,
+          "loss": 1.882531762123108,
+          "step": 1
+        },
+        {
+          "batch_exact": 1.0,
+          "grad_norm": 0.03531775623559952,
+          "loss": 0.019522668793797493,
+          "step": 50
+        },
+        {
+          "batch_exact": 1.0,
+          "grad_norm": 0.010810205712914467,
+          "loss": 0.005964485462754965,
+          "step": 100
+        },
+        {
+          "batch_exact": 1.0,
+          "grad_norm": 0.003614569315686822,
+          "loss": 0.0019847359508275986,
+          "step": 150
+        },
+        {
+          "batch_exact": 1.0,
+          "grad_norm": 0.0011382633820176125,
+          "loss": 0.0006259209476411343,
+          "step": 200
+        }
+      ],
+      "trainable_parameters": 1152
+    },
+    {
+      "eval": {
+        "normal": {
+          "digit_accuracy": 1.0,
+          "exact": 1024,
+          "exact_match": 1.0,
+          "examples": 1024,
+          "intervention": "normal",
+          "nll_per_digit": 0.0006130892215878703,
+          "split": "validation"
+        },
+        "query_deranged": {
+          "digit_accuracy": 0.21044921875,
+          "exact": 119,
+          "exact_match": 0.1162109375,
+          "examples": 1024,
+          "intervention": "query_deranged",
+          "nll_per_digit": 7.544171690940857,
+          "split": "validation"
+        },
+        "target_deranged": {
+          "digit_accuracy": 0.10009765625,
+          "exact": 0,
+          "exact_match": 0.0,
+          "examples": 1024,
+          "intervention": "target_deranged",
+          "nll_per_digit": 8.647428274154663,
+          "split": "validation"
+        },
+        "zero": {
+          "digit_accuracy": 0.09619140625,
+          "exact": 1,
+          "exact_match": 0.0009765625,
+          "examples": 1024,
+          "intervention": "zero",
+          "nll_per_digit": 2.3025853633880615,
+          "split": "validation"
+        }
+      },
+      "experiment": "fog_exact_multidigit_binding_v1",
+      "seed": 1,
+      "steps": 200,
+      "task": {
+        "digits": 4,
+        "radix": 10,
+        "table_size": 8
+      },
+      "trace": [
+        {
+          "batch_exact": 0.015625,
+          "grad_norm": 0.20648756623268127,
+          "loss": 1.8816527128219604,
+          "step": 1
+        },
+        {
+          "batch_exact": 1.0,
+          "grad_norm": 0.03493648022413254,
+          "loss": 0.019241664558649063,
+          "step": 50
+        },
+        {
+          "batch_exact": 1.0,
+          "grad_norm": 0.01084662415087223,
+          "loss": 0.005978090688586235,
+          "step": 100
+        },
+        {
+          "batch_exact": 1.0,
+          "grad_norm": 0.0035822121426463127,
+          "loss": 0.001970522338524461,
+          "step": 150
+        },
+        {
+          "batch_exact": 1.0,
+          "grad_norm": 0.0011325582163408399,
+          "loss": 0.0006225003162398934,
+          "step": 200
+        }
+      ],
+      "trainable_parameters": 1152
+    },
+    {
+      "eval": {
+        "normal": {
+          "digit_accuracy": 1.0,
+          "exact": 1024,
+          "exact_match": 1.0,
+          "examples": 1024,
+          "intervention": "normal",
+          "nll_per_digit": 0.0006232000232557766,
+          "split": "validation"
+        },
+        "query_deranged": {
+          "digit_accuracy": 0.21044921875,
+          "exact": 119,
+          "exact_match": 0.1162109375,
+          "examples": 1024,
+          "intervention": "query_deranged",
+          "nll_per_digit": 7.531456887722015,
+          "split": "validation"
+        },
+        "target_deranged": {
+          "digit_accuracy": 0.10009765625,
+          "exact": 0,
+          "exact_match": 0.0,
+          "examples": 1024,
+          "intervention": "target_deranged",
+          "nll_per_digit": 8.631697297096252,
+          "split": "validation"
+        },
+        "zero": {
+          "digit_accuracy": 0.09619140625,
+          "exact": 1,
+          "exact_match": 0.0009765625,
+          "examples": 1024,
+          "intervention": "zero",
+          "nll_per_digit": 2.3025853633880615,
+          "split": "validation"
+        }
+      },
+      "experiment": "fog_exact_multidigit_binding_v1",
+      "seed": 2,
+      "steps": 200,
+      "task": {
+        "digits": 4,
+        "radix": 10,
+        "table_size": 8
+      },
+      "trace": [
+        {
+          "batch_exact": 0.0,
+          "grad_norm": 0.20619842410087585,
+          "loss": 1.8836885690689087,
+          "step": 1
+        },
+        {
+          "batch_exact": 1.0,
+          "grad_norm": 0.03491311892867088,
+          "loss": 0.019362039864063263,
+          "step": 50
+        },
+        {
+          "batch_exact": 1.0,
+          "grad_norm": 0.010957146063446999,
+          "loss": 0.0060405433177948,
+          "step": 100
+        },
+        {
+          "batch_exact": 1.0,
+          "grad_norm": 0.0036377678625285625,
+          "loss": 0.002001730026677251,
+          "step": 150
+        },
+        {
+          "batch_exact": 1.0,
+          "grad_norm": 0.0011461501708254218,
+          "loss": 0.0006310493918135762,
+          "step": 200
+        }
+      ],
+      "trainable_parameters": 1152
+    }
+  ],
+  "test_split_touched": false
+}

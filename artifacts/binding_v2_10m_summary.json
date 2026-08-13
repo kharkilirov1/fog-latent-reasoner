@@ -1,0 +1,69 @@
+{
+  "experiment": "fog_10m_token_binding_v2_final",
+  "date": "2026-08-13",
+  "architecture_version": "query_bound_v2",
+  "parameters": 10000039,
+  "reasoning_steps": 1,
+  "binding_offsets": [2],
+  "training": {
+    "steps": 40,
+    "batch_size": 32,
+    "learning_rate": 0.1,
+    "weight_decay": 0.0,
+    "train_scope": "sharpness",
+    "trainable_parameters": 1,
+    "data_seed": 20260813
+  },
+  "oracle_vocab_copy": {
+    "correct": 8192,
+    "count": 8192,
+    "minimum_logit_margin": 0.5791110992431641
+  },
+  "locked_test": {
+    "examples_per_seed": 4032,
+    "stream_sha256": "344b99f6f49ff0f56d4c567a92dfa58433b9931b934d18f9d8691776e01103f8",
+    "runs": [
+      {
+        "model_seed": 42,
+        "checkpoint_sha256": "e8e3fe34723c6830b034181900ca00a3a785d28eae4815d10d05d289bf896ec6",
+        "normal_correct": 4032,
+        "address_hit_accuracy": 1.0,
+        "correct_address_mass": 0.9842337048242963,
+        "address_entropy": 0.11891005637626799,
+        "zero_correct": 0,
+        "target_deranged_correct": 0,
+        "query_cyclic_correct": 0,
+        "source": "artifacts/binding_v2_10m_token_lookup_locked_test.json"
+      },
+      {
+        "model_seed": 0,
+        "checkpoint_sha256": "b350db67d104973e3c037fe49ee8dae806a3eb2bee71810d7828fff06e25e87d",
+        "normal_correct": 4032,
+        "address_hit_accuracy": 1.0,
+        "correct_address_mass": 0.9662300054989164,
+        "address_entropy": 0.22108037225783816,
+        "zero_correct": 0,
+        "target_deranged_correct": 0,
+        "query_cyclic_correct": 0,
+        "source": "artifacts/fog_binding_v2_10m_token_lookup_seed0_locked_test.json"
+      },
+      {
+        "model_seed": 1,
+        "checkpoint_sha256": "c8bb359ea687a84ac428be83da8116a786aabb7bcf59326903daa09224ae3ba6",
+        "normal_correct": 4032,
+        "address_hit_accuracy": 1.0,
+        "correct_address_mass": 0.9983128072723509,
+        "address_entropy": 0.015625147163749686,
+        "zero_correct": 0,
+        "target_deranged_correct": 0,
+        "query_cyclic_correct": 0,
+        "source": "artifacts/binding_v2_10m_token_lookup_seed1_locked_test.json"
+      }
+    ]
+  },
+  "interpretation": {
+    "supported": "exact query-to-token binding and causal use of the protected latent payload",
+    "not_supported": "arithmetic, multi-step composition, or general language reasoning",
+    "nll_caveat": "top-1 is exact but full-vocabulary NLL remains high because the lexical codebook/head stayed frozen"
+  }
+}

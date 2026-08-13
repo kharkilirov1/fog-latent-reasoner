@@ -1,0 +1,104 @@
+{
+  "batch_size": 64,
+  "data_seed": 20260812,
+  "eval": {
+    "normal": {
+      "accuracy": 0.2890625,
+      "correct": 148,
+      "count": 512,
+      "intervention": "normal",
+      "nll": 1.4182608425617218,
+      "seconds": 0.2984349590005877,
+      "split": "validation",
+      "stream_sha256": "f181b2f37eb563c9e5067f629410fff27626f2f2e99d82dda9ab4fe6e9af222b"
+    }
+  },
+  "evaluation_split": "validation",
+  "experiment": "matched_structured_permutation_lookup_v1",
+  "initialization_pairing": {
+    "exact_match": true,
+    "scheme": "sha256(seed, full_parameter_name)_v1",
+    "shared_parameter_entries": 69696,
+    "shared_state_sha256": "c7d405a0a0841d90066848b567948c8a57faea916d042c5b85d7936f8a63604c",
+    "shared_tensor_count": 28,
+    "shared_tensor_names": [
+      "backbone.blocks.0.attn.in_proj_bias",
+      "backbone.blocks.0.attn.in_proj_weight",
+      "backbone.blocks.0.attn.out_proj.bias",
+      "backbone.blocks.0.attn.out_proj.weight",
+      "backbone.blocks.0.ff.0.bias",
+      "backbone.blocks.0.ff.0.weight",
+      "backbone.blocks.0.ff.2.bias",
+      "backbone.blocks.0.ff.2.weight",
+      "backbone.blocks.0.n1.weight",
+      "backbone.blocks.0.n2.weight",
+      "backbone.blocks.1.attn.in_proj_bias",
+      "backbone.blocks.1.attn.in_proj_weight",
+      "backbone.blocks.1.attn.out_proj.bias",
+      "backbone.blocks.1.attn.out_proj.weight",
+      "backbone.blocks.1.ff.0.bias",
+      "backbone.blocks.1.ff.0.weight",
+      "backbone.blocks.1.ff.2.bias",
+      "backbone.blocks.1.ff.2.weight",
+      "backbone.blocks.1.n1.weight",
+      "backbone.blocks.1.n2.weight",
+      "backbone.kind.weight",
+      "backbone.out_norm.weight",
+      "backbone.pos.weight",
+      "classifier.weight",
+      "key.weight",
+      "query_type",
+      "row_type",
+      "value.weight"
+    ],
+    "variants": [
+      "direct"
+    ]
+  },
+  "model_seed": 0,
+  "parameters": {
+    "fog_only": 0,
+    "forward_active": 69696,
+    "shared_structured_stack": 69696,
+    "total": 69696,
+    "trainable": 69184
+  },
+  "steps": 200,
+  "trace": [
+    {
+      "batch_accuracy": 0.078125,
+      "grad_norm": 1.275473952293396,
+      "loss": 2.1280455589294434,
+      "step": 1
+    },
+    {
+      "batch_accuracy": 0.125,
+      "grad_norm": 0.5743638873100281,
+      "loss": 2.0800416469573975,
+      "step": 50
+    },
+    {
+      "batch_accuracy": 0.078125,
+      "grad_norm": 0.7854126691818237,
+      "loss": 2.1054391860961914,
+      "step": 100
+    },
+    {
+      "batch_accuracy": 0.171875,
+      "grad_norm": 1.3643401861190796,
+      "loss": 1.9184552431106567,
+      "step": 150
+    },
+    {
+      "batch_accuracy": 0.265625,
+      "grad_norm": 8.940157890319824,
+      "loss": 1.5850404500961304,
+      "step": 200
+    }
+  ],
+  "train_examples": 12800,
+  "train_online_accuracy": 0.153359375,
+  "train_seconds": 18.63941114300178,
+  "training_stream_sha256": "df77df5372a7e972b5a961da50942294295c4b31c6d482e6463d8abd407d87c7",
+  "variant": "direct"
+}

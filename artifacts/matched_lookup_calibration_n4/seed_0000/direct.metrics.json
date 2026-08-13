@@ -1,0 +1,141 @@
+{
+  "batch_size": 128,
+  "data_seed": 20260812,
+  "eval": {
+    "normal": {
+      "accuracy": 0.251953125,
+      "correct": 258,
+      "count": 1024,
+      "intervention": "normal",
+      "nll": 1.3871691823005676,
+      "seconds": 0.305657256001723,
+      "split": "validation",
+      "stream_sha256": "aac0d0164cd12ae9a5d9b8bfb6a2b133fb5a4878df861dc3c51230cf65f3e024"
+    }
+  },
+  "evaluation_split": "validation",
+  "experiment": "matched_permutation_lookup_v2",
+  "initialization": {
+    "arm_lexical_state_sha256": "c244469d8432a8d916c6dbc19b1b3381d0e0a0c1dac480fbadadfacd89b85985",
+    "canonical_cross_arm": {
+      "canonical_common_state_sha256": "c244469d8432a8d916c6dbc19b1b3381d0e0a0c1dac480fbadadfacd89b85985",
+      "canonical_parameter_entries": 51990,
+      "canonical_tensor_count": 25,
+      "canonical_tensor_names": [
+        "backbone.blocks.0.attn.in_proj_bias",
+        "backbone.blocks.0.attn.in_proj_weight",
+        "backbone.blocks.0.attn.out_proj.bias",
+        "backbone.blocks.0.attn.out_proj.weight",
+        "backbone.blocks.0.ff.0.bias",
+        "backbone.blocks.0.ff.0.weight",
+        "backbone.blocks.0.ff.2.bias",
+        "backbone.blocks.0.ff.2.weight",
+        "backbone.blocks.0.n1.weight",
+        "backbone.blocks.0.n2.weight",
+        "backbone.blocks.1.attn.in_proj_bias",
+        "backbone.blocks.1.attn.in_proj_weight",
+        "backbone.blocks.1.attn.out_proj.bias",
+        "backbone.blocks.1.attn.out_proj.weight",
+        "backbone.blocks.1.ff.0.bias",
+        "backbone.blocks.1.ff.0.weight",
+        "backbone.blocks.1.ff.2.bias",
+        "backbone.blocks.1.ff.2.weight",
+        "backbone.blocks.1.n1.weight",
+        "backbone.blocks.1.n2.weight",
+        "backbone.kind.weight",
+        "backbone.out_norm.weight",
+        "backbone.pos.weight",
+        "lm_head.weight",
+        "token.weight"
+      ],
+      "exact_match": true,
+      "excluded_shape_mismatch_names": [],
+      "scheme": "sha256(seed, full_parameter_name)_v1",
+      "variants": [
+        "direct"
+      ]
+    },
+    "scheme": "sha256(seed, full_parameter_name)_v1",
+    "whole_model_sha256": "c244469d8432a8d916c6dbc19b1b3381d0e0a0c1dac480fbadadfacd89b85985"
+  },
+  "model_seed": 0,
+  "parameters": {
+    "shared_lexical_backbone": 51414,
+    "total": 51414,
+    "trainable": 51414
+  },
+  "steps": 1000,
+  "trace": [
+    {
+      "batch_accuracy": 0.0,
+      "grad_norm": 6.7051568031311035,
+      "loss": 2.553443431854248,
+      "step": 1
+    },
+    {
+      "batch_accuracy": 0.234375,
+      "grad_norm": 0.6985318064689636,
+      "loss": 1.3946057558059692,
+      "step": 100
+    },
+    {
+      "batch_accuracy": 0.2421875,
+      "grad_norm": 0.7028266191482544,
+      "loss": 1.4004039764404297,
+      "step": 200
+    },
+    {
+      "batch_accuracy": 0.21875,
+      "grad_norm": 0.3880546987056732,
+      "loss": 1.39100182056427,
+      "step": 300
+    },
+    {
+      "batch_accuracy": 0.1875,
+      "grad_norm": 0.7278292775154114,
+      "loss": 1.4046982526779175,
+      "step": 400
+    },
+    {
+      "batch_accuracy": 0.234375,
+      "grad_norm": 0.645534336566925,
+      "loss": 1.3929190635681152,
+      "step": 500
+    },
+    {
+      "batch_accuracy": 0.21875,
+      "grad_norm": 0.5117627382278442,
+      "loss": 1.385285496711731,
+      "step": 600
+    },
+    {
+      "batch_accuracy": 0.28125,
+      "grad_norm": 0.15434163808822632,
+      "loss": 1.3851513862609863,
+      "step": 700
+    },
+    {
+      "batch_accuracy": 0.2109375,
+      "grad_norm": 0.6097845435142517,
+      "loss": 1.3977974653244019,
+      "step": 800
+    },
+    {
+      "batch_accuracy": 0.328125,
+      "grad_norm": 0.32172292470932007,
+      "loss": 1.3826470375061035,
+      "step": 900
+    },
+    {
+      "batch_accuracy": 0.3046875,
+      "grad_norm": 0.30043137073516846,
+      "loss": 1.3721286058425903,
+      "step": 1000
+    }
+  ],
+  "train_examples": 128000,
+  "train_online_accuracy": 0.2501875,
+  "train_seconds": 40.071782695002184,
+  "training_stream_sha256": "f13ff936147040d90cfe9cf9a846939e0cf35a9e505b29b94f02590bb8c577bb",
+  "variant": "direct"
+}
