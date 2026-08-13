@@ -1,0 +1,10 @@
+{
+  "dataset": "openai/gsm8k",
+  "config": "main",
+  "split": "train",
+  "offset": 0,
+  "limit": 1024,
+  "source_total_rows": 7473,
+  "sha256": "bfa19819db9f14ee2e63b66351b1a8a189c9c8ce075fa29c484d47053775057f",
+  "viewer_endpoint": "https://datasets-server.huggingface.co/rows"
+}

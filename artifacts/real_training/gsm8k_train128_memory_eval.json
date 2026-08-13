@@ -1,0 +1,178 @@
+{
+  "checkpoint": "checkpoints/fog_10m_gsm8k_896_best.pt",
+  "checkpoint_step": 400,
+  "split": "train",
+  "examples": 128,
+  "reasoning_steps": 4,
+  "decoder_mode": "memory-only",
+  "interventions": {
+    "normal": {
+      "correct": 2,
+      "count": 128,
+      "exact_match": 0.015625,
+      "seconds": 6.106911894999939,
+      "samples": [
+        {
+          "source_row": 948,
+          "prediction": "12",
+          "target": "32",
+          "correct": false
+        },
+        {
+          "source_row": 297,
+          "prediction": "12",
+          "target": "75",
+          "correct": false
+        },
+        {
+          "source_row": 804,
+          "prediction": "12",
+          "target": "2",
+          "correct": false
+        },
+        {
+          "source_row": 328,
+          "prediction": "12",
+          "target": "84",
+          "correct": false
+        },
+        {
+          "source_row": 702,
+          "prediction": "12",
+          "target": "27",
+          "correct": false
+        },
+        {
+          "source_row": 678,
+          "prediction": "12",
+          "target": "32",
+          "correct": false
+        },
+        {
+          "source_row": 260,
+          "prediction": "12",
+          "target": "360",
+          "correct": false
+        },
+        {
+          "source_row": 571,
+          "prediction": "12",
+          "target": "27",
+          "correct": false
+        }
+      ]
+    },
+    "zero": {
+      "correct": 2,
+      "count": 128,
+      "exact_match": 0.015625,
+      "seconds": 5.054957546999503,
+      "samples": [
+        {
+          "source_row": 948,
+          "prediction": "12",
+          "target": "32",
+          "correct": false
+        },
+        {
+          "source_row": 297,
+          "prediction": "12",
+          "target": "75",
+          "correct": false
+        },
+        {
+          "source_row": 804,
+          "prediction": "12",
+          "target": "2",
+          "correct": false
+        },
+        {
+          "source_row": 328,
+          "prediction": "12",
+          "target": "84",
+          "correct": false
+        },
+        {
+          "source_row": 702,
+          "prediction": "12",
+          "target": "27",
+          "correct": false
+        },
+        {
+          "source_row": 678,
+          "prediction": "12",
+          "target": "32",
+          "correct": false
+        },
+        {
+          "source_row": 260,
+          "prediction": "12",
+          "target": "360",
+          "correct": false
+        },
+        {
+          "source_row": 571,
+          "prediction": "12",
+          "target": "27",
+          "correct": false
+        }
+      ]
+    },
+    "shuffle": {
+      "correct": 2,
+      "count": 128,
+      "exact_match": 0.015625,
+      "seconds": 5.120514943000671,
+      "samples": [
+        {
+          "source_row": 948,
+          "prediction": "12",
+          "target": "32",
+          "correct": false
+        },
+        {
+          "source_row": 297,
+          "prediction": "12",
+          "target": "75",
+          "correct": false
+        },
+        {
+          "source_row": 804,
+          "prediction": "12",
+          "target": "2",
+          "correct": false
+        },
+        {
+          "source_row": 328,
+          "prediction": "12",
+          "target": "84",
+          "correct": false
+        },
+        {
+          "source_row": 702,
+          "prediction": "12",
+          "target": "27",
+          "correct": false
+        },
+        {
+          "source_row": 678,
+          "prediction": "12",
+          "target": "32",
+          "correct": false
+        },
+        {
+          "source_row": 260,
+          "prediction": "12",
+          "target": "360",
+          "correct": false
+        },
+        {
+          "source_row": 571,
+          "prediction": "12",
+          "target": "27",
+          "correct": false
+        }
+      ]
+    }
+  }
+}

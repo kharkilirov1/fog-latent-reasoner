@@ -1,0 +1,46 @@
+{
+  "checkpoint": {
+    "model_seed": 1,
+    "path": "artifacts/matched_structured_lookup_decisive_seeds1_2/seed_0001/direct.pt",
+    "sha256": "a381f0a4bc4753c9a092290681df425bbe8e2326d225df84b59601b387c1649d",
+    "training_stream_sha256": "df77df5372a7e972b5a961da50942294295c4b31c6d482e6463d8abd407d87c7",
+    "variant": "direct"
+  },
+  "data_seed": 20260812,
+  "eval": {
+    "normal": {
+      "accuracy": 0.2646329365079365,
+      "correct": 1067,
+      "count": 4032,
+      "intervention": "normal",
+      "nll": 1.7216812580350846,
+      "seconds": 1.2472790629981318,
+      "split": "test",
+      "stream_sha256": "30d79d0feacba5a79898a9c42547e8b339ffbed4fda482990faad5fc0dadd095"
+    }
+  },
+  "eval_batch_size": 128,
+  "eval_examples": 4032,
+  "experiment": "matched_structured_permutation_lookup_v1",
+  "mode": "checkpoint_only_evaluation",
+  "model_config": {
+    "compare_rank": 16,
+    "d_ff": 128,
+    "d_model": 64,
+    "dropout": 0.0,
+    "fixed_orthogonal_keys": true,
+    "initializer_range": 0.02,
+    "latent_slots": 4,
+    "max_seq_len": 18,
+    "memory_slots": 8,
+    "n_heads": 4,
+    "n_layers": 2,
+    "n_reasoning_modes": 4,
+    "planner_ff": 128,
+    "reasoning_steps": 2
+  },
+  "split": "test",
+  "task_config": {
+    "table_size": 8
+  }
+}

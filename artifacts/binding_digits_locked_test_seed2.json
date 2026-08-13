@@ -1,0 +1,42 @@
+{
+  "eval": {
+    "normal": {
+      "digit_accuracy": 1.0,
+      "exact": 4096,
+      "exact_match": 1.0,
+      "examples": 4096,
+      "intervention": "normal",
+      "nll_per_digit": 0.0006220663799467729,
+      "split": "test"
+    },
+    "query_deranged": {
+      "digit_accuracy": 0.1005859375,
+      "exact": 0,
+      "exact_match": 0.0,
+      "examples": 4096,
+      "intervention": "query_deranged",
+      "nll_per_digit": 8.569465965032578,
+      "split": "test"
+    },
+    "target_deranged": {
+      "digit_accuracy": 0.09881591796875,
+      "exact": 0,
+      "exact_match": 0.0,
+      "examples": 4096,
+      "intervention": "target_deranged",
+      "nll_per_digit": 8.64422008395195,
+      "split": "test"
+    },
+    "zero": {
+      "digit_accuracy": 0.1038818359375,
+      "exact": 1,
+      "exact_match": 0.000244140625,
+      "examples": 4096,
+      "intervention": "zero",
+      "nll_per_digit": 2.3025853633880615,
+      "split": "test"
+    }
+  },
+  "experiment": "fog_exact_multidigit_binding_v1",
+  "split": "test"
+}

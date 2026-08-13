@@ -1,0 +1,83 @@
+{
+  "batch_size": 64,
+  "data_seed": 20260812,
+  "eval": {
+    "normal": {
+      "accuracy": 1.0,
+      "correct": 1024,
+      "count": 1024,
+      "intervention": "normal",
+      "nll": 6.007365300320089e-05,
+      "split": "validation",
+      "stream_sha256": "8511d71e5198e78e5ea8b2ba31c3784833ee4bc7a529345bab1aab3e37794f82"
+    },
+    "query_deranged": {
+      "accuracy": 0.1171875,
+      "correct": 120,
+      "count": 1024,
+      "intervention": "query_deranged",
+      "nll": 10.331641793251038,
+      "split": "validation",
+      "stream_sha256": "8511d71e5198e78e5ea8b2ba31c3784833ee4bc7a529345bab1aab3e37794f82"
+    },
+    "target_deranged_primary": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 1024,
+      "intervention": "target_deranged_primary",
+      "nll": 11.692571759223938,
+      "split": "validation",
+      "stream_sha256": "8511d71e5198e78e5ea8b2ba31c3784833ee4bc7a529345bab1aab3e37794f82"
+    },
+    "zero_primary": {
+      "accuracy": 0.1376953125,
+      "correct": 141,
+      "count": 1024,
+      "intervention": "zero_primary",
+      "nll": 2.0794410705566406,
+      "split": "validation",
+      "stream_sha256": "8511d71e5198e78e5ea8b2ba31c3784833ee4bc7a529345bab1aab3e37794f82"
+    }
+  },
+  "experiment": "fog_binding_preserving_v2",
+  "learning_rate": 0.01,
+  "model_seed": 1,
+  "parameters": 49664,
+  "steps": 200,
+  "trace": [
+    {
+      "batch_accuracy": 0.0,
+      "grad_norm": 2.007711172103882,
+      "loss": 2.098299980163574,
+      "step": 1
+    },
+    {
+      "batch_accuracy": 1.0,
+      "grad_norm": 0.0028157662600278854,
+      "loss": 0.000978215248323977,
+      "step": 50
+    },
+    {
+      "batch_accuracy": 1.0,
+      "grad_norm": 0.0015409748302772641,
+      "loss": 0.0005270183901302516,
+      "step": 100
+    },
+    {
+      "batch_accuracy": 1.0,
+      "grad_norm": 0.0006399453850463033,
+      "loss": 0.00020008509454783052,
+      "step": 150
+    },
+    {
+      "batch_accuracy": 1.0,
+      "grad_norm": 0.00019380674348212779,
+      "loss": 6.363144348142669e-05,
+      "step": 200
+    }
+  ],
+  "train_seconds": 2.793738966996898,
+  "trainable_parameters": 48640,
+  "training_stream_sha256": "df77df5372a7e972b5a961da50942294295c4b31c6d482e6463d8abd407d87c7",
+  "weight_decay": 0.0
+}

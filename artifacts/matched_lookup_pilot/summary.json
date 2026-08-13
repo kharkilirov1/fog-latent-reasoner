@@ -1,0 +1,407 @@
+{
+  "arguments": {
+    "batch_size": 64,
+    "compare_rank": 16,
+    "d_ff": 128,
+    "d_model": 64,
+    "data_seed": 20260812,
+    "device": "cpu",
+    "eval_batch_size": 128,
+    "evaluation_split": "validation",
+    "fog_full_steps": 1,
+    "fog_strict_steps": 4,
+    "latent_slots": 4,
+    "learning_rate": 0.003,
+    "log_every": 10,
+    "memory_slots": 8,
+    "n_heads": 4,
+    "n_layers": 2,
+    "output_dir": "artifacts/matched_lookup_pilot",
+    "planner_ff": 128,
+    "protocol_check_examples": 2048,
+    "reasoning_steps": 2,
+    "seeds": [
+      0
+    ],
+    "steps": 50,
+    "table_size": 8,
+    "test_examples": 256,
+    "threads": 4,
+    "validation_examples": 256,
+    "variants": [
+      "direct",
+      "fog_full",
+      "fog_strict"
+    ],
+    "weight_decay": 0.01
+  },
+  "condition_model_configs": {
+    "direct": {
+      "compare_rank": 16,
+      "d_ff": 128,
+      "d_model": 64,
+      "diversity_weight": 0.0,
+      "dropout": 0.0,
+      "initializer_range": 0.02,
+      "latent_slots": 4,
+      "max_seq_len": 64,
+      "memory_slots": 8,
+      "n_heads": 4,
+      "n_layers": 2,
+      "n_reasoning_modes": 4,
+      "planner_ff": 128,
+      "reasoning_steps": 4,
+      "route_entropy_weight": 0.0,
+      "vocab_size": 24
+    },
+    "fog_full": {
+      "compare_rank": 16,
+      "d_ff": 128,
+      "d_model": 64,
+      "diversity_weight": 0.0,
+      "dropout": 0.0,
+      "initializer_range": 0.02,
+      "latent_slots": 4,
+      "max_seq_len": 64,
+      "memory_slots": 8,
+      "n_heads": 4,
+      "n_layers": 2,
+      "n_reasoning_modes": 4,
+      "planner_ff": 128,
+      "reasoning_steps": 1,
+      "route_entropy_weight": 0.0,
+      "vocab_size": 24
+    },
+    "fog_strict": {
+      "compare_rank": 16,
+      "d_ff": 128,
+      "d_model": 64,
+      "diversity_weight": 0.0,
+      "dropout": 0.0,
+      "initializer_range": 0.02,
+      "latent_slots": 4,
+      "max_seq_len": 64,
+      "memory_slots": 8,
+      "n_heads": 4,
+      "n_layers": 2,
+      "n_reasoning_modes": 4,
+      "planner_ff": 128,
+      "reasoning_steps": 4,
+      "route_entropy_weight": 0.0,
+      "vocab_size": 24
+    }
+  },
+  "experiment": "matched_permutation_lookup_v1",
+  "model_config": {
+    "compare_rank": 16,
+    "d_ff": 128,
+    "d_model": 64,
+    "diversity_weight": 0.0,
+    "dropout": 0.0,
+    "initializer_range": 0.02,
+    "latent_slots": 4,
+    "max_seq_len": 64,
+    "memory_slots": 8,
+    "n_heads": 4,
+    "n_layers": 2,
+    "n_reasoning_modes": 4,
+    "planner_ff": 128,
+    "reasoning_steps": 4,
+    "route_entropy_weight": 0.0,
+    "vocab_size": 24
+  },
+  "protocol_check": {
+    "bucket_rule": "blake2b(mapping) % 10: train=0..7, validation=8, test=9",
+    "checked_examples": {
+      "test": 256,
+      "train": 2048,
+      "validation": 256
+    },
+    "overlap": {
+      "train_test": 0,
+      "train_validation": 0,
+      "validation_test": 0
+    },
+    "partition_key": "mapping permutation only",
+    "unique_mappings": {
+      "test": 248,
+      "train": 1990,
+      "validation": 248
+    }
+  },
+  "results": {
+    "0": {
+      "direct": {
+        "batch_size": 64,
+        "data_seed": 20260812,
+        "eval": {
+          "normal": {
+            "accuracy": 0.14453125,
+            "correct": 37,
+            "count": 256,
+            "intervention": "normal",
+            "nll": 2.0792808532714844,
+            "seconds": 0.13879914099743473,
+            "split": "validation",
+            "stream_sha256": "ea56c982406ff2d9c03f5a3bcc38e212e890e16c50dfe9261561b3bee89d9816"
+          }
+        },
+        "evaluation_split": "validation",
+        "experiment": "matched_permutation_lookup_v1",
+        "initialization": {
+          "scheme": "sha256(seed, full_parameter_name)_v1",
+          "shared_state_sha256": "e2c6b9335d45b8629e0a8460717dae7d81a09c9088454020e50f2784628a744c",
+          "whole_model_sha256": "e2c6b9335d45b8629e0a8460717dae7d81a09c9088454020e50f2784628a744c"
+        },
+        "model_seed": 0,
+        "parameters": {
+          "shared_lexical_backbone": 72512,
+          "total": 72512,
+          "trainable": 72512
+        },
+        "steps": 50,
+        "trace": [
+          {
+            "batch_accuracy": 0.0,
+            "grad_norm": 5.278627395629883,
+            "loss": 3.2360191345214844,
+            "step": 1
+          },
+          {
+            "batch_accuracy": 0.21875,
+            "grad_norm": 1.1080073118209839,
+            "loss": 2.230656862258911,
+            "step": 10
+          },
+          {
+            "batch_accuracy": 0.125,
+            "grad_norm": 0.9847884774208069,
+            "loss": 2.1197285652160645,
+            "step": 20
+          },
+          {
+            "batch_accuracy": 0.125,
+            "grad_norm": 1.471712589263916,
+            "loss": 2.1294307708740234,
+            "step": 30
+          },
+          {
+            "batch_accuracy": 0.140625,
+            "grad_norm": 1.1240476369857788,
+            "loss": 2.125244140625,
+            "step": 40
+          },
+          {
+            "batch_accuracy": 0.125,
+            "grad_norm": 0.9931964874267578,
+            "loss": 2.107369899749756,
+            "step": 50
+          }
+        ],
+        "train_examples": 3200,
+        "train_online_accuracy": 0.1284375,
+        "train_seconds": 1.863964477997797,
+        "training_stream_sha256": "8105aa648f14f6021587f676f1cba8a0ac1a77083f921a1472b886577afbca72",
+        "variant": "direct"
+      },
+      "fog_full": {
+        "batch_size": 64,
+        "data_seed": 20260812,
+        "eval": {
+          "normal": {
+            "accuracy": 0.14453125,
+            "correct": 37,
+            "count": 256,
+            "intervention": "normal",
+            "nll": 2.0790154933929443,
+            "seconds": 0.3771267619995342,
+            "split": "validation",
+            "stream_sha256": "ea56c982406ff2d9c03f5a3bcc38e212e890e16c50dfe9261561b3bee89d9816"
+          },
+          "shuffle": {
+            "accuracy": 0.14453125,
+            "correct": 37,
+            "count": 256,
+            "intervention": "shuffle",
+            "nll": 2.0790154933929443,
+            "seconds": 0.44350321300225914,
+            "split": "validation",
+            "stream_sha256": "ea56c982406ff2d9c03f5a3bcc38e212e890e16c50dfe9261561b3bee89d9816"
+          },
+          "zero": {
+            "accuracy": 0.14453125,
+            "correct": 37,
+            "count": 256,
+            "intervention": "zero",
+            "nll": 2.0790395736694336,
+            "seconds": 0.42329245599830756,
+            "split": "validation",
+            "stream_sha256": "ea56c982406ff2d9c03f5a3bcc38e212e890e16c50dfe9261561b3bee89d9816"
+          }
+        },
+        "evaluation_split": "validation",
+        "experiment": "matched_permutation_lookup_v1",
+        "initialization": {
+          "scheme": "sha256(seed, full_parameter_name)_v1",
+          "shared_state_sha256": "e2c6b9335d45b8629e0a8460717dae7d81a09c9088454020e50f2784628a744c",
+          "whole_model_sha256": "6efa3f3acc3c12d11a3063d1947d645936af4882eaccff4123f1c140638a16b0"
+        },
+        "model_seed": 0,
+        "parameters": {
+          "shared_lexical_backbone": 72512,
+          "total": 142404,
+          "trainable": 142404
+        },
+        "steps": 50,
+        "trace": [
+          {
+            "batch_accuracy": 0.0,
+            "grad_norm": 5.286941051483154,
+            "loss": 3.2561328411102295,
+            "step": 1
+          },
+          {
+            "batch_accuracy": 0.21875,
+            "grad_norm": 1.1408443450927734,
+            "loss": 2.2365715503692627,
+            "step": 10
+          },
+          {
+            "batch_accuracy": 0.125,
+            "grad_norm": 0.9941232204437256,
+            "loss": 2.1210570335388184,
+            "step": 20
+          },
+          {
+            "batch_accuracy": 0.125,
+            "grad_norm": 1.4990977048873901,
+            "loss": 2.134978771209717,
+            "step": 30
+          },
+          {
+            "batch_accuracy": 0.140625,
+            "grad_norm": 1.1208043098449707,
+            "loss": 2.1247782707214355,
+            "step": 40
+          },
+          {
+            "batch_accuracy": 0.125,
+            "grad_norm": 0.9864211082458496,
+            "loss": 2.106429100036621,
+            "step": 50
+          }
+        ],
+        "train_examples": 3200,
+        "train_online_accuracy": 0.1290625,
+        "train_seconds": 3.317909407996922,
+        "training_stream_sha256": "8105aa648f14f6021587f676f1cba8a0ac1a77083f921a1472b886577afbca72",
+        "variant": "fog_full"
+      },
+      "fog_strict": {
+        "batch_size": 64,
+        "data_seed": 20260812,
+        "eval": {
+          "normal": {
+            "accuracy": 0.14453125,
+            "correct": 37,
+            "count": 256,
+            "intervention": "normal",
+            "nll": 2.079709053039551,
+            "seconds": 0.4190728570029023,
+            "split": "validation",
+            "stream_sha256": "ea56c982406ff2d9c03f5a3bcc38e212e890e16c50dfe9261561b3bee89d9816"
+          },
+          "shuffle": {
+            "accuracy": 0.14453125,
+            "correct": 37,
+            "count": 256,
+            "intervention": "shuffle",
+            "nll": 2.0797089338302612,
+            "seconds": 0.7263236370017694,
+            "split": "validation",
+            "stream_sha256": "ea56c982406ff2d9c03f5a3bcc38e212e890e16c50dfe9261561b3bee89d9816"
+          },
+          "zero": {
+            "accuracy": 0.14453125,
+            "correct": 37,
+            "count": 256,
+            "intervention": "zero",
+            "nll": 2.0796849727630615,
+            "seconds": 0.6499349019977672,
+            "split": "validation",
+            "stream_sha256": "ea56c982406ff2d9c03f5a3bcc38e212e890e16c50dfe9261561b3bee89d9816"
+          }
+        },
+        "evaluation_split": "validation",
+        "experiment": "matched_permutation_lookup_v1",
+        "initialization": {
+          "scheme": "sha256(seed, full_parameter_name)_v1",
+          "shared_state_sha256": "e2c6b9335d45b8629e0a8460717dae7d81a09c9088454020e50f2784628a744c",
+          "whole_model_sha256": "6efa3f3acc3c12d11a3063d1947d645936af4882eaccff4123f1c140638a16b0"
+        },
+        "model_seed": 0,
+        "parameters": {
+          "shared_lexical_backbone": 72512,
+          "total": 142404,
+          "trainable": 142404
+        },
+        "steps": 50,
+        "trace": [
+          {
+            "batch_accuracy": 0.0,
+            "grad_norm": 5.083804607391357,
+            "loss": 3.1451499462127686,
+            "step": 1
+          },
+          {
+            "batch_accuracy": 0.125,
+            "grad_norm": 1.1597765684127808,
+            "loss": 2.235403299331665,
+            "step": 10
+          },
+          {
+            "batch_accuracy": 0.125,
+            "grad_norm": 1.0291610956192017,
+            "loss": 2.1262056827545166,
+            "step": 20
+          },
+          {
+            "batch_accuracy": 0.125,
+            "grad_norm": 1.487054467201233,
+            "loss": 2.1316401958465576,
+            "step": 30
+          },
+          {
+            "batch_accuracy": 0.140625,
+            "grad_norm": 1.1145433187484741,
+            "loss": 2.1233861446380615,
+            "step": 40
+          },
+          {
+            "batch_accuracy": 0.125,
+            "grad_norm": 0.9733936786651611,
+            "loss": 2.1053147315979004,
+            "step": 50
+          }
+        ],
+        "train_examples": 3200,
+        "train_online_accuracy": 0.130625,
+        "train_seconds": 10.426512727000954,
+        "training_stream_sha256": "8105aa648f14f6021587f676f1cba8a0ac1a77083f921a1472b886577afbca72",
+        "variant": "fog_strict"
+      }
+    }
+  },
+  "shared_streams": {
+    "training_sha256": "8105aa648f14f6021587f676f1cba8a0ac1a77083f921a1472b886577afbca72",
+    "validation_sha256": "ea56c982406ff2d9c03f5a3bcc38e212e890e16c50dfe9261561b3bee89d9816"
+  },
+  "task": {
+    "chance_accuracy": 0.125,
+    "prompt_length": 44,
+    "serialization": "TASK (ROW KEY MAPS_TO VALUE ROW_END)* TABLE_END QUERY KEY",
+    "split_rule": "content-hash parity; exact prompts cannot cross splits",
+    "table_size": 8,
+    "vocab_size": 24
+  }
+}

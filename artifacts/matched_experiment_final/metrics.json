@@ -1,0 +1,71 @@
+{
+  "experiment": "matched_interface_localization_v1",
+  "date": "2026-08-12",
+  "chance_accuracy": 0.125,
+  "chance_nll": 2.0794415416798357,
+  "primary_configuration": {
+    "table_size": 8,
+    "split": "mapping-only blake2b bucket, 80/10/10",
+    "steps": 200,
+    "batch_size": 64,
+    "learning_rate": 0.01,
+    "weight_decay": 0.0,
+    "fixed_orthogonal_keys": true,
+    "direct_trainable_parameters": 69184,
+    "fog_trainable_parameters": 139204
+  },
+  "validation_accuracy": {
+    "direct": [1.0, 0.248046875, 0.998046875],
+    "fog_full": [0.103515625, 0.09765625, 0.103515625],
+    "fog_strict": [0.103515625, 0.103515625, 0.103515625]
+  },
+  "locked_test": {
+    "examples_per_seed": 4032,
+    "stream_sha256": "30d79d0feacba5a79898a9c42547e8b339ffbed4fda482990faad5fc0dadd095",
+    "direct": [
+      {"seed": 0, "correct": 4032, "accuracy": 1.0, "nll": 0.020225158079512535},
+      {"seed": 1, "correct": 1067, "accuracy": 0.2646329365079365, "nll": 1.7216812580350846},
+      {"seed": 2, "correct": 4031, "accuracy": 0.9997519841269841, "nll": 0.003263744080276598}
+    ],
+    "fog_full": [
+      {"seed": 0, "correct": 495, "accuracy": 0.12276785714285714, "nll": 2.081692619929238},
+      {"seed": 1, "correct": 498, "accuracy": 0.12351190476190477, "nll": 2.077620506286621},
+      {"seed": 2, "correct": 495, "accuracy": 0.12276785714285714, "nll": 2.0814526762281145}
+    ],
+    "fog_strict": [
+      {"seed": 0, "correct": 495, "accuracy": 0.12276785714285714, "nll": 2.082801379854717},
+      {"seed": 1, "correct": 495, "accuracy": 0.12276785714285714, "nll": 2.0822504172249445},
+      {"seed": 2, "correct": 495, "accuracy": 0.12276785714285714, "nll": 2.084151483717419}
+    ]
+  },
+  "localization_controls_validation_seed0": {
+    "direct_query_200": 1.0,
+    "direct_bos_200": 0.103515625,
+    "direct_bos_1000": 0.107421875,
+    "fog_full_r1_200": 0.103515625,
+    "fog_full_r1_1000": 0.126953125,
+    "fog_strict_r1_200": 0.103515625,
+    "fog_strict_r1_1000": 0.107421875,
+    "lossless_hidden_memory_200": 0.103515625,
+    "lossless_hidden_memory_1000": 0.134765625,
+    "lossless_hidden_memory_1000_nll": 2.0794081092
+  },
+  "verdict": {
+    "small_model_only_explanation_rejected": true,
+    "current_fog_interface_passed": false,
+    "planner_compression_is_sole_cause": false,
+    "localized_primary_barrier": "readout/interface above planner compression; new answer-BOS is the narrowest shared suspect",
+    "scope": "current implementation and optimizer, not latent reasoning in general"
+  },
+  "source_artifacts": [
+    "MATCHED_EXPERIMENT_PROTOCOL.md",
+    "artifacts/matched_structured_lookup_decisive_seed0/summary.json",
+    "artifacts/matched_structured_lookup_decisive_seeds1_2/summary.json",
+    "artifacts/matched_structured_lookup_direct_seed1_rescue1000/summary.json",
+    "artifacts/matched_structured_lookup_r1_diagnostic_200_seed0/summary.json",
+    "artifacts/matched_structured_lookup_r1_diagnostic_1000_seed0/summary.json",
+    "artifacts/matched_structured_lookup_hidden_memory_200_seed0/summary.json",
+    "artifacts/matched_structured_lookup_hidden_memory_1000_seed0/summary.json",
+    "artifacts/matched_structured_lookup_test"
+  ]
+}

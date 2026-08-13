@@ -1,0 +1,45 @@
+{
+  "checkpoint": "artifacts/binding_v2_exactcode_validation/seed_0000/binding_v2.pt",
+  "data_seed": 20260812,
+  "eval": {
+    "normal": {
+      "accuracy": 1.0,
+      "correct": 4032,
+      "count": 4032,
+      "intervention": "normal",
+      "nll": 5.9818474544463534e-05,
+      "split": "test",
+      "stream_sha256": "30d79d0feacba5a79898a9c42547e8b339ffbed4fda482990faad5fc0dadd095"
+    },
+    "query_deranged": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 4032,
+      "intervention": "query_deranged",
+      "nll": 11.71581230466328,
+      "split": "test",
+      "stream_sha256": "30d79d0feacba5a79898a9c42547e8b339ffbed4fda482990faad5fc0dadd095"
+    },
+    "target_deranged_primary": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 4032,
+      "intervention": "target_deranged_primary",
+      "nll": 11.709881434364924,
+      "split": "test",
+      "stream_sha256": "30d79d0feacba5a79898a9c42547e8b339ffbed4fda482990faad5fc0dadd095"
+    },
+    "zero_primary": {
+      "accuracy": 0.13169642857142858,
+      "correct": 531,
+      "count": 4032,
+      "intervention": "zero_primary",
+      "nll": 2.0794410743410627,
+      "split": "test",
+      "stream_sha256": "30d79d0feacba5a79898a9c42547e8b339ffbed4fda482990faad5fc0dadd095"
+    }
+  },
+  "experiment": "fog_binding_preserving_v2",
+  "mode": "checkpoint_only_evaluation",
+  "split": "test"
+}

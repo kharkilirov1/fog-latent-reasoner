@@ -1,0 +1,103 @@
+{
+  "release": "fog-latent-reasoner-0.5.0-binding-v2",
+  "date": "2026-08-13",
+  "status": "lexically-pretrained-binding-validated-reasoning-unvalidated",
+  "model": {
+    "path": "checkpoints/fog_binding_v2_10m_token_lookup_bf16.pt",
+    "sha256": "d9a5523adc85a049d970f51c2bd75c6f88c64a533d8614077334999a1f4c5960",
+    "architecture_version": "query_bound_v2",
+    "parameters": 10000039,
+    "weights_dtype": "bfloat16",
+    "lexical_source_step": 1600,
+    "consumed_lexical_target_tokens": 1358852,
+    "binding_calibration_steps": 40,
+    "binding_calibration_examples": 1280,
+    "binding_trainable_parameters": 1,
+    "stage": "tinystories-lexical-pretrain-plus-exact-binding-calibration"
+  },
+  "legacy_lexical_checkpoint": {
+    "path": "checkpoints/fog_10m_tinystories_1_36m_pretrained_bf16.pt",
+    "sha256": "0cc9650eb2c1de0109fa517ebf5f22589f1b24edd7e8818e522cbd64afde0e7b",
+    "parameters": 10035848,
+    "architecture_version": "legacy_v1",
+    "training_step": 1600
+  },
+  "tokenizer": {
+    "path": "tokenizer/tinystories_3k_bpe.json",
+    "sha256": "a4d8b2413791f5b5a93653720ef545f63ef35112a449b7e8bccbdb08b463af61",
+    "vocab_size": 8192,
+    "kind": "byte-level-bpe-trained-on-3000-tinystories"
+  },
+  "binding_gate": {
+    "task": "mapping-disjoint-token-lookup",
+    "seeds": [42, 0, 1],
+    "validation_examples_per_seed": 1024,
+    "locked_test_examples_per_seed": 4032,
+    "locked_test_normal_accuracy": [1.0, 1.0, 1.0],
+    "locked_test_address_hit_accuracy": [1.0, 1.0, 1.0],
+    "locked_test_zero_accuracy": [0.0, 0.0, 0.0],
+    "locked_test_target_deranged_accuracy": [0.0, 0.0, 0.0],
+    "locked_test_query_cyclic_accuracy": [0.0, 0.0, 0.0],
+    "oracle_vocab_copy": "8192/8192",
+    "claim_limit": "exact lookup/copy only; not arithmetic or multi-step reasoning"
+  },
+  "data": [
+    {
+      "manifest_path": "data_cache/tinystories_train_3000.jsonl.manifest.json",
+      "rows": 3000,
+      "content_sha256": "445c316f3d0868156ce2c910c924edc7534866bfc22b8b9f8437deed9ecf5fce"
+    },
+    {
+      "manifest_path": "data_cache/tinystories_validation_300.jsonl.manifest.json",
+      "rows": 300,
+      "content_sha256": "e1412321b5d5c970111bad3fa5f79598a411617f0da58f5815f1b56f96c8a04a"
+    },
+    {
+      "manifest_path": "data_cache/gsm8k_train_1024.jsonl.manifest.json",
+      "rows": 1024,
+      "content_sha256": "bfa19819db9f14ee2e63b66351b1a8a189c9c8ce075fa29c484d47053775057f",
+      "official_test_touched": false
+    }
+  ],
+  "raw_dataset_rows_bundled": false,
+  "legacy_reasoning_experiments": [
+    {
+      "path": "checkpoints/fog_10m_gsm8k_896_best_bf16.pt",
+      "sha256": "27f535b3303a912282ec7cba83601f1f6f51a5cc5d0573cae0292198c855d513",
+      "status": "failed",
+      "validation_exact_match": 0.0078125
+    },
+    {
+      "path": "checkpoints/fog_10m_addition_strict_best_bf16.pt",
+      "sha256": "df59c85d1c860aa4fc1200a09b80cc8f219da8b26fa86b610d534a3324b4fe8d",
+      "status": "weak-memory-signal-not-solved",
+      "validation_exact_match": 0.0625
+    }
+  ],
+  "entrypoints": {
+    "download_small_slice": "download_viewer_subset.py",
+    "train_real": "train_real.py",
+    "train_binding_v2": "train_token_binding_v2.py",
+    "migrate_v1_to_v2": "migrate_to_binding_v2.py",
+    "evaluate_local": "eval_local_sft.py",
+    "verify": "verify_release.py",
+    "demo": "demo.py"
+  },
+  "evidence": [
+    "BINDING_V2_REPORT_RU.md",
+    "binding_diagnostics_seed0.json",
+    "artifacts/binding_v2_10m_summary.json",
+    "artifacts/binding_v2_10m_token_lookup_validation.json",
+    "artifacts/binding_v2_10m_token_lookup_locked_test.json",
+    "artifacts/fog_binding_v2_10m_token_lookup_seed0_validation.json",
+    "artifacts/fog_binding_v2_10m_token_lookup_seed0_locked_test.json",
+    "artifacts/binding_v2_10m_token_lookup_seed1_validation.json",
+    "artifacts/binding_v2_10m_token_lookup_seed1_locked_test.json",
+    "artifacts/binding_v2_exactcode_validation/summary.json",
+    "artifacts/binding_digits_decisive_validation/summary.json",
+    "MATCHED_EXPERIMENT_REPORT_RU.md",
+    "TRAINING_REPORT_REAL_V2.md",
+    "artifacts/real_training/metrics.json"
+  ],
+  "expected_tests": 62
+}

@@ -1,0 +1,13 @@
+{
+  "vocab_size": 8192,
+  "dataset_id": null,
+  "dataset_config": null,
+  "revision": null,
+  "max_samples": 3000,
+  "special_tokens": {
+    "pad": "<pad>",
+    "bos": "<bos>",
+    "eos": "<eos>",
+    "unk": "<unk>"
+  }
+}

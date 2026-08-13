@@ -1,0 +1,342 @@
+{
+  "schema_version": 1,
+  "report_date": "2026-08-12",
+  "result": {
+    "training_pipeline_operational": true,
+    "lexical_pretraining_improved_validation": true,
+    "gsm8k_reasoning_solved": false,
+    "addition_reasoning_solved": false,
+    "summary": "The 10M model learned TinyStories token statistics, but the tested training budget did not produce reliable arithmetic or GSM8K reasoning."
+  },
+  "environment": {
+    "device": "cpu",
+    "cpu": "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz",
+    "logical_cpus_available": 9,
+    "torch_version": "2.9.1+cpu",
+    "training_precision": "fp32",
+    "threads_used_for_recorded_evaluations": 4,
+    "seed": 42
+  },
+  "model": {
+    "unique_parameters": 10035848,
+    "vocab_size": 8192,
+    "d_model": 320,
+    "layers": 4,
+    "heads": 5,
+    "d_ff": 1344,
+    "max_sequence_length": 512,
+    "latent_slots": 4,
+    "reasoning_steps": 4,
+    "compare_rank": 80,
+    "planner_ff": 1344,
+    "memory_slots": 8,
+    "reasoning_modes": 8,
+    "dropout": 0.1
+  },
+  "datasets": {
+    "tinystories_train": {
+      "dataset": "roneneldan/TinyStories",
+      "config": "default",
+      "split": "train",
+      "source_rows": "0..2999",
+      "rows": 3000,
+      "source_total_rows": 2119719,
+      "sha256": "445c316f3d0868156ce2c910c924edc7534866bfc22b8b9f8437deed9ecf5fce",
+      "manifest": "data_cache/tinystories_train_3000.jsonl.manifest.json"
+    },
+    "tinystories_validation": {
+      "dataset": "roneneldan/TinyStories",
+      "config": "default",
+      "split": "validation",
+      "source_rows": "0..299",
+      "rows": 300,
+      "source_total_rows": 21990,
+      "sha256": "e1412321b5d5c970111bad3fa5f79598a411617f0da58f5815f1b56f96c8a04a",
+      "manifest": "data_cache/tinystories_validation_300.jsonl.manifest.json"
+    },
+    "gsm8k_train_subset": {
+      "dataset": "openai/gsm8k",
+      "config": "main",
+      "split": "train",
+      "source_rows": "0..1023",
+      "rows": 1024,
+      "source_total_rows": 7473,
+      "sha256": "bfa19819db9f14ee2e63b66351b1a8a189c9c8ce075fa29c484d47053775057f",
+      "manifest": "data_cache/gsm8k_train_1024.jsonl.manifest.json",
+      "official_test_split_used": false,
+      "notes": "All 1024 rows contain the GSM8K #### final-answer marker. The deterministic local 896/128 split is drawn only from these train rows."
+    },
+    "addition_train": {
+      "generator": "generate_arithmetic_data.py --max-number 19",
+      "rows": 320,
+      "sha256": "31bdf3da7b103b3caf2e315d980ecdf9dab23e73613d90d057ada02c6a7b89d6"
+    },
+    "addition_validation": {
+      "generator": "generate_arithmetic_data.py --max-number 19",
+      "rows": 80,
+      "sha256": "1cf6765667d3e415def4e87dd14aff41ae270a8fa752dba9d873f843c7cda687",
+      "split_rule": "validation iff (a*53 + b*97) % 5 == 0",
+      "reversed_validation_pairs_found_in_train": 0,
+      "notes": "The 80 validation ordered pairs are absent from train, and an empirical check found that none of their reversed (b,a) pairs occurs in train."
+    },
+    "acquisition": {
+      "method": "Hugging Face Dataset Viewer rows API",
+      "endpoint": "https://datasets-server.huggingface.co/rows",
+      "script": "download_viewer_subset.py",
+      "validation": "The downloader rejects partial pages, truncated cells, missing row indices and row-count mismatches."
+    }
+  },
+  "tokenizer": {
+    "path": "tokenizer/tinystories_3k_bpe.json",
+    "kind": "BPE",
+    "vocab_size": 8192,
+    "training_rows": 3000,
+    "min_frequency": 2,
+    "sha256": "a4d8b2413791f5b5a93653720ef545f63ef35112a449b7e8bccbdb08b463af61"
+  },
+  "release_checkpoints": {
+    "format": "portable inference checkpoint with bfloat16 state_dict",
+    "lossy_export": true,
+    "pretrained": {
+      "path": "checkpoints/fog_10m_tinystories_1_36m_pretrained_bf16.pt",
+      "source_checkpoint": "checkpoints/fog_10m_tinystories_1_36m_pretrained.pt",
+      "source_sha256": "ee193e6e0fc434c24343ff6601e59acf20de0565e08bdcce37763e5d6f45bcab",
+      "sha256": "0cc9650eb2c1de0109fa517ebf5f22589f1b24edd7e8818e522cbd64afde0e7b"
+    },
+    "gsm8k_strict": {
+      "path": "checkpoints/fog_10m_gsm8k_896_best_bf16.pt",
+      "source_checkpoint": "checkpoints/fog_10m_gsm8k_896_best.pt",
+      "source_sha256": "66c5cb513b5a9829c3075428f262e14532707a111a14c0d0eb222bb2900db96d",
+      "sha256": "27f535b3303a912282ec7cba83601f1f6f51a5cc5d0573cae0292198c855d513"
+    },
+    "addition_strict": {
+      "path": "checkpoints/fog_10m_addition_strict_best_bf16.pt",
+      "source_checkpoint": "checkpoints/fog_10m_addition_strict_best.pt",
+      "source_sha256": "92307104969ccadd20753ad9d7c362003f57f22e201bf306ebcbc86b0aa175ed",
+      "sha256": "df59c85d1c860aa4fc1200a09b80cc8f219da8b26fa86b610d534a3324b4fe8d"
+    },
+    "notes": "BF16 exports reduce archive size and are lossy relative to their FP32 source checkpoints; source hashes are preserved in checkpoint metadata."
+  },
+  "pretraining": {
+    "stage_1": {
+      "initial_checkpoint": "checkpoints/fog_10m_tinystories_3k_init.pt",
+      "output_checkpoint": "checkpoints/fog_10m_tinystories_3k_pretrained.pt",
+      "output_sha256": "0ac52797a4b3daa073b27ce700cb8fd1112f682d7a5921f4747a452b8cc0e526",
+      "steps": 400,
+      "consumed_target_tokens": 339043,
+      "batch_size": 4,
+      "sequence_length": 128,
+      "learning_rate": 0.0003,
+      "warmup_steps": 20,
+      "weight_decay": 0.1,
+      "validation_batches_during_training": 10,
+      "logged_validation_curve": [
+        {"step": 100, "loss": 5.5598},
+        {"step": 200, "loss": 4.8696},
+        {"step": 300, "loss": 4.5792},
+        {"step": 400, "loss": 4.47578906855907, "perplexity": 87.86390370752507}
+      ]
+    },
+    "stage_2": {
+      "initial_checkpoint": "checkpoints/fog_10m_tinystories_3k_pretrained.pt",
+      "output_checkpoint": "checkpoints/fog_10m_tinystories_1_36m_pretrained.pt",
+      "output_sha256": "ee193e6e0fc434c24343ff6601e59acf20de0565e08bdcce37763e5d6f45bcab",
+      "additional_steps": 1200,
+      "additional_consumed_target_tokens": 1019809,
+      "combined_steps": 1600,
+      "combined_consumed_target_tokens": 1358852,
+      "batch_size": 4,
+      "sequence_length": 128,
+      "learning_rate": 0.00015,
+      "warmup_steps": 20,
+      "weight_decay": 0.1,
+      "validation_batches_during_training": 10,
+      "logged_validation_curve": [
+        {"additional_step": 200, "loss": 4.18985},
+        {"additional_step": 400, "loss": 4.01362},
+        {"additional_step": 600, "loss": 3.89896},
+        {"additional_step": 800, "loss": 3.814},
+        {"additional_step": 1000, "loss": 3.74759},
+        {"additional_step": 1200, "loss": 3.719378583761012, "perplexity": 41.2387597096605, "token_accuracy": 0.32932091305845035}
+      ]
+    },
+    "independent_full_validation": {
+      "dataset_rows": 300,
+      "target_tokens": 63668,
+      "sequence_length": 128,
+      "batch_size": 4,
+      "initial": {
+        "step": 0,
+        "loss": 9.044516296237529,
+        "perplexity": 8471.952632810073,
+        "token_accuracy": 0.00001570647773158238
+      },
+      "stage_1": {
+        "step": 400,
+        "consumed_target_tokens": 339043,
+        "loss": 4.503844580219238,
+        "perplexity": 90.36387549875899,
+        "token_accuracy": 0.24370170312372444
+      },
+      "final": {
+        "step": 1600,
+        "consumed_target_tokens": 1358852,
+        "loss": 3.752901612360468,
+        "perplexity": 42.64464087045695,
+        "token_accuracy": 0.3295533077340446
+      },
+      "notes": "These values cover all 300 validation rows. They differ slightly from checkpoint metadata, which used only 10 validation batches. Causal pretraining exercised the shared token embeddings/backbone/LM head; it did not train the planner or latent-memory path."
+    },
+    "qualitative_greedy_generation": {
+      "checkpoint": "checkpoints/fog_10m_tinystories_1_36m_pretrained.pt",
+      "method": "greedy",
+      "max_new_tokens": 80,
+      "samples_file": "artifacts/real_training/tinystories_greedy_samples.json",
+      "interpretation": "Samples exhibit local English and TinyStories-like syntax, but severe repetition and semantic inconsistency."
+    }
+  },
+  "sft_experiments": {
+    "gsm8k_overfit_64": {
+      "initial_checkpoint": "checkpoints/fog_10m_tinystories_3k_pretrained.pt",
+      "train_rows": 64,
+      "heldout_rows": 16,
+      "steps": 400,
+      "consumed_target_tokens": 9950,
+      "decoder_mode": "memory-only",
+      "target_mode": "final",
+      "best_validation": {
+        "step": 100,
+        "loss": 1.8742118310928344,
+        "perplexity": 6.515681638317964,
+        "teacher_forced_token_accuracy": 0.38000000357627867
+      },
+      "train_exact_match_at_step_400": {
+        "normal": {"correct": 8, "count": 64, "rate": 0.125},
+        "zero_memory": {"correct": 4, "count": 64, "rate": 0.0625},
+        "shuffled_memory": {"correct": 2, "count": 64, "rate": 0.03125}
+      },
+      "heldout_exact_match_at_best_validation_step_100": {
+        "normal": {"correct": 0, "count": 16, "rate": 0.0},
+        "zero_memory": {"correct": 0, "count": 16, "rate": 0.0},
+        "shuffled_memory": {"correct": 0, "count": 16, "rate": 0.0}
+      },
+      "interpretation": "The train intervention gap shows content-specific memory use during overfit, but exact memorization is weak and held-out generalization is zero."
+    },
+    "gsm8k_strict_896": {
+      "checkpoint": "checkpoints/fog_10m_gsm8k_896_best.pt",
+      "checkpoint_sha256": "66c5cb513b5a9829c3075428f262e14532707a111a14c0d0eb222bb2900db96d",
+      "initial_checkpoint": "checkpoints/fog_10m_tinystories_3k_pretrained.pt",
+      "train_rows": 896,
+      "heldout_rows": 128,
+      "steps": 400,
+      "consumed_target_tokens": 10510,
+      "batch_size": 8,
+      "learning_rate": 0.0003,
+      "decoder_mode": "memory-only",
+      "target_mode": "final",
+      "logged_validation_curve": [
+        {"step": 100, "loss": 1.84536},
+        {"step": 200, "loss": 1.8323},
+        {"step": 300, "loss": 1.74438},
+        {"step": 400, "loss": 1.7379500966232557, "perplexity": 5.685676381390553, "teacher_forced_token_accuracy": 0.40144231120267737}
+      ],
+      "train_sample_exact_match": {
+        "sample_rows": 128,
+        "normal": {"correct": 2, "count": 128, "rate": 0.015625},
+        "zero_memory": {"correct": 2, "count": 128, "rate": 0.015625},
+        "shuffled_memory": {"correct": 2, "count": 128, "rate": 0.015625}
+      },
+      "heldout_exact_match": {
+        "normal": {"correct": 1, "count": 128, "rate": 0.0078125},
+        "zero_memory": {"correct": 1, "count": 128, "rate": 0.0078125},
+        "shuffled_memory": {"correct": 1, "count": 128, "rate": 0.0078125}
+      },
+      "interpretation": "Predictions collapsed mainly to the constant answer 12; identical intervention scores provide no evidence of useful latent reasoning on this split."
+    },
+    "gsm8k_full_cot": {
+      "checkpoint": "checkpoints/fog_10m_gsm8k_cot_full_best.pt",
+      "checkpoint_sha256": "82317cc300bbe0a89b0c9651cc87c28b3b946fd03ceb2e6212e14978f1f88903",
+      "initial_checkpoint": "checkpoints/fog_10m_tinystories_1_36m_pretrained.pt",
+      "train_rows": 896,
+      "heldout_rows": 128,
+      "steps": 400,
+      "consumed_target_tokens": 178227,
+      "batch_size": 4,
+      "learning_rate": 0.0002,
+      "decoder_mode": "full",
+      "target_mode": "full",
+      "logged_validation_curve": [
+        {"step": 100, "loss": 4.1273},
+        {"step": 200, "loss": 3.7127},
+        {"step": 300, "loss": 3.5647},
+        {"step": 400, "loss": 3.492055027548959, "perplexity": 32.85339300922887, "teacher_forced_token_accuracy": 0.31854955500707016}
+      ],
+      "heldout_greedy_exact_match": {
+        "max_new_tokens": 96,
+        "correct": 0,
+        "count": 128,
+        "rate": 0.0
+      },
+      "interpretation": "Greedy generations were repetitive and malformed; lower teacher-forced loss did not translate into valid chain-of-thought or final answers."
+    },
+    "addition_strict": {
+      "checkpoint": "checkpoints/fog_10m_addition_strict_best.pt",
+      "checkpoint_sha256": "92307104969ccadd20753ad9d7c362003f57f22e201bf306ebcbc86b0aa175ed",
+      "initial_checkpoint": "checkpoints/fog_10m_tinystories_1_36m_pretrained.pt",
+      "train_rows": 320,
+      "heldout_rows": 80,
+      "steps": 800,
+      "consumed_target_tokens": 36640,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "decoder_mode": "memory-only",
+      "target_mode": "final",
+      "logged_validation_curve": [
+        {"step": 100, "loss": 1.241},
+        {"step": 200, "loss": 1.0155},
+        {"step": 300, "loss": 1.0461},
+        {"step": 400, "loss": 0.9771},
+        {"step": 500, "loss": 0.9869},
+        {"step": 600, "loss": 0.977},
+        {"step": 700, "loss": 0.91716},
+        {"step": 800, "loss": 0.8249302644396453, "perplexity": 2.2817216426437903, "teacher_forced_token_accuracy": 0.6855895232946071}
+      ],
+      "train_exact_match": {
+        "normal": {"correct": 24, "count": 320, "rate": 0.075},
+        "zero_memory": {"correct": 12, "count": 320, "rate": 0.0375},
+        "shuffled_memory": {"correct": 8, "count": 320, "rate": 0.025}
+      },
+      "heldout_exact_match": {
+        "normal": {"correct": 5, "count": 80, "rate": 0.0625},
+        "zero_memory": {"correct": 4, "count": 80, "rate": 0.05},
+        "shuffled_memory": {"correct": 1, "count": 80, "rate": 0.0125}
+      },
+      "majority_final_answer_baseline": {
+        "train": {"correct": 16, "count": 320, "rate": 0.05, "modal_sums": [18, 19, 20]},
+        "heldout": {"correct": 4, "count": 80, "rate": 0.05, "modal_sums": [15, 17, 19, 21, 23]}
+      },
+      "interpretation": "Normal held-out accuracy is only one example (1.25 percentage points) above the 5% majority baseline. The shuffle drop weakly shows that memory content affects predictions, but 5/80 exact matches is not meaningful addition ability."
+    }
+  },
+  "metric_notes": {
+    "teacher_forced_token_accuracy": "Counts answer subword tokens and EOS under teacher forcing; it is not sequence-level exact match and can look high even when generated answers are wrong.",
+    "exact_match": "Greedy generated text is reduced to its normalized numeric final answer and compared with the target.",
+    "memory_interventions": {
+      "normal": "Use the example's computed latent memory.",
+      "zero_memory": "Replace latent memory with zeros.",
+      "shuffled_memory": "Rotate latent memories across examples in each evaluation batch."
+    }
+  },
+  "source_artifacts": [
+    "artifacts/real_training/addition_train_memory_eval.json",
+    "artifacts/real_training/addition_validation_memory_eval.json",
+    "artifacts/real_training/gsm8k_train128_memory_eval.json",
+    "artifacts/real_training/gsm8k_validation_eval.json",
+    "artifacts/real_training/gsm8k_cot_full_validation_eval.json",
+    "artifacts/real_training/tinystories_full_validation_eval.json",
+    "artifacts/real_training/tinystories_greedy_samples.json",
+    "data_cache/tinystories_train_3000.jsonl.manifest.json",
+    "data_cache/tinystories_validation_300.jsonl.manifest.json",
+    "data_cache/gsm8k_train_1024.jsonl.manifest.json"
+  ]
+}

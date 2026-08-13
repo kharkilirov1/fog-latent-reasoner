@@ -1,0 +1,25 @@
+{
+  "checkpoint": "checkpoints/fog_10m_tinystories_1_36m_pretrained.pt",
+  "tokenizer": "tokenizer/tinystories_3k_bpe.json",
+  "decoding": {
+    "method": "greedy",
+    "max_new_tokens": 80,
+    "path": "causal_lm_logits",
+    "temperature": null
+  },
+  "samples": [
+    {
+      "prompt": "Once upon a time, there was a little",
+      "completion": " girl named Lily. She loved to play with her mom and her mom. She loved to play with her mom. She loved to play with her mom and her mom and her mom. She was so happy to play with her mom. She was very happy and said, \"I'm sorry, I can't want to play with you. I can't want to play with you. I'm sorry"
+    },
+    {
+      "prompt": "Lily went to the garden and",
+      "completion": " Ben were playing in the park. They were playing with the park. They were very happy and they were very happy. They were very happy. They were happy and they were happy. They were happy and they were happy. They were happy and they were happy. They were happy. They were happy and they were happy. They were happy. They were happy"
+    },
+    {
+      "prompt": "The small blue bird was afraid because",
+      "completion": " he was very happy. He was so happy to play with his friends. He was so happy and he was so happy. He was so happy. He was so happy that he was so happy that he had a big, he had a big, he had a big, he had a big, he had a big, he was so happy. He was so happy. He was so happy that"
+    }
+  ],
+  "interpretation": "The model learned local English syntax and TinyStories style, but greedy decoding remains repetitive and semantically inconsistent at this training scale."
+}

@@ -1,0 +1,42 @@
+{
+  "dataset": "roneneldan/TinyStories",
+  "validation_file": "data_cache/tinystories_validation_300.jsonl",
+  "validation_file_sha256": "e1412321b5d5c970111bad3fa5f79598a411617f0da58f5815f1b56f96c8a04a",
+  "validation_rows": 300,
+  "target_tokens": 63668,
+  "sequence_length": 128,
+  "batch_size": 4,
+  "precision": "fp32",
+  "device": "cpu",
+  "checkpoints": [
+    {
+      "path": "checkpoints/fog_10m_tinystories_3k_init.pt",
+      "step": 0,
+      "consumed_training_tokens": 0,
+      "loss": 9.044516296237529,
+      "perplexity": 8471.952632810073,
+      "token_accuracy": 0.00001570647773158238
+    },
+    {
+      "path": "checkpoints/fog_10m_tinystories_3k_pretrained.pt",
+      "step": 400,
+      "consumed_training_tokens": 339043,
+      "loss": 4.503844580219238,
+      "perplexity": 90.36387549875899,
+      "token_accuracy": 0.24370170312372444
+    },
+    {
+      "path": "checkpoints/fog_10m_tinystories_1_36m_pretrained.pt",
+      "step": 1600,
+      "consumed_training_tokens": 1358852,
+      "loss": 3.752901612360468,
+      "perplexity": 42.64464087045695,
+      "token_accuracy": 0.3295533077340446
+    }
+  ],
+  "notes": [
+    "All three checkpoints were re-evaluated in one process over the complete 300-row local validation subset.",
+    "The local subset was fetched from the Dataset Viewer API and is identified by its content hash; the viewer endpoint does not pin a repository revision.",
+    "These full-subset values are slightly different from the bounded validation used during checkpoint selection."
+  ]
+}

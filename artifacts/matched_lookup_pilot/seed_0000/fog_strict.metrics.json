@@ -1,0 +1,93 @@
+{
+  "batch_size": 64,
+  "data_seed": 20260812,
+  "eval": {
+    "normal": {
+      "accuracy": 0.14453125,
+      "correct": 37,
+      "count": 256,
+      "intervention": "normal",
+      "nll": 2.079709053039551,
+      "seconds": 0.4190728570029023,
+      "split": "validation",
+      "stream_sha256": "ea56c982406ff2d9c03f5a3bcc38e212e890e16c50dfe9261561b3bee89d9816"
+    },
+    "shuffle": {
+      "accuracy": 0.14453125,
+      "correct": 37,
+      "count": 256,
+      "intervention": "shuffle",
+      "nll": 2.0797089338302612,
+      "seconds": 0.7263236370017694,
+      "split": "validation",
+      "stream_sha256": "ea56c982406ff2d9c03f5a3bcc38e212e890e16c50dfe9261561b3bee89d9816"
+    },
+    "zero": {
+      "accuracy": 0.14453125,
+      "correct": 37,
+      "count": 256,
+      "intervention": "zero",
+      "nll": 2.0796849727630615,
+      "seconds": 0.6499349019977672,
+      "split": "validation",
+      "stream_sha256": "ea56c982406ff2d9c03f5a3bcc38e212e890e16c50dfe9261561b3bee89d9816"
+    }
+  },
+  "evaluation_split": "validation",
+  "experiment": "matched_permutation_lookup_v1",
+  "initialization": {
+    "scheme": "sha256(seed, full_parameter_name)_v1",
+    "shared_state_sha256": "e2c6b9335d45b8629e0a8460717dae7d81a09c9088454020e50f2784628a744c",
+    "whole_model_sha256": "6efa3f3acc3c12d11a3063d1947d645936af4882eaccff4123f1c140638a16b0"
+  },
+  "model_seed": 0,
+  "parameters": {
+    "shared_lexical_backbone": 72512,
+    "total": 142404,
+    "trainable": 142404
+  },
+  "steps": 50,
+  "trace": [
+    {
+      "batch_accuracy": 0.0,
+      "grad_norm": 5.083804607391357,
+      "loss": 3.1451499462127686,
+      "step": 1
+    },
+    {
+      "batch_accuracy": 0.125,
+      "grad_norm": 1.1597765684127808,
+      "loss": 2.235403299331665,
+      "step": 10
+    },
+    {
+      "batch_accuracy": 0.125,
+      "grad_norm": 1.0291610956192017,
+      "loss": 2.1262056827545166,
+      "step": 20
+    },
+    {
+      "batch_accuracy": 0.125,
+      "grad_norm": 1.487054467201233,
+      "loss": 2.1316401958465576,
+      "step": 30
+    },
+    {
+      "batch_accuracy": 0.140625,
+      "grad_norm": 1.1145433187484741,
+      "loss": 2.1233861446380615,
+      "step": 40
+    },
+    {
+      "batch_accuracy": 0.125,
+      "grad_norm": 0.9733936786651611,
+      "loss": 2.1053147315979004,
+      "step": 50
+    }
+  ],
+  "train_examples": 3200,
+  "train_online_accuracy": 0.130625,
+  "train_seconds": 10.426512727000954,
+  "training_stream_sha256": "8105aa648f14f6021587f676f1cba8a0ac1a77083f921a1472b886577afbca72",
+  "variant": "fog_strict"
+}
