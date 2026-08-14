@@ -42,3 +42,23 @@ FOG is no longer merely a "latent CoT" mechanism. It is defined as:
 $$\textbf{FOG} = \text{Learned State Space} + \text{Finite Operator Algebra} + \text{Structural Compiler}$$
 
 The immediate next frontier involves tackling **repeated joint irreducible blocks** and transitioning from linear operators to **local Jacobians / state-conditioned nonlinear dynamics**.
+
+
+---
+
+## Extension: Commutants, Holonomy, and Nonlinear Black-Box Compilation (EXP-031...035)
+
+### 1. Repeated Irreducible Blocks & Commutant Law (EXP-031)
+When spectral analysis fails due to repeated eigenvalues, the commutant algebra $XA = AX, XB = BX$ reliably identifies structure, obeying $\dim\mathrm{Comm} = m^2$ for multiplicity $m$.
+
+### 2. Multiplicity as Error-Correcting Redundancy (EXP-032)
+Repeated latent modules act as an intrinsic error-correcting code. Under 15% noise, structural averaging across copies recovers recurrent accuracy from $\approx 24\%$ to $\ge 96.77\%$.
+
+### 3. Trajectory-Based System ID (EXP-033)
+The compiler successfully identifies algebraic structures purely from noisy hidden trajectories ($z \to z'$) without access to action matrices, labels, or codebooks, requiring $\approx 2d$ probes.
+
+### 4. Gauge Synchronization & Loop Holonomy (EXP-034)
+For state-conditioned dynamics with local Jacobians, closed-loop trajectories eliminate local gauge ambiguities via loop holonomy. The compiler applies compiled laws only when holonomy residuals pass strict safety gates $\tau$.
+
+### 5. Nonlinear Black-Box Dynamics (EXP-035)
+Hidden behind nonlinear transformations $w = \phi(z) = z + \alpha z^2$, the compiler discovers reachable states, builds transition graphs, estimates finite-difference Jacobians, performs gauge synchronization, and compiles stable recurrent dynamics with 100% accuracy at depth $R=256$.
