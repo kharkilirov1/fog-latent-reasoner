@@ -191,3 +191,9 @@ critical decisions, or claims that hidden reasoning has been validated.
 See `README_RU.md`, `TRAINING_REPORT_REAL_V2.md`, `EXPERIMENT_REPORT_V2.md`,
 `MATCHED_EXPERIMENT_REPORT_RU.md`, `BINDING_V2_REPORT_RU.md`, and the JSON
 artifacts for commands and raw evidence.
+
+## Extended Pretraining (August 2026)
+
+To further reduce loss and improve linguistic diversity, an extended pretraining cycle was initiated using a **1,000,000 sample dataset** mixed from TinyStories (500,000 samples) and FineWeb-Edu (500,000 samples). This expansion provides the model with a broader range of narrative structures and educational content, facilitating a more robust latent representation of natural language.
+
+A critical technical improvement was the implementation of a **buffer-based streaming local record factory**. This allows the training pipeline to handle million-scale datasets on hardware with limited memory, such as the user's Xeon E5 and 8GB RAM configuration, by avoiding the preloading of the entire dataset into RAM. The training utilizes the `serious` recipe, targeting **20,000 steps** with a batch size of 2 and gradient accumulation of 16, resulting in an effective batch size of 32. The process was successfully resumed from step 9,000, and all scripts, improvements, and updated model cards have been synchronized with the GitHub repository.

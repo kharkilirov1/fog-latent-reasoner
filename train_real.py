@@ -244,16 +244,41 @@ class CyclingBatchSource:
 
 
 def shuffled_local_factory(
-    paths: Sequence[str], *, required_fields: Sequence[str], seed: int
+    paths: Sequence[str],
+    *,
+    required_fields: Sequence[str],
+    seed: int,
+    buffer_size: int = 10000,
 ) -> Callable[[int], Iterable[Mapping[str, Any]]]:
-    records = list(iter_local_records(paths, required_fields=required_fields))
-    if not records:
+    # Check if empty
+    try:
+        next(iter_local_records(paths, required_fields=required_fields))
+    except StopIteration:
         raise ValueError("local dataset is empty")
 
     def factory(epoch: int):
-        order = list(range(len(records)))
-        random.Random(seed + epoch).shuffle(order)
-        return (records[index] for index in order)
+        rng = random.Random(seed + epoch)
+        records = iter_local_records(paths, required_fields=required_fields)
+        buffer = []
+        # Fill initial buffer
+        for _ in range(buffer_size):
+            try:
+                buffer.append(next(records))
+            except StopIteration:
+                break
+
+        if not buffer:
+            return
+
+        # Stream with buffer shuffle
+        for item in records:
+            idx = rng.randint(0, len(buffer) - 1)
+            yield buffer[idx]
+            buffer[idx] = item
+
+        # Drain buffer
+        rng.shuffle(buffer)
+        yield from buffer
 
     return factory
 

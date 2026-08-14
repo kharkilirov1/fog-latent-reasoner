@@ -6,21 +6,20 @@ def main():
     os.makedirs("data", exist_ok=True)
     print("Loading TinyStories and FineWeb-Edu from Hugging Face...")
     
-    # TinyStories for narrative structure (400k samples)
+    # TinyStories for narrative structure (500k samples)
     ts_dataset = load_dataset("roneneldan/TinyStories", split="train", streaming=True)
     
-    # FineWeb-Edu sample for educational/diverse text diversity (100k samples)
-    # Using a reliable subset or sample from huggingface
+    # FineWeb-Edu sample for educational/diverse text diversity (500k samples)
     try:
-        fw_dataset = load_dataset("HuggingFaceFW/fineweb-edu", name="sample-10bt", split="train", streaming=True)
-    except Exception:
-        # Fallback to general text source if needed
+        fw_dataset = load_dataset("HuggingFaceFW/fineweb-edu", name="sample-10BT", split="train", streaming=True)
+    except Exception as e:
+        print(f"Error loading FineWeb-Edu: {e}. Falling back to more TinyStories.")
         fw_dataset = load_dataset("roneneldan/TinyStories", split="train", streaming=True)
 
-    train_file = "data/train_mixed.jsonl"
-    eval_file = "data/eval_mixed.jsonl"
+    train_file = "data/train_mixed_1m.jsonl"
+    eval_file = "data/eval_mixed_1m.jsonl"
     
-    print("Creating mixed dataset (500k total: 400k TinyStories + 100k FineWeb/Edu)...")
+    print("Creating mixed dataset (1M total: 500k TinyStories + 500k FineWeb/Edu)...")
     
     count = 0
     train_count = 0
@@ -31,7 +30,7 @@ def main():
         ts_count = 0
         for item in ts_dataset:
             text = item.get("text", "")
-            if not text.strip():
+            if not text or not text.strip():
                 continue
             record = {"text": text}
             if count % 20 == 0:
@@ -42,7 +41,7 @@ def main():
                 train_count += 1
             count += 1
             ts_count += 1
-            if ts_count >= 400000:
+            if ts_count >= 500000:
                 break
                 
         print(f"Added {ts_count} TinyStories samples.")
@@ -51,7 +50,7 @@ def main():
         fw_count = 0
         for item in fw_dataset:
             text = item.get("text", "")
-            if not text.strip():
+            if not text or not text.strip():
                 continue
             record = {"text": text}
             if count % 20 == 0:
@@ -62,7 +61,7 @@ def main():
                 train_count += 1
             count += 1
             fw_count += 1
-            if fw_count >= 100000:
+            if fw_count >= 500000:
                 break
                 
         print(f"Added {fw_count} FineWeb-Edu samples.")
