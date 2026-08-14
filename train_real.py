@@ -481,6 +481,7 @@ def finite_eval(
     decoder_mode: str,
     bos_token_id: int,
     max_batches: int,
+    reasoning_steps: int | None = None,
 ) -> dict[str, float]:
     was_training = model.training
     model.eval()
@@ -519,6 +520,7 @@ def finite_eval(
                             answer_attention_mask=batch["answer_attention_mask"],
                             decoder_prompt_ids=decoder_prompt,
                             decoder_prompt_attention_mask=decoder_mask,
+                            reasoning_steps=reasoning_steps,
                         )
                         tokens = int(batch["answer_labels"].ne(-100).sum().item())
                 weighted_loss += float(loss.detach()) * tokens
@@ -612,6 +614,7 @@ def train_loop(
                         answer_attention_mask=batch["answer_attention_mask"],
                         decoder_prompt_ids=decoder_prompt,
                         decoder_prompt_attention_mask=decoder_mask,
+                        reasoning_steps=args.reasoning_steps,
                     )
                     tokens = int(batch["answer_labels"].ne(-100).sum().item())
             if not torch.isfinite(loss):
@@ -668,6 +671,7 @@ def train_loop(
                 decoder_mode=("full" if stage == "pretrain" else args.decoder_mode),
                 bos_token_id=tokenizer.bos_token_id,
                 max_batches=args.eval_batches,
+                reasoning_steps=(None if stage == "pretrain" else args.reasoning_steps),
             )
             print(json.dumps({"stage": stage, "step": global_step, "validation": validation}))
 

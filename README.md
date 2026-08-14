@@ -156,3 +156,20 @@ binding-v2 follow-up is in [BINDING_V2_REPORT_RU.md](BINDING_V2_REPORT_RU.md).
 ## Research workflow
 
 Active research is tracked separately from released claims. See [`research/README.md`](research/README.md) for the IDEA -> PROTOCOL -> RESULT -> DECISION workflow, [`research/STATUS.md`](research/STATUS.md) for the evidence ledger, and [`research/ROADMAP.md`](research/ROADMAP.md) for dependency-ordered milestones. The current production-transfer experiment is EXP-002 (recurrent protected binding).
+
+## One-command FOG v3 training
+
+The model-ready `register_machine_v3` now has a convenience wrapper:
+
+```bash
+python train_v3_easy.py --install --recipe smoke
+```
+
+For a real local text run:
+
+```bash
+python train_v3_easy.py --install --recipe starter --device cuda \
+  --text-data /path/to/train.jsonl --text-eval-data /path/to/validation.jsonl
+```
+
+Add `--sft-data ...` to continue into staged latent SFT. The wrapper automatically resumes incomplete stages from `last.pt`. See `TRAIN_V3_EASY_RU.md` for the practical guide.

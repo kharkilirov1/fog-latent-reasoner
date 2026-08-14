@@ -470,3 +470,26 @@ python export_checkpoint.py \
 ## Исследовательский workflow
 
 Активные гипотезы отделены от уже подтверждённых результатов. См. [`research/README.md`](research/README.md) для процесса IDEA -> PROTOCOL -> RESULT -> DECISION, [`research/STATUS.md`](research/STATUS.md) для реестра доказательств и [`research/ROADMAP.md`](research/ROADMAP.md) для порядка следующих этапов. Текущий production-transfer эксперимент — EXP-002 (recurrent protected binding).
+
+## Простое обучение FOG v3 одной командой
+
+Для model-ready `register_machine_v3` добавлен wrapper `train_v3_easy.py`.
+
+Быстрый smoke-run:
+
+```bash
+python train_v3_easy.py --install --recipe smoke
+```
+
+Первый нормальный локальный запуск:
+
+```bash
+python train_v3_easy.py \
+  --install --recipe starter --device cuda \
+  --text-data /path/to/train.jsonl \
+  --text-eval-data /path/to/validation.jsonl
+```
+
+Если дополнительно передать `--sft-data`, wrapper автоматически выполняет staged SFT с увеличением latent depth. Повтор той же команды автоматически возобновляет незавершённые `last.pt` и пропускает уже законченные стадии.
+
+Полная короткая инструкция: [`TRAIN_V3_EASY_RU.md`](TRAIN_V3_EASY_RU.md).
