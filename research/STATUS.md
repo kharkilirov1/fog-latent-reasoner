@@ -1,9 +1,11 @@
 # Research Status
 
 ## Confirmed Findings
-- **Recurrent Composition (EXP-001):** Successfully achieved recurrent latent state composition $f^R(q_0)$ for depth $R=1 \dots 64$ without decoding intermediate states. Achieved 100% accuracy on validation and locked tests up to $R=16$, and 100% stress-validation up to $R=64$.
-- **Soft-Binding Attractor (NOTE-001):** Soft-state does not accumulate error with depth; it converges to a stable attractor basin. Analytical fixed point mass $a^* \approx 0.510181$ and cosine similarity $\cos(z, E(y)) \approx 0.940022$ match empirical $R=64$ results to decimal precision.
+- **Recurrent Composition (EXP-001):** Proven $f^R(q_0)$ recurrence up to depth $R=64$.
+- **Soft-Binding Attractor (NOTE-001):** Established analytical fixed points and error-correcting basins.
+- **Invariant Dimension Law (EXP-022):** Proved $d_{\min}=30$ for affine operator grammar equivariance.
+- **Structural Operator Compiler (EXP-023...030):** Demonstrated that neural approximations can be algebraically compiled into sparse primitives, denoised against weight corruption, minimized into generator sets, and cross-aligned across independent seeds without trained bridges ($\cos > 0.9999999$).
 
-## Open / In Progress
-- **Production Recurrence (EXP-002):** Integrating `primary_recurrent` update into `FOGReasonerConfig` and separating identity from role (single `STATE_B`).
-- **Next Frontier (EXP-003):** Generating intermediate latent objects not present in inputs (e.g. $z_1 = a + b, z_2 = z_1 \cdot c$) to transition from recurrent retrieval to true latent computation.
+## Active Frontier
+- **Joint Irreducible Blocks:** Handling degenerate spectral spectra via compositional closure discovery.
+- **Nonlinear Dynamics:** Transitioning from linear operator matrices to state-conditioned local Jacobians.
