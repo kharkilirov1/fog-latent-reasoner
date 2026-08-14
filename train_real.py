@@ -248,7 +248,7 @@ def shuffled_local_factory(
     *,
     required_fields: Sequence[str],
     seed: int,
-    buffer_size: int = 10000,
+    buffer_size: int = 500,
 ) -> Callable[[int], Iterable[Mapping[str, Any]]]:
     # Check if empty
     try:
