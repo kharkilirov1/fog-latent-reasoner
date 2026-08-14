@@ -191,3 +191,18 @@ critical decisions, or claims that hidden reasoning has been validated.
 See `README_RU.md`, `TRAINING_REPORT_REAL_V2.md`, `EXPERIMENT_REPORT_V2.md`,
 `MATCHED_EXPERIMENT_REPORT_RU.md`, `BINDING_V2_REPORT_RU.md`, and the JSON
 artifacts for commands and raw evidence.
+
+
+---
+
+## FOG-LMW v3 (Model Ready Extension)
+
+### Architecture & Parameters
+- **Version:** v3 (`register_machine_v3`)
+- **Parameters:** 10,245,433 (`d_model=320`, 4-layer backbone, $K=4$ typed registers)
+- **Roles:** Value, control, and scratch typed latent registers.
+- **Routing:** Hard operator routing in forward pass with Straight-Through Estimator (STE) during training.
+- **Capabilities:** JVP-instrumented recurrent transitions, learned HALT, and EXP-037 generated latent value persistence (100% closure up to $R=8$).
+
+### Status
+The architecture phase (FOG v3) is fully complete and model-ready. The system now transitions from structural design to semantic pretraining and induction.
