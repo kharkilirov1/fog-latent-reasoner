@@ -1,0 +1,194 @@
+{
+  "experiment": "exp_034_state_conditioned_jacobian_gauge",
+  "protocol": {
+    "compiler_input": "context transition graph plus noisy local Jacobians",
+    "cycle_projection": "only when observed A-edge graph is one closed cycle with near-identity measured holonomy",
+    "examples": 1024,
+    "finite_order_used_during_synchronization": false,
+    "gauge_family": "2D local rotations",
+    "global_action_matrix_exists_in_observed_gauge": false,
+    "hidden_gauges_given": false,
+    "program_depth": 256,
+    "semantic_codebook_given": false,
+    "shared_action_family": "O(2), determinant component inferred from observed Jacobians",
+    "shared_operators_given": false
+  },
+  "rows": [
+    {
+      "contexts": 7,
+      "cycle_holonomy": {
+        "closed_single_cycle": true,
+        "cycle_length": 7,
+        "identity_residual": 0.008915767338491382
+      },
+      "cycle_law_projection_applied": true,
+      "global_matrix_relative_mismatch": {
+        "A": 0.9676706450694357,
+        "B": 0.9708639946516588
+      },
+      "noise": 0.03,
+      "projected_shared_laws": {
+        "A_cycle_residual": 6.684427777288335e-16,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 1.1102230246251565e-16
+      },
+      "raw_local_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.416015625,
+        "fraction_cosine_gt_0_999": 0.1435546875,
+        "mean_target_cosine": 0.9681637838529296
+      },
+      "seed": 140,
+      "synchronization_loss": 0.00013293811516095654,
+      "synchronized_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 0.9482421875,
+        "mean_target_cosine": 0.9997243555232853
+      },
+      "synchronized_law_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 1.0,
+        "mean_target_cosine": 0.9999410576091048
+      },
+      "synchronized_shared_laws": {
+        "A_cycle_residual": 0.008915767338492009,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 1.1102230246251565e-16
+      }
+    },
+    {
+      "contexts": 7,
+      "cycle_holonomy": {
+        "closed_single_cycle": true,
+        "cycle_length": 7,
+        "identity_residual": 0.01524086708416972
+      },
+      "cycle_law_projection_applied": true,
+      "global_matrix_relative_mismatch": {
+        "A": 0.9676381467525621,
+        "B": 0.9719591235504869
+      },
+      "noise": 0.05,
+      "projected_shared_laws": {
+        "A_cycle_residual": 6.684427777288335e-16,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 1.1102230246251565e-16
+      },
+      "raw_local_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.2470703125,
+        "fraction_cosine_gt_0_999": 0.0791015625,
+        "mean_target_cosine": 0.9146396613149906
+      },
+      "seed": 140,
+      "synchronization_loss": 0.0003665980674504431,
+      "synchronized_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 0.7578125,
+        "mean_target_cosine": 0.9992033823387836
+      },
+      "synchronized_law_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 1.0,
+        "mean_target_cosine": 0.9998359540325998
+      },
+      "synchronized_shared_laws": {
+        "A_cycle_residual": 0.015240867084169324,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 0.0
+      }
+    },
+    {
+      "contexts": 7,
+      "cycle_holonomy": {
+        "closed_single_cycle": true,
+        "cycle_length": 7,
+        "identity_residual": 0.03228885962278725
+      },
+      "cycle_law_projection_applied": true,
+      "global_matrix_relative_mismatch": {
+        "A": 0.9675407185408378,
+        "B": 0.9746853773251618
+      },
+      "noise": 0.1,
+      "projected_shared_laws": {
+        "A_cycle_residual": 6.684427777288335e-16,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 0.0
+      },
+      "raw_local_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.1416015625,
+        "fraction_cosine_gt_0_999": 0.0380859375,
+        "mean_target_cosine": 0.7037335213418527
+      },
+      "seed": 140,
+      "synchronization_loss": 0.001439633374030875,
+      "synchronized_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.912109375,
+        "fraction_cosine_gt_0_999": 0.4130859375,
+        "mean_target_cosine": 0.9965090802478713
+      },
+      "synchronized_law_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 0.7421875,
+        "mean_target_cosine": 0.9993392304576931
+      },
+      "synchronized_shared_laws": {
+        "A_cycle_residual": 0.0322888596227873,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 0.0
+      }
+    },
+    {
+      "contexts": 7,
+      "cycle_holonomy": {
+        "closed_single_cycle": true,
+        "cycle_length": 7,
+        "identity_residual": 0.05093907474778575
+      },
+      "cycle_law_projection_applied": true,
+      "global_matrix_relative_mismatch": {
+        "A": 0.9674220059485119,
+        "B": 0.97734337648542
+      },
+      "noise": 0.15,
+      "projected_shared_laws": {
+        "A_cycle_residual": 6.684427777288335e-16,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 1.1102230246251565e-16
+      },
+      "raw_local_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.0947265625,
+        "fraction_cosine_gt_0_999": 0.025390625,
+        "mean_target_cosine": 0.45542059687494035
+      },
+      "seed": 140,
+      "synchronization_loss": 0.003179355094118239,
+      "synchronized_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.7392578125,
+        "fraction_cosine_gt_0_999": 0.27734375,
+        "mean_target_cosine": 0.991484900196402
+      },
+      "synchronized_law_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 0.5244140625,
+        "mean_target_cosine": 0.998498692454354
+      },
+      "synchronized_shared_laws": {
+        "A_cycle_residual": 0.050939074747785466,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 0.0
+      }
+    }
+  ]
+}

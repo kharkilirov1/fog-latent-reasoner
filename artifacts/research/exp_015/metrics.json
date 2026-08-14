@@ -1,0 +1,125 @@
+{
+  "experiment": "exp_015_operator_grammar_induction",
+  "rows": [
+    {
+      "add_full_group_accuracy": 1.0,
+      "episode_metrics": [
+        {
+          "answer_accuracy": 0.9866666666666667,
+          "demonstrations": 1,
+          "episodes": 3000,
+          "mean_score_margin": 0.8906434980452904,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 0.9853333333333333,
+          "score_ambiguous_fraction": 0.0,
+          "semantic_ambiguous_fraction": 0.029666666666666668
+        },
+        {
+          "answer_accuracy": 0.9996666666666667,
+          "demonstrations": 2,
+          "episodes": 3000,
+          "mean_score_margin": 0.8861960325818384,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 0.9996666666666667,
+          "score_ambiguous_fraction": 0.0,
+          "semantic_ambiguous_fraction": 0.001
+        },
+        {
+          "answer_accuracy": 1.0,
+          "demonstrations": 3,
+          "episodes": 3000,
+          "mean_score_margin": 0.8859844264672403,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 1.0,
+          "score_ambiguous_fraction": 0.0,
+          "semantic_ambiguous_fraction": 0.0
+        }
+      ],
+      "mul_exponent_group_accuracy": 1.0,
+      "seed": 30
+    },
+    {
+      "add_full_group_accuracy": 1.0,
+      "episode_metrics": [
+        {
+          "answer_accuracy": 0.7946666666666666,
+          "demonstrations": 1,
+          "episodes": 3000,
+          "mean_score_margin": 0.935802915201212,
+          "nonambiguous_answer_accuracy": 0.8025455796353629,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 0.9856666666666667,
+          "score_ambiguous_fraction": 0.0,
+          "semantic_ambiguous_fraction": 0.031
+        },
+        {
+          "answer_accuracy": 0.7926666666666666,
+          "demonstrations": 2,
+          "episodes": 3000,
+          "mean_score_margin": 0.9226351983730371,
+          "nonambiguous_answer_accuracy": 0.7931954636424283,
+          "nonambiguous_route_accuracy": 0.9993328885923949,
+          "route_accuracy": 0.9986666666666667,
+          "score_ambiguous_fraction": 0.0,
+          "semantic_ambiguous_fraction": 0.0006666666666666666
+        },
+        {
+          "answer_accuracy": 0.818,
+          "demonstrations": 3,
+          "episodes": 3000,
+          "mean_score_margin": 0.9213389636076366,
+          "nonambiguous_answer_accuracy": 0.8182727575858619,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 0.9996666666666667,
+          "score_ambiguous_fraction": 0.0,
+          "semantic_ambiguous_fraction": 0.0003333333333333333
+        }
+      ],
+      "mul_exponent_group_accuracy": 0.6077777743339539,
+      "seed": 31
+    },
+    {
+      "add_full_group_accuracy": 1.0,
+      "episode_metrics": [
+        {
+          "answer_accuracy": 0.9856666666666667,
+          "demonstrations": 1,
+          "episodes": 3000,
+          "mean_score_margin": 0.8889964750763029,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 0.9856666666666667,
+          "score_ambiguous_fraction": 0.007,
+          "semantic_ambiguous_fraction": 0.029
+        },
+        {
+          "answer_accuracy": 0.9993333333333333,
+          "demonstrations": 2,
+          "episodes": 3000,
+          "mean_score_margin": 0.881295137657163,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 0.9993333333333333,
+          "score_ambiguous_fraction": 0.0006666666666666666,
+          "semantic_ambiguous_fraction": 0.002
+        },
+        {
+          "answer_accuracy": 1.0,
+          "demonstrations": 3,
+          "episodes": 3000,
+          "mean_score_margin": 0.8770051989853382,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 1.0,
+          "score_ambiguous_fraction": 0.0,
+          "semantic_ambiguous_fraction": 0.0
+        }
+      ],
+      "mul_exponent_group_accuracy": 1.0,
+      "seed": 32
+    }
+  ]
+}

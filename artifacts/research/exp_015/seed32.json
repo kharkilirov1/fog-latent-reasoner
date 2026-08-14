@@ -1,0 +1,55 @@
+{
+  "candidate_operators": [
+    "ADD_mod_31",
+    "MUL_nonzero_mod_31"
+  ],
+  "config": {
+    "harmonics": 4,
+    "head_scale": 20.0,
+    "separation_weight": 0.05
+  },
+  "experiment": "exp_015_operator_grammar_induction",
+  "explicit_operation_label_at_evaluation": false,
+  "rows": [
+    {
+      "add_full_group_accuracy": 1.0,
+      "episode_metrics": [
+        {
+          "answer_accuracy": 0.9856666666666667,
+          "demonstrations": 1,
+          "episodes": 3000,
+          "mean_score_margin": 0.8889964750763029,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 0.9856666666666667,
+          "score_ambiguous_fraction": 0.007,
+          "semantic_ambiguous_fraction": 0.029
+        },
+        {
+          "answer_accuracy": 0.9993333333333333,
+          "demonstrations": 2,
+          "episodes": 3000,
+          "mean_score_margin": 0.881295137657163,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 0.9993333333333333,
+          "score_ambiguous_fraction": 0.0006666666666666666,
+          "semantic_ambiguous_fraction": 0.002
+        },
+        {
+          "answer_accuracy": 1.0,
+          "demonstrations": 3,
+          "episodes": 3000,
+          "mean_score_margin": 0.8770051989853382,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 1.0,
+          "score_ambiguous_fraction": 0.0,
+          "semantic_ambiguous_fraction": 0.0
+        }
+      ],
+      "mul_exponent_group_accuracy": 1.0,
+      "seed": 32
+    }
+  ]
+}

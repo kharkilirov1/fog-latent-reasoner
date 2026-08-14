@@ -1,0 +1,1139 @@
+{
+  "experiment": "exp_022_isotropic_affine_representation",
+  "rows": [
+    {
+      "dimension": 16,
+      "metrics": {
+        "all_add_power_accuracy_mean": 1.0,
+        "all_add_power_accuracy_min": 1.0,
+        "all_mul_power_accuracy_mean": 0.22150537570317586,
+        "all_mul_power_accuracy_min": 0.0,
+        "code_effective_rank": 15.971323013305664,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 0.9968894124031067,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 0.9527470469474792,
+        "mixed_program_accuracy": 0.0322265625,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": -0.0021323703695088625,
+        "semidirect_cosine": 0.9948641061782837
+      },
+      "seed": 70,
+      "trace": [
+        {
+          "add_loss": 0.9800843000411987,
+          "isotropy_loss": 0.5247941613197327,
+          "loss": 2.4496512413024902,
+          "mul_loss": 0.9447563886642456,
+          "step": 1
+        },
+        {
+          "add_loss": 0.07792085409164429,
+          "isotropy_loss": 0.014131789095699787,
+          "loss": 0.15188345313072205,
+          "mul_loss": 0.05731425806879997,
+          "step": 240
+        },
+        {
+          "add_loss": 0.03938967362046242,
+          "isotropy_loss": 0.008212723769247532,
+          "loss": 0.09647853672504425,
+          "mul_loss": 0.0476224385201931,
+          "step": 480
+        },
+        {
+          "add_loss": 0.02765730395913124,
+          "isotropy_loss": 0.006744083948433399,
+          "loss": 0.0761612057685852,
+          "mul_loss": 0.04091494157910347,
+          "step": 720
+        },
+        {
+          "add_loss": 0.002298741601407528,
+          "isotropy_loss": 0.006986608728766441,
+          "loss": 0.058188386261463165,
+          "mul_loss": 0.04802539944648743,
+          "step": 960
+        },
+        {
+          "add_loss": 0.0031123929657042027,
+          "isotropy_loss": 0.006540327332913876,
+          "loss": 0.05774997919797897,
+          "mul_loss": 0.04725174605846405,
+          "step": 1200
+        }
+      ]
+    },
+    {
+      "dimension": 24,
+      "metrics": {
+        "all_add_power_accuracy_mean": 1.0,
+        "all_add_power_accuracy_min": 1.0,
+        "all_mul_power_accuracy_mean": 0.37956988910833994,
+        "all_mul_power_accuracy_min": 0.032258063554763794,
+        "code_effective_rank": 23.98877716064453,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 0.9942454695701599,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 0.9778624773025513,
+        "mixed_program_accuracy": 0.033203125,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": -0.008516919799149036,
+        "semidirect_cosine": 0.9909695386886597
+      },
+      "seed": 70,
+      "trace": [
+        {
+          "add_loss": 0.9139824509620667,
+          "isotropy_loss": 0.744022011756897,
+          "loss": 2.6194496154785156,
+          "mul_loss": 0.9614422917366028,
+          "step": 1
+        },
+        {
+          "add_loss": 0.015891576185822487,
+          "isotropy_loss": 0.006970046553760767,
+          "loss": 0.05083976313471794,
+          "mul_loss": 0.025825895369052887,
+          "step": 240
+        },
+        {
+          "add_loss": 0.005385527852922678,
+          "isotropy_loss": 0.002284557558596134,
+          "loss": 0.032628290355205536,
+          "mul_loss": 0.024377120658755302,
+          "step": 480
+        },
+        {
+          "add_loss": 0.005578017793595791,
+          "isotropy_loss": 0.0017241155728697777,
+          "loss": 0.030614808201789856,
+          "mul_loss": 0.022922201082110405,
+          "step": 720
+        },
+        {
+          "add_loss": 0.005649289581924677,
+          "isotropy_loss": 0.0017375817988067865,
+          "loss": 0.03055540658533573,
+          "mul_loss": 0.022793006151914597,
+          "step": 960
+        },
+        {
+          "add_loss": 0.005753939971327782,
+          "isotropy_loss": 0.0018964394694194198,
+          "loss": 0.03026825189590454,
+          "mul_loss": 0.022141506895422935,
+          "step": 1200
+        }
+      ]
+    },
+    {
+      "dimension": 30,
+      "metrics": {
+        "all_add_power_accuracy_mean": 1.0,
+        "all_add_power_accuracy_min": 1.0,
+        "all_mul_power_accuracy_mean": 1.0,
+        "all_mul_power_accuracy_min": 1.0,
+        "code_effective_rank": 30.0000057220459,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 0.9999952912330627,
+        "semidirect_cosine": 1.0
+      },
+      "seed": 70,
+      "trace": [
+        {
+          "add_loss": 0.9947314858436584,
+          "isotropy_loss": 0.9922037720680237,
+          "loss": 3.0023982524871826,
+          "mul_loss": 1.0154626369476318,
+          "step": 1
+        },
+        {
+          "add_loss": 1.2113201819374808e-07,
+          "isotropy_loss": 1.152873281284883e-07,
+          "loss": 2.2053874999983236e-05,
+          "mul_loss": 6.345010916675164e-08,
+          "step": 240
+        },
+        {
+          "add_loss": -4.80682622594486e-08,
+          "isotropy_loss": 1.7586368559335819e-12,
+          "loss": -1.1314878634038905e-07,
+          "mul_loss": -6.537283780971848e-08,
+          "step": 480
+        },
+        {
+          "add_loss": -6.152737341835746e-08,
+          "isotropy_loss": 1.751111022407336e-14,
+          "loss": -1.3843657598044956e-07,
+          "mul_loss": -7.690921677294682e-08,
+          "step": 720
+        },
+        {
+          "add_loss": -5.7681912579710115e-08,
+          "isotropy_loss": 1.6763009030992468e-14,
+          "loss": -1.172865466969597e-07,
+          "mul_loss": -5.960464477539063e-08,
+          "step": 960
+        },
+        {
+          "add_loss": -4.999099090241543e-08,
+          "isotropy_loss": 1.018036349664797e-12,
+          "loss": -9.411324697339296e-08,
+          "mul_loss": -4.422280142080126e-08,
+          "step": 1200
+        }
+      ]
+    },
+    {
+      "dimension": 16,
+      "metrics": {
+        "all_add_power_accuracy_mean": 1.0,
+        "all_add_power_accuracy_min": 1.0,
+        "all_mul_power_accuracy_mean": 0.2655913958946864,
+        "all_mul_power_accuracy_min": 0.032258063554763794,
+        "code_effective_rank": 15.965320587158203,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 0.9960350394248962,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 0.9505120515823364,
+        "mixed_program_accuracy": 0.03125,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": -0.009007683023810387,
+        "semidirect_cosine": 0.9741669297218323
+      },
+      "seed": 71,
+      "trace": [
+        {
+          "add_loss": 0.913530170917511,
+          "isotropy_loss": 0.592443585395813,
+          "loss": 2.5624265670776367,
+          "mul_loss": 1.0564281940460205,
+          "step": 1
+        },
+        {
+          "add_loss": 0.036454323679208755,
+          "isotropy_loss": 0.010245349258184433,
+          "loss": 0.0946817696094513,
+          "mul_loss": 0.04650598019361496,
+          "step": 240
+        },
+        {
+          "add_loss": 0.0050306241028010845,
+          "isotropy_loss": 0.007606294006109238,
+          "loss": 0.06297526508569717,
+          "mul_loss": 0.04941509664058685,
+          "step": 480
+        },
+        {
+          "add_loss": 0.00399258267134428,
+          "isotropy_loss": 0.007783348206430674,
+          "loss": 0.062180861830711365,
+          "mul_loss": 0.04948490485548973,
+          "step": 720
+        },
+        {
+          "add_loss": 0.003980988636612892,
+          "isotropy_loss": 0.007789140101522207,
+          "loss": 0.06217237934470177,
+          "mul_loss": 0.049481891095638275,
+          "step": 960
+        },
+        {
+          "add_loss": 0.003965006675571203,
+          "isotropy_loss": 0.0077898227609694,
+          "loss": 0.06216360256075859,
+          "mul_loss": 0.049487970769405365,
+          "step": 1200
+        }
+      ]
+    },
+    {
+      "dimension": 24,
+      "metrics": {
+        "all_add_power_accuracy_mean": 1.0,
+        "all_add_power_accuracy_min": 1.0,
+        "all_mul_power_accuracy_mean": 0.2698924700419108,
+        "all_mul_power_accuracy_min": 0.0,
+        "code_effective_rank": 23.969697952270508,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 0.9943844079971313,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 0.9798437356948853,
+        "mixed_program_accuracy": 0.03125,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": -0.0037175738252699375,
+        "semidirect_cosine": 0.9679425358772278
+      },
+      "seed": 71,
+      "trace": [
+        {
+          "add_loss": 0.9497703313827515,
+          "isotropy_loss": 0.6976987719535828,
+          "loss": 2.626826524734497,
+          "mul_loss": 0.9793555736541748,
+          "step": 1
+        },
+        {
+          "add_loss": 0.023919854313135147,
+          "isotropy_loss": 0.009621215984225273,
+          "loss": 0.06345818191766739,
+          "mul_loss": 0.028262611478567123,
+          "step": 240
+        },
+        {
+          "add_loss": 0.006501801777631044,
+          "isotropy_loss": 0.0027694096788764,
+          "loss": 0.035477496683597565,
+          "mul_loss": 0.025574954226613045,
+          "step": 480
+        },
+        {
+          "add_loss": 0.005140550900250673,
+          "isotropy_loss": 0.00342820817604661,
+          "loss": 0.03422826901078224,
+          "mul_loss": 0.0243044663220644,
+          "step": 720
+        },
+        {
+          "add_loss": 0.005507542286068201,
+          "isotropy_loss": 0.00449134549126029,
+          "loss": 0.03390200436115265,
+          "mul_loss": 0.02152768149971962,
+          "step": 960
+        },
+        {
+          "add_loss": 0.0056173973716795444,
+          "isotropy_loss": 0.005137932021170855,
+          "loss": 0.033843033015728,
+          "mul_loss": 0.020180601626634598,
+          "step": 1200
+        }
+      ]
+    },
+    {
+      "dimension": 30,
+      "metrics": {
+        "all_add_power_accuracy_mean": 1.0,
+        "all_add_power_accuracy_min": 1.0,
+        "all_mul_power_accuracy_mean": 1.0,
+        "all_mul_power_accuracy_min": 1.0,
+        "code_effective_rank": 30.00000762939453,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 1.0,
+        "semidirect_cosine": 1.0
+      },
+      "seed": 71,
+      "trace": [
+        {
+          "add_loss": 1.0027191638946533,
+          "isotropy_loss": 0.9843555688858032,
+          "loss": 2.9767279624938965,
+          "mul_loss": 0.9896523356437683,
+          "step": 1
+        },
+        {
+          "add_loss": 9.036833148456935e-08,
+          "isotropy_loss": 1.2127594573030365e-07,
+          "loss": 1.7883598047774285e-05,
+          "mul_loss": 3.845460838647341e-08,
+          "step": 240
+        },
+        {
+          "add_loss": -4.037734058215392e-08,
+          "isotropy_loss": 1.111461617187004e-12,
+          "loss": -1.1715948744495108e-07,
+          "mul_loss": -7.690921677294682e-08,
+          "step": 480
+        },
+        {
+          "add_loss": -5.5759183936743284e-08,
+          "isotropy_loss": 2.636537432061832e-14,
+          "loss": -9.998196048854879e-08,
+          "mul_loss": -4.422280142080126e-08,
+          "step": 720
+        },
+        {
+          "add_loss": -6.921829509565214e-08,
+          "isotropy_loss": 2.2250423888352938e-14,
+          "loss": -1.095956108088103e-07,
+          "mul_loss": -4.037734058215392e-08,
+          "step": 960
+        },
+        {
+          "add_loss": -5.7681912579710115e-08,
+          "isotropy_loss": 2.1330806993782522e-14,
+          "loss": -9.998196048854879e-08,
+          "mul_loss": -4.230006922512075e-08,
+          "step": 1200
+        }
+      ]
+    },
+    {
+      "dimension": 16,
+      "metrics": {
+        "all_add_power_accuracy_mean": 1.0,
+        "all_add_power_accuracy_min": 1.0,
+        "all_mul_power_accuracy_mean": 0.206451611717542,
+        "all_mul_power_accuracy_min": 0.0,
+        "code_effective_rank": 15.972099304199219,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 0.9806336760520935,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 0.9552733302116394,
+        "mixed_program_accuracy": 0.0390625,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 0.0002280727494508028,
+        "semidirect_cosine": 0.9378759264945984
+      },
+      "seed": 72,
+      "trace": [
+        {
+          "add_loss": 0.9800423979759216,
+          "isotropy_loss": 0.5157436728477478,
+          "loss": 2.4769041538238525,
+          "mul_loss": 0.9811010956764221,
+          "step": 1
+        },
+        {
+          "add_loss": 0.06176002696156502,
+          "isotropy_loss": 0.013330856338143349,
+          "loss": 0.14165867865085602,
+          "mul_loss": 0.06318394094705582,
+          "step": 240
+        },
+        {
+          "add_loss": 0.04200319945812225,
+          "isotropy_loss": 0.011149512603878975,
+          "loss": 0.10504982620477676,
+          "mul_loss": 0.04973061382770538,
+          "step": 480
+        },
+        {
+          "add_loss": 0.024641556665301323,
+          "isotropy_loss": 0.0087809506803751,
+          "loss": 0.07787825167179108,
+          "mul_loss": 0.04315194487571716,
+          "step": 720
+        },
+        {
+          "add_loss": 0.0208940077573061,
+          "isotropy_loss": 0.007523311302065849,
+          "loss": 0.07325661927461624,
+          "mul_loss": 0.043801575899124146,
+          "step": 960
+        },
+        {
+          "add_loss": 0.019364530220627785,
+          "isotropy_loss": 0.006322233937680721,
+          "loss": 0.07130714505910873,
+          "mul_loss": 0.04472823441028595,
+          "step": 1200
+        }
+      ]
+    },
+    {
+      "dimension": 24,
+      "metrics": {
+        "all_add_power_accuracy_mean": 0.6888657558348871,
+        "all_add_power_accuracy_min": 0.35483869910240173,
+        "all_mul_power_accuracy_mean": 0.3827956954638163,
+        "all_mul_power_accuracy_min": 0.032258063554763794,
+        "code_effective_rank": 23.959646224975586,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 0.9876423478126526,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 0.9735056757926941,
+        "mixed_program_accuracy": 0.02734375,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 7.112883031368256e-05,
+        "semidirect_cosine": 0.8897544145584106
+      },
+      "seed": 72,
+      "trace": [
+        {
+          "add_loss": 1.0251202583312988,
+          "isotropy_loss": 0.8546363711357117,
+          "loss": 2.9177989959716797,
+          "mul_loss": 1.038040041923523,
+          "step": 1
+        },
+        {
+          "add_loss": 0.028992928564548492,
+          "isotropy_loss": 0.007567187305539846,
+          "loss": 0.06941148638725281,
+          "mul_loss": 0.03105817176401615,
+          "step": 240
+        },
+        {
+          "add_loss": 0.01618259772658348,
+          "isotropy_loss": 0.009734664112329483,
+          "loss": 0.05215584859251976,
+          "mul_loss": 0.022962389513850212,
+          "step": 480
+        },
+        {
+          "add_loss": 0.01466340385377407,
+          "isotropy_loss": 0.01061791181564331,
+          "loss": 0.055161040276288986,
+          "mul_loss": 0.026649100705981255,
+          "step": 720
+        },
+        {
+          "add_loss": 0.014095931313931942,
+          "isotropy_loss": 0.009290339425206184,
+          "loss": 0.05027677118778229,
+          "mul_loss": 0.023899966850876808,
+          "step": 960
+        },
+        {
+          "add_loss": 0.012350905686616898,
+          "isotropy_loss": 0.006786856334656477,
+          "loss": 0.04852527752518654,
+          "mul_loss": 0.027266979217529297,
+          "step": 1200
+        }
+      ]
+    },
+    {
+      "dimension": 30,
+      "metrics": {
+        "all_add_power_accuracy_mean": 1.0,
+        "all_add_power_accuracy_min": 1.0,
+        "all_mul_power_accuracy_mean": 1.0,
+        "all_mul_power_accuracy_min": 1.0,
+        "code_effective_rank": 30.00000762939453,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 1.0,
+        "semidirect_cosine": 1.0
+      },
+      "seed": 72,
+      "trace": [
+        {
+          "add_loss": 1.0178228616714478,
+          "isotropy_loss": 0.997086226940155,
+          "loss": 3.019071102142334,
+          "mul_loss": 1.0041601657867432,
+          "step": 1
+        },
+        {
+          "add_loss": 1.2497747547968174e-07,
+          "isotropy_loss": 1.1140909350615402e-07,
+          "loss": 1.9804776457021944e-05,
+          "mul_loss": 7.306375948701316e-08,
+          "step": 240
+        },
+        {
+          "add_loss": -4.999099090241543e-08,
+          "isotropy_loss": 1.568796958659191e-12,
+          "loss": -9.974009884672341e-08,
+          "mul_loss": -4.999099090241543e-08,
+          "step": 480
+        },
+        {
+          "add_loss": -4.614553006376809e-08,
+          "isotropy_loss": 1.5605143791216046e-14,
+          "loss": -1.1344108230559868e-07,
+          "mul_loss": -6.729556645268531e-08,
+          "step": 720
+        },
+        {
+          "add_loss": -4.230006922512075e-08,
+          "isotropy_loss": 1.3658476578210215e-14,
+          "loss": -9.229104591668147e-08,
+          "mul_loss": -4.999099090241543e-08,
+          "step": 960
+        },
+        {
+          "add_loss": -4.999099090241543e-08,
+          "isotropy_loss": 2.2534400154249415e-14,
+          "loss": -1.1536381094856551e-07,
+          "mul_loss": -6.537283780971848e-08,
+          "step": 1200
+        }
+      ]
+    },
+    {
+      "dimension": 28,
+      "metrics": {
+        "all_add_power_accuracy_mean": 0.9001040497133809,
+        "all_add_power_accuracy_min": 0.6774193644523621,
+        "all_mul_power_accuracy_mean": 0.5139784882465999,
+        "all_mul_power_accuracy_min": 0.06451612710952759,
+        "code_effective_rank": 27.976877212524414,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 0.992102861404419,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 0.9928984045982361,
+        "mixed_program_accuracy": 0.037109375,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 0.013734706677496433,
+        "semidirect_cosine": 0.917504072189331
+      },
+      "seed": 73,
+      "trace": [
+        {
+          "add_loss": 0.9833003282546997,
+          "isotropy_loss": 0.9507787823677063,
+          "loss": 2.904177665710449,
+          "mul_loss": 0.9700967073440552,
+          "step": 1
+        },
+        {
+          "add_loss": 0.013444271869957447,
+          "isotropy_loss": 0.003833723021671176,
+          "loss": 0.030092403292655945,
+          "mul_loss": 0.011376277543604374,
+          "step": 240
+        },
+        {
+          "add_loss": 0.007039197254925966,
+          "isotropy_loss": 0.0028378271963447332,
+          "loss": 0.019804436713457108,
+          "mul_loss": 0.00810605101287365,
+          "step": 480
+        },
+        {
+          "add_loss": 0.007923610508441925,
+          "isotropy_loss": 0.003654307220131159,
+          "loss": 0.02072685956954956,
+          "mul_loss": 0.007172177080065012,
+          "step": 720
+        },
+        {
+          "add_loss": 0.005001508630812168,
+          "isotropy_loss": 0.003601714735850692,
+          "loss": 0.019295062869787216,
+          "mul_loss": 0.008823884651064873,
+          "step": 960
+        },
+        {
+          "add_loss": 0.008018518798053265,
+          "isotropy_loss": 0.003561553545296192,
+          "loss": 0.020440898835659027,
+          "mul_loss": 0.007102904841303825,
+          "step": 1200
+        }
+      ]
+    },
+    {
+      "dimension": 29,
+      "metrics": {
+        "all_add_power_accuracy_mean": 1.0,
+        "all_add_power_accuracy_min": 1.0,
+        "all_mul_power_accuracy_mean": 0.9913978457450867,
+        "all_mul_power_accuracy_min": 0.9354838728904724,
+        "code_effective_rank": 28.991405487060547,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 0.9978196024894714,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 0.9962493777275085,
+        "mixed_program_accuracy": 0.0576171875,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 0.02873706817626953,
+        "semidirect_cosine": 0.9751008749008179
+      },
+      "seed": 73,
+      "trace": [
+        {
+          "add_loss": 0.9763243794441223,
+          "isotropy_loss": 0.8981181979179382,
+          "loss": 2.8877031803131104,
+          "mul_loss": 1.0132596492767334,
+          "step": 1
+        },
+        {
+          "add_loss": 0.007517328020185232,
+          "isotropy_loss": 0.001963504357263446,
+          "loss": 0.014490891247987747,
+          "mul_loss": 0.0039795138873159885,
+          "step": 240
+        },
+        {
+          "add_loss": 0.003713807789608836,
+          "isotropy_loss": 0.0014227732317522168,
+          "loss": 0.009450347162783146,
+          "mul_loss": 0.0034023388288915157,
+          "step": 480
+        },
+        {
+          "add_loss": 0.0021499355789273977,
+          "isotropy_loss": 0.0013975678011775017,
+          "loss": 0.008041261695325375,
+          "mul_loss": 0.003474973840638995,
+          "step": 720
+        },
+        {
+          "add_loss": 0.002244847360998392,
+          "isotropy_loss": 0.001328072277829051,
+          "loss": 0.008177854120731354,
+          "mul_loss": 0.0036260446067899466,
+          "step": 960
+        },
+        {
+          "add_loss": 0.002167167142033577,
+          "isotropy_loss": 0.0013693071668967605,
+          "loss": 0.008277076296508312,
+          "mul_loss": 0.003791636088863015,
+          "step": 1200
+        }
+      ]
+    },
+    {
+      "dimension": 30,
+      "metrics": {
+        "all_add_power_accuracy_mean": 1.0,
+        "all_add_power_accuracy_min": 1.0,
+        "all_mul_power_accuracy_mean": 1.0,
+        "all_mul_power_accuracy_min": 1.0,
+        "code_effective_rank": 30.00000762939453,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 1.0,
+        "semidirect_cosine": 1.0
+      },
+      "seed": 73,
+      "trace": [
+        {
+          "add_loss": 0.9704992771148682,
+          "isotropy_loss": 0.982627272605896,
+          "loss": 2.95872163772583,
+          "mul_loss": 1.0055938959121704,
+          "step": 1
+        },
+        {
+          "add_loss": 7.306375948701316e-08,
+          "isotropy_loss": 9.674374723545043e-08,
+          "loss": 1.7335361917503178e-05,
+          "mul_loss": 6.152737341835746e-08,
+          "step": 240
+        },
+        {
+          "add_loss": -5.960464477539063e-08,
+          "isotropy_loss": 1.1461275721894038e-12,
+          "loss": -1.1713687086967184e-07,
+          "mul_loss": -5.7681912579710115e-08,
+          "step": 480
+        },
+        {
+          "add_loss": -5.7681912579710115e-08,
+          "isotropy_loss": 2.632024440518861e-14,
+          "loss": -1.3843656176959485e-07,
+          "mul_loss": -8.075468116430784e-08,
+          "step": 720
+        },
+        {
+          "add_loss": -6.152737341835746e-08,
+          "isotropy_loss": 2.2588142700686806e-14,
+          "loss": -1.1728653959153235e-07,
+          "mul_loss": -5.5759183936743284e-08,
+          "step": 960
+        },
+        {
+          "add_loss": -6.345010916675164e-08,
+          "isotropy_loss": 2.344451842134932e-14,
+          "loss": -1.5574113376715104e-07,
+          "mul_loss": -9.229106012753618e-08,
+          "step": 1200
+        }
+      ]
+    },
+    {
+      "dimension": 28,
+      "metrics": {
+        "all_add_power_accuracy_mean": 0.45577522727750963,
+        "all_add_power_accuracy_min": 0.06451612710952759,
+        "all_mul_power_accuracy_mean": 0.9290322562058767,
+        "all_mul_power_accuracy_min": 0.6129032373428345,
+        "code_effective_rank": 27.977313995361328,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 0.9880149364471436,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 0.9948692917823792,
+        "mixed_program_accuracy": 0.0322265625,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 0.0015809066826477647,
+        "semidirect_cosine": 0.8376726508140564
+      },
+      "seed": 74,
+      "trace": [
+        {
+          "add_loss": 0.9783570170402527,
+          "isotropy_loss": 0.942081868648529,
+          "loss": 2.9372825622558594,
+          "mul_loss": 1.0168431997299194,
+          "step": 1
+        },
+        {
+          "add_loss": 0.011708817444741726,
+          "isotropy_loss": 0.0033238546457141638,
+          "loss": 0.024764547124505043,
+          "mul_loss": 0.007729926612228155,
+          "step": 240
+        },
+        {
+          "add_loss": 0.014880362898111343,
+          "isotropy_loss": 0.003798010293394327,
+          "loss": 0.02711840718984604,
+          "mul_loss": 0.006136676762253046,
+          "step": 480
+        },
+        {
+          "add_loss": 0.012046300806105137,
+          "isotropy_loss": 0.0033604674972593784,
+          "loss": 0.022717658430337906,
+          "mul_loss": 0.004979525692760944,
+          "step": 720
+        },
+        {
+          "add_loss": 0.009905640035867691,
+          "isotropy_loss": 0.003677605651319027,
+          "loss": 0.02072964981198311,
+          "mul_loss": 0.004761899821460247,
+          "step": 960
+        },
+        {
+          "add_loss": 0.012085170485079288,
+          "isotropy_loss": 0.0036628388334065676,
+          "loss": 0.022945193573832512,
+          "mul_loss": 0.005156915169209242,
+          "step": 1200
+        }
+      ]
+    },
+    {
+      "dimension": 29,
+      "metrics": {
+        "all_add_power_accuracy_mean": 1.0,
+        "all_add_power_accuracy_min": 1.0,
+        "all_mul_power_accuracy_mean": 0.9634408553441366,
+        "all_mul_power_accuracy_min": 0.8387096524238586,
+        "code_effective_rank": 28.989723205566406,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 0.997229814529419,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 0.9956379532814026,
+        "mixed_program_accuracy": 0.068359375,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 0.052178092300891876,
+        "semidirect_cosine": 0.9837131500244141
+      },
+      "seed": 74,
+      "trace": [
+        {
+          "add_loss": 1.0039087533950806,
+          "isotropy_loss": 0.9972261190414429,
+          "loss": 2.998162269592285,
+          "mul_loss": 0.9970248341560364,
+          "step": 1
+        },
+        {
+          "add_loss": 0.008609235286712646,
+          "isotropy_loss": 0.0018465615576133132,
+          "loss": 0.016027243807911873,
+          "mul_loss": 0.004614939447492361,
+          "step": 240
+        },
+        {
+          "add_loss": 0.005619414616376162,
+          "isotropy_loss": 0.001552485628053546,
+          "loss": 0.013048579916357994,
+          "mul_loss": 0.004258329048752785,
+          "step": 480
+        },
+        {
+          "add_loss": 0.002728731371462345,
+          "isotropy_loss": 0.0017392162699252367,
+          "loss": 0.011890583671629429,
+          "mul_loss": 0.006316884886473417,
+          "step": 720
+        },
+        {
+          "add_loss": 0.002302177483215928,
+          "isotropy_loss": 0.001956130377948284,
+          "loss": 0.009434418752789497,
+          "mul_loss": 0.00402437848970294,
+          "step": 960
+        },
+        {
+          "add_loss": 0.0027932371012866497,
+          "isotropy_loss": 0.0015197922475636005,
+          "loss": 0.00938313640654087,
+          "mul_loss": 0.00431281141936779,
+          "step": 1200
+        }
+      ]
+    },
+    {
+      "dimension": 30,
+      "metrics": {
+        "all_add_power_accuracy_mean": 1.0,
+        "all_add_power_accuracy_min": 1.0,
+        "all_mul_power_accuracy_mean": 1.0,
+        "all_mul_power_accuracy_min": 1.0,
+        "code_effective_rank": 30.0,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 0.9999959468841553,
+        "semidirect_cosine": 1.0
+      },
+      "seed": 74,
+      "trace": [
+        {
+          "add_loss": 0.9581283926963806,
+          "isotropy_loss": 0.9351537823677063,
+          "loss": 2.8486857414245605,
+          "mul_loss": 0.9554030895233154,
+          "step": 1
+        },
+        {
+          "add_loss": 2.6918225870531387e-08,
+          "isotropy_loss": 7.365705556594548e-08,
+          "loss": 1.22083447422483e-05,
+          "mul_loss": 4.614553006376809e-08,
+          "step": 240
+        },
+        {
+          "add_loss": -5.7681912579710115e-08,
+          "isotropy_loss": 3.028623901148164e-13,
+          "loss": -1.2301786966872896e-07,
+          "mul_loss": -6.537283780971848e-08,
+          "step": 480
+        },
+        {
+          "add_loss": -4.614553006376809e-08,
+          "isotropy_loss": 2.853022451534265e-14,
+          "loss": -1.0190468913151562e-07,
+          "mul_loss": -5.5759183936743284e-08,
+          "step": 720
+        },
+        {
+          "add_loss": -4.614553006376809e-08,
+          "isotropy_loss": 1.0360806044487289e-13,
+          "loss": -9.997216210422266e-08,
+          "mul_loss": -5.3836451741062774e-08,
+          "step": 960
+        },
+        {
+          "add_loss": -4.614553006376809e-08,
+          "isotropy_loss": 2.482731685168882e-12,
+          "loss": -9.390073785198183e-08,
+          "mul_loss": -4.80682622594486e-08,
+          "step": 1200
+        }
+      ]
+    },
+    {
+      "dimension": 28,
+      "metrics": {
+        "all_add_power_accuracy_mean": 0.7731529618463209,
+        "all_add_power_accuracy_min": 0.4516128897666931,
+        "all_mul_power_accuracy_mean": 0.9204300959904989,
+        "all_mul_power_accuracy_min": 0.8387096524238586,
+        "code_effective_rank": 27.980884552001953,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 0.9942991733551025,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 0.9908314347267151,
+        "mixed_program_accuracy": 0.037109375,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": -0.0013632946647703648,
+        "semidirect_cosine": 0.9006372690200806
+      },
+      "seed": 75,
+      "trace": [
+        {
+          "add_loss": 0.9431740641593933,
+          "isotropy_loss": 0.818825900554657,
+          "loss": 2.735567331314087,
+          "mul_loss": 0.9735671281814575,
+          "step": 1
+        },
+        {
+          "add_loss": 0.010707197710871696,
+          "isotropy_loss": 0.002570908283814788,
+          "loss": 0.026052560657262802,
+          "mul_loss": 0.011013561859726906,
+          "step": 240
+        },
+        {
+          "add_loss": 0.00953017920255661,
+          "isotropy_loss": 0.0033860683906823397,
+          "loss": 0.02379741705954075,
+          "mul_loss": 0.008678432554006577,
+          "step": 480
+        },
+        {
+          "add_loss": 0.005941279698163271,
+          "isotropy_loss": 0.0034221827518194914,
+          "loss": 0.019870471209287643,
+          "mul_loss": 0.008260701783001423,
+          "step": 720
+        },
+        {
+          "add_loss": 0.0064743333496153355,
+          "isotropy_loss": 0.003340628929436207,
+          "loss": 0.021464329212903976,
+          "mul_loss": 0.009441393427550793,
+          "step": 960
+        },
+        {
+          "add_loss": 0.005727517884224653,
+          "isotropy_loss": 0.0030936612747609615,
+          "loss": 0.020246164873242378,
+          "mul_loss": 0.009290985763072968,
+          "step": 1200
+        }
+      ]
+    },
+    {
+      "dimension": 29,
+      "metrics": {
+        "all_add_power_accuracy_mean": 1.0,
+        "all_add_power_accuracy_min": 1.0,
+        "all_mul_power_accuracy_mean": 0.8139784872531891,
+        "all_mul_power_accuracy_min": 0.29032257199287415,
+        "code_effective_rank": 28.9873046875,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 0.9975990056991577,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 0.9965541958808899,
+        "mixed_program_accuracy": 0.046875,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 0.009375123307108879,
+        "semidirect_cosine": 0.9728761315345764
+      },
+      "seed": 75,
+      "trace": [
+        {
+          "add_loss": 0.9976707100868225,
+          "isotropy_loss": 0.9734108448028564,
+          "loss": 2.948237180709839,
+          "mul_loss": 0.9771551489830017,
+          "step": 1
+        },
+        {
+          "add_loss": 0.00778820039704442,
+          "isotropy_loss": 0.001737233716994524,
+          "loss": 0.015925228595733643,
+          "mul_loss": 0.005032900720834732,
+          "step": 240
+        },
+        {
+          "add_loss": 0.0035236075054854155,
+          "isotropy_loss": 0.002060217084363103,
+          "loss": 0.010355894453823566,
+          "mul_loss": 0.003445242764428258,
+          "step": 480
+        },
+        {
+          "add_loss": 0.002494486980140209,
+          "isotropy_loss": 0.0017038456862792373,
+          "loss": 0.008968483656644821,
+          "mul_loss": 0.003536931937560439,
+          "step": 720
+        },
+        {
+          "add_loss": 0.002398806158453226,
+          "isotropy_loss": 0.0017894684569910169,
+          "loss": 0.008987807668745518,
+          "mul_loss": 0.0037657252978533506,
+          "step": 960
+        },
+        {
+          "add_loss": 0.0024108425714075565,
+          "isotropy_loss": 0.001938691595569253,
+          "loss": 0.008766727522015572,
+          "mul_loss": 0.00340029108338058,
+          "step": 1200
+        }
+      ]
+    },
+    {
+      "dimension": 30,
+      "metrics": {
+        "all_add_power_accuracy_mean": 1.0,
+        "all_add_power_accuracy_min": 1.0,
+        "all_mul_power_accuracy_mean": 1.0,
+        "all_mul_power_accuracy_min": 1.0,
+        "code_effective_rank": 30.00000762939453,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 1.0,
+        "semidirect_cosine": 1.0
+      },
+      "seed": 75,
+      "trace": [
+        {
+          "add_loss": 0.977957010269165,
+          "isotropy_loss": 0.9956092834472656,
+          "loss": 2.9257023334503174,
+          "mul_loss": 0.9521352648735046,
+          "step": 1
+        },
+        {
+          "add_loss": 8.075468116430784e-08,
+          "isotropy_loss": 9.584778126736637e-08,
+          "loss": 1.5065979823702946e-05,
+          "mul_loss": 3.845460838647341e-08,
+          "step": 240
+        },
+        {
+          "add_loss": -4.80682622594486e-08,
+          "isotropy_loss": 1.2134160863597199e-12,
+          "loss": -1.1875015104578779e-07,
+          "mul_loss": -7.114103084404633e-08,
+          "step": 480
+        },
+        {
+          "add_loss": -6.345010916675164e-08,
+          "isotropy_loss": 6.096711135071542e-13,
+          "loss": -1.2094193380107754e-07,
+          "mul_loss": -5.7681912579710115e-08,
+          "step": 720
+        },
+        {
+          "add_loss": -5.191372309809594e-08,
+          "isotropy_loss": 1.345271821457522e-13,
+          "loss": -1.2495399914769223e-07,
+          "mul_loss": -7.306375948701316e-08,
+          "step": 960
+        },
+        {
+          "add_loss": -5.191372309809594e-08,
+          "isotropy_loss": 1.971538641436059e-14,
+          "loss": -1.1728616300388239e-07,
+          "mul_loss": -6.537283780971848e-08,
+          "step": 1200
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,502 @@
+{
+  "experiment": "exp_020_operator_orbit_scaling",
+  "prime": 31,
+  "primitive_root": 3,
+  "rows": [
+    {
+      "seed": 0,
+      "sizes": [
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 2,
+          "subgroup_size": 1,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1,
+            30
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 4,
+          "subgroup_size": 2,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1,
+            5,
+            25
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 6,
+          "subgroup_size": 3,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1,
+            2,
+            4,
+            8,
+            16
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 10,
+          "subgroup_size": 5,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1,
+            5,
+            6,
+            25,
+            26,
+            30
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 12,
+          "subgroup_size": 6,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1,
+            2,
+            4,
+            8,
+            15,
+            16,
+            23,
+            27,
+            29,
+            30
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 20,
+          "subgroup_size": 10,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1,
+            2,
+            4,
+            5,
+            7,
+            8,
+            9,
+            10,
+            14,
+            16,
+            18,
+            19,
+            20,
+            25,
+            28
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 30,
+          "subgroup_size": 15,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": null,
+          "frequencies": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 60,
+          "subgroup_size": 30,
+          "target_cosine_mean": 1.0
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "sizes": [
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 2,
+          "subgroup_size": 1,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1,
+            30
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 4,
+          "subgroup_size": 2,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1,
+            5,
+            25
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 6,
+          "subgroup_size": 3,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1,
+            2,
+            4,
+            8,
+            16
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 10,
+          "subgroup_size": 5,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1,
+            5,
+            6,
+            25,
+            26,
+            30
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 12,
+          "subgroup_size": 6,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1,
+            2,
+            4,
+            8,
+            15,
+            16,
+            23,
+            27,
+            29,
+            30
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 20,
+          "subgroup_size": 10,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1,
+            2,
+            4,
+            5,
+            7,
+            8,
+            9,
+            10,
+            14,
+            16,
+            18,
+            19,
+            20,
+            25,
+            28
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 30,
+          "subgroup_size": 15,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": null,
+          "frequencies": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 60,
+          "subgroup_size": 30,
+          "target_cosine_mean": 1.0
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "sizes": [
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 2,
+          "subgroup_size": 1,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1,
+            30
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 4,
+          "subgroup_size": 2,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1,
+            5,
+            25
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 6,
+          "subgroup_size": 3,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1,
+            2,
+            4,
+            8,
+            16
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 10,
+          "subgroup_size": 5,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1,
+            5,
+            6,
+            25,
+            26,
+            30
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 12,
+          "subgroup_size": 6,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1,
+            2,
+            4,
+            8,
+            15,
+            16,
+            23,
+            27,
+            29,
+            30
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 20,
+          "subgroup_size": 10,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": 0.0,
+          "frequencies": [
+            1,
+            2,
+            4,
+            5,
+            7,
+            8,
+            9,
+            10,
+            14,
+            16,
+            18,
+            19,
+            20,
+            25,
+            28
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 30,
+          "subgroup_size": 15,
+          "target_cosine_mean": 1.0
+        },
+        {
+          "example_outside_multiplier_closure_fraction": null,
+          "frequencies": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "invariant_under_allowed_multipliers": true,
+          "mixed_accuracy": 1.0,
+          "mixed_depth": 128,
+          "real_width": 60,
+          "subgroup_size": 30,
+          "target_cosine_mean": 1.0
+        }
+      ]
+    }
+  ]
+}

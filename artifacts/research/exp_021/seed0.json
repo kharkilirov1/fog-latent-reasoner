@@ -1,0 +1,502 @@
+{
+  "config": {
+    "head_scale": 20.0,
+    "orthogonality_weight": 0.1,
+    "separation_weight": 0.05
+  },
+  "experiment": "exp_021_learned_affine_representation",
+  "rows": [
+    {
+      "dimension": 2,
+      "metrics": {
+        "all_add_power_accuracy_mean": 0.06451612807089283,
+        "all_add_power_accuracy_min": 0.0,
+        "all_mul_power_accuracy_mean": 0.05913978417714437,
+        "all_mul_power_accuracy_min": 0.0,
+        "code_effective_rank": 1.652955412864685,
+        "generator_add_accuracy": 0.06451612710952759,
+        "generator_add_cosine": 0.7950647473335266,
+        "generator_mul_accuracy": 0.06451612710952759,
+        "generator_mul_cosine": 0.8594766855239868,
+        "mixed_program_accuracy": 0.025390625,
+        "mixed_program_depth": 8,
+        "mixed_program_target_cosine": -0.07385456562042236,
+        "semidirect_cosine": 0.6035057306289673
+      },
+      "seed": 0,
+      "trace": [
+        {
+          "add_loss": 0.8474633693695068,
+          "loss": 1.729167103767395,
+          "mul_loss": 0.8240850567817688,
+          "orthogonality_loss": 1.3322676295501878e-15,
+          "separation_loss": 1.1523749828338623,
+          "step": 1
+        },
+        {
+          "add_loss": 0.08861848711967468,
+          "loss": 0.37373730540275574,
+          "mul_loss": 0.1435566246509552,
+          "orthogonality_loss": 0.501609206199646,
+          "separation_loss": 1.8280258178710938,
+          "step": 200
+        },
+        {
+          "add_loss": 0.14112740755081177,
+          "loss": 0.495495080947876,
+          "mul_loss": 0.2151070237159729,
+          "orthogonality_loss": 0.5017990469932556,
+          "separation_loss": 1.781614899635315,
+          "step": 400
+        },
+        {
+          "add_loss": 0.16823524236679077,
+          "loss": 0.4708501398563385,
+          "mul_loss": 0.1690845936536789,
+          "orthogonality_loss": 0.5151645541191101,
+          "separation_loss": 1.6402770280838013,
+          "step": 600
+        },
+        {
+          "add_loss": 0.14847862720489502,
+          "loss": 0.43349480628967285,
+          "mul_loss": 0.13907690346240997,
+          "orthogonality_loss": 0.5016709566116333,
+          "separation_loss": 1.915443778038025,
+          "step": 800
+        },
+        {
+          "add_loss": 0.20517289638519287,
+          "loss": 0.491581529378891,
+          "mul_loss": 0.14054705202579498,
+          "orthogonality_loss": 0.5005757808685303,
+          "separation_loss": 1.916080117225647,
+          "step": 1000
+        }
+      ]
+    },
+    {
+      "dimension": 4,
+      "metrics": {
+        "all_add_power_accuracy_mean": 0.08012486946198248,
+        "all_add_power_accuracy_min": 0.0,
+        "all_mul_power_accuracy_mean": 0.08172042866547903,
+        "all_mul_power_accuracy_min": 0.0,
+        "code_effective_rank": 2.6145081520080566,
+        "generator_add_accuracy": 0.5483871102333069,
+        "generator_add_cosine": 0.9783631563186646,
+        "generator_mul_accuracy": 0.6451612710952759,
+        "generator_mul_cosine": 0.9860896468162537,
+        "mixed_program_accuracy": 0.03515625,
+        "mixed_program_depth": 8,
+        "mixed_program_target_cosine": 0.03497127443552017,
+        "semidirect_cosine": 0.3940431475639343
+      },
+      "seed": 0,
+      "trace": [
+        {
+          "add_loss": 0.9342947602272034,
+          "loss": 1.9523227214813232,
+          "mul_loss": 1.0061039924621582,
+          "orthogonality_loss": 1.526209714164395e-14,
+          "separation_loss": 0.23848052322864532,
+          "step": 1
+        },
+        {
+          "add_loss": 0.026451759040355682,
+          "loss": 0.11449830234050751,
+          "mul_loss": 0.016130154952406883,
+          "orthogonality_loss": 0.26716458797454834,
+          "separation_loss": 0.9039984345436096,
+          "step": 200
+        },
+        {
+          "add_loss": 0.01323556900024414,
+          "loss": 0.10176662355661392,
+          "mul_loss": 0.009742719121277332,
+          "orthogonality_loss": 0.2545517683029175,
+          "separation_loss": 1.066663146018982,
+          "step": 400
+        },
+        {
+          "add_loss": 0.008098412305116653,
+          "loss": 0.09178458154201508,
+          "mul_loss": 0.006181437987834215,
+          "orthogonality_loss": 0.25106024742126465,
+          "separation_loss": 1.0479741096496582,
+          "step": 600
+        },
+        {
+          "add_loss": 0.006765811704099178,
+          "loss": 0.08831656724214554,
+          "mul_loss": 0.005370007362216711,
+          "orthogonality_loss": 0.2509113550186157,
+          "separation_loss": 1.0217921733856201,
+          "step": 800
+        },
+        {
+          "add_loss": 0.021817687898874283,
+          "loss": 0.10453417152166367,
+          "mul_loss": 0.01416198629885912,
+          "orthogonality_loss": 0.2535969614982605,
+          "separation_loss": 0.8638959527015686,
+          "step": 1000
+        }
+      ]
+    },
+    {
+      "dimension": 8,
+      "metrics": {
+        "all_add_power_accuracy_mean": 0.13215400422773055,
+        "all_add_power_accuracy_min": 0.0,
+        "all_mul_power_accuracy_mean": 0.10860214928785959,
+        "all_mul_power_accuracy_min": 0.0,
+        "code_effective_rank": 4.1496758460998535,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 0.9974088072776794,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 0.9973044991493225,
+        "mixed_program_accuracy": 0.01953125,
+        "mixed_program_depth": 8,
+        "mixed_program_target_cosine": -0.001746688038110733,
+        "semidirect_cosine": 0.5381708741188049
+      },
+      "seed": 0,
+      "trace": [
+        {
+          "add_loss": 0.9542779326438904,
+          "loss": 1.8336468935012817,
+          "mul_loss": 0.8790910243988037,
+          "orthogonality_loss": 1.2095928642388842e-14,
+          "separation_loss": 0.005556595977395773,
+          "step": 1
+        },
+        {
+          "add_loss": 0.010530789382755756,
+          "loss": 0.04677953943610191,
+          "mul_loss": 0.013642695732414722,
+          "orthogonality_loss": 0.15409958362579346,
+          "separation_loss": 0.14392192661762238,
+          "step": 200
+        },
+        {
+          "add_loss": 0.005267770029604435,
+          "loss": 0.03077675774693489,
+          "mul_loss": 0.006947200279682875,
+          "orthogonality_loss": 0.1466788351535797,
+          "separation_loss": 0.07787810266017914,
+          "step": 400
+        },
+        {
+          "add_loss": 0.004029025789350271,
+          "loss": 0.026259029284119606,
+          "mul_loss": 0.00471139932051301,
+          "orthogonality_loss": 0.1405998021364212,
+          "separation_loss": 0.06917247921228409,
+          "step": 600
+        },
+        {
+          "add_loss": 0.002522057155147195,
+          "loss": 0.022200699895620346,
+          "mul_loss": 0.0030757265631109476,
+          "orthogonality_loss": 0.13800176978111267,
+          "separation_loss": 0.05605478212237358,
+          "step": 800
+        },
+        {
+          "add_loss": 0.00252852332778275,
+          "loss": 0.021010715514421463,
+          "mul_loss": 0.002588237402960658,
+          "orthogonality_loss": 0.13579422235488892,
+          "separation_loss": 0.046290650963783264,
+          "step": 1000
+        }
+      ]
+    },
+    {
+      "dimension": 16,
+      "metrics": {
+        "all_add_power_accuracy_mean": 0.24453693628311157,
+        "all_add_power_accuracy_min": 0.0,
+        "all_mul_power_accuracy_mean": 0.16559139589468638,
+        "all_mul_power_accuracy_min": 0.0,
+        "code_effective_rank": 8.33785343170166,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 0.998026430606842,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 0.9975703358650208,
+        "mixed_program_accuracy": 0.021484375,
+        "mixed_program_depth": 8,
+        "mixed_program_target_cosine": 0.1307964026927948,
+        "semidirect_cosine": 0.8397769331932068
+      },
+      "seed": 0,
+      "trace": [
+        {
+          "add_loss": 1.075541615486145,
+          "loss": 2.139808416366577,
+          "mul_loss": 1.0642589330673218,
+          "orthogonality_loss": 9.65743259559275e-15,
+          "separation_loss": 0.00015503267059102654,
+          "step": 1
+        },
+        {
+          "add_loss": 0.004975461401045322,
+          "loss": 0.017934659495949745,
+          "mul_loss": 0.004439544398337603,
+          "orthogonality_loss": 0.07976613938808441,
+          "separation_loss": 0.01086079515516758,
+          "step": 200
+        },
+        {
+          "add_loss": 0.002246610587462783,
+          "loss": 0.012603919953107834,
+          "mul_loss": 0.0022705793380737305,
+          "orthogonality_loss": 0.07625657320022583,
+          "separation_loss": 0.00922144204378128,
+          "step": 400
+        },
+        {
+          "add_loss": 0.0018850545166060328,
+          "loss": 0.011358775198459625,
+          "mul_loss": 0.0018272880697622895,
+          "orthogonality_loss": 0.07259025424718857,
+          "separation_loss": 0.007748124655336142,
+          "step": 600
+        },
+        {
+          "add_loss": 0.0017598828999325633,
+          "loss": 0.010875547304749489,
+          "mul_loss": 0.001772990101017058,
+          "orthogonality_loss": 0.06992538273334503,
+          "separation_loss": 0.007002705242484808,
+          "step": 800
+        },
+        {
+          "add_loss": 0.002060207538306713,
+          "loss": 0.011524681001901627,
+          "mul_loss": 0.002314827172085643,
+          "orthogonality_loss": 0.06787417829036713,
+          "separation_loss": 0.00724456924945116,
+          "step": 1000
+        }
+      ]
+    },
+    {
+      "dimension": 24,
+      "metrics": {
+        "all_add_power_accuracy_mean": 0.2341311102913272,
+        "all_add_power_accuracy_min": 0.0,
+        "all_mul_power_accuracy_mean": 0.25913978219032285,
+        "all_mul_power_accuracy_min": 0.0,
+        "code_effective_rank": 13.486202239990234,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 0.9985764026641846,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 0.9984957575798035,
+        "mixed_program_accuracy": 0.03515625,
+        "mixed_program_depth": 8,
+        "mixed_program_target_cosine": 0.09869931638240814,
+        "semidirect_cosine": 0.875010073184967
+      },
+      "seed": 0,
+      "trace": [
+        {
+          "add_loss": 1.0086108446121216,
+          "loss": 2.0106518268585205,
+          "mul_loss": 1.0020393133163452,
+          "orthogonality_loss": 9.567969822736697e-15,
+          "separation_loss": 3.314653076813556e-05,
+          "step": 1
+        },
+        {
+          "add_loss": 0.002815752290189266,
+          "loss": 0.010781828314065933,
+          "mul_loss": 0.002792035462334752,
+          "orthogonality_loss": 0.05151719972491264,
+          "separation_loss": 0.0004464095691218972,
+          "step": 200
+        },
+        {
+          "add_loss": 0.0019022899214178324,
+          "loss": 0.009211407974362373,
+          "mul_loss": 0.002447049366310239,
+          "orthogonality_loss": 0.04816310480237007,
+          "separation_loss": 0.0009151756530627608,
+          "step": 400
+        },
+        {
+          "add_loss": 0.0009604404331184924,
+          "loss": 0.006449361331760883,
+          "mul_loss": 0.0008943138527683914,
+          "orthogonality_loss": 0.04540248215198517,
+          "separation_loss": 0.0010871747508645058,
+          "step": 600
+        },
+        {
+          "add_loss": 0.0006487465579994023,
+          "loss": 0.005652775056660175,
+          "mul_loss": 0.0005780343199148774,
+          "orthogonality_loss": 0.0435982421040535,
+          "separation_loss": 0.0013233982026576996,
+          "step": 800
+        },
+        {
+          "add_loss": 0.0018930454971268773,
+          "loss": 0.008290652185678482,
+          "mul_loss": 0.0021336020436137915,
+          "orthogonality_loss": 0.04198034852743149,
+          "separation_loss": 0.0013194013154134154,
+          "step": 1000
+        }
+      ]
+    },
+    {
+      "dimension": 30,
+      "metrics": {
+        "all_add_power_accuracy_mean": 0.93028094883888,
+        "all_add_power_accuracy_min": 0.8064516186714172,
+        "all_mul_power_accuracy_mean": 0.6290322522322337,
+        "all_mul_power_accuracy_min": 0.06451612710952759,
+        "code_effective_rank": 21.739498138427734,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 0.9998111128807068,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 0.9998607039451599,
+        "mixed_program_accuracy": 0.03125,
+        "mixed_program_depth": 8,
+        "mixed_program_target_cosine": 0.014072543010115623,
+        "semidirect_cosine": 0.9930959939956665
+      },
+      "seed": 0,
+      "trace": [
+        {
+          "add_loss": 0.9814031720161438,
+          "loss": 1.9703298807144165,
+          "mul_loss": 0.9889261722564697,
+          "orthogonality_loss": 8.078373446530548e-15,
+          "separation_loss": 1.1020935744454619e-05,
+          "step": 1
+        },
+        {
+          "add_loss": 0.0005905916332267225,
+          "loss": 0.003673195606097579,
+          "mul_loss": 0.00028426223434507847,
+          "orthogonality_loss": 0.027956224977970123,
+          "separation_loss": 5.4387212003348395e-05,
+          "step": 200
+        },
+        {
+          "add_loss": 0.0002984500606544316,
+          "loss": 0.003077118191868067,
+          "mul_loss": 0.00021849524637218565,
+          "orthogonality_loss": 0.02557951584458351,
+          "separation_loss": 4.442482168087736e-05,
+          "step": 400
+        },
+        {
+          "add_loss": 0.00023806479293853045,
+          "loss": 0.0027793769259005785,
+          "mul_loss": 0.00016697375394869596,
+          "orthogonality_loss": 0.023725204169750214,
+          "separation_loss": 3.6357629142003134e-05,
+          "step": 600
+        },
+        {
+          "add_loss": 0.00020403246162459254,
+          "loss": 0.002566711511462927,
+          "mul_loss": 0.00013945756654720753,
+          "orthogonality_loss": 0.02221713960170746,
+          "separation_loss": 3.014750109286979e-05,
+          "step": 800
+        },
+        {
+          "add_loss": 0.00019307290494907647,
+          "loss": 0.0024368474259972572,
+          "mul_loss": 0.0001387846132274717,
+          "orthogonality_loss": 0.021036585792899132,
+          "separation_loss": 2.662517363205552e-05,
+          "step": 1000
+        }
+      ]
+    },
+    {
+      "dimension": 31,
+      "metrics": {
+        "all_add_power_accuracy_mean": 1.0,
+        "all_add_power_accuracy_min": 1.0,
+        "all_mul_power_accuracy_mean": 1.0,
+        "all_mul_power_accuracy_min": 1.0,
+        "code_effective_rank": 29.26173973083496,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 0.9999970197677612,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 0.9999969601631165,
+        "mixed_program_accuracy": 0.99609375,
+        "mixed_program_depth": 8,
+        "mixed_program_target_cosine": 0.9944146871566772,
+        "semidirect_cosine": 0.9999948143959045
+      },
+      "seed": 0,
+      "trace": [
+        {
+          "add_loss": 0.9869845509529114,
+          "loss": 2.0150763988494873,
+          "mul_loss": 1.0280911922454834,
+          "orthogonality_loss": 7.373096545196939e-15,
+          "separation_loss": 1.5108209481695667e-05,
+          "step": 1
+        },
+        {
+          "add_loss": 7.060266398184467e-06,
+          "loss": 0.0022594397887587547,
+          "mul_loss": 8.363877896044869e-06,
+          "orthogonality_loss": 0.02243218757212162,
+          "separation_loss": 1.593858360138256e-05,
+          "step": 200
+        },
+        {
+          "add_loss": 4.6164759623934515e-06,
+          "loss": 0.0018747751601040363,
+          "mul_loss": 5.362495357985608e-06,
+          "orthogonality_loss": 0.018644552677869797,
+          "separation_loss": 6.817877419962315e-06,
+          "step": 400
+        },
+        {
+          "add_loss": 4.253079623595113e-06,
+          "loss": 0.001497139222919941,
+          "mul_loss": 4.695307779911673e-06,
+          "orthogonality_loss": 0.01488078385591507,
+          "separation_loss": 2.249584895253065e-06,
+          "step": 600
+        },
+        {
+          "add_loss": 3.914679382432951e-06,
+          "loss": 0.0010499608470126987,
+          "mul_loss": 3.974284027208341e-06,
+          "orthogonality_loss": 0.010420428588986397,
+          "separation_loss": 5.806642207062396e-07,
+          "step": 800
+        },
+        {
+          "add_loss": 2.9898458251409465e-06,
+          "loss": 0.0005713108112104237,
+          "mul_loss": 3.0782914564042585e-06,
+          "orthogonality_loss": 0.005652367137372494,
+          "separation_loss": 1.1920927533992653e-07,
+          "step": 1000
+        }
+      ]
+    }
+  ],
+  "training": {
+    "arbitrary_operand_transition_labels": false,
+    "lr": 0.02,
+    "only_generator_transition_labels": [
+      "x->x+1",
+      "x->3x"
+    ],
+    "steps": 1000
+  }
+}

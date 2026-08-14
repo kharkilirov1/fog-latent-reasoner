@@ -1,0 +1,63 @@
+{
+  "demonstrations": 2,
+  "experiment": "exp_018_inferred_operator_recurrent_execution",
+  "explicit_operation_label": false,
+  "hard_snap_between_hops": false,
+  "mixed_operator_programs": false,
+  "rows": [
+    {
+      "depths": [
+        {
+          "answer_accuracy": 1.0,
+          "depth": 1,
+          "episodes": 1000,
+          "mean_route_margin": 1.0033149799222592,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 2,
+          "episodes": 1000,
+          "mean_route_margin": 0.9969102413763757,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 4,
+          "episodes": 1000,
+          "mean_route_margin": 1.0017315713549033,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 8,
+          "episodes": 1000,
+          "mean_route_margin": 0.9921898818237241,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 16,
+          "episodes": 1000,
+          "mean_route_margin": 0.9998540708122309,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 32,
+          "episodes": 1000,
+          "mean_route_margin": 0.9896851880964823,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 64,
+          "episodes": 1000,
+          "mean_route_margin": 0.9979376900007483,
+          "route_accuracy": 1.0
+        }
+      ],
+      "seed": 62
+    }
+  ]
+}

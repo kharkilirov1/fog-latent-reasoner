@@ -1,0 +1,142 @@
+{
+  "config": {
+    "algebraic_weight": 0.5,
+    "canonicalizer_scale": 12.0,
+    "harmonics": 4,
+    "head_scale": 20.0,
+    "modulus": 31,
+    "separation_weight": 0.05
+  },
+  "experiment": "exp_013_canonicalized_joint_algebra",
+  "rows": [
+    {
+      "metrics": {
+        "all_binary_addition_accuracy": 0.13007284700870514,
+        "associativity_error": 0.04520075023174286,
+        "canonical_nearest_code_cosine_mean": 0.9786458611488342,
+        "canonical_true_target_cosine_mean": 0.504010021686554,
+        "canonicalizer_entropy_mean": 1.5796414613723755,
+        "canonicalizer_top_mass_mean": 0.4586758613586426,
+        "commutativity_error": 0.0006809011683799326,
+        "raw_nearest_code_cosine_mean": 0.7868929505348206,
+        "recurrent_depth": 32,
+        "recurrent_final_accuracy": 0.02734375,
+        "recurrent_minimum_hop_accuracy": 0.01953125,
+        "successor_accuracy": 0.6774193644523621
+      },
+      "seed": 12,
+      "trace": [
+        {
+          "associativity_loss": 0.8091853857040405,
+          "commutativity_loss": 0.538921058177948,
+          "identity_loss": 2.1741042137145996,
+          "loss": 2.746084451675415,
+          "separation_loss": 0.071039579808712,
+          "step": 1,
+          "successor_loss": 0.9814272522926331
+        },
+        {
+          "associativity_loss": 0.06940185278654099,
+          "commutativity_loss": 0.003770194249227643,
+          "identity_loss": 0.02967587672173977,
+          "loss": 0.6174840331077576,
+          "separation_loss": 0.1637323498725891,
+          "step": 80,
+          "successor_loss": 0.5578734278678894
+        },
+        {
+          "associativity_loss": 0.06838875263929367,
+          "commutativity_loss": 0.0021413930226117373,
+          "identity_loss": 0.043118901550769806,
+          "loss": 0.32078129053115845,
+          "separation_loss": 0.2681550681591034,
+          "step": 160,
+          "successor_loss": 0.25054898858070374
+        },
+        {
+          "associativity_loss": 0.04497547820210457,
+          "commutativity_loss": 0.0012040156871080399,
+          "identity_loss": 0.02939414046704769,
+          "loss": 0.18419316411018372,
+          "separation_loss": 0.4531349241733551,
+          "step": 240,
+          "successor_loss": 0.12374960631132126
+        },
+        {
+          "associativity_loss": 0.05368947237730026,
+          "commutativity_loss": 0.0017007694113999605,
+          "identity_loss": 0.02192426100373268,
+          "loss": 0.14819587767124176,
+          "separation_loss": 0.4815997779369354,
+          "step": 320,
+          "successor_loss": 0.08545864373445511
+        },
+        {
+          "associativity_loss": 0.03477229177951813,
+          "commutativity_loss": 0.001595488516613841,
+          "identity_loss": 0.021060947328805923,
+          "loss": 0.12204410135746002,
+          "separation_loss": 0.5116443037986755,
+          "step": 400,
+          "successor_loss": 0.06774751842021942
+        },
+        {
+          "associativity_loss": 0.02796366438269615,
+          "commutativity_loss": 0.0017566380556672812,
+          "identity_loss": 0.018605155870318413,
+          "loss": 0.10263262689113617,
+          "separation_loss": 0.4769524931907654,
+          "step": 480,
+          "successor_loss": 0.05462227761745453
+        },
+        {
+          "associativity_loss": 0.04070478305220604,
+          "commutativity_loss": 0.0018546849023550749,
+          "identity_loss": 0.016452737152576447,
+          "loss": 0.09659330546855927,
+          "separation_loss": 0.46568992733955383,
+          "step": 560,
+          "successor_loss": 0.04380270838737488
+        },
+        {
+          "associativity_loss": 0.04385356977581978,
+          "commutativity_loss": 0.0007274749223142862,
+          "identity_loss": 0.015439490787684917,
+          "loss": 0.09455714374780655,
+          "separation_loss": 0.4590889513492584,
+          "step": 640,
+          "successor_loss": 0.04159243032336235
+        },
+        {
+          "associativity_loss": 0.04359472170472145,
+          "commutativity_loss": 0.0013727301266044378,
+          "identity_loss": 0.014736623503267765,
+          "loss": 0.09277395904064178,
+          "separation_loss": 0.4227965176105499,
+          "step": 720,
+          "successor_loss": 0.04178209975361824
+        },
+        {
+          "associativity_loss": 0.038524024188518524,
+          "commutativity_loss": 0.000671762740239501,
+          "identity_loss": 0.014367762953042984,
+          "loss": 0.09488619863986969,
+          "separation_loss": 0.397710919380188,
+          "step": 800,
+          "successor_loss": 0.04821887984871864
+        }
+      ]
+    }
+  ],
+  "training": {
+    "algebraic_batch": 256,
+    "arbitrary_binary_pair_targets_used": false,
+    "lr": 0.02,
+    "steps": 800,
+    "supervised_terminal_depths": [
+      1,
+      2,
+      3
+    ]
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "experiment": "exp_018",
+  "rows": [
+    {
+      "depths": [
+        {
+          "answer_accuracy": 1.0,
+          "depth": 1,
+          "episodes": 1000,
+          "mean_route_margin": 0.8840740639511496,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 2,
+          "episodes": 1000,
+          "mean_route_margin": 0.877196739666164,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 4,
+          "episodes": 1000,
+          "mean_route_margin": 0.8854403926935047,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 8,
+          "episodes": 1000,
+          "mean_route_margin": 0.8998680397113785,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 16,
+          "episodes": 1000,
+          "mean_route_margin": 0.8739838308272884,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 32,
+          "episodes": 1000,
+          "mean_route_margin": 0.8858421794809401,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 64,
+          "episodes": 1000,
+          "mean_route_margin": 0.8824937633313239,
+          "route_accuracy": 1.0
+        }
+      ],
+      "seed": 60
+    },
+    {
+      "depths": [
+        {
+          "answer_accuracy": 1.0,
+          "depth": 1,
+          "episodes": 1000,
+          "mean_route_margin": 0.8833201787811704,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 2,
+          "episodes": 1000,
+          "mean_route_margin": 0.8734720437002834,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 4,
+          "episodes": 1000,
+          "mean_route_margin": 0.8697447295077145,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 8,
+          "episodes": 1000,
+          "mean_route_margin": 0.8668326834156178,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 16,
+          "episodes": 1000,
+          "mean_route_margin": 0.8828885601307266,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 32,
+          "episodes": 1000,
+          "mean_route_margin": 0.8738816799514462,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 64,
+          "episodes": 1000,
+          "mean_route_margin": 0.8667195273754187,
+          "route_accuracy": 1.0
+        }
+      ],
+      "seed": 61
+    },
+    {
+      "depths": [
+        {
+          "answer_accuracy": 1.0,
+          "depth": 1,
+          "episodes": 1000,
+          "mean_route_margin": 1.0033149799222592,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 2,
+          "episodes": 1000,
+          "mean_route_margin": 0.9969102413763757,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 4,
+          "episodes": 1000,
+          "mean_route_margin": 1.0017315713549033,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 8,
+          "episodes": 1000,
+          "mean_route_margin": 0.9921898818237241,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 16,
+          "episodes": 1000,
+          "mean_route_margin": 0.9998540708122309,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 32,
+          "episodes": 1000,
+          "mean_route_margin": 0.9896851880964823,
+          "route_accuracy": 1.0
+        },
+        {
+          "answer_accuracy": 1.0,
+          "depth": 64,
+          "episodes": 1000,
+          "mean_route_margin": 0.9979376900007483,
+          "route_accuracy": 1.0
+        }
+      ],
+      "seed": 62
+    }
+  ]
+}

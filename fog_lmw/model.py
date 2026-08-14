@@ -8,6 +8,7 @@ from .config import FOGReasonerConfig
 from .core import TinyDecoderBackbone
 from .losses import route_entropy, slot_diversity_loss
 from .memory import PersistentLatentMemory, ReusableLatentMemory
+from .registers import RegisterMachineCell, RegisterStateMemory
 from .planner import (
     DirectLatentReadout,
     CosineTiedHead,
@@ -59,7 +60,18 @@ class FOGLatentReasoner(nn.Module):
                 else {}
             ),
         )
-        if cfg.architecture_version == "query_bound_v2":
+        if cfg.architecture_version == "register_machine_v3":
+            self.memory = RegisterStateMemory(cfg.latent_slots)
+            self.machine_cell = RegisterMachineCell(
+                d_model=cfg.d_model,
+                latent_slots=cfg.latent_slots,
+                compare_rank=cfg.compare_rank,
+                machine_ff=cfg.machine_ff,
+                n_generated_operators=cfg.machine_operator_count,
+                operator_rank=cfg.machine_operator_rank,
+                hard_routing=cfg.machine_hard_routing,
+            )
+        elif cfg.architecture_version == "query_bound_v2":
             self.memory = ReusableLatentMemory(cfg.d_model, cfg.latent_slots)
         else:
             self.memory = PersistentLatentMemory(
@@ -73,6 +85,13 @@ class FOGLatentReasoner(nn.Module):
         self.lm_head.weight = self.token.weight
         if cfg.readout_mode == "direct_latent":
             self.direct_head.weight = self.token.weight
+            if cfg.architecture_version == "register_machine_v3":
+                # Start from the already-validated v2 behavior while keeping
+                # generated computation available from tick one.
+                with torch.no_grad():
+                    final_router = self.machine_cell.operator_bank.router[-1]
+                    final_router.bias.zero_()
+                    final_router.bias[0] = 4.0  # READ candidate
             # Query and key begin in one address coordinate system.  They
             # remain separate trainable projections and may specialize later.
             with torch.no_grad():
@@ -154,7 +173,7 @@ class FOGLatentReasoner(nn.Module):
         )
 
     def _memory_size_after_steps(self, reasoning_steps: int) -> int:
-        if self.cfg.architecture_version == "query_bound_v2":
+        if self.cfg.architecture_version in {"query_bound_v2", "register_machine_v3"}:
             return self.cfg.latent_slots if reasoning_steps > 0 else 0
         size = reasoning_steps * self.cfg.latent_slots
         return min(size, self.cfg.memory_slots) if self.cfg.memory_slots > 0 else size
@@ -170,19 +189,12 @@ class FOGLatentReasoner(nn.Module):
                 f"{decoder_len} = {total} > {self.cfg.max_seq_len}"
             )
 
-    def reason(
+    def _prepare_reasoning_prompt(
         self,
         prompt_ids: torch.Tensor,
-        prompt_attention_mask: torch.Tensor | None = None,
-        reasoning_steps: int | None = None,
-        return_diagnostics: bool = False,
-    ) -> tuple[torch.Tensor | None, dict]:
-        """Build latent memory without emitting any vocabulary tokens."""
-        steps = self.cfg.reasoning_steps if reasoning_steps is None else reasoning_steps
-        if steps < 0:
-            raise ValueError("reasoning_steps must be >= 0")
-        if self.cfg.readout_mode == "direct_latent" and steps < 1:
-            raise ValueError("direct_latent readout requires at least one reasoning step")
+        prompt_attention_mask: torch.Tensor | None,
+    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
+        """Embed a fixed lexical prompt and locate each example's query token."""
         x = self.token(prompt_ids)
         batch_size, prompt_length = prompt_ids.shape
         if prompt_attention_mask is None:
@@ -203,69 +215,183 @@ class FOGLatentReasoner(nn.Module):
         positions = torch.arange(prompt_length, device=prompt_ids.device).unsqueeze(0)
         query_indices = positions.masked_fill(~lexical_mask, -1).max(dim=1).values
         batch_indices = torch.arange(batch_size, device=prompt_ids.device)
+        return x, lexical_mask, query_indices, batch_indices
+
+    def _reasoning_step_embedded(
+        self,
+        x: torch.Tensor,
+        lexical_mask: torch.Tensor,
+        query_indices: torch.Tensor,
+        batch_indices: torch.Tensor,
+        memory: torch.Tensor | None,
+    ) -> tuple[torch.Tensor, torch.Tensor, dict, dict, torch.Tensor | None, torch.Tensor | None]:
+        """Apply exactly one shared latent transition to an existing memory state.
+
+        This explicit one-step boundary is intentionally public-facing through
+        :meth:`transition_memory`: it makes recurrent FOG dynamics directly
+        probeable with JVP/VJP sketches without reconstructing a full Jacobian.
+        """
+        prompt_length = x.size(1)
+        h, context_mask = self._run_backbone(
+            x, memory, token_attention_mask=lexical_mask
+        )
+        query_state: torch.Tensor | None = None
+        binding_query_state: torch.Tensor | None = None
+
+        if self.cfg.binding_mode == "query_conditioned":
+            query_state = h[batch_indices, query_indices]
+            raw_query_state = x[batch_indices, query_indices]
+            if (
+                self.cfg.binding_query_update == "primary_recurrent"
+                and memory is not None
+            ):
+                if memory.size(1) < 1:
+                    raise ValueError("recurrent binding query requires a primary memory slot")
+                # ReusableLatentMemory preserves slot zero exactly, so the
+                # protected carrier itself is the recurrent address register.
+                binding_query_state = memory[:, 0]
+            else:
+                binding_query_state = raw_query_state
+
+            payload_context = x if memory is None else torch.cat([x, memory], dim=1)
+            workspace_selectable = context_mask.clone()
+            workspace_selectable[batch_indices, query_indices] = False
+            binding_addresses = []
+            binding_payloads = []
+            binding_masks = []
+            for relation_index, offset in enumerate(self.cfg.binding_offsets):
+                if offset >= prompt_length:
+                    continue
+                role = self.planner.binding_role[relation_index]
+                binding_addresses.append(x[:, :-offset] + role)
+                binding_payloads.append(x[:, offset:])
+                binding_masks.append(
+                    lexical_mask[:, :-offset] & lexical_mask[:, offset:]
+                )
+            if not binding_addresses:
+                raise ValueError("prompt is too short for configured binding offsets")
+            binding_context = torch.cat(binding_addresses, dim=1)
+            binding_payload = torch.cat(binding_payloads, dim=1)
+            binding_selectable = torch.cat(binding_masks, dim=1)
+            if not torch.all(binding_selectable.any(dim=-1)):
+                raise ValueError(
+                    "query-conditioned binding requires context besides the query token"
+                )
+            z, pstats = self.planner(
+                h,
+                query_state,
+                context_mask=workspace_selectable,
+                binding_mask=binding_selectable,
+                payload_context=payload_context,
+                binding_context=binding_context,
+                binding_payload=binding_payload,
+                binding_query_state=binding_query_state,
+            )
+            if self.cfg.architecture_version == "register_machine_v3":
+                z, machine_stats = self.machine_cell(
+                    memory,
+                    z,
+                    initial_value=(binding_query_state if memory is None else None),
+                    initial_control=(query_state if memory is None else None),
+                )
+                pstats = {**pstats, "machine": machine_stats}
+                new_memory, mstats = self.memory.forward_preserving(
+                    memory,
+                    z,
+                    protected_slots=self.cfg.latent_slots,
+                )
+            else:
+                new_memory, mstats = self.memory.forward_preserving(
+                    memory,
+                    z,
+                    protected_slots=self.cfg.protected_binding_slots,
+                )
+        else:
+            z, pstats = self.planner(h, context_mask=context_mask)
+            new_memory, mstats = self.memory(memory, z)
+
+        return new_memory, z, pstats, mstats, query_state, binding_query_state
+
+    def transition_memory(
+        self,
+        prompt_ids: torch.Tensor,
+        memory: torch.Tensor | None,
+        prompt_attention_mask: torch.Tensor | None = None,
+        *,
+        return_diagnostics: bool = False,
+    ) -> tuple[torch.Tensor, dict]:
+        """Run one recurrent latent step from an explicit memory state.
+
+        ``memory`` is the complete recurrent machine state. For query-bound v2
+        it has fixed shape ``[B, K, D]``; when ``binding_query_update`` is
+        ``primary_recurrent``, slot zero is used as the next binding address.
+        This method performs no vocabulary projection and is differentiable
+        with respect to ``memory`` for JVP/VJP instrumentation.
+        """
+        x, lexical_mask, query_indices, batch_indices = self._prepare_reasoning_prompt(
+            prompt_ids, prompt_attention_mask
+        )
+        if memory is not None:
+            if memory.ndim != 3 or memory.size(0) != prompt_ids.size(0) or memory.size(2) != self.cfg.d_model:
+                raise ValueError("memory must have shape [batch, slots, d_model]")
+            if (
+                self.cfg.architecture_version == "query_bound_v2"
+                and memory.size(1) != self.cfg.latent_slots
+            ):
+                raise ValueError("query_bound_v2 memory must contain exactly latent_slots states")
+        new_memory, z, pstats, mstats, query_state, binding_query_state = (
+            self._reasoning_step_embedded(
+                x, lexical_mask, query_indices, batch_indices, memory
+            )
+        )
+        aux = {
+            "latent": z,
+            "primary_latent": z[:, 0] if self.cfg.binding_mode == "query_conditioned" else None,
+            "query_state": query_state,
+            "binding_query_state": binding_query_state,
+            "planner": pstats if return_diagnostics else None,
+            "memory": mstats if return_diagnostics else None,
+        }
+        return new_memory, aux
+
+    def reason(
+        self,
+        prompt_ids: torch.Tensor,
+        prompt_attention_mask: torch.Tensor | None = None,
+        reasoning_steps: int | None = None,
+        return_diagnostics: bool = False,
+    ) -> tuple[torch.Tensor | None, dict]:
+        """Build latent memory without emitting any vocabulary tokens."""
+        steps = self.cfg.reasoning_steps if reasoning_steps is None else reasoning_steps
+        if steps < 0:
+            raise ValueError("reasoning_steps must be >= 0")
+        if self.cfg.readout_mode == "direct_latent" and steps < 1:
+            raise ValueError("direct_latent readout requires at least one reasoning step")
+        x, lexical_mask, query_indices, batch_indices = self._prepare_reasoning_prompt(
+            prompt_ids, prompt_attention_mask
+        )
         memory = None
         latest_primary: torch.Tensor | None = None
         latest_query: torch.Tensor | None = None
         history: list[dict] = []
         diversity_terms = []
         entropy_terms = []
+        halt_probabilities = []
         need_diversity = self.cfg.diversity_weight != 0.0
         need_entropy = self.cfg.route_entropy_weight != 0.0
 
         for t in range(steps):
-            h, context_mask = self._run_backbone(
-                x, memory, token_attention_mask=lexical_mask
+            memory, z, pstats, mstats, query_state, binding_query_state = (
+                self._reasoning_step_embedded(
+                    x, lexical_mask, query_indices, batch_indices, memory
+                )
             )
             if self.cfg.binding_mode == "query_conditioned":
-                query_state = h[batch_indices, query_indices]
-                raw_query_state = x[batch_indices, query_indices]
-                payload_context = (
-                    x if memory is None else torch.cat([x, memory], dim=1)
-                )
-                workspace_selectable = context_mask.clone()
-                workspace_selectable[batch_indices, query_indices] = False
-                binding_addresses = []
-                binding_payloads = []
-                binding_masks = []
-                for relation_index, offset in enumerate(self.cfg.binding_offsets):
-                    if offset >= prompt_length:
-                        continue
-                    role = self.planner.binding_role[relation_index]
-                    binding_addresses.append(x[:, :-offset] + role)
-                    binding_payloads.append(x[:, offset:])
-                    binding_masks.append(
-                        lexical_mask[:, :-offset] & lexical_mask[:, offset:]
-                    )
-                if not binding_addresses:
-                    raise ValueError("prompt is too short for configured binding offsets")
-                binding_context = torch.cat(binding_addresses, dim=1)
-                binding_payload = torch.cat(binding_payloads, dim=1)
-                binding_selectable = torch.cat(binding_masks, dim=1)
-                if not torch.all(binding_selectable.any(dim=-1)):
-                    raise ValueError(
-                        "query-conditioned binding requires context besides the query token"
-                    )
-                z, pstats = self.planner(
-                    h,
-                    query_state,
-                    context_mask=workspace_selectable,
-                    binding_mask=binding_selectable,
-                    payload_context=payload_context,
-                    binding_context=binding_context,
-                    binding_payload=binding_payload,
-                    binding_query_state=raw_query_state,
-                )
-                memory, mstats = self.memory.forward_preserving(
-                    memory,
-                    z,
-                    protected_slots=self.cfg.protected_binding_slots,
-                )
                 latest_primary = z[:, 0]
                 latest_query = query_state
-            else:
-                z, pstats = self.planner(h, context_mask=context_mask)
-                memory, mstats = self.memory(memory, z)
 
+            if self.cfg.architecture_version == "register_machine_v3":
+                halt_probabilities.append(pstats["machine"]["halt_probability"])
             if need_diversity:
                 diversity_terms.append(slot_diversity_loss(z))
             if need_entropy:
@@ -281,6 +407,7 @@ class FOGLatentReasoner(nn.Module):
                         "memory_size": memory.size(1),
                         "planner": pstats,
                         "memory": mstats,
+                        "binding_query_state": binding_query_state,
                     }
                 )
 
@@ -299,8 +426,91 @@ class FOGLatentReasoner(nn.Module):
             ),
             "primary_latent": latest_primary,
             "query_state": latest_query,
+            "binding_query_update": self.cfg.binding_query_update,
+            "halt_probabilities": (
+                torch.stack(halt_probabilities, dim=1) if halt_probabilities else None
+            ),
         }
         return memory, aux
+
+    def reason_adaptive(
+        self,
+        prompt_ids: torch.Tensor,
+        prompt_attention_mask: torch.Tensor | None = None,
+        *,
+        max_steps: int | None = None,
+        min_steps: int | None = None,
+        halt_threshold: float | None = None,
+        return_diagnostics: bool = False,
+    ) -> tuple[torch.Tensor, dict]:
+        """Inference-only adaptive latent execution for register_machine_v3.
+
+        The external loop is only a safety cap. Each example freezes its entire
+        register file once the learned HALT probability crosses the threshold.
+        """
+        if self.cfg.architecture_version != "register_machine_v3":
+            raise ValueError("reason_adaptive requires register_machine_v3")
+        max_steps = self.cfg.reasoning_steps if max_steps is None else max_steps
+        min_steps = self.cfg.machine_min_steps if min_steps is None else min_steps
+        threshold = (
+            self.cfg.machine_halt_threshold
+            if halt_threshold is None
+            else halt_threshold
+        )
+        if max_steps < 1 or min_steps < 1 or min_steps > max_steps:
+            raise ValueError("adaptive step bounds are invalid")
+        if not 0.0 < threshold < 1.0:
+            raise ValueError("halt_threshold must be in (0,1)")
+
+        x, lexical_mask, query_indices, batch_indices = self._prepare_reasoning_prompt(
+            prompt_ids, prompt_attention_mask
+        )
+        batch = prompt_ids.size(0)
+        memory = None
+        halted = torch.zeros(batch, dtype=torch.bool, device=prompt_ids.device)
+        steps_used = torch.full(
+            (batch,), max_steps, dtype=torch.long, device=prompt_ids.device
+        )
+        halt_history = []
+        history = []
+        for t in range(max_steps):
+            candidate, z, pstats, mstats, query_state, binding_query_state = (
+                self._reasoning_step_embedded(
+                    x, lexical_mask, query_indices, batch_indices, memory
+                )
+            )
+            if memory is not None and torch.any(halted):
+                candidate = torch.where(halted[:, None, None], memory, candidate)
+            halt_prob = pstats["machine"]["halt_probability"]
+            halt_history.append(halt_prob)
+            if return_diagnostics:
+                history.append(
+                    {
+                        "step": t,
+                        "latent": z,
+                        "memory": mstats,
+                        "planner": pstats,
+                        "binding_query_state": binding_query_state,
+                    }
+                )
+            memory = candidate
+            if t + 1 >= min_steps:
+                newly = (~halted) & halt_prob.ge(threshold)
+                steps_used = torch.where(
+                    newly, torch.full_like(steps_used, t + 1), steps_used
+                )
+                halted = halted | newly
+                if bool(torch.all(halted)):
+                    break
+        if memory is None:
+            raise AssertionError("adaptive machine executed zero steps")
+        return memory, {
+            "primary_latent": memory[:, 0],
+            "halt_probabilities": torch.stack(halt_history, dim=1),
+            "steps_used": steps_used,
+            "halted": halted,
+            "history": history,
+        }
 
     def _decode_direct_continuation(
         self,

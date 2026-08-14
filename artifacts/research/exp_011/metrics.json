@@ -1,0 +1,354 @@
+{
+  "arbitrary_binary_pairs_seen_in_training": false,
+  "config": {
+    "harmonics": 6,
+    "head_scale": 20.0,
+    "modulus": 31,
+    "separation_weight": 0.05
+  },
+  "experiment": "exp_011_learned_chart_depth_consistency",
+  "rows": [
+    {
+      "evaluation": {
+        "all_binary_addition_accuracy": 1.0,
+        "arm": "closed_cycle",
+        "closure_edge_accuracy": 1.0,
+        "heldout_binary_pair_accuracy_b_ne_1": 1.0,
+        "mean_pth_root_residual": 0.015106376260519028,
+        "recurrence": [
+          {
+            "depth": 2,
+            "final_accuracy": 1.0,
+            "minimum_hop_accuracy": 1.0
+          },
+          {
+            "depth": 4,
+            "final_accuracy": 1.0,
+            "minimum_hop_accuracy": 1.0
+          },
+          {
+            "depth": 8,
+            "final_accuracy": 1.0,
+            "minimum_hop_accuracy": 1.0
+          },
+          {
+            "depth": 16,
+            "final_accuracy": 1.0,
+            "minimum_hop_accuracy": 1.0
+          },
+          {
+            "depth": 32,
+            "final_accuracy": 1.0,
+            "minimum_hop_accuracy": 1.0
+          },
+          {
+            "depth": 64,
+            "final_accuracy": 1.0,
+            "minimum_hop_accuracy": 1.0
+          }
+        ],
+        "self_decode_accuracy": 1.0,
+        "successor_accuracy_all_edges": 1.0
+      },
+      "seed": 0,
+      "trace": [
+        {
+          "consistency_loss": 0.9484047293663025,
+          "loss": 0.9486106634140015,
+          "separation_loss": 0.0041182031854987144,
+          "step": 1
+        },
+        {
+          "consistency_loss": 0.033900436013936996,
+          "loss": 0.03390142321586609,
+          "separation_loss": 1.972680547623895e-05,
+          "step": 60
+        },
+        {
+          "consistency_loss": 0.0027847217861562967,
+          "loss": 0.0027855189982801676,
+          "separation_loss": 1.5943141988827847e-05,
+          "step": 120
+        },
+        {
+          "consistency_loss": 0.00016921822680160403,
+          "loss": 0.00017013229080475867,
+          "separation_loss": 1.8281154552823864e-05,
+          "step": 180
+        },
+        {
+          "consistency_loss": 7.55889413994737e-06,
+          "loss": 8.48929448693525e-06,
+          "separation_loss": 1.8608010577736422e-05,
+          "step": 240
+        },
+        {
+          "consistency_loss": 1.448456998787151e-07,
+          "loss": 1.072169879989815e-06,
+          "separation_loss": 1.8546483261161484e-05,
+          "step": 300
+        },
+        {
+          "consistency_loss": -6.729556645268531e-08,
+          "loss": 8.592595577283646e-07,
+          "separation_loss": 1.85311018867651e-05,
+          "step": 360
+        },
+        {
+          "consistency_loss": -5.960464477539063e-08,
+          "loss": 8.669504723002319e-07,
+          "separation_loss": 1.85311018867651e-05,
+          "step": 420
+        },
+        {
+          "consistency_loss": 8.120331926875224e-07,
+          "loss": 1.738588252919726e-06,
+          "separation_loss": 1.85311018867651e-05,
+          "step": 480
+        },
+        {
+          "consistency_loss": -5.3195538640693485e-08,
+          "loss": 8.73359567776788e-07,
+          "separation_loss": 1.85311018867651e-05,
+          "step": 540
+        },
+        {
+          "consistency_loss": 1.4016704881214537e-06,
+          "loss": 2.3284178496396635e-06,
+          "separation_loss": 1.8534947230364196e-05,
+          "step": 600
+        }
+      ]
+    },
+    {
+      "evaluation": {
+        "all_binary_addition_accuracy": 1.0,
+        "arm": "closed_cycle",
+        "closure_edge_accuracy": 1.0,
+        "heldout_binary_pair_accuracy_b_ne_1": 1.0,
+        "mean_pth_root_residual": 9.06281711650081e-05,
+        "recurrence": [
+          {
+            "depth": 2,
+            "final_accuracy": 1.0,
+            "minimum_hop_accuracy": 1.0
+          },
+          {
+            "depth": 4,
+            "final_accuracy": 1.0,
+            "minimum_hop_accuracy": 1.0
+          },
+          {
+            "depth": 8,
+            "final_accuracy": 1.0,
+            "minimum_hop_accuracy": 1.0
+          },
+          {
+            "depth": 16,
+            "final_accuracy": 1.0,
+            "minimum_hop_accuracy": 1.0
+          },
+          {
+            "depth": 32,
+            "final_accuracy": 1.0,
+            "minimum_hop_accuracy": 1.0
+          },
+          {
+            "depth": 64,
+            "final_accuracy": 1.0,
+            "minimum_hop_accuracy": 1.0
+          }
+        ],
+        "self_decode_accuracy": 1.0,
+        "successor_accuracy_all_edges": 1.0
+      },
+      "seed": 1,
+      "trace": [
+        {
+          "consistency_loss": 0.9864405989646912,
+          "loss": 0.9867095351219177,
+          "separation_loss": 0.005378753878176212,
+          "step": 1
+        },
+        {
+          "consistency_loss": 0.041224122047424316,
+          "loss": 0.04420366510748863,
+          "separation_loss": 0.05959084630012512,
+          "step": 60
+        },
+        {
+          "consistency_loss": 0.0013895848533138633,
+          "loss": 0.0017826480325311422,
+          "separation_loss": 0.007861262187361717,
+          "step": 120
+        },
+        {
+          "consistency_loss": 4.64281729364302e-05,
+          "loss": 0.00038814431172795594,
+          "separation_loss": 0.006834322586655617,
+          "step": 180
+        },
+        {
+          "consistency_loss": 1.4837069102213718e-06,
+          "loss": 0.0003428660274948925,
+          "separation_loss": 0.006827646400779486,
+          "step": 240
+        },
+        {
+          "consistency_loss": -2.4354584127195267e-08,
+          "loss": 0.0003413789963815361,
+          "separation_loss": 0.006828066892921925,
+          "step": 300
+        },
+        {
+          "consistency_loss": -5.8963735227735015e-08,
+          "loss": 0.0003413439553696662,
+          "separation_loss": 0.006828058511018753,
+          "step": 360
+        },
+        {
+          "consistency_loss": 5.8771461226569954e-06,
+          "loss": 0.0003472818061709404,
+          "separation_loss": 0.006828093435615301,
+          "step": 420
+        },
+        {
+          "consistency_loss": 1.37020178954117e-05,
+          "loss": 0.0003551061381585896,
+          "separation_loss": 0.006828082259744406,
+          "step": 480
+        },
+        {
+          "consistency_loss": -1.6663664226257424e-08,
+          "loss": 0.0003413866215851158,
+          "separation_loss": 0.00682806596159935,
+          "step": 540
+        },
+        {
+          "consistency_loss": -5.7681916132423794e-08,
+          "loss": 0.00034134561428800225,
+          "separation_loss": 0.00682806596159935,
+          "step": 600
+        }
+      ]
+    },
+    {
+      "evaluation": {
+        "all_binary_addition_accuracy": 1.0,
+        "arm": "closed_cycle",
+        "closure_edge_accuracy": 1.0,
+        "heldout_binary_pair_accuracy_b_ne_1": 1.0,
+        "mean_pth_root_residual": 2.5033818928932305e-06,
+        "recurrence": [
+          {
+            "depth": 2,
+            "final_accuracy": 1.0,
+            "minimum_hop_accuracy": 1.0
+          },
+          {
+            "depth": 4,
+            "final_accuracy": 1.0,
+            "minimum_hop_accuracy": 1.0
+          },
+          {
+            "depth": 8,
+            "final_accuracy": 1.0,
+            "minimum_hop_accuracy": 1.0
+          },
+          {
+            "depth": 16,
+            "final_accuracy": 1.0,
+            "minimum_hop_accuracy": 1.0
+          },
+          {
+            "depth": 32,
+            "final_accuracy": 1.0,
+            "minimum_hop_accuracy": 1.0
+          },
+          {
+            "depth": 64,
+            "final_accuracy": 1.0,
+            "minimum_hop_accuracy": 1.0
+          }
+        ],
+        "self_decode_accuracy": 1.0,
+        "successor_accuracy_all_edges": 1.0
+      },
+      "seed": 2,
+      "trace": [
+        {
+          "consistency_loss": 0.9711686968803406,
+          "loss": 0.97201007604599,
+          "separation_loss": 0.01682799868285656,
+          "step": 1
+        },
+        {
+          "consistency_loss": 0.03832051530480385,
+          "loss": 0.038344334810972214,
+          "separation_loss": 0.0004764106997754425,
+          "step": 60
+        },
+        {
+          "consistency_loss": 0.002851340686902404,
+          "loss": 0.0028535944875329733,
+          "separation_loss": 4.507544144871645e-05,
+          "step": 120
+        },
+        {
+          "consistency_loss": 0.00013288503396324813,
+          "loss": 0.0001343061012448743,
+          "separation_loss": 2.8421396564226598e-05,
+          "step": 180
+        },
+        {
+          "consistency_loss": 3.496805902614142e-06,
+          "loss": 4.884805548499571e-06,
+          "separation_loss": 2.7759995646192692e-05,
+          "step": 240
+        },
+        {
+          "consistency_loss": -1.0895472080107993e-08,
+          "loss": 1.3763353763351915e-06,
+          "separation_loss": 2.7744617909775116e-05,
+          "step": 300
+        },
+        {
+          "consistency_loss": -5.5118274389087674e-08,
+          "loss": 1.3324972769623855e-06,
+          "separation_loss": 2.775231041596271e-05,
+          "step": 360
+        },
+        {
+          "consistency_loss": -6.601374735737409e-08,
+          "loss": 1.3216017578088213e-06,
+          "separation_loss": 2.775231041596271e-05,
+          "step": 420
+        },
+        {
+          "consistency_loss": -7.242284283393019e-08,
+          "loss": 1.3151926623322652e-06,
+          "separation_loss": 2.775231041596271e-05,
+          "step": 480
+        },
+        {
+          "consistency_loss": -8.331831935493028e-08,
+          "loss": 1.304297143178701e-06,
+          "separation_loss": 2.775231041596271e-05,
+          "step": 540
+        },
+        {
+          "consistency_loss": -6.921829509565214e-08,
+          "loss": 1.3183971532271244e-06,
+          "separation_loss": 2.775231041596271e-05,
+          "step": 600
+        }
+      ]
+    }
+  ],
+  "train_depths": [
+    1,
+    2,
+    3
+  ],
+  "training_examples_are_successor_sequences_only": true
+}

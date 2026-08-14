@@ -1,0 +1,351 @@
+{
+  "experiment": "exp_035_nonlinear_blackbox_structural_compiler",
+  "protocol": {
+    "claim_boundary": "finite 2D conformal nonlinear orbit; tangent dynamics only",
+    "compiled_object": "polar/tangent action field",
+    "context_graph_given_to_compiler": false,
+    "edge_discovery": "apply black-box operators and nearest-match within discovered orbit",
+    "examples": 1024,
+    "holonomy_threshold": 0.4,
+    "jacobian_estimation": "central finite differences in observed hidden coordinates",
+    "jacobians_given_to_compiler": false,
+    "nonlinear_warp_given_to_compiler": false,
+    "orbit_discovery": "active black-box BFS from one hidden state",
+    "program_depth": 256,
+    "semantic_coordinates_given_to_compiler": false
+  },
+  "rows": [
+    {
+      "compiled_tangent_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 1.0,
+        "mean_tangent_cosine": 0.9999898072167684
+      },
+      "discovered_cycle_lengths": {
+        "op0": [
+          7,
+          7
+        ],
+        "op1": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "discovered_orbit_size": 14,
+      "global_linear_fit_relative_error": {
+        "op0": 0.1610763539203008,
+        "op1": 0.12904053238749288
+      },
+      "jacobian_noise": 0.01,
+      "law_accepted": {
+        "op0": true,
+        "op1": true
+      },
+      "law_evidence": {
+        "op0": {
+          "cycle_lengths": [
+            7,
+            7
+          ],
+          "graph_order": 7,
+          "identity_residuals": [
+            0.004332980981107131,
+            0.015850031438789942
+          ],
+          "max_identity_residual": 0.015850031438789942
+        },
+        "op1": {
+          "cycle_lengths": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "graph_order": 2,
+          "identity_residuals": [
+            0.0029012802271506455,
+            0.0012377491971386529,
+            0.0018798393929658824,
+            0.0030575254861915915,
+            0.0025725058138955656,
+            0.007782044951030037,
+            0.006274493730813654
+          ],
+          "max_identity_residual": 0.007782044951030037
+        }
+      },
+      "raw_tangent_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.3818359375,
+        "fraction_cosine_gt_0_999": 0.013671875,
+        "mean_tangent_cosine": 0.9862031271951097
+      },
+      "seed": 150,
+      "synchronization_loss": 4.206076753867554e-06,
+      "synchronized_tangent_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 0.951171875,
+        "mean_tangent_cosine": 0.9997361301816589
+      }
+    },
+    {
+      "compiled_tangent_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 1.0,
+        "mean_tangent_cosine": 0.9999089389997773
+      },
+      "discovered_cycle_lengths": {
+        "op0": [
+          7,
+          7
+        ],
+        "op1": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "discovered_orbit_size": 14,
+      "global_linear_fit_relative_error": {
+        "op0": 0.1610763539203008,
+        "op1": 0.12904053238749288
+      },
+      "jacobian_noise": 0.03,
+      "law_accepted": {
+        "op0": true,
+        "op1": true
+      },
+      "law_evidence": {
+        "op0": {
+          "cycle_lengths": [
+            7,
+            7
+          ],
+          "graph_order": 7,
+          "identity_residuals": [
+            0.013311437311373719,
+            0.04735414638646389
+          ],
+          "max_identity_residual": 0.04735414638646389
+        },
+        "op1": {
+          "cycle_lengths": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "graph_order": 2,
+          "identity_residuals": [
+            0.00855400503886076,
+            0.0037498289818853905,
+            0.00580832902642719,
+            0.00920725231914087,
+            0.007435787554294518,
+            0.023131599864247277,
+            0.018702954391382923
+          ],
+          "max_identity_residual": 0.023131599864247277
+        }
+      },
+      "raw_tangent_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.0146484375,
+        "fraction_cosine_gt_0_999": 0.0009765625,
+        "mean_tangent_cosine": 0.8803051054690949
+      },
+      "seed": 150,
+      "synchronization_loss": 3.748818083189214e-05,
+      "synchronized_tangent_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.9580078125,
+        "fraction_cosine_gt_0_999": 0.4677734375,
+        "mean_tangent_cosine": 0.9976195609679918
+      }
+    },
+    {
+      "compiled_tangent_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 0.9736328125,
+        "mean_tangent_cosine": 0.9997489002014873
+      },
+      "discovered_cycle_lengths": {
+        "op0": [
+          7,
+          7
+        ],
+        "op1": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "discovered_orbit_size": 14,
+      "global_linear_fit_relative_error": {
+        "op0": 0.1610763539203008,
+        "op1": 0.12904053238749288
+      },
+      "jacobian_noise": 0.05,
+      "law_accepted": {
+        "op0": true,
+        "op1": true
+      },
+      "law_evidence": {
+        "op0": {
+          "cycle_lengths": [
+            7,
+            7
+          ],
+          "graph_order": 7,
+          "identity_residuals": [
+            0.022702860222654296,
+            0.07860449429041112
+          ],
+          "max_identity_residual": 0.07860449429041112
+        },
+        "op1": {
+          "cycle_lengths": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "graph_order": 2,
+          "identity_residuals": [
+            0.014015250577916461,
+            0.006308516785205384,
+            0.009950353040891096,
+            0.01540318912356214,
+            0.01193065155473228,
+            0.0381992550075733,
+            0.030952813002720004
+          ],
+          "max_identity_residual": 0.0381992550075733
+        }
+      },
+      "raw_tangent_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.00390625,
+        "fraction_cosine_gt_0_999": 0.0,
+        "mean_tangent_cosine": 0.686934316107941
+      },
+      "seed": 150,
+      "synchronization_loss": 0.00010314412702382925,
+      "synchronized_tangent_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.779296875,
+        "fraction_cosine_gt_0_999": 0.3076171875,
+        "mean_tangent_cosine": 0.993377797973075
+      }
+    },
+    {
+      "compiled_tangent_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 0.75390625,
+        "mean_tangent_cosine": 0.9990136207805977
+      },
+      "discovered_cycle_lengths": {
+        "op0": [
+          7,
+          7
+        ],
+        "op1": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "discovered_orbit_size": 14,
+      "global_linear_fit_relative_error": {
+        "op0": 0.1610763539203008,
+        "op1": 0.12904053238749288
+      },
+      "jacobian_noise": 0.1,
+      "law_accepted": {
+        "op0": true,
+        "op1": true
+      },
+      "law_evidence": {
+        "op0": {
+          "cycle_lengths": [
+            7,
+            7
+          ],
+          "graph_order": 7,
+          "identity_residuals": [
+            0.047964824735149264,
+            0.15568823493352932
+          ],
+          "max_identity_residual": 0.15568823493352932
+        },
+        "op1": {
+          "cycle_lengths": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "graph_order": 2,
+          "identity_residuals": [
+            0.026890899452702167,
+            0.012890781662481664,
+            0.02115009358651277,
+            0.031094867963791552,
+            0.021605494297688727,
+            0.07466757477797885,
+            0.06065173323778445
+          ],
+          "max_identity_residual": 0.07466757477797885
+        }
+      },
+      "raw_tangent_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.0009765625,
+        "fraction_cosine_gt_0_999": 0.0,
+        "mean_tangent_cosine": 0.022916736075360628
+      },
+      "seed": 150,
+      "synchronization_loss": 0.00040314281044036445,
+      "synchronized_tangent_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.4404296875,
+        "fraction_cosine_gt_0_999": 0.1435546875,
+        "mean_tangent_cosine": 0.9735119140210046
+      }
+    }
+  ]
+}

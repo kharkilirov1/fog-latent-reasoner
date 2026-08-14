@@ -1,0 +1,277 @@
+{
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "train_steps": 150,
+  "train_depths": [
+    1,
+    2,
+    3
+  ],
+  "eval_depths": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    8
+  ],
+  "rows": [
+    {
+      "seed": 0,
+      "depth": 1,
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_nontrivial_operator_mass": 0.6462339535355568,
+      "selected_operator_fraction": {
+        "READ": 0.13671875,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.86328125,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    {
+      "seed": 0,
+      "depth": 2,
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_nontrivial_operator_mass": 0.7081549093127251,
+      "selected_operator_fraction": {
+        "READ": 0.087158203125,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.912841796875,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    {
+      "seed": 0,
+      "depth": 3,
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_nontrivial_operator_mass": 0.7284270375967026,
+      "selected_operator_fraction": {
+        "READ": 0.06363932291666667,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.9363606770833334,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    {
+      "seed": 0,
+      "depth": 4,
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_nontrivial_operator_mass": 0.7426747903227806,
+      "selected_operator_fraction": {
+        "READ": 0.0474853515625,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.9525146484375,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    {
+      "seed": 0,
+      "depth": 6,
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_nontrivial_operator_mass": 0.7558391280472279,
+      "selected_operator_fraction": {
+        "READ": 0.031575520833333336,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.9684244791666666,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    {
+      "seed": 0,
+      "depth": 8,
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_nontrivial_operator_mass": 0.7630623737350106,
+      "selected_operator_fraction": {
+        "READ": 0.0234375,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.9765625,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    {
+      "seed": 1,
+      "depth": 1,
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_nontrivial_operator_mass": 0.7413363754749298,
+      "selected_operator_fraction": {
+        "READ": 0.11083984375,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.88916015625,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    {
+      "seed": 1,
+      "depth": 2,
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_nontrivial_operator_mass": 0.8135910667479038,
+      "selected_operator_fraction": {
+        "READ": 0.07470703125,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.92529296875,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    {
+      "seed": 1,
+      "depth": 3,
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_nontrivial_operator_mass": 0.8540952652692795,
+      "selected_operator_fraction": {
+        "READ": 0.047037760416666664,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.9529622395833334,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    {
+      "seed": 1,
+      "depth": 4,
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_nontrivial_operator_mass": 0.8688426464796066,
+      "selected_operator_fraction": {
+        "READ": 0.0394287109375,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.9605712890625,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    {
+      "seed": 1,
+      "depth": 6,
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_nontrivial_operator_mass": 0.8911793703834215,
+      "selected_operator_fraction": {
+        "READ": 0.024169921875,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.975830078125,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    {
+      "seed": 1,
+      "depth": 8,
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_nontrivial_operator_mass": 0.9001826280727983,
+      "selected_operator_fraction": {
+        "READ": 0.0179443359375,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.9820556640625,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    {
+      "seed": 2,
+      "depth": 1,
+      "accuracy": 1.0,
+      "mean_target_cosine": 0.999999962747097,
+      "mean_nontrivial_operator_mass": 0.7740490287542343,
+      "selected_operator_fraction": {
+        "READ": 0.1298828125,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.8701171875,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    {
+      "seed": 2,
+      "depth": 2,
+      "accuracy": 1.0,
+      "mean_target_cosine": 0.9999998807907104,
+      "mean_nontrivial_operator_mass": 0.851987786591053,
+      "selected_operator_fraction": {
+        "READ": 0.08935546875,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.91064453125,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    {
+      "seed": 2,
+      "depth": 3,
+      "accuracy": 1.0,
+      "mean_target_cosine": 0.9999997615814209,
+      "mean_nontrivial_operator_mass": 0.8854002356529236,
+      "selected_operator_fraction": {
+        "READ": 0.0634765625,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.9365234375,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    {
+      "seed": 2,
+      "depth": 4,
+      "accuracy": 1.0,
+      "mean_target_cosine": 0.9999994933605194,
+      "mean_nontrivial_operator_mass": 0.9120525438338518,
+      "selected_operator_fraction": {
+        "READ": 0.043701171875,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.956298828125,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    {
+      "seed": 2,
+      "depth": 6,
+      "accuracy": 1.0,
+      "mean_target_cosine": 0.9999988526105881,
+      "mean_nontrivial_operator_mass": 0.9320552460849285,
+      "selected_operator_fraction": {
+        "READ": 0.028727213541666668,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.9712727864583334,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    {
+      "seed": 2,
+      "depth": 8,
+      "accuracy": 1.0,
+      "mean_target_cosine": 0.999997928738594,
+      "mean_nontrivial_operator_mass": 0.9418710144236684,
+      "selected_operator_fraction": {
+        "READ": 0.0220947265625,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.9779052734375,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    }
+  ],
+  "all_accuracy_exact": true,
+  "min_cosine": 0.999997928738594
+}

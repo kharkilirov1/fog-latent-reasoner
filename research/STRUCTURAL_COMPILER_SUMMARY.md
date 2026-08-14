@@ -1,64 +1,166 @@
-# STRUCTURAL COMPILER SUMMARY: From Neural Learner to Compiled Latent Machine
+# Structural Operator Compiler — current research summary
 
-## Abstract
-This document synthesizes the experimental findings from EXP-023 through EXP-030 within the FOG-LMW research framework. We formalize the **Structural Operator Compiler** paradigm, shifting the design philosophy from rigid manual architecture to a dual-stage system: neural approximation followed by algebraic compilation.
+Updated: 2026-08-14
 
----
+This document summarizes EXP-023 through EXP-035.  It does not replace the
+individual frozen protocols or machine-readable artifacts.
 
-## Core Paradigm Shift
-$$\text{Neural Learner} \longrightarrow \text{Structural Compiler} \longrightarrow \text{Compiled Latent Machine}$$
+## Core finding
 
-Instead of forcing weights to learn pristine algebraic structures directly from scratch, the system learns continuous approximate dynamics. The structural compiler then analyzes the representation, uncovers spectral gauges, extracts compact operator grammars, prunes redundancy, and projects dynamics back onto stable attractors.
+A latent operator that looks dense in the training gauge may implement a very
+small reusable computation in another gauge.  In the controlled affine setting,
+a useful workflow is now:
 
----
+```text
+learn approximate invariant state/action system
+    -> discover finite/operator relations
+    -> recover or synthesize a canonical gauge anchor
+    -> expose sparse motifs
+    -> project onto the accepted legal operator family
+    -> remove redundant operators
+    -> execute recurrently / bridge compatible modules
+```
 
-## Key Experimental Milestones
+## Evidence chain
 
-### 1. Gauge Disentanglement & Sparse Discovery (EXP-023)
-Dense $30 \times 30$ operators trained without explicit Fourier guidance automatically collapse into diagonal and monomial/permutation structures under spectral gauge transformation, sustaining 100% accuracy at depth $R=64$.
+### EXP-023 — gauge recovery
 
-### 2. Robust Denoising via Compiler (EXP-024)
-Even under artificial weight corruption (5% to 10% noise), the structural compiler successfully projects noisy neural operators back onto clean invariant dynamics, restoring 100% recurrent closure.
+A learned dense d=30 action pair becomes diagonal/monomial in the automatically
+recovered A eigengauge.  Hard pruning preserves 100% depth-64 execution.
 
-### 3. Automatic Law Discovery (EXP-025 & EXP-026)
-- **EXP-025:** The compiler automatically discovers relations such as $A^{31} \approx I$ and $MAM^{-1} \approx A^3$ purely from observation.
-- **EXP-026:** Given redundant action primitives ($A, S_3, S_5, S_7$), the compiler derives $S_5 \approx S_3^{20}$ and $S_7 \approx S_3^{28}$, pruning unnecessary operators down to minimal generators $\{A, S_3\}$.
+### EXP-024 — recurrent denoising
 
-### 4. Sample Complexity Law (EXP-027 / EXP-028)
-For an orthogonal operator in $d$-dimensions observed across $k$ independent directions, degrees of freedom scale as:
-$$\text{DOF} \sim O(d-k)$$
-At $d=30$, $k=29$ leaves exactly a 1-bit orientation ambiguity ($\det M \approx \pm 1$), which the compiler resolves to achieve 100% accuracy.
+Motif projection improves noisy long-horizon execution.  Adding the accepted
+finite-order/norm law restores 100% in the tested noise range where raw dense
+execution is near chance.
 
-### 5. Zero-Bridge Module Interoperability (EXP-029)
-Independently trained FOG modules starting from different random seeds and gauges can be perfectly aligned via structural gauge transformation ($\cos > 0.9999999$), enabling seamless 32-step latent transfer between models without any trained bridge network.
+### EXP-025 — law discovery
 
-### 6. Compositional Primitive Synthesis (EXP-030)
-To resolve spectral degeneracy where individual operators have few roots, the compiler analyzes **compositional closure** (e.g., $T = BC$), synthesizing a new primitive $T$ of order 30 that spans the full invariant space.
+The compiler infers from matrices alone:
 
----
+\[
+A^{31}\approx I,
+\qquad MAM^{-1}\approx A^3.
+\]
 
-## Conclusion and Next Steps
-FOG is no longer merely a "latent CoT" mechanism. It is defined as:
-$$\textbf{FOG} = \text{Learned State Space} + \text{Finite Operator Algebra} + \text{Structural Compiler}$$
+No field/Fourier semantic metadata is used by discovery.
 
-The immediate next frontier involves tackling **repeated joint irreducible blocks** and transitioning from linear operators to **local Jacobians / state-conditioned nonlinear dynamics**.
+### EXP-026 — grammar compression
 
+Separately learned S3/S5/S7 modules compile to one primitive scaling generator:
 
----
+\[
+S5\approx S3^{20},\qquad S7\approx S3^{28}.
+\]
 
-## Extension: Commutants, Holonomy, and Nonlinear Black-Box Compilation (EXP-031...035)
+Redundant dense matrices can be deleted without changing depth-64 behavior.
 
-### 1. Repeated Irreducible Blocks & Commutant Law (EXP-031)
-When spectral analysis fails due to repeated eigenvalues, the commutant algebra $XA = AX, XB = BX$ reliably identifies structure, obeying $\dim\mathrm{Comm} = m^2$ for multiplicity $m$.
+### EXP-027/028 — transition sample law
 
-### 2. Multiplicity as Error-Correcting Redundancy (EXP-032)
-Repeated latent modules act as an intrinsic error-correcting code. Under 15% noise, structural averaging across copies recovers recurrent accuracy from $\approx 24\%$ to $\ge 96.77\%$.
+For a d-dimensional orthogonal action, k known independent directions leave an
+`O(d-k)` completion freedom.  In d=30:
 
-### 3. Trajectory-Based System ID (EXP-033)
-The compiler successfully identifies algebraic structures purely from noisy hidden trajectories ($z \to z'$) without access to action matrices, labels, or codebooks, requiring $\approx 2d$ probes.
+- k=28 leaves continuous O(2) ambiguity and is not repaired;
+- k=29 leaves a +/- orientation ambiguity; motif structure repairs the wrong
+  branch in the observed bad seed;
+- k=30 determines the action directly.
 
-### 4. Gauge Synchronization & Loop Holonomy (EXP-034)
-For state-conditioned dynamics with local Jacobians, closed-loop trajectories eliminate local gauge ambiguities via loop holonomy. The compiler applies compiled laws only when holonomy residuals pass strict safety gates $\tau$.
+### EXP-029 — module interoperability
 
-### 5. Nonlinear Black-Box Dynamics (EXP-035)
-Hidden behind nonlinear transformations $w = \phi(z) = z + \alpha z^2$, the compiler discovers reachable states, builds transition graphs, estimates finite-difference Jacobians, performs gauge synchronization, and compiles stable recurrent dynamics with 100% accuracy at depth $R=256$.
+Independent training seeds canonicalize to almost identical coordinates.  A
+zero-parameter structural bridge transfers both static identities and
+mid-program recurrent states at 100%.
+
+### EXP-030 — synthesize a missing primitive
+
+The trained library exposes only degenerate order-10 and order-3 actions.  The
+compiler searches their composition closure and synthesizes an order-30,
+simple-spectrum primitive that was never trained as its own module.  Original
+operators are then recompiled as powers of the synthesized primitive.
+
+### EXP-031 — repeated joint irreducible blocks
+
+When multiplicity forces every operator/composition to have repeated spectrum,
+the compiler switches from a spectral anchor to the **joint commutant**.  The
+commutant dimensions 4/9/16 reveal multiplicities 2/3/4, symmetric commutant
+elements split invariant copies, and intertwiners align them into one shared
+2x2 grammar.  Depth-256 execution is 100% on all main runs.
+
+### EXP-032 — approximate commutant denoising
+
+Exact nullspaces are replaced by low-singular-value clusters.  A fixed
+commutator-spectrum gap detects repeated structure through 15% action noise,
+and shared-block averaging acts as structural error correction.
+
+### EXP-033 — traces instead of matrices
+
+The compiler can start from noisy continuous hidden-state transition pairs.
+After ridge system identification, approximately `2d` probes per operator are
+sufficient in the tested setting for robust commutant discovery and ~100%
+depth-256 compiled execution.  No semantic codebook or latent identity labels
+are used by identification/compilation.
+
+### EXP-034 — state-conditioned local Jacobians
+
+A single observed global action matrix is no longer required.  Local Jacobians
+are treated as a gauge cocycle
+
+\[
+J_{g,x}=H_{gx}R_gH_x^{-1}.
+\]
+
+Gauge synchronization recovers shared actions.  Closed-loop holonomy supplies
+gauge-invariant evidence for finite-order projection.  Through 10% Jacobian
+noise, all tested runs return to 100% depth-256 continuous-state tracking after
+the fixed holonomy gate accepts the law.  When the gate fails at the hardest
+15% arm, the compiler abstains.
+
+### EXP-035 — nonlinear black-box instrumentation
+
+The compiler is no longer handed the context graph or Jacobians.  From one
+hidden state it actively explores a nonlinear black-box orbit, infers graph
+edges by black-box calls, estimates Jacobians by finite differences, and then
+applies gauge synchronization plus holonomy-gated compilation.  All 12 main
+arms through 10% Jacobian noise retain 100% depth-256 tangent tracking after
+compilation.
+
+## Current architectural hypothesis
+
+FOG should not require every learned module to remain in the exact parameter
+form used during gradient training.  A more promising architecture is:
+
+1. **neural proposal layer** — learn approximate states/actions from data;
+2. **structural compiler** — discover recurrently stable operator structure;
+3. **compiled latent machine** — execute the simpler accepted grammar;
+4. **fallback neural path** — retain uncompiled transitions where no structural
+   hypothesis passes its residual/causal gates.
+
+The compiler must be conservative: a motif is not accepted because it looks
+simple.  It must satisfy fixed relation residuals and preserve held-out/recurrent
+behavior.
+
+## What remains open
+
+The compiler no longer requires simple spectra, exact actions, direct action
+matrices, or even one global observed matrix in the latest controlled gates.
+Production FOG is still harder:
+
+- local contexts/transition graphs must be inferred rather than supplied;
+- Jacobians must be estimated from a genuinely nonlinear backbone rather than
+  directly provided as local matrices;
+- gauges may be general high-dimensional/non-orthogonal charts;
+- semantic identity may be distributed rather than a fixed row codebook;
+- the correct operator family may change by context;
+- compilation may need to happen online or during training;
+- approximate modules may not share a common anchor state.
+
+## Next decisive experiment
+
+Move from the finite 2D nonlinear orbit to a **continuous high-dimensional
+hidden-state cloud**.  Discover neighborhoods without a known context count,
+estimate only low-rank JVP/VJP sketches, and test whether shared operator motifs,
+commutants and loop laws can still be recovered robustly.
+
+This is now the closest controlled precursor to production instrumentation: the
+remaining gap is primarily scale/manifold complexity rather than privileged
+access to action matrices or semantic latent identities.

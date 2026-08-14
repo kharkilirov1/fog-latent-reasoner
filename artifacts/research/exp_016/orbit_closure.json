@@ -1,0 +1,216 @@
+{
+  "experiment": "exp_016_generator_orbit_chart",
+  "arm": "generator_orbit_closure",
+  "rows": [
+    {
+      "arm": "generator_orbit_closure",
+      "seed": 40,
+      "metrics": {
+        "successor_accuracy": 1.0,
+        "successor_cosine_mean": 1.0,
+        "all_binary_accuracy": 1.0,
+        "all_binary_target_cosine_mean": 1.0,
+        "phase_increment_concentration_min": 0.9999999403953552,
+        "phase_increment_concentration_mean": 1.0,
+        "trajectory": {
+          "1": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "2": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "4": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "8": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "16": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "32": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "64": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          }
+        }
+      }
+    },
+    {
+      "arm": "generator_orbit_closure",
+      "seed": 41,
+      "metrics": {
+        "successor_accuracy": 1.0,
+        "successor_cosine_mean": 1.0,
+        "all_binary_accuracy": 1.0,
+        "all_binary_target_cosine_mean": 1.0,
+        "phase_increment_concentration_min": 1.0,
+        "phase_increment_concentration_mean": 1.0000001192092896,
+        "trajectory": {
+          "1": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "2": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "4": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "8": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "16": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "32": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "64": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          }
+        }
+      }
+    },
+    {
+      "arm": "generator_orbit_closure",
+      "seed": 42,
+      "metrics": {
+        "successor_accuracy": 1.0,
+        "successor_cosine_mean": 1.0000001192092896,
+        "all_binary_accuracy": 1.0,
+        "all_binary_target_cosine_mean": 1.0,
+        "phase_increment_concentration_min": 1.0,
+        "phase_increment_concentration_mean": 1.0,
+        "trajectory": {
+          "1": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "2": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "4": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "8": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "16": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "32": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "64": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          }
+        }
+      }
+    },
+    {
+      "arm": "generator_orbit_closure",
+      "seed": 43,
+      "metrics": {
+        "successor_accuracy": 1.0,
+        "successor_cosine_mean": 1.0,
+        "all_binary_accuracy": 1.0,
+        "all_binary_target_cosine_mean": 1.0,
+        "phase_increment_concentration_min": 1.0,
+        "phase_increment_concentration_mean": 1.0,
+        "trajectory": {
+          "1": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "2": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "4": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "8": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "16": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "32": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "64": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          }
+        }
+      }
+    },
+    {
+      "arm": "generator_orbit_closure",
+      "seed": 44,
+      "metrics": {
+        "successor_accuracy": 1.0,
+        "successor_cosine_mean": 1.0,
+        "all_binary_accuracy": 1.0,
+        "all_binary_target_cosine_mean": 1.0,
+        "phase_increment_concentration_min": 1.0,
+        "phase_increment_concentration_mean": 1.0,
+        "trajectory": {
+          "1": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "2": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "4": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "8": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "16": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "32": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          },
+          "64": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 1.0
+          }
+        }
+      }
+    }
+  ]
+}

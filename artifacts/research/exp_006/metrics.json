@@ -1,0 +1,360 @@
+{
+  "arms": [
+    {
+      "code_seed": 0,
+      "geometry": "fourier",
+      "id_programs": {
+        "examples": 4096,
+        "halt_position_accuracy": 1.0,
+        "halt_rate": 1.0,
+        "halt_step_accuracy": 1.0,
+        "length_range": [
+          1,
+          4
+        ],
+        "trajectory_pc_accuracy": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "value_accuracy": 1.0
+      },
+      "ood_programs": {
+        "examples": 4096,
+        "halt_position_accuracy": 1.0,
+        "halt_rate": 1.0,
+        "halt_step_accuracy": 1.0,
+        "length_range": [
+          5,
+          10
+        ],
+        "trajectory_pc_accuracy": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "value_accuracy": 1.0
+      },
+      "operator": "local",
+      "successor": {
+        "predicted_successor": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          0
+        ],
+        "seen_transition_accuracy": 1.0,
+        "unseen_transition_accuracy": 1.0
+      }
+    },
+    {
+      "code_seed": 0,
+      "geometry": "fourier",
+      "id_programs": {
+        "examples": 4096,
+        "halt_position_accuracy": 1.0,
+        "halt_rate": 1.0,
+        "halt_step_accuracy": 1.0,
+        "length_range": [
+          1,
+          4
+        ],
+        "trajectory_pc_accuracy": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "value_accuracy": 1.0
+      },
+      "ood_programs": {
+        "examples": 4096,
+        "halt_position_accuracy": 0.16357421875,
+        "halt_rate": 0.16357421875,
+        "halt_step_accuracy": 0.0,
+        "length_range": [
+          5,
+          10
+        ],
+        "trajectory_pc_accuracy": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.16357421875,
+          0.16357421875,
+          0.16357421875,
+          0.16357421875,
+          0.16357421875,
+          0.16357421875,
+          0.16357421875,
+          0.16357421875,
+          0.16357421875
+        ],
+        "value_accuracy": 0.064453125
+      },
+      "operator": "full",
+      "successor": {
+        "predicted_successor": [
+          1,
+          2,
+          3,
+          4,
+          6,
+          6,
+          6,
+          6,
+          5,
+          6,
+          6,
+          5,
+          6
+        ],
+        "seen_transition_accuracy": 1.0,
+        "unseen_transition_accuracy": 0.125
+      }
+    },
+    {
+      "code_seed": 11,
+      "geometry": "random",
+      "id_programs": {
+        "examples": 4096,
+        "halt_position_accuracy": 1.0,
+        "halt_rate": 1.0,
+        "halt_step_accuracy": 1.0,
+        "length_range": [
+          1,
+          4
+        ],
+        "trajectory_pc_accuracy": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "value_accuracy": 1.0
+      },
+      "ood_programs": {
+        "examples": 4096,
+        "halt_position_accuracy": 0.170166015625,
+        "halt_rate": 0.170166015625,
+        "halt_step_accuracy": 0.0,
+        "length_range": [
+          5,
+          10
+        ],
+        "trajectory_pc_accuracy": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.170166015625,
+          0.170166015625,
+          0.170166015625,
+          0.170166015625,
+          0.170166015625,
+          0.170166015625
+        ],
+        "value_accuracy": 0.07421875
+      },
+      "operator": "full",
+      "successor": {
+        "predicted_successor": [
+          1,
+          2,
+          3,
+          4,
+          9,
+          1,
+          9,
+          3,
+          3,
+          9,
+          4,
+          2,
+          1
+        ],
+        "seen_transition_accuracy": 1.0,
+        "unseen_transition_accuracy": 0.0
+      }
+    },
+    {
+      "code_seed": 22,
+      "geometry": "random",
+      "id_programs": {
+        "examples": 4096,
+        "halt_position_accuracy": 1.0,
+        "halt_rate": 1.0,
+        "halt_step_accuracy": 1.0,
+        "length_range": [
+          1,
+          4
+        ],
+        "trajectory_pc_accuracy": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "value_accuracy": 1.0
+      },
+      "ood_programs": {
+        "examples": 4096,
+        "halt_position_accuracy": 0.157958984375,
+        "halt_rate": 0.157958984375,
+        "halt_step_accuracy": 0.0,
+        "length_range": [
+          5,
+          10
+        ],
+        "trajectory_pc_accuracy": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.157958984375
+        ],
+        "value_accuracy": 0.091796875
+      },
+      "operator": "full",
+      "successor": {
+        "predicted_successor": [
+          1,
+          2,
+          3,
+          4,
+          2,
+          4,
+          10,
+          4,
+          1,
+          3,
+          8,
+          4,
+          1
+        ],
+        "seen_transition_accuracy": 1.0,
+        "unseen_transition_accuracy": 0.0
+      }
+    },
+    {
+      "code_seed": 33,
+      "geometry": "random",
+      "id_programs": {
+        "examples": 4096,
+        "halt_position_accuracy": 1.0,
+        "halt_rate": 1.0,
+        "halt_step_accuracy": 1.0,
+        "length_range": [
+          1,
+          4
+        ],
+        "trajectory_pc_accuracy": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "value_accuracy": 1.0
+      },
+      "ood_programs": {
+        "examples": 4096,
+        "halt_position_accuracy": 0.328369140625,
+        "halt_rate": 0.328369140625,
+        "halt_step_accuracy": 0.0,
+        "length_range": [
+          5,
+          10
+        ],
+        "trajectory_pc_accuracy": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.163818359375,
+          0.163818359375,
+          0.163818359375,
+          0.163818359375,
+          0.163818359375,
+          0.163818359375,
+          0.163818359375,
+          0.328369140625
+        ],
+        "value_accuracy": 0.077392578125
+      },
+      "operator": "full",
+      "successor": {
+        "predicted_successor": [
+          1,
+          2,
+          3,
+          4,
+          3,
+          0,
+          4,
+          8,
+          4,
+          4,
+          7,
+          1,
+          4
+        ],
+        "seen_transition_accuracy": 1.0,
+        "unseen_transition_accuracy": 0.125
+      }
+    }
+  ],
+  "config": {
+    "pc_harmonics": 6,
+    "pc_modulus": 13,
+    "ridge": 1e-08,
+    "train_last_source": 3,
+    "value_modulus": 13
+  },
+  "experiment": "exp_006_latent_program_counter",
+  "post_halt_distractors": true,
+  "unique_halt": true
+}

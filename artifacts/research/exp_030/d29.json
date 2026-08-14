@@ -1,0 +1,218 @@
+{
+  "experiment": "exp_030_degenerate_joint_anchor_synthesis",
+  "protocol": {
+    "compiler_semantic_metadata_used": false,
+    "primitive_action_given": false,
+    "program_depth": 64,
+    "trained_actions": {
+      "B": 27,
+      "C": 25
+    }
+  },
+  "rows": [
+    {
+      "compiler": {
+        "B_order": {
+          "order": 10,
+          "residual": 0.8018192167636028
+        },
+        "C_order": {
+          "order": 3,
+          "residual": 0.6198551569980334
+        },
+        "accepted": false,
+        "best": null
+      },
+      "dimension": 29,
+      "evaluation": {
+        "compiled_program_accuracy": null,
+        "generator_accuracy": {
+          "B": 1.0,
+          "C": 1.0
+        }
+      },
+      "seed": 100,
+      "trace": [
+        {
+          "isotropy_loss": 0.858701229095459,
+          "loss": 2.8921124935150146,
+          "step": 1,
+          "transition_loss": 2.0334105491638184
+        },
+        {
+          "isotropy_loss": 0.0022444063797593117,
+          "loss": 0.014832003973424435,
+          "step": 280,
+          "transition_loss": 0.011230578646063805
+        },
+        {
+          "isotropy_loss": 0.002213170053437352,
+          "loss": 0.014467599801719189,
+          "step": 560,
+          "transition_loss": 0.01078514102846384
+        },
+        {
+          "isotropy_loss": 0.002318351762369275,
+          "loss": 0.014676952734589577,
+          "step": 840,
+          "transition_loss": 0.010884449817240238
+        },
+        {
+          "isotropy_loss": 0.002261186484247446,
+          "loss": 0.014190837740898132,
+          "step": 1120,
+          "transition_loss": 0.010413460433483124
+        },
+        {
+          "isotropy_loss": 0.0022906651720404625,
+          "loss": 0.015690460801124573,
+          "step": 1400,
+          "transition_loss": 0.011842154897749424
+        }
+      ]
+    },
+    {
+      "compiler": {
+        "B_distinct_roots": 10,
+        "B_order": {
+          "order": 10,
+          "residual": 5.705063424138013e-05
+        },
+        "C_distinct_roots": 3,
+        "C_order": {
+          "order": 3,
+          "residual": 1.373844365298437e-06
+        },
+        "accepted": true,
+        "best": {
+          "a": 1,
+          "accepted": true,
+          "b": 1,
+          "distinct_eigen_roots": 29,
+          "order": 30,
+          "order_residual": 9.131227457080097e-05
+        },
+        "power_relations": {
+          "B": {
+            "exponent": 21,
+            "residual": 7.956277315324868e-05
+          },
+          "C": {
+            "exponent": 10,
+            "residual": 5.950502093321913e-05
+          }
+        }
+      },
+      "dimension": 29,
+      "evaluation": {
+        "compiled_program_accuracy": 1.0,
+        "compiled_program_depth": 64,
+        "compiled_target_cosine": 0.9999958872795105,
+        "generator_accuracy": {
+          "B": 1.0,
+          "C": 1.0
+        }
+      },
+      "seed": 101,
+      "trace": [
+        {
+          "isotropy_loss": 0.9242941737174988,
+          "loss": 2.9171581268310547,
+          "step": 1,
+          "transition_loss": 1.9928629398345947
+        },
+        {
+          "isotropy_loss": 0.000926925684325397,
+          "loss": 0.0022541028447449207,
+          "step": 280,
+          "transition_loss": 0.0010608030715957284
+        },
+        {
+          "isotropy_loss": 3.502739855321124e-05,
+          "loss": 3.491715688141994e-05,
+          "step": 560,
+          "transition_loss": -1.1728656090781442e-07
+        },
+        {
+          "isotropy_loss": 3.499212834867649e-05,
+          "loss": 3.48806097463239e-05,
+          "step": 840,
+          "transition_loss": -1.1151836787348657e-07
+        },
+        {
+          "isotropy_loss": 3.4991906431969255e-05,
+          "loss": 3.48496250808239e-05,
+          "step": 1120,
+          "transition_loss": -1.4228206168809265e-07
+        },
+        {
+          "isotropy_loss": 3.499213926261291e-05,
+          "loss": 3.4851782402256504e-05,
+          "step": 1400,
+          "transition_loss": -1.4035933304512582e-07
+        }
+      ]
+    },
+    {
+      "compiler": {
+        "B_order": {
+          "order": 10,
+          "residual": 0.01860784311859982
+        },
+        "C_order": {
+          "order": 3,
+          "residual": 0.7712675809463407
+        },
+        "accepted": false,
+        "best": null
+      },
+      "dimension": 29,
+      "evaluation": {
+        "compiled_program_accuracy": null,
+        "generator_accuracy": {
+          "B": 1.0,
+          "C": 1.0
+        }
+      },
+      "seed": 102,
+      "trace": [
+        {
+          "isotropy_loss": 0.9121212363243103,
+          "loss": 2.8995800018310547,
+          "step": 1,
+          "transition_loss": 1.9874582290649414
+        },
+        {
+          "isotropy_loss": 0.001956833992153406,
+          "loss": 0.013005055487155914,
+          "step": 280,
+          "transition_loss": 0.010347731411457062
+        },
+        {
+          "isotropy_loss": 0.0010715154930949211,
+          "loss": 0.006184878759086132,
+          "step": 560,
+          "transition_loss": 0.003668194869533181
+        },
+        {
+          "isotropy_loss": 0.001360579626634717,
+          "loss": 0.02632807195186615,
+          "step": 840,
+          "transition_loss": 0.023523256182670593
+        },
+        {
+          "isotropy_loss": 0.0011545453453436494,
+          "loss": 0.009526298381388187,
+          "step": 1120,
+          "transition_loss": 0.007315898779779673
+        },
+        {
+          "isotropy_loss": 0.0011446140706539154,
+          "loss": 0.0065273926593363285,
+          "step": 1400,
+          "transition_loss": 0.003946004435420036
+        }
+      ]
+    }
+  ]
+}

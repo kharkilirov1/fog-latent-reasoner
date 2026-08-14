@@ -66,6 +66,25 @@ recurrent reasoning, relation composition, or arithmetic. See
 Read [README_RU.md](README_RU.md) for the complete commands and
 [MODEL_CARD.md](MODEL_CARD.md) before interpreting results.
 
+
+## Register Machine v3 — model-ready research architecture
+
+The repository now also contains a **build-ready 10,245,433-parameter**
+`register_machine_v3` research model.  It is separate from the released v2
+binding checkpoint and is **not yet a trained language reasoner**.  v3 adds a
+fixed typed register file (value/control/scratch), recurrent value-as-next-address,
+a finite operator grammar (READ, IDENTITY, structured BLOCK_PRODUCT, plus four
+flexible low-rank bilinear operators), straight-through hard operator routing,
+an optional HALT head, and a JVP-probeable one-step transition API.
+
+`build_fog_machine.py` mechanically verifies the reference preset by running
+forward/backward, checking machine gradients, probing the real recurrent
+transition with JVPs, saving a checkpoint and strict-reloading every parameter.
+The current init checkpoint is `checkpoints/fog_machine_v3_10m_init.pt`; see
+`research/MODEL_READY_V3.md` for the evidence and training ladder.  EXP-037
+shows generated latent values can be reused as the next address through OOD
+depth 8 in a controlled model-side task on 3/3 seeds.
+
 ## Quick verification
 
 ```bash
@@ -89,7 +108,7 @@ readout. Its successful token-binding checkpoints were evaluated with `R=1`;
 the preset's ability to run deeper is not evidence that `R>1` helps.
 
 `train_real.py init-model` accepts an explicit
-`--architecture {legacy_v1,query_bound_v2}`. New v2 training should pass
+`--architecture {legacy_v1,query_bound_v2,register_machine_v3}`. New v2 training should pass
 `--architecture query_bound_v2`; legacy experiment reproduction should pass
 `--architecture legacy_v1`. The exact migration, 40-step binding calibration,
 locked evaluation, and BF16 export commands are listed in `README_RU.md`.
@@ -133,3 +152,7 @@ The complete real-data audit is in
 architecture diagnosis is in
 [MATCHED_EXPERIMENT_REPORT_RU.md](MATCHED_EXPERIMENT_REPORT_RU.md), and the
 binding-v2 follow-up is in [BINDING_V2_REPORT_RU.md](BINDING_V2_REPORT_RU.md).
+
+## Research workflow
+
+Active research is tracked separately from released claims. See [`research/README.md`](research/README.md) for the IDEA -> PROTOCOL -> RESULT -> DECISION workflow, [`research/STATUS.md`](research/STATUS.md) for the evidence ledger, and [`research/ROADMAP.md`](research/ROADMAP.md) for dependency-ordered milestones. The current production-transfer experiment is EXP-002 (recurrent protected binding).

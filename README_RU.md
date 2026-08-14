@@ -48,6 +48,37 @@ Weights в релизных checkpoints экспортированы из FP32 �
 inference checkpoints без optimizer state и с небольшой необратимой потерей
 точности. Полные training checkpoints создаются командами ниже.
 
+
+## Register Machine v3: модель уже можно собирать и обучать
+
+В репозитории теперь есть отдельная **model-ready** архитектура
+`register_machine_v3` на **10 245 433 параметра**. Это не замена и не
+переименование обученного v2 checkpoint: текущий v3 checkpoint — честная
+инициализация исследовательской модели, а не готовая LLM.
+
+В v3 добавлены типизированные регистры `value/control/scratch`, recurrent
+`value -> next address`, конечная грамматика операторов `READ / IDENTITY /
+BLOCK_PRODUCT / 4 learned bilinear operators`, hard forward routing со
+straight-through gradient, необязательный HALT и публичный one-step transition
+для JVP-диагностики.
+
+Команда:
+
+```bash
+python build_fog_machine.py \
+  --output checkpoints/fog_machine_v3_10m_init.pt \
+  --reasoning-steps 8 --jvp-probes 2 --seed 42
+```
+
+проверяет полный цикл `instantiate -> forward/backward -> machine gradients ->
+JVP -> save -> strict reload`. Текущий checkpoint проходит этот gate. В EXP-037
+полная v3-машина на контролируемой задаче создаёт промежуточное значение,
+которого нет среди payload prompt, и повторно использует его как следующий
+адрес: **100% на глубинах 1,2,3,4,6,8 на 3/3 seed**. Это доказательство
+механизма generated latent computation, но не natural-language reasoning.
+
+Полная спецификация и training ladder: `research/MODEL_READY_V3.md`.
+
 ## 1. Состав legacy-модели
 
 | параметр | значение |
@@ -435,3 +466,7 @@ python export_checkpoint.py \
 - `EXPERIMENT_REPORT_V2.md` и `MODEL_CARD.md` — архитектурный аудит и
   ограничения;
 - `tests/` — автоматические gates.
+
+## Исследовательский workflow
+
+Активные гипотезы отделены от уже подтверждённых результатов. См. [`research/README.md`](research/README.md) для процесса IDEA -> PROTOCOL -> RESULT -> DECISION, [`research/STATUS.md`](research/STATUS.md) для реестра доказательств и [`research/ROADMAP.md`](research/ROADMAP.md) для порядка следующих этапов. Текущий production-transfer эксперимент — EXP-002 (recurrent protected binding).

@@ -1,0 +1,5168 @@
+{
+  "checkpoint": "artifacts/research/exp_001/exp_001.pt",
+  "depths": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "eval": {
+    "hard_recurrent": [
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 1,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          }
+        ],
+        "intervention": "normal",
+        "mode": "hard_recurrent",
+        "nll": 6.123445306371877e-08,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 2,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          }
+        ],
+        "intervention": "normal",
+        "mode": "hard_recurrent",
+        "nll": 6.10016224200649e-08,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 3,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          }
+        ],
+        "intervention": "normal",
+        "mode": "hard_recurrent",
+        "nll": 5.937180969084466e-08,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 4,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          }
+        ],
+        "intervention": "normal",
+        "mode": "hard_recurrent",
+        "nll": 6.181652878467503e-08,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 5,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          }
+        ],
+        "intervention": "normal",
+        "mode": "hard_recurrent",
+        "nll": 6.088520798641639e-08,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 6,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          }
+        ],
+        "intervention": "normal",
+        "mode": "hard_recurrent",
+        "nll": 6.007029984544943e-08,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 7,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          }
+        ],
+        "intervention": "normal",
+        "mode": "hard_recurrent",
+        "nll": 6.007029984544943e-08,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 8,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          }
+        ],
+        "intervention": "normal",
+        "mode": "hard_recurrent",
+        "nll": 6.018671605545478e-08,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 9,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          }
+        ],
+        "intervention": "normal",
+        "mode": "hard_recurrent",
+        "nll": 6.088520798641639e-08,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 10,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          }
+        ],
+        "intervention": "normal",
+        "mode": "hard_recurrent",
+        "nll": 5.92553934808393e-08,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 11,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          }
+        ],
+        "intervention": "normal",
+        "mode": "hard_recurrent",
+        "nll": 5.995388541180091e-08,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 12,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 12,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          }
+        ],
+        "intervention": "normal",
+        "mode": "hard_recurrent",
+        "nll": 6.228219184833961e-08,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 13,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 12,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 13,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          }
+        ],
+        "intervention": "normal",
+        "mode": "hard_recurrent",
+        "nll": 6.123445306371877e-08,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 14,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 12,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 13,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 14,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          }
+        ],
+        "intervention": "normal",
+        "mode": "hard_recurrent",
+        "nll": 6.076879177641104e-08,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 15,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 12,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 13,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 14,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 15,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          }
+        ],
+        "intervention": "normal",
+        "mode": "hard_recurrent",
+        "nll": 5.867331775988305e-08,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 16,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 12,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 13,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 14,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 15,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 16,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          }
+        ],
+        "intervention": "normal",
+        "mode": "hard_recurrent",
+        "nll": 5.92553934808393e-08,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      }
+    ],
+    "recurrent": [
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 1,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          }
+        ],
+        "intervention": "normal",
+        "mode": "recurrent",
+        "nll": 6.123445306371877e-08,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 2,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          }
+        ],
+        "intervention": "normal",
+        "mode": "recurrent",
+        "nll": 1.3434326717742806e-07,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 3,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5339887738227844,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9496712684631348,
+            "oracle_cosine": 0.9496712684631348
+          }
+        ],
+        "intervention": "normal",
+        "mode": "recurrent",
+        "nll": 6.544868824676087e-07,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 4,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5339887738227844,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9496712684631348,
+            "oracle_cosine": 0.9496712684631348
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5225253701210022,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.945212721824646,
+            "oracle_cosine": 0.9452127814292908
+          }
+        ],
+        "intervention": "normal",
+        "mode": "recurrent",
+        "nll": 6.676418138340523e-07,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 5,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5339887738227844,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9496712684631348,
+            "oracle_cosine": 0.9496712684631348
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5225253701210022,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.945212721824646,
+            "oracle_cosine": 0.9452127814292908
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5167475342750549,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9428352117538452,
+            "oracle_cosine": 0.94283527135849
+          }
+        ],
+        "intervention": "normal",
+        "mode": "recurrent",
+        "nll": 6.979097975090554e-07,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 6,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5339887738227844,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9496712684631348,
+            "oracle_cosine": 0.9496712684631348
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5225253701210022,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.945212721824646,
+            "oracle_cosine": 0.9452127814292908
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5167475342750549,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9428352117538452,
+            "oracle_cosine": 0.94283527135849
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5137197971343994,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9415529370307922,
+            "oracle_cosine": 0.9415530562400818
+          }
+        ],
+        "intervention": "normal",
+        "mode": "recurrent",
+        "nll": 7.143243578866532e-07,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 7,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5339887738227844,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9496712684631348,
+            "oracle_cosine": 0.9496712684631348
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5225253701210022,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.945212721824646,
+            "oracle_cosine": 0.9452127814292908
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5167475342750549,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9428352117538452,
+            "oracle_cosine": 0.94283527135849
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5137197971343994,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9415529370307922,
+            "oracle_cosine": 0.9415530562400818
+          },
+          {
+            "address_entropy": 1.6422615051269531,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5121012330055237,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.94085693359375,
+            "oracle_cosine": 0.94085693359375
+          }
+        ],
+        "intervention": "normal",
+        "mode": "recurrent",
+        "nll": 7.137422812775185e-07,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 8,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5339887738227844,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9496712684631348,
+            "oracle_cosine": 0.9496712684631348
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5225253701210022,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.945212721824646,
+            "oracle_cosine": 0.9452127814292908
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5167475342750549,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9428352117538452,
+            "oracle_cosine": 0.94283527135849
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5137197971343994,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9415529370307922,
+            "oracle_cosine": 0.9415530562400818
+          },
+          {
+            "address_entropy": 1.6422615051269531,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5121012330055237,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.94085693359375,
+            "oracle_cosine": 0.94085693359375
+          },
+          {
+            "address_entropy": 1.6440038681030273,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5112267136573792,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.9404779076576233,
+            "oracle_cosine": 0.9404779076576233
+          }
+        ],
+        "intervention": "normal",
+        "mode": "recurrent",
+        "nll": 7.124617127374222e-07,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 9,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5339887738227844,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9496712684631348,
+            "oracle_cosine": 0.9496712684631348
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5225253701210022,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.945212721824646,
+            "oracle_cosine": 0.9452127814292908
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5167475342750549,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9428352117538452,
+            "oracle_cosine": 0.94283527135849
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5137197971343994,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9415529370307922,
+            "oracle_cosine": 0.9415530562400818
+          },
+          {
+            "address_entropy": 1.6422615051269531,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5121012330055237,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.94085693359375,
+            "oracle_cosine": 0.94085693359375
+          },
+          {
+            "address_entropy": 1.6440038681030273,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5112267136573792,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.9404779076576233,
+            "oracle_cosine": 0.9404779076576233
+          },
+          {
+            "address_entropy": 1.6449490785598755,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5107517242431641,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.9402710199356079,
+            "oracle_cosine": 0.9402712285518646
+          }
+        ],
+        "intervention": "normal",
+        "mode": "recurrent",
+        "nll": 7.142079425648262e-07,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 10,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5339887738227844,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9496712684631348,
+            "oracle_cosine": 0.9496712684631348
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5225253701210022,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.945212721824646,
+            "oracle_cosine": 0.9452127814292908
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5167475342750549,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9428352117538452,
+            "oracle_cosine": 0.94283527135849
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5137197971343994,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9415529370307922,
+            "oracle_cosine": 0.9415530562400818
+          },
+          {
+            "address_entropy": 1.6422615051269531,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5121012330055237,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.94085693359375,
+            "oracle_cosine": 0.94085693359375
+          },
+          {
+            "address_entropy": 1.6440038681030273,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5112267136573792,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.9404779076576233,
+            "oracle_cosine": 0.9404779076576233
+          },
+          {
+            "address_entropy": 1.6449490785598755,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5107517242431641,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.9402710199356079,
+            "oracle_cosine": 0.9402712285518646
+          },
+          {
+            "address_entropy": 1.6454639434814453,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5104928016662598,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.9401580095291138,
+            "oracle_cosine": 0.940157949924469
+          }
+        ],
+        "intervention": "normal",
+        "mode": "recurrent",
+        "nll": 7.45058002848964e-07,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 11,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5339887738227844,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9496712684631348,
+            "oracle_cosine": 0.9496712684631348
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5225253701210022,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.945212721824646,
+            "oracle_cosine": 0.9452127814292908
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5167475342750549,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9428352117538452,
+            "oracle_cosine": 0.94283527135849
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5137197971343994,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9415529370307922,
+            "oracle_cosine": 0.9415530562400818
+          },
+          {
+            "address_entropy": 1.6422615051269531,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5121012330055237,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.94085693359375,
+            "oracle_cosine": 0.94085693359375
+          },
+          {
+            "address_entropy": 1.6440038681030273,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5112267136573792,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.9404779076576233,
+            "oracle_cosine": 0.9404779076576233
+          },
+          {
+            "address_entropy": 1.6449490785598755,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5107517242431641,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.9402710199356079,
+            "oracle_cosine": 0.9402712285518646
+          },
+          {
+            "address_entropy": 1.6454639434814453,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5104928016662598,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.9401580095291138,
+            "oracle_cosine": 0.940157949924469
+          },
+          {
+            "address_entropy": 1.6457445323467255,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5103514343500137,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.9400963187217712,
+            "oracle_cosine": 0.940096378326416
+          }
+        ],
+        "intervention": "normal",
+        "mode": "recurrent",
+        "nll": 7.415655005615918e-07,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 12,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5339887738227844,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9496712684631348,
+            "oracle_cosine": 0.9496712684631348
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5225253701210022,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.945212721824646,
+            "oracle_cosine": 0.9452127814292908
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5167475342750549,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9428352117538452,
+            "oracle_cosine": 0.94283527135849
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5137197971343994,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9415529370307922,
+            "oracle_cosine": 0.9415530562400818
+          },
+          {
+            "address_entropy": 1.6422615051269531,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5121012330055237,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.94085693359375,
+            "oracle_cosine": 0.94085693359375
+          },
+          {
+            "address_entropy": 1.6440038681030273,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5112267136573792,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.9404779076576233,
+            "oracle_cosine": 0.9404779076576233
+          },
+          {
+            "address_entropy": 1.6449490785598755,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5107517242431641,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.9402710199356079,
+            "oracle_cosine": 0.9402712285518646
+          },
+          {
+            "address_entropy": 1.6454639434814453,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5104928016662598,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.9401580095291138,
+            "oracle_cosine": 0.940157949924469
+          },
+          {
+            "address_entropy": 1.6457445323467255,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5103514343500137,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.9400963187217712,
+            "oracle_cosine": 0.940096378326416
+          },
+          {
+            "address_entropy": 1.645898699760437,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5102741867303848,
+            "hop": 12,
+            "minimum_oracle_cosine": 0.9400625824928284,
+            "oracle_cosine": 0.9400625824928284
+          }
+        ],
+        "intervention": "normal",
+        "mode": "recurrent",
+        "nll": 7.423804504469445e-07,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 13,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5339887738227844,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9496712684631348,
+            "oracle_cosine": 0.9496712684631348
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5225253701210022,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.945212721824646,
+            "oracle_cosine": 0.9452127814292908
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5167475342750549,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9428352117538452,
+            "oracle_cosine": 0.94283527135849
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5137197971343994,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9415529370307922,
+            "oracle_cosine": 0.9415530562400818
+          },
+          {
+            "address_entropy": 1.6422615051269531,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5121012330055237,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.94085693359375,
+            "oracle_cosine": 0.94085693359375
+          },
+          {
+            "address_entropy": 1.6440038681030273,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5112267136573792,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.9404779076576233,
+            "oracle_cosine": 0.9404779076576233
+          },
+          {
+            "address_entropy": 1.6449490785598755,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5107517242431641,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.9402710199356079,
+            "oracle_cosine": 0.9402712285518646
+          },
+          {
+            "address_entropy": 1.6454639434814453,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5104928016662598,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.9401580095291138,
+            "oracle_cosine": 0.940157949924469
+          },
+          {
+            "address_entropy": 1.6457445323467255,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5103514343500137,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.9400963187217712,
+            "oracle_cosine": 0.940096378326416
+          },
+          {
+            "address_entropy": 1.645898699760437,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5102741867303848,
+            "hop": 12,
+            "minimum_oracle_cosine": 0.9400625824928284,
+            "oracle_cosine": 0.9400625824928284
+          },
+          {
+            "address_entropy": 1.6459825932979584,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5102320313453674,
+            "hop": 13,
+            "minimum_oracle_cosine": 0.940044105052948,
+            "oracle_cosine": 0.9400439858436584
+          }
+        ],
+        "intervention": "normal",
+        "mode": "recurrent",
+        "nll": 7.412162972286751e-07,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 14,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5339887738227844,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9496712684631348,
+            "oracle_cosine": 0.9496712684631348
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5225253701210022,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.945212721824646,
+            "oracle_cosine": 0.9452127814292908
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5167475342750549,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9428352117538452,
+            "oracle_cosine": 0.94283527135849
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5137197971343994,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9415529370307922,
+            "oracle_cosine": 0.9415530562400818
+          },
+          {
+            "address_entropy": 1.6422615051269531,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5121012330055237,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.94085693359375,
+            "oracle_cosine": 0.94085693359375
+          },
+          {
+            "address_entropy": 1.6440038681030273,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5112267136573792,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.9404779076576233,
+            "oracle_cosine": 0.9404779076576233
+          },
+          {
+            "address_entropy": 1.6449490785598755,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5107517242431641,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.9402710199356079,
+            "oracle_cosine": 0.9402712285518646
+          },
+          {
+            "address_entropy": 1.6454639434814453,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5104928016662598,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.9401580095291138,
+            "oracle_cosine": 0.940157949924469
+          },
+          {
+            "address_entropy": 1.6457445323467255,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5103514343500137,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.9400963187217712,
+            "oracle_cosine": 0.940096378326416
+          },
+          {
+            "address_entropy": 1.645898699760437,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5102741867303848,
+            "hop": 12,
+            "minimum_oracle_cosine": 0.9400625824928284,
+            "oracle_cosine": 0.9400625824928284
+          },
+          {
+            "address_entropy": 1.6459825932979584,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5102320313453674,
+            "hop": 13,
+            "minimum_oracle_cosine": 0.940044105052948,
+            "oracle_cosine": 0.9400439858436584
+          },
+          {
+            "address_entropy": 1.6460283994674683,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5102090239524841,
+            "hop": 14,
+            "minimum_oracle_cosine": 0.9400339126586914,
+            "oracle_cosine": 0.9400339126586914
+          }
+        ],
+        "intervention": "normal",
+        "mode": "recurrent",
+        "nll": 7.444759262398293e-07,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 15,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5339887738227844,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9496712684631348,
+            "oracle_cosine": 0.9496712684631348
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5225253701210022,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.945212721824646,
+            "oracle_cosine": 0.9452127814292908
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5167475342750549,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9428352117538452,
+            "oracle_cosine": 0.94283527135849
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5137197971343994,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9415529370307922,
+            "oracle_cosine": 0.9415530562400818
+          },
+          {
+            "address_entropy": 1.6422615051269531,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5121012330055237,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.94085693359375,
+            "oracle_cosine": 0.94085693359375
+          },
+          {
+            "address_entropy": 1.6440038681030273,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5112267136573792,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.9404779076576233,
+            "oracle_cosine": 0.9404779076576233
+          },
+          {
+            "address_entropy": 1.6449490785598755,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5107517242431641,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.9402710199356079,
+            "oracle_cosine": 0.9402712285518646
+          },
+          {
+            "address_entropy": 1.6454639434814453,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5104928016662598,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.9401580095291138,
+            "oracle_cosine": 0.940157949924469
+          },
+          {
+            "address_entropy": 1.6457445323467255,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5103514343500137,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.9400963187217712,
+            "oracle_cosine": 0.940096378326416
+          },
+          {
+            "address_entropy": 1.645898699760437,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5102741867303848,
+            "hop": 12,
+            "minimum_oracle_cosine": 0.9400625824928284,
+            "oracle_cosine": 0.9400625824928284
+          },
+          {
+            "address_entropy": 1.6459825932979584,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5102320313453674,
+            "hop": 13,
+            "minimum_oracle_cosine": 0.940044105052948,
+            "oracle_cosine": 0.9400439858436584
+          },
+          {
+            "address_entropy": 1.6460283994674683,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5102090239524841,
+            "hop": 14,
+            "minimum_oracle_cosine": 0.9400339126586914,
+            "oracle_cosine": 0.9400339126586914
+          },
+          {
+            "address_entropy": 1.6460533142089844,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5101963579654694,
+            "hop": 15,
+            "minimum_oracle_cosine": 0.9400283694267273,
+            "oracle_cosine": 0.9400282502174377
+          }
+        ],
+        "intervention": "normal",
+        "mode": "recurrent",
+        "nll": 7.42962484423515e-07,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 16,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5339887738227844,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.9496712684631348,
+            "oracle_cosine": 0.9496712684631348
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5225253701210022,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.945212721824646,
+            "oracle_cosine": 0.9452127814292908
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5167475342750549,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.9428352117538452,
+            "oracle_cosine": 0.94283527135849
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5137197971343994,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.9415529370307922,
+            "oracle_cosine": 0.9415530562400818
+          },
+          {
+            "address_entropy": 1.6422615051269531,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5121012330055237,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.94085693359375,
+            "oracle_cosine": 0.94085693359375
+          },
+          {
+            "address_entropy": 1.6440038681030273,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5112267136573792,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.9404779076576233,
+            "oracle_cosine": 0.9404779076576233
+          },
+          {
+            "address_entropy": 1.6449490785598755,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5107517242431641,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.9402710199356079,
+            "oracle_cosine": 0.9402712285518646
+          },
+          {
+            "address_entropy": 1.6454639434814453,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5104928016662598,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.9401580095291138,
+            "oracle_cosine": 0.940157949924469
+          },
+          {
+            "address_entropy": 1.6457445323467255,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5103514343500137,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.9400963187217712,
+            "oracle_cosine": 0.940096378326416
+          },
+          {
+            "address_entropy": 1.645898699760437,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5102741867303848,
+            "hop": 12,
+            "minimum_oracle_cosine": 0.9400625824928284,
+            "oracle_cosine": 0.9400625824928284
+          },
+          {
+            "address_entropy": 1.6459825932979584,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5102320313453674,
+            "hop": 13,
+            "minimum_oracle_cosine": 0.940044105052948,
+            "oracle_cosine": 0.9400439858436584
+          },
+          {
+            "address_entropy": 1.6460283994674683,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5102090239524841,
+            "hop": 14,
+            "minimum_oracle_cosine": 0.9400339126586914,
+            "oracle_cosine": 0.9400339126586914
+          },
+          {
+            "address_entropy": 1.6460533142089844,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5101963579654694,
+            "hop": 15,
+            "minimum_oracle_cosine": 0.9400283694267273,
+            "oracle_cosine": 0.9400282502174377
+          },
+          {
+            "address_entropy": 1.6460667848587036,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5101894736289978,
+            "hop": 16,
+            "minimum_oracle_cosine": 0.9400253891944885,
+            "oracle_cosine": 0.9400253891944885
+          }
+        ],
+        "intervention": "normal",
+        "mode": "recurrent",
+        "nll": 7.465714020327141e-07,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      }
+    ],
+    "recurrent_corrupt_after_2": [
+      {
+        "accuracy": 0.15234375,
+        "correct": 156,
+        "count": 1024,
+        "depth": 3,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13778090104460716,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.11839668452739716,
+            "oracle_cosine": 0.24503616616129875
+          }
+        ],
+        "intervention": "corrupt_after_2",
+        "mode": "recurrent",
+        "nll": 14.092700004577637,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.15234375,
+        "correct": 156,
+        "count": 1024,
+        "depth": 4,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13778090104460716,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.11839668452739716,
+            "oracle_cosine": 0.24503616616129875
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13742268085479736,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.12338843941688538,
+            "oracle_cosine": 0.24858824163675308
+          }
+        ],
+        "intervention": "corrupt_after_2",
+        "mode": "recurrent",
+        "nll": 13.932492017745972,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.15234375,
+        "correct": 156,
+        "count": 1024,
+        "depth": 5,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13778090104460716,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.11839668452739716,
+            "oracle_cosine": 0.24503616616129875
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13742268085479736,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.12338843941688538,
+            "oracle_cosine": 0.24858824163675308
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13724211230874062,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.12596017122268677,
+            "oracle_cosine": 0.2504059821367264
+          }
+        ],
+        "intervention": "corrupt_after_2",
+        "mode": "recurrent",
+        "nll": 13.848582744598389,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.15234375,
+        "correct": 156,
+        "count": 1024,
+        "depth": 6,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13778090104460716,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.11839668452739716,
+            "oracle_cosine": 0.24503616616129875
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13742268085479736,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.12338843941688538,
+            "oracle_cosine": 0.24858824163675308
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13724211230874062,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.12596017122268677,
+            "oracle_cosine": 0.2504059821367264
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13714751228690147,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.12732303142547607,
+            "oracle_cosine": 0.25136587768793106
+          }
+        ],
+        "intervention": "corrupt_after_2",
+        "mode": "recurrent",
+        "nll": 13.803738832473755,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.15234375,
+        "correct": 156,
+        "count": 1024,
+        "depth": 7,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13778090104460716,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.11839668452739716,
+            "oracle_cosine": 0.24503616616129875
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13742268085479736,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.12338843941688538,
+            "oracle_cosine": 0.24858824163675308
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13724211230874062,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.12596017122268677,
+            "oracle_cosine": 0.2504059821367264
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13714751228690147,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.12732303142547607,
+            "oracle_cosine": 0.25136587768793106
+          },
+          {
+            "address_entropy": 1.6422615051269531,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13709692284464836,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.1280558705329895,
+            "oracle_cosine": 0.2518810145556927
+          }
+        ],
+        "intervention": "corrupt_after_2",
+        "mode": "recurrent",
+        "nll": 13.779521465301514,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.15234375,
+        "correct": 156,
+        "count": 1024,
+        "depth": 8,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13778090104460716,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.11839668452739716,
+            "oracle_cosine": 0.24503616616129875
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13742268085479736,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.12338843941688538,
+            "oracle_cosine": 0.24858824163675308
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13724211230874062,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.12596017122268677,
+            "oracle_cosine": 0.2504059821367264
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13714751228690147,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.12732303142547607,
+            "oracle_cosine": 0.25136587768793106
+          },
+          {
+            "address_entropy": 1.6422615051269531,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13709692284464836,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.1280558705329895,
+            "oracle_cosine": 0.2518810145556927
+          },
+          {
+            "address_entropy": 1.6440038681030273,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13706958666443825,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.12845303118228912,
+            "oracle_cosine": 0.2521599531173706
+          }
+        ],
+        "intervention": "corrupt_after_2",
+        "mode": "recurrent",
+        "nll": 13.766358137130737,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.15234375,
+        "correct": 156,
+        "count": 1024,
+        "depth": 9,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13778090104460716,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.11839668452739716,
+            "oracle_cosine": 0.24503616616129875
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13742268085479736,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.12338843941688538,
+            "oracle_cosine": 0.24858824163675308
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13724211230874062,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.12596017122268677,
+            "oracle_cosine": 0.2504059821367264
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13714751228690147,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.12732303142547607,
+            "oracle_cosine": 0.25136587768793106
+          },
+          {
+            "address_entropy": 1.6422615051269531,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13709692284464836,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.1280558705329895,
+            "oracle_cosine": 0.2518810145556927
+          },
+          {
+            "address_entropy": 1.6440038681030273,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13706958666443825,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.12845303118228912,
+            "oracle_cosine": 0.2521599531173706
+          },
+          {
+            "address_entropy": 1.6449490785598755,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13705474883317947,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.1286691576242447,
+            "oracle_cosine": 0.25231167674064636
+          }
+        ],
+        "intervention": "corrupt_after_2",
+        "mode": "recurrent",
+        "nll": 13.75918960571289,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.15234375,
+        "correct": 156,
+        "count": 1024,
+        "depth": 10,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13778090104460716,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.11839668452739716,
+            "oracle_cosine": 0.24503616616129875
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13742268085479736,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.12338843941688538,
+            "oracle_cosine": 0.24858824163675308
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13724211230874062,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.12596017122268677,
+            "oracle_cosine": 0.2504059821367264
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13714751228690147,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.12732303142547607,
+            "oracle_cosine": 0.25136587768793106
+          },
+          {
+            "address_entropy": 1.6422615051269531,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13709692284464836,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.1280558705329895,
+            "oracle_cosine": 0.2518810145556927
+          },
+          {
+            "address_entropy": 1.6440038681030273,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13706958666443825,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.12845303118228912,
+            "oracle_cosine": 0.2521599531173706
+          },
+          {
+            "address_entropy": 1.6449490785598755,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13705474883317947,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.1286691576242447,
+            "oracle_cosine": 0.25231167674064636
+          },
+          {
+            "address_entropy": 1.6454639434814453,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13704665005207062,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.1287870556116104,
+            "oracle_cosine": 0.25239434838294983
+          }
+        ],
+        "intervention": "corrupt_after_2",
+        "mode": "recurrent",
+        "nll": 13.755273580551147,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.15234375,
+        "correct": 156,
+        "count": 1024,
+        "depth": 11,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13778090104460716,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.11839668452739716,
+            "oracle_cosine": 0.24503616616129875
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13742268085479736,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.12338843941688538,
+            "oracle_cosine": 0.24858824163675308
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13724211230874062,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.12596017122268677,
+            "oracle_cosine": 0.2504059821367264
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13714751228690147,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.12732303142547607,
+            "oracle_cosine": 0.25136587768793106
+          },
+          {
+            "address_entropy": 1.6422615051269531,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13709692284464836,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.1280558705329895,
+            "oracle_cosine": 0.2518810145556927
+          },
+          {
+            "address_entropy": 1.6440038681030273,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13706958666443825,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.12845303118228912,
+            "oracle_cosine": 0.2521599531173706
+          },
+          {
+            "address_entropy": 1.6449490785598755,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13705474883317947,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.1286691576242447,
+            "oracle_cosine": 0.25231167674064636
+          },
+          {
+            "address_entropy": 1.6454639434814453,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13704665005207062,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.1287870556116104,
+            "oracle_cosine": 0.25239434838294983
+          },
+          {
+            "address_entropy": 1.6457445621490479,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13704222813248634,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.12885142862796783,
+            "oracle_cosine": 0.25243953615427017
+          }
+        ],
+        "intervention": "corrupt_after_2",
+        "mode": "recurrent",
+        "nll": 13.75313663482666,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.15234375,
+        "correct": 156,
+        "count": 1024,
+        "depth": 12,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13778090104460716,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.11839668452739716,
+            "oracle_cosine": 0.24503616616129875
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13742268085479736,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.12338843941688538,
+            "oracle_cosine": 0.24858824163675308
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13724211230874062,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.12596017122268677,
+            "oracle_cosine": 0.2504059821367264
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13714751228690147,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.12732303142547607,
+            "oracle_cosine": 0.25136587768793106
+          },
+          {
+            "address_entropy": 1.6422615051269531,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13709692284464836,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.1280558705329895,
+            "oracle_cosine": 0.2518810145556927
+          },
+          {
+            "address_entropy": 1.6440038681030273,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13706958666443825,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.12845303118228912,
+            "oracle_cosine": 0.2521599531173706
+          },
+          {
+            "address_entropy": 1.6449490785598755,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13705474883317947,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.1286691576242447,
+            "oracle_cosine": 0.25231167674064636
+          },
+          {
+            "address_entropy": 1.6454639434814453,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13704665005207062,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.1287870556116104,
+            "oracle_cosine": 0.25239434838294983
+          },
+          {
+            "address_entropy": 1.6457445621490479,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13704222813248634,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.12885142862796783,
+            "oracle_cosine": 0.25243953615427017
+          },
+          {
+            "address_entropy": 1.645898699760437,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13703981786966324,
+            "hop": 12,
+            "minimum_oracle_cosine": 0.1288866400718689,
+            "oracle_cosine": 0.25246427208185196
+          }
+        ],
+        "intervention": "corrupt_after_2",
+        "mode": "recurrent",
+        "nll": 13.751964807510376,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.15234375,
+        "correct": 156,
+        "count": 1024,
+        "depth": 13,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13778090104460716,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.11839668452739716,
+            "oracle_cosine": 0.24503616616129875
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13742268085479736,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.12338843941688538,
+            "oracle_cosine": 0.24858824163675308
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13724211230874062,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.12596017122268677,
+            "oracle_cosine": 0.2504059821367264
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13714751228690147,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.12732303142547607,
+            "oracle_cosine": 0.25136587768793106
+          },
+          {
+            "address_entropy": 1.6422615051269531,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13709692284464836,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.1280558705329895,
+            "oracle_cosine": 0.2518810145556927
+          },
+          {
+            "address_entropy": 1.6440038681030273,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13706958666443825,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.12845303118228912,
+            "oracle_cosine": 0.2521599531173706
+          },
+          {
+            "address_entropy": 1.6449490785598755,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13705474883317947,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.1286691576242447,
+            "oracle_cosine": 0.25231167674064636
+          },
+          {
+            "address_entropy": 1.6454639434814453,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13704665005207062,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.1287870556116104,
+            "oracle_cosine": 0.25239434838294983
+          },
+          {
+            "address_entropy": 1.6457445621490479,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13704222813248634,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.12885142862796783,
+            "oracle_cosine": 0.25243953615427017
+          },
+          {
+            "address_entropy": 1.645898699760437,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13703981786966324,
+            "hop": 12,
+            "minimum_oracle_cosine": 0.1288866400718689,
+            "oracle_cosine": 0.25246427208185196
+          },
+          {
+            "address_entropy": 1.6459825932979584,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13703849911689758,
+            "hop": 13,
+            "minimum_oracle_cosine": 0.12890587747097015,
+            "oracle_cosine": 0.25247772783041
+          }
+        ],
+        "intervention": "corrupt_after_2",
+        "mode": "recurrent",
+        "nll": 13.751326322555542,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.15234375,
+        "correct": 156,
+        "count": 1024,
+        "depth": 14,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13778090104460716,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.11839668452739716,
+            "oracle_cosine": 0.24503616616129875
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13742268085479736,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.12338843941688538,
+            "oracle_cosine": 0.24858824163675308
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13724211230874062,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.12596017122268677,
+            "oracle_cosine": 0.2504059821367264
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13714751228690147,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.12732303142547607,
+            "oracle_cosine": 0.25136587768793106
+          },
+          {
+            "address_entropy": 1.6422615051269531,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13709692284464836,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.1280558705329895,
+            "oracle_cosine": 0.2518810145556927
+          },
+          {
+            "address_entropy": 1.6440038681030273,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13706958666443825,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.12845303118228912,
+            "oracle_cosine": 0.2521599531173706
+          },
+          {
+            "address_entropy": 1.6449490785598755,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13705474883317947,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.1286691576242447,
+            "oracle_cosine": 0.25231167674064636
+          },
+          {
+            "address_entropy": 1.6454639434814453,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13704665005207062,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.1287870556116104,
+            "oracle_cosine": 0.25239434838294983
+          },
+          {
+            "address_entropy": 1.6457445621490479,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13704222813248634,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.12885142862796783,
+            "oracle_cosine": 0.25243953615427017
+          },
+          {
+            "address_entropy": 1.645898699760437,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13703981786966324,
+            "hop": 12,
+            "minimum_oracle_cosine": 0.1288866400718689,
+            "oracle_cosine": 0.25246427208185196
+          },
+          {
+            "address_entropy": 1.6459825932979584,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13703849911689758,
+            "hop": 13,
+            "minimum_oracle_cosine": 0.12890587747097015,
+            "oracle_cosine": 0.25247772783041
+          },
+          {
+            "address_entropy": 1.6460283994674683,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13703778386116028,
+            "hop": 14,
+            "minimum_oracle_cosine": 0.128916397690773,
+            "oracle_cosine": 0.25248509645462036
+          }
+        ],
+        "intervention": "corrupt_after_2",
+        "mode": "recurrent",
+        "nll": 13.750977516174316,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.15234375,
+        "correct": 156,
+        "count": 1024,
+        "depth": 15,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13778090104460716,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.11839668452739716,
+            "oracle_cosine": 0.24503616616129875
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13742268085479736,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.12338843941688538,
+            "oracle_cosine": 0.24858824163675308
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13724211230874062,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.12596017122268677,
+            "oracle_cosine": 0.2504059821367264
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13714751228690147,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.12732303142547607,
+            "oracle_cosine": 0.25136587768793106
+          },
+          {
+            "address_entropy": 1.6422615051269531,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13709692284464836,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.1280558705329895,
+            "oracle_cosine": 0.2518810145556927
+          },
+          {
+            "address_entropy": 1.6440038681030273,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13706958666443825,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.12845303118228912,
+            "oracle_cosine": 0.2521599531173706
+          },
+          {
+            "address_entropy": 1.6449490785598755,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13705474883317947,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.1286691576242447,
+            "oracle_cosine": 0.25231167674064636
+          },
+          {
+            "address_entropy": 1.6454639434814453,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13704665005207062,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.1287870556116104,
+            "oracle_cosine": 0.25239434838294983
+          },
+          {
+            "address_entropy": 1.6457445621490479,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13704222813248634,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.12885142862796783,
+            "oracle_cosine": 0.25243953615427017
+          },
+          {
+            "address_entropy": 1.645898699760437,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13703981786966324,
+            "hop": 12,
+            "minimum_oracle_cosine": 0.1288866400718689,
+            "oracle_cosine": 0.25246427208185196
+          },
+          {
+            "address_entropy": 1.6459825932979584,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13703849911689758,
+            "hop": 13,
+            "minimum_oracle_cosine": 0.12890587747097015,
+            "oracle_cosine": 0.25247772783041
+          },
+          {
+            "address_entropy": 1.6460283994674683,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13703778386116028,
+            "hop": 14,
+            "minimum_oracle_cosine": 0.128916397690773,
+            "oracle_cosine": 0.25248509645462036
+          },
+          {
+            "address_entropy": 1.6460533142089844,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13703738525509834,
+            "hop": 15,
+            "minimum_oracle_cosine": 0.12892216444015503,
+            "oracle_cosine": 0.2524891495704651
+          }
+        ],
+        "intervention": "corrupt_after_2",
+        "mode": "recurrent",
+        "nll": 13.750783920288086,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.15234375,
+        "correct": 156,
+        "count": 1024,
+        "depth": 16,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.5450628995895386,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.5586574673652649,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.958196222782135,
+            "oracle_cosine": 0.958196222782135
+          },
+          {
+            "address_entropy": 1.5976506471633911,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13778090104460716,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.11839668452739716,
+            "oracle_cosine": 0.24503616616129875
+          },
+          {
+            "address_entropy": 1.621254801750183,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13742268085479736,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.12338843941688538,
+            "oracle_cosine": 0.24858824163675308
+          },
+          {
+            "address_entropy": 1.6329517364501953,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13724211230874062,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.12596017122268677,
+            "oracle_cosine": 0.2504059821367264
+          },
+          {
+            "address_entropy": 1.6390284299850464,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13714751228690147,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.12732303142547607,
+            "oracle_cosine": 0.25136587768793106
+          },
+          {
+            "address_entropy": 1.6422615051269531,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13709692284464836,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.1280558705329895,
+            "oracle_cosine": 0.2518810145556927
+          },
+          {
+            "address_entropy": 1.6440038681030273,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13706958666443825,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.12845303118228912,
+            "oracle_cosine": 0.2521599531173706
+          },
+          {
+            "address_entropy": 1.6449490785598755,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13705474883317947,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.1286691576242447,
+            "oracle_cosine": 0.25231167674064636
+          },
+          {
+            "address_entropy": 1.6454639434814453,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13704665005207062,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.1287870556116104,
+            "oracle_cosine": 0.25239434838294983
+          },
+          {
+            "address_entropy": 1.6457445621490479,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13704222813248634,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.12885142862796783,
+            "oracle_cosine": 0.25243953615427017
+          },
+          {
+            "address_entropy": 1.645898699760437,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13703981786966324,
+            "hop": 12,
+            "minimum_oracle_cosine": 0.1288866400718689,
+            "oracle_cosine": 0.25246427208185196
+          },
+          {
+            "address_entropy": 1.6459825932979584,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13703849911689758,
+            "hop": 13,
+            "minimum_oracle_cosine": 0.12890587747097015,
+            "oracle_cosine": 0.25247772783041
+          },
+          {
+            "address_entropy": 1.6460283994674683,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13703778386116028,
+            "hop": 14,
+            "minimum_oracle_cosine": 0.128916397690773,
+            "oracle_cosine": 0.25248509645462036
+          },
+          {
+            "address_entropy": 1.6460533142089844,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13703738525509834,
+            "hop": 15,
+            "minimum_oracle_cosine": 0.12892216444015503,
+            "oracle_cosine": 0.2524891495704651
+          },
+          {
+            "address_entropy": 1.6460667848587036,
+            "address_hit_accuracy": 0.15234375,
+            "correct_address_mass": 0.13703717291355133,
+            "hop": 16,
+            "minimum_oracle_cosine": 0.12892532348632812,
+            "oracle_cosine": 0.2524913623929024
+          }
+        ],
+        "intervention": "corrupt_after_2",
+        "mode": "recurrent",
+        "nll": 13.750680208206177,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      }
+    ],
+    "static": [
+      {
+        "accuracy": 1.0,
+        "correct": 1024,
+        "count": 1024,
+        "depth": 1,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          }
+        ],
+        "intervention": "normal",
+        "mode": "static",
+        "nll": 6.123445306371877e-08,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.1298828125,
+        "correct": 133,
+        "count": 1024,
+        "depth": 2,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          }
+        ],
+        "intervention": "normal",
+        "mode": "static",
+        "nll": 15.50026559829712,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.2685546875,
+        "correct": 275,
+        "count": 1024,
+        "depth": 3,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2685546875,
+            "correct_address_mass": 0.20674654841423035,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3233833611011505
+          }
+        ],
+        "intervention": "normal",
+        "mode": "static",
+        "nll": 13.029964923858643,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.265625,
+        "correct": 272,
+        "count": 1024,
+        "depth": 4,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2685546875,
+            "correct_address_mass": 0.20674654841423035,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3233833611011505
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.265625,
+            "correct_address_mass": 0.20507826283574104,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3207738921046257
+          }
+        ],
+        "intervention": "normal",
+        "mode": "static",
+        "nll": 13.082154750823975,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.37890625,
+        "correct": 388,
+        "count": 1024,
+        "depth": 5,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2685546875,
+            "correct_address_mass": 0.20674654841423035,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3233833611011505
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.265625,
+            "correct_address_mass": 0.20507826283574104,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3207738921046257
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.37890625,
+            "correct_address_mass": 0.2695857286453247,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4216734990477562
+          }
+        ],
+        "intervention": "normal",
+        "mode": "static",
+        "nll": 11.064161539077759,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.2626953125,
+        "correct": 269,
+        "count": 1024,
+        "depth": 6,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2685546875,
+            "correct_address_mass": 0.20674654841423035,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3233833611011505
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.265625,
+            "correct_address_mass": 0.20507826283574104,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3207738921046257
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.37890625,
+            "correct_address_mass": 0.2695857286453247,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4216734990477562
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2626953125,
+            "correct_address_mass": 0.20340995863080025,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3181644454598427
+          }
+        ],
+        "intervention": "normal",
+        "mode": "static",
+        "nll": 13.134344100952148,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.521484375,
+        "correct": 534,
+        "count": 1024,
+        "depth": 7,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2685546875,
+            "correct_address_mass": 0.20674654841423035,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3233833611011505
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.265625,
+            "correct_address_mass": 0.20507826283574104,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3207738921046257
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.37890625,
+            "correct_address_mass": 0.2695857286453247,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4216734990477562
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2626953125,
+            "correct_address_mass": 0.20340995863080025,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3181644454598427
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.521484375,
+            "correct_address_mass": 0.35077617317438126,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.5486678183078766
+          }
+        ],
+        "intervention": "normal",
+        "mode": "static",
+        "nll": 8.52427625656128,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.236328125,
+        "correct": 242,
+        "count": 1024,
+        "depth": 8,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2685546875,
+            "correct_address_mass": 0.20674654841423035,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3233833611011505
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.265625,
+            "correct_address_mass": 0.20507826283574104,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3207738921046257
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.37890625,
+            "correct_address_mass": 0.2695857286453247,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4216734990477562
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2626953125,
+            "correct_address_mass": 0.20340995863080025,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3181644454598427
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.521484375,
+            "correct_address_mass": 0.35077617317438126,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.5486678183078766
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.236328125,
+            "correct_address_mass": 0.18839528411626816,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.2946791723370552
+          }
+        ],
+        "intervention": "normal",
+        "mode": "static",
+        "nll": 13.604049444198608,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.5078125,
+        "correct": 520,
+        "count": 1024,
+        "depth": 9,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2685546875,
+            "correct_address_mass": 0.20674654841423035,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3233833611011505
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.265625,
+            "correct_address_mass": 0.20507826283574104,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3207738921046257
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.37890625,
+            "correct_address_mass": 0.2695857286453247,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4216734990477562
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2626953125,
+            "correct_address_mass": 0.20340995863080025,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3181644454598427
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.521484375,
+            "correct_address_mass": 0.35077617317438126,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.5486678183078766
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.236328125,
+            "correct_address_mass": 0.18839528411626816,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.2946791723370552
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.5078125,
+            "correct_address_mass": 0.34299079328775406,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.5364903211593628
+          }
+        ],
+        "intervention": "normal",
+        "mode": "static",
+        "nll": 8.767827033996582,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.265625,
+        "correct": 272,
+        "count": 1024,
+        "depth": 10,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2685546875,
+            "correct_address_mass": 0.20674654841423035,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3233833611011505
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.265625,
+            "correct_address_mass": 0.20507826283574104,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3207738921046257
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.37890625,
+            "correct_address_mass": 0.2695857286453247,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4216734990477562
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2626953125,
+            "correct_address_mass": 0.20340995863080025,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3181644454598427
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.521484375,
+            "correct_address_mass": 0.35077617317438126,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.5486678183078766
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.236328125,
+            "correct_address_mass": 0.18839528411626816,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.2946791723370552
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.5078125,
+            "correct_address_mass": 0.34299079328775406,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.5364903211593628
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.265625,
+            "correct_address_mass": 0.20507826283574104,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3207738921046257
+          }
+        ],
+        "intervention": "normal",
+        "mode": "static",
+        "nll": 13.082154750823975,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.4013671875,
+        "correct": 411,
+        "count": 1024,
+        "depth": 11,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2685546875,
+            "correct_address_mass": 0.20674654841423035,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3233833611011505
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.265625,
+            "correct_address_mass": 0.20507826283574104,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3207738921046257
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.37890625,
+            "correct_address_mass": 0.2695857286453247,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4216734990477562
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2626953125,
+            "correct_address_mass": 0.20340995863080025,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3181644454598427
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.521484375,
+            "correct_address_mass": 0.35077617317438126,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.5486678183078766
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.236328125,
+            "correct_address_mass": 0.18839528411626816,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.2946791723370552
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.5078125,
+            "correct_address_mass": 0.34299079328775406,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.5364903211593628
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.265625,
+            "correct_address_mass": 0.20507826283574104,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3207738921046257
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.4013671875,
+            "correct_address_mass": 0.2823759987950325,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4416794627904892
+          }
+        ],
+        "intervention": "normal",
+        "mode": "static",
+        "nll": 10.664042711257935,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.1298828125,
+        "correct": 133,
+        "count": 1024,
+        "depth": 12,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2685546875,
+            "correct_address_mass": 0.20674654841423035,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3233833611011505
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.265625,
+            "correct_address_mass": 0.20507826283574104,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3207738921046257
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.37890625,
+            "correct_address_mass": 0.2695857286453247,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4216734990477562
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2626953125,
+            "correct_address_mass": 0.20340995863080025,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3181644454598427
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.521484375,
+            "correct_address_mass": 0.35077617317438126,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.5486678183078766
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.236328125,
+            "correct_address_mass": 0.18839528411626816,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.2946791723370552
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.5078125,
+            "correct_address_mass": 0.34299079328775406,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.5364903211593628
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.265625,
+            "correct_address_mass": 0.20507826283574104,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3207738921046257
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.4013671875,
+            "correct_address_mass": 0.2823759987950325,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4416794627904892
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 12,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          }
+        ],
+        "intervention": "normal",
+        "mode": "static",
+        "nll": 15.50026559829712,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.6318359375,
+        "correct": 647,
+        "count": 1024,
+        "depth": 13,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2685546875,
+            "correct_address_mass": 0.20674654841423035,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3233833611011505
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.265625,
+            "correct_address_mass": 0.20507826283574104,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3207738921046257
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.37890625,
+            "correct_address_mass": 0.2695857286453247,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4216734990477562
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2626953125,
+            "correct_address_mass": 0.20340995863080025,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3181644454598427
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.521484375,
+            "correct_address_mass": 0.35077617317438126,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.5486678183078766
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.236328125,
+            "correct_address_mass": 0.18839528411626816,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.2946791723370552
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.5078125,
+            "correct_address_mass": 0.34299079328775406,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.5364903211593628
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.265625,
+            "correct_address_mass": 0.20507826283574104,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3207738921046257
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.4013671875,
+            "correct_address_mass": 0.2823759987950325,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4416794627904892
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 12,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.6318359375,
+            "correct_address_mass": 0.4136153534054756,
+            "hop": 13,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.6469579190015793
+          }
+        ],
+        "intervention": "normal",
+        "mode": "static",
+        "nll": 6.558474063873291,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.1298828125,
+        "correct": 133,
+        "count": 1024,
+        "depth": 14,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2685546875,
+            "correct_address_mass": 0.20674654841423035,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3233833611011505
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.265625,
+            "correct_address_mass": 0.20507826283574104,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3207738921046257
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.37890625,
+            "correct_address_mass": 0.2695857286453247,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4216734990477562
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2626953125,
+            "correct_address_mass": 0.20340995863080025,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3181644454598427
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.521484375,
+            "correct_address_mass": 0.35077617317438126,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.5486678183078766
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.236328125,
+            "correct_address_mass": 0.18839528411626816,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.2946791723370552
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.5078125,
+            "correct_address_mass": 0.34299079328775406,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.5364903211593628
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.265625,
+            "correct_address_mass": 0.20507826283574104,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3207738921046257
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.4013671875,
+            "correct_address_mass": 0.2823759987950325,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4416794627904892
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 12,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.6318359375,
+            "correct_address_mass": 0.4136153534054756,
+            "hop": 13,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.6469579190015793
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 14,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          }
+        ],
+        "intervention": "normal",
+        "mode": "static",
+        "nll": 15.50026559829712,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.375,
+        "correct": 384,
+        "count": 1024,
+        "depth": 15,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2685546875,
+            "correct_address_mass": 0.20674654841423035,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3233833611011505
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.265625,
+            "correct_address_mass": 0.20507826283574104,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3207738921046257
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.37890625,
+            "correct_address_mass": 0.2695857286453247,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4216734990477562
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2626953125,
+            "correct_address_mass": 0.20340995863080025,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3181644454598427
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.521484375,
+            "correct_address_mass": 0.35077617317438126,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.5486678183078766
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.236328125,
+            "correct_address_mass": 0.18839528411626816,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.2946791723370552
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.5078125,
+            "correct_address_mass": 0.34299079328775406,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.5364903211593628
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.265625,
+            "correct_address_mass": 0.20507826283574104,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3207738921046257
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.4013671875,
+            "correct_address_mass": 0.2823759987950325,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4416794627904892
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 12,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.6318359375,
+            "correct_address_mass": 0.4136153534054756,
+            "hop": 13,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.6469579190015793
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 14,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.375,
+            "correct_address_mass": 0.2673613354563713,
+            "hop": 15,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4181942045688629
+          }
+        ],
+        "intervention": "normal",
+        "mode": "static",
+        "nll": 11.133747339248657,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      },
+      {
+        "accuracy": 0.3984375,
+        "correct": 408,
+        "count": 1024,
+        "depth": 16,
+        "hops": [
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.623264729976654,
+            "hop": 1,
+            "minimum_oracle_cosine": 0.9748815894126892,
+            "oracle_cosine": 0.974881649017334
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 2,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2685546875,
+            "correct_address_mass": 0.20674654841423035,
+            "hop": 3,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3233833611011505
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.265625,
+            "correct_address_mass": 0.20507826283574104,
+            "hop": 4,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3207738921046257
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.37890625,
+            "correct_address_mass": 0.2695857286453247,
+            "hop": 5,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4216734990477562
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.2626953125,
+            "correct_address_mass": 0.20340995863080025,
+            "hop": 6,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3181644454598427
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.521484375,
+            "correct_address_mass": 0.35077617317438126,
+            "hop": 7,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.5486678183078766
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.236328125,
+            "correct_address_mass": 0.18839528411626816,
+            "hop": 8,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.2946791723370552
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.5078125,
+            "correct_address_mass": 0.34299079328775406,
+            "hop": 9,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.5364903211593628
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.265625,
+            "correct_address_mass": 0.20507826283574104,
+            "hop": 10,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.3207738921046257
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.4013671875,
+            "correct_address_mass": 0.2823759987950325,
+            "hop": 11,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4416794627904892
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 12,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.6318359375,
+            "correct_address_mass": 0.4136153534054756,
+            "hop": 13,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.6469579190015793
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.1298828125,
+            "correct_address_mass": 0.1277805082499981,
+            "hop": 14,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.199868343770504
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.375,
+            "correct_address_mass": 0.2673613354563713,
+            "hop": 15,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4181942045688629
+          },
+          {
+            "address_entropy": 1.3955365419387817,
+            "address_hit_accuracy": 0.3984375,
+            "correct_address_mass": 0.2807077169418335,
+            "hop": 16,
+            "minimum_oracle_cosine": 0.08418172597885132,
+            "oracle_cosine": 0.4390699937939644
+          }
+        ],
+        "intervention": "normal",
+        "mode": "static",
+        "nll": 10.716232538223267,
+        "split": "test",
+        "stream_sha256": "6a5f974ec569db7c661ba9afc90c2f69b664f5c6c64eb8fddd08aa1595b3650e"
+      }
+    ]
+  },
+  "experiment": "exp_001_recurrent_binding_composition",
+  "mode": "checkpoint_only_evaluation",
+  "split": "test"
+}

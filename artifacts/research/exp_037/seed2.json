@@ -1,0 +1,90 @@
+{
+  "seed": 2,
+  "steps": 150,
+  "training": [
+    {
+      "step": 1,
+      "depth": 1,
+      "loss": 17.655885696411133
+    },
+    {
+      "step": 100,
+      "depth": 2,
+      "loss": 7.145047220546985e-06
+    }
+  ],
+  "evaluation": {
+    "1": {
+      "accuracy": 1.0,
+      "mean_target_cosine": 0.999999962747097,
+      "mean_nontrivial_operator_mass": 0.7740490287542343,
+      "selected_operator_fraction": {
+        "READ": 0.1298828125,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.8701171875,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    "2": {
+      "accuracy": 1.0,
+      "mean_target_cosine": 0.9999998807907104,
+      "mean_nontrivial_operator_mass": 0.851987786591053,
+      "selected_operator_fraction": {
+        "READ": 0.08935546875,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.91064453125,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    "3": {
+      "accuracy": 1.0,
+      "mean_target_cosine": 0.9999997615814209,
+      "mean_nontrivial_operator_mass": 0.8854002356529236,
+      "selected_operator_fraction": {
+        "READ": 0.0634765625,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.9365234375,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    "4": {
+      "accuracy": 1.0,
+      "mean_target_cosine": 0.9999994933605194,
+      "mean_nontrivial_operator_mass": 0.9120525438338518,
+      "selected_operator_fraction": {
+        "READ": 0.043701171875,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.956298828125,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    "6": {
+      "accuracy": 1.0,
+      "mean_target_cosine": 0.9999988526105881,
+      "mean_nontrivial_operator_mass": 0.9320552460849285,
+      "selected_operator_fraction": {
+        "READ": 0.028727213541666668,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.9712727864583334,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    "8": {
+      "accuracy": 1.0,
+      "mean_target_cosine": 0.999997928738594,
+      "mean_nontrivial_operator_mass": 0.9418710144236684,
+      "selected_operator_fraction": {
+        "READ": 0.0220947265625,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.9779052734375,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    }
+  }
+}

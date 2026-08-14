@@ -1,0 +1,291 @@
+{
+  "experiment": "exp_027_partial_transition_sample_complexity",
+  "protocol": {
+    "all_states_still_in_geometry_losses": true,
+    "latent_dimension": 30,
+    "program_depth": 16,
+    "semantic_labels": "only A/M transitions on observed identity subset",
+    "total_states": 31
+  },
+  "rows": [
+    {
+      "heldout_ids": [
+        13,
+        15,
+        8,
+        3,
+        19,
+        14,
+        12
+      ],
+      "metrics": {
+        "code_effective_rank": 30.0,
+        "heldout_add_accuracy": 0.1428571492433548,
+        "heldout_count": 7,
+        "heldout_mul_accuracy": 0.2857142984867096,
+        "mixed_program_accuracy": 0.03125,
+        "observed_add_accuracy": 1.0,
+        "observed_mul_accuracy": 1.0,
+        "semidirect_cosine": 0.4833903908729553
+      },
+      "observed_ids": [
+        7,
+        29,
+        25,
+        28,
+        2,
+        1,
+        21,
+        26,
+        24,
+        17,
+        9,
+        20,
+        22,
+        4,
+        23,
+        11,
+        10,
+        18,
+        30,
+        27,
+        16,
+        5,
+        6,
+        0
+      ],
+      "observed_states": 24,
+      "seed": 91,
+      "trace": [
+        {
+          "add_loss": 0.9691041111946106,
+          "isotropy_loss": 0.8815589547157288,
+          "loss": 2.8598551750183105,
+          "mul_loss": 1.0091909170150757,
+          "step": 1
+        },
+        {
+          "add_loss": 7.798274168635544e-07,
+          "isotropy_loss": 7.254345746332547e-07,
+          "loss": 0.0004105890984646976,
+          "mul_loss": 8.468826422358688e-07,
+          "step": 300
+        },
+        {
+          "add_loss": 0.0,
+          "isotropy_loss": 1.5047598722617295e-08,
+          "loss": 4.084438842255622e-06,
+          "mul_loss": -4.718701163142214e-08,
+          "step": 600
+        },
+        {
+          "add_loss": -7.698933046640377e-08,
+          "isotropy_loss": 1.893451107709554e-12,
+          "loss": -1.5102973804914654e-07,
+          "mul_loss": -7.450580596923828e-08,
+          "step": 900
+        },
+        {
+          "add_loss": -1.7384687467369986e-08,
+          "isotropy_loss": 5.230771545072788e-12,
+          "loss": -9.636158893044922e-08,
+          "mul_loss": -7.947286206899662e-08,
+          "step": 1200
+        },
+        {
+          "add_loss": 4.967053879312289e-09,
+          "isotropy_loss": 2.068667806498503e-11,
+          "loss": -3.408514714919875e-08,
+          "mul_loss": -3.973643103449831e-08,
+          "step": 1500
+        }
+      ]
+    },
+    {
+      "heldout_ids": [
+        14,
+        12
+      ],
+      "metrics": {
+        "code_effective_rank": 30.00000762939453,
+        "heldout_add_accuracy": 1.0,
+        "heldout_count": 2,
+        "heldout_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "observed_add_accuracy": 1.0,
+        "observed_mul_accuracy": 1.0,
+        "semidirect_cosine": 1.0
+      },
+      "observed_ids": [
+        7,
+        29,
+        25,
+        28,
+        2,
+        1,
+        21,
+        26,
+        24,
+        17,
+        9,
+        20,
+        22,
+        4,
+        23,
+        11,
+        10,
+        18,
+        30,
+        27,
+        16,
+        5,
+        6,
+        0,
+        13,
+        15,
+        8,
+        3,
+        19
+      ],
+      "observed_states": 29,
+      "seed": 91,
+      "trace": [
+        {
+          "add_loss": 0.9676366448402405,
+          "isotropy_loss": 0.8815589547157288,
+          "loss": 2.8476786613464355,
+          "mul_loss": 0.998481810092926,
+          "step": 1
+        },
+        {
+          "add_loss": 1.2331994980741e-07,
+          "isotropy_loss": 5.904533963985159e-07,
+          "loss": 0.00022845470812171698,
+          "mul_loss": 2.2814191424913588e-07,
+          "step": 300
+        },
+        {
+          "add_loss": 2.6719323642510062e-08,
+          "isotropy_loss": 2.9958968639220984e-08,
+          "loss": 9.052055247593671e-06,
+          "mul_loss": -4.7272649794649624e-08,
+          "step": 600
+        },
+        {
+          "add_loss": -4.9327983475677684e-08,
+          "isotropy_loss": 7.346199928752462e-13,
+          "loss": -1.1500191021696082e-07,
+          "mul_loss": -6.577064226576113e-08,
+          "step": 900
+        },
+        {
+          "add_loss": -4.110665230427912e-08,
+          "isotropy_loss": 4.554041808913466e-14,
+          "loss": -9.043088766702567e-08,
+          "mul_loss": -4.9327983475677684e-08,
+          "step": 1200
+        },
+        {
+          "add_loss": -6.371531213744674e-08,
+          "isotropy_loss": 2.6928315805495318e-14,
+          "loss": -1.007112544471056e-07,
+          "mul_loss": -3.6995984942223004e-08,
+          "step": 1500
+        }
+      ]
+    },
+    {
+      "heldout_ids": [
+        12
+      ],
+      "metrics": {
+        "code_effective_rank": 30.000001907348633,
+        "heldout_add_accuracy": 1.0,
+        "heldout_count": 1,
+        "heldout_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "observed_add_accuracy": 1.0,
+        "observed_mul_accuracy": 1.0,
+        "semidirect_cosine": 1.0
+      },
+      "observed_ids": [
+        7,
+        29,
+        25,
+        28,
+        2,
+        1,
+        21,
+        26,
+        24,
+        17,
+        9,
+        20,
+        22,
+        4,
+        23,
+        11,
+        10,
+        18,
+        30,
+        27,
+        16,
+        5,
+        6,
+        0,
+        13,
+        15,
+        8,
+        3,
+        19,
+        14
+      ],
+      "observed_states": 30,
+      "seed": 91,
+      "trace": [
+        {
+          "add_loss": 0.9639934301376343,
+          "isotropy_loss": 0.8815589547157288,
+          "loss": 2.8401119709014893,
+          "mul_loss": 0.9945585131645203,
+          "step": 1
+        },
+        {
+          "add_loss": 3.099441414633475e-07,
+          "isotropy_loss": 1.4539028825311107e-06,
+          "loss": 1.5585223081870936e-05,
+          "mul_loss": 2.9007594548602356e-07,
+          "step": 300
+        },
+        {
+          "add_loss": -5.563100202721216e-08,
+          "isotropy_loss": 1.9634556567421635e-12,
+          "loss": -1.2713185526536108e-07,
+          "mul_loss": -7.152557657263969e-08,
+          "step": 600
+        },
+        {
+          "add_loss": -4.967053612858763e-08,
+          "isotropy_loss": 2.5028932512704063e-14,
+          "loss": -1.1920926112907182e-07,
+          "mul_loss": -6.953874986947994e-08,
+          "step": 900
+        },
+        {
+          "add_loss": -4.5696893380409165e-08,
+          "isotropy_loss": 2.0020399590535073e-14,
+          "loss": -9.735423134316079e-08,
+          "mul_loss": -5.16573592790337e-08,
+          "step": 1200
+        },
+        {
+          "add_loss": -4.967053612858763e-08,
+          "isotropy_loss": 2.4512447396852176e-14,
+          "loss": -9.536740464000104e-08,
+          "mul_loss": -4.5696893380409165e-08,
+          "step": 1500
+        }
+      ]
+    }
+  ]
+}

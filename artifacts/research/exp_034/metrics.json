@@ -1,0 +1,551 @@
+{
+  "assembled_from_seed_artifacts": [
+    "seed_140.json",
+    "seed_141.json",
+    "seed_142.json"
+  ],
+  "experiment": "exp_034_state_conditioned_jacobian_gauge",
+  "protocol": {
+    "compiler_input": "context transition graph plus noisy local Jacobians",
+    "cycle_projection": "only when observed A-edge graph is one closed cycle with near-identity measured holonomy",
+    "examples": 1024,
+    "finite_order_used_during_synchronization": false,
+    "gauge_family": "2D local rotations",
+    "global_action_matrix_exists_in_observed_gauge": false,
+    "hidden_gauges_given": false,
+    "program_depth": 256,
+    "semantic_codebook_given": false,
+    "shared_action_family": "O(2), determinant component inferred from observed Jacobians",
+    "shared_operators_given": false
+  },
+  "rows": [
+    {
+      "contexts": 7,
+      "cycle_holonomy": {
+        "closed_single_cycle": true,
+        "cycle_length": 7,
+        "identity_residual": 0.008915767338491382
+      },
+      "cycle_law_projection_applied": true,
+      "global_matrix_relative_mismatch": {
+        "A": 0.9676706450694357,
+        "B": 0.9708639946516588
+      },
+      "noise": 0.03,
+      "projected_shared_laws": {
+        "A_cycle_residual": 6.684427777288335e-16,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 1.1102230246251565e-16
+      },
+      "raw_local_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.416015625,
+        "fraction_cosine_gt_0_999": 0.1435546875,
+        "mean_target_cosine": 0.9681637838529296
+      },
+      "seed": 140,
+      "synchronization_loss": 0.00013293811516095654,
+      "synchronized_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 0.9482421875,
+        "mean_target_cosine": 0.9997243555232853
+      },
+      "synchronized_law_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 1.0,
+        "mean_target_cosine": 0.9999410576091048
+      },
+      "synchronized_shared_laws": {
+        "A_cycle_residual": 0.008915767338492009,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 1.1102230246251565e-16
+      }
+    },
+    {
+      "contexts": 7,
+      "cycle_holonomy": {
+        "closed_single_cycle": true,
+        "cycle_length": 7,
+        "identity_residual": 0.01524086708416972
+      },
+      "cycle_law_projection_applied": true,
+      "global_matrix_relative_mismatch": {
+        "A": 0.9676381467525621,
+        "B": 0.9719591235504869
+      },
+      "noise": 0.05,
+      "projected_shared_laws": {
+        "A_cycle_residual": 6.684427777288335e-16,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 1.1102230246251565e-16
+      },
+      "raw_local_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.2470703125,
+        "fraction_cosine_gt_0_999": 0.0791015625,
+        "mean_target_cosine": 0.9146396613149906
+      },
+      "seed": 140,
+      "synchronization_loss": 0.0003665980674504431,
+      "synchronized_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 0.7578125,
+        "mean_target_cosine": 0.9992033823387836
+      },
+      "synchronized_law_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 1.0,
+        "mean_target_cosine": 0.9998359540325998
+      },
+      "synchronized_shared_laws": {
+        "A_cycle_residual": 0.015240867084169324,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 0.0
+      }
+    },
+    {
+      "contexts": 7,
+      "cycle_holonomy": {
+        "closed_single_cycle": true,
+        "cycle_length": 7,
+        "identity_residual": 0.03228885962278725
+      },
+      "cycle_law_projection_applied": true,
+      "global_matrix_relative_mismatch": {
+        "A": 0.9675407185408378,
+        "B": 0.9746853773251618
+      },
+      "noise": 0.1,
+      "projected_shared_laws": {
+        "A_cycle_residual": 6.684427777288335e-16,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 0.0
+      },
+      "raw_local_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.1416015625,
+        "fraction_cosine_gt_0_999": 0.0380859375,
+        "mean_target_cosine": 0.7037335213418527
+      },
+      "seed": 140,
+      "synchronization_loss": 0.001439633374030875,
+      "synchronized_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.912109375,
+        "fraction_cosine_gt_0_999": 0.4130859375,
+        "mean_target_cosine": 0.9965090802478713
+      },
+      "synchronized_law_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 0.7421875,
+        "mean_target_cosine": 0.9993392304576931
+      },
+      "synchronized_shared_laws": {
+        "A_cycle_residual": 0.0322888596227873,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 0.0
+      }
+    },
+    {
+      "contexts": 7,
+      "cycle_holonomy": {
+        "closed_single_cycle": true,
+        "cycle_length": 7,
+        "identity_residual": 0.05093907474778575
+      },
+      "cycle_law_projection_applied": true,
+      "global_matrix_relative_mismatch": {
+        "A": 0.9674220059485119,
+        "B": 0.97734337648542
+      },
+      "noise": 0.15,
+      "projected_shared_laws": {
+        "A_cycle_residual": 6.684427777288335e-16,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 1.1102230246251565e-16
+      },
+      "raw_local_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.0947265625,
+        "fraction_cosine_gt_0_999": 0.025390625,
+        "mean_target_cosine": 0.45542059687494035
+      },
+      "seed": 140,
+      "synchronization_loss": 0.003179355094118239,
+      "synchronized_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.7392578125,
+        "fraction_cosine_gt_0_999": 0.27734375,
+        "mean_target_cosine": 0.991484900196402
+      },
+      "synchronized_law_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 0.5244140625,
+        "mean_target_cosine": 0.998498692454354
+      },
+      "synchronized_shared_laws": {
+        "A_cycle_residual": 0.050939074747785466,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 0.0
+      }
+    },
+    {
+      "contexts": 7,
+      "cycle_holonomy": {
+        "closed_single_cycle": true,
+        "cycle_length": 7,
+        "identity_residual": 0.05383518493909454
+      },
+      "cycle_law_projection_applied": true,
+      "global_matrix_relative_mismatch": {
+        "A": 0.9755793691573271,
+        "B": 0.9705264403840278
+      },
+      "noise": 0.03,
+      "projected_shared_laws": {
+        "A_cycle_residual": 6.684427777288335e-16,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 1.1102230246251565e-16
+      },
+      "raw_local_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.37890625,
+        "fraction_cosine_gt_0_999": 0.12109375,
+        "mean_target_cosine": 0.964005972034262
+      },
+      "seed": 141,
+      "synchronization_loss": 8.890541999998469e-05,
+      "synchronized_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.75,
+        "fraction_cosine_gt_0_999": 0.298828125,
+        "mean_target_cosine": 0.992373894390465
+      },
+      "synchronized_law_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 1.0,
+        "mean_target_cosine": 0.9999379860877529
+      },
+      "synchronized_shared_laws": {
+        "A_cycle_residual": 0.05383518493909476,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 1.1102230246251565e-16
+      }
+    },
+    {
+      "contexts": 7,
+      "cycle_holonomy": {
+        "closed_single_cycle": true,
+        "cycle_length": 7,
+        "identity_residual": 0.09033918928114465
+      },
+      "cycle_law_projection_applied": true,
+      "global_matrix_relative_mismatch": {
+        "A": 0.9743635050602777,
+        "B": 0.9700701207985194
+      },
+      "noise": 0.05,
+      "projected_shared_laws": {
+        "A_cycle_residual": 1.0778315928076987e-15,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 5.551115123125783e-17
+      },
+      "raw_local_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.220703125,
+        "fraction_cosine_gt_0_999": 0.072265625,
+        "mean_target_cosine": 0.9027730932072267
+      },
+      "seed": 141,
+      "synchronization_loss": 0.0002475541123082967,
+      "synchronized_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.501953125,
+        "fraction_cosine_gt_0_999": 0.171875,
+        "mean_target_cosine": 0.9786670756139559
+      },
+      "synchronized_law_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 1.0,
+        "mean_target_cosine": 0.9998279155860197
+      },
+      "synchronized_shared_laws": {
+        "A_cycle_residual": 0.0903391892811473,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 1.2412670766236366e-16
+      }
+    },
+    {
+      "contexts": 7,
+      "cycle_holonomy": {
+        "closed_single_cycle": true,
+        "cycle_length": 7,
+        "identity_residual": 0.18356239770475336
+      },
+      "cycle_law_projection_applied": true,
+      "global_matrix_relative_mismatch": {
+        "A": 0.9712002900368996,
+        "B": 0.9689233627008405
+      },
+      "noise": 0.1,
+      "projected_shared_laws": {
+        "A_cycle_residual": 6.684427777288335e-16,
+        "B_square_residual": 1.1102230246251565e-16,
+        "dihedral_conjugacy_residual": 1.570092458683775e-16
+      },
+      "raw_local_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.111328125,
+        "fraction_cosine_gt_0_999": 0.0263671875,
+        "mean_target_cosine": 0.6617585995182886
+      },
+      "seed": 141,
+      "synchronization_loss": 0.0009956377527708495,
+      "synchronized_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.2587890625,
+        "fraction_cosine_gt_0_999": 0.0859375,
+        "mean_target_cosine": 0.9146610558068086
+      },
+      "synchronized_law_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 0.751953125,
+        "mean_target_cosine": 0.9993136605895074
+      },
+      "synchronized_shared_laws": {
+        "A_cycle_residual": 0.18356239770475322,
+        "B_square_residual": 1.1102230246251565e-16,
+        "dihedral_conjugacy_residual": 1.570092458683775e-16
+      }
+    },
+    {
+      "contexts": 7,
+      "cycle_holonomy": {
+        "closed_single_cycle": true,
+        "cycle_length": 7,
+        "identity_residual": 0.27921451045444273
+      },
+      "cycle_law_projection_applied": true,
+      "global_matrix_relative_mismatch": {
+        "A": 0.9678718615940296,
+        "B": 0.9677666810017932
+      },
+      "noise": 0.15,
+      "projected_shared_laws": {
+        "A_cycle_residual": 1.0778315928076987e-15,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 5.551115123125783e-17
+      },
+      "raw_local_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.0732421875,
+        "fraction_cosine_gt_0_999": 0.0185546875,
+        "mean_target_cosine": 0.3900753311045276
+      },
+      "seed": 141,
+      "synchronization_loss": 0.002250132651550644,
+      "synchronized_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.171875,
+        "fraction_cosine_gt_0_999": 0.052734375,
+        "mean_target_cosine": 0.8129203335944983
+      },
+      "synchronized_law_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 0.5556640625,
+        "mean_target_cosine": 0.9984610961010966
+      },
+      "synchronized_shared_laws": {
+        "A_cycle_residual": 0.27921451045444434,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 0.0
+      }
+    },
+    {
+      "contexts": 7,
+      "cycle_holonomy": {
+        "closed_single_cycle": true,
+        "cycle_length": 7,
+        "identity_residual": 0.10624655563560838
+      },
+      "cycle_law_projection_applied": true,
+      "global_matrix_relative_mismatch": {
+        "A": 0.9058405571967479,
+        "B": 0.7902748353877488
+      },
+      "noise": 0.03,
+      "projected_shared_laws": {
+        "A_cycle_residual": 0.0,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 0.0
+      },
+      "raw_local_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.2783203125,
+        "fraction_cosine_gt_0_999": 0.09375,
+        "mean_target_cosine": 0.924636924064724
+      },
+      "seed": 142,
+      "synchronization_loss": 0.00011706909084210393,
+      "synchronized_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.435546875,
+        "fraction_cosine_gt_0_999": 0.1416015625,
+        "mean_target_cosine": 0.9712680237241773
+      },
+      "synchronized_law_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 1.0,
+        "mean_target_cosine": 0.9999595871239012
+      },
+      "synchronized_shared_laws": {
+        "A_cycle_residual": 0.1062465556356083,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 2.775557561562892e-17
+      }
+    },
+    {
+      "contexts": 7,
+      "cycle_holonomy": {
+        "closed_single_cycle": true,
+        "cycle_length": 7,
+        "identity_residual": 0.1775560743740188
+      },
+      "cycle_law_projection_applied": true,
+      "global_matrix_relative_mismatch": {
+        "A": 0.9055533348705079,
+        "B": 0.7888480953605603
+      },
+      "noise": 0.05,
+      "projected_shared_laws": {
+        "A_cycle_residual": 1.0778315928076987e-15,
+        "B_square_residual": 1.1102230246251565e-16,
+        "dihedral_conjugacy_residual": 1.2412670766236366e-16
+      },
+      "raw_local_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.1650390625,
+        "fraction_cosine_gt_0_999": 0.0537109375,
+        "mean_target_cosine": 0.8037167822259028
+      },
+      "seed": 142,
+      "synchronization_loss": 0.0003262296176607936,
+      "synchronized_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.267578125,
+        "fraction_cosine_gt_0_999": 0.09765625,
+        "mean_target_cosine": 0.9217547530954193
+      },
+      "synchronized_law_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 1.0,
+        "mean_target_cosine": 0.9998861998112121
+      },
+      "synchronized_shared_laws": {
+        "A_cycle_residual": 0.17755607437401663,
+        "B_square_residual": 1.1102230246251565e-16,
+        "dihedral_conjugacy_residual": 1.1102230246251565e-16
+      }
+    },
+    {
+      "contexts": 7,
+      "cycle_holonomy": {
+        "closed_single_cycle": true,
+        "cycle_length": 7,
+        "identity_residual": 0.3566792129104705
+      },
+      "cycle_law_projection_applied": true,
+      "global_matrix_relative_mismatch": {
+        "A": 0.9048507687558772,
+        "B": 0.785399785200249
+      },
+      "noise": 0.1,
+      "projected_shared_laws": {
+        "A_cycle_residual": 0.0,
+        "B_square_residual": 1.1102230246251565e-16,
+        "dihedral_conjugacy_residual": 1.1102230246251565e-16
+      },
+      "raw_local_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.08984375,
+        "fraction_cosine_gt_0_999": 0.0205078125,
+        "mean_target_cosine": 0.41314544351603943
+      },
+      "seed": 142,
+      "synchronization_loss": 0.001314514243614052,
+      "synchronized_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.1416015625,
+        "fraction_cosine_gt_0_999": 0.037109375,
+        "mean_target_cosine": 0.7188979687892957
+      },
+      "synchronized_law_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 1.0,
+        "fraction_cosine_gt_0_999": 0.8544921875,
+        "mean_target_cosine": 0.9995300656988348
+      },
+      "synchronized_shared_laws": {
+        "A_cycle_residual": 0.35667921291047033,
+        "B_square_residual": 1.1102230246251565e-16,
+        "dihedral_conjugacy_residual": 1.1631705747361534e-16
+      }
+    },
+    {
+      "contexts": 7,
+      "cycle_holonomy": {
+        "closed_single_cycle": true,
+        "cycle_length": 7,
+        "identity_residual": 0.5355099964075148
+      },
+      "cycle_law_projection_applied": false,
+      "global_matrix_relative_mismatch": {
+        "A": 0.9041715653701461,
+        "B": 0.7821372654939956
+      },
+      "noise": 0.15,
+      "projected_shared_laws": {
+        "A_cycle_residual": 0.5355099964075123,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 0.0
+      },
+      "raw_local_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.0595703125,
+        "fraction_cosine_gt_0_999": 0.0126953125,
+        "mean_target_cosine": 0.13075925846183734
+      },
+      "seed": 142,
+      "synchronization_loss": 0.0029763240104616843,
+      "synchronized_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.09765625,
+        "fraction_cosine_gt_0_999": 0.037109375,
+        "mean_target_cosine": 0.47198311235052626
+      },
+      "synchronized_law_execution": {
+        "depth": 256,
+        "fraction_cosine_gt_0_99": 0.09765625,
+        "fraction_cosine_gt_0_999": 0.037109375,
+        "mean_target_cosine": 0.47198311235052626
+      },
+      "synchronized_shared_laws": {
+        "A_cycle_residual": 0.5355099964075123,
+        "B_square_residual": 0.0,
+        "dihedral_conjugacy_residual": 0.0
+      }
+    }
+  ]
+}

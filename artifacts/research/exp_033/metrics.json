@@ -1,0 +1,3172 @@
+{
+  "experiment": "exp_033_trajectory_only_commutant_recovery",
+  "protocol": {
+    "compiler_receives_discrete_state_labels": false,
+    "compiler_receives_identity_codebook": false,
+    "compiler_receives_multiplicity": false,
+    "compiler_receives_true_action_matrices": false,
+    "examples": 2048,
+    "gap_threshold": 5.0,
+    "program_depth": 256,
+    "system_identification": "ridge linear regression on continuous random state-transition pairs"
+  },
+  "rows": [
+    {
+      "compiled_shared_execution": null,
+      "compiled_shared_polar_execution": null,
+      "compiler": {
+        "accepted": false,
+        "best": {
+          "approx_commutant_dim": 9,
+          "block_dim": 2,
+          "gap_ratio": 1.7244335700028812,
+          "high_cluster_min": 1.4032009108740406,
+          "low_cluster_max": 0.8137169997634042,
+          "multiplicity": 3
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 3,
+            "gap_ratio": 1.1099815827487445,
+            "high_cluster_min": 0.42602389622632053,
+            "low_cluster_max": 0.38381168016438644,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 9,
+            "block_dim": 2,
+            "gap_ratio": 1.7244335700028812,
+            "high_cluster_min": 1.4032009108740406,
+            "low_cluster_max": 0.8137169997634042,
+            "multiplicity": 3
+          }
+        ],
+        "gap_threshold": 5.0,
+        "smallest_singular_values": [
+          2.4425280446693396e-16,
+          0.2270647510042856,
+          0.328503957039042,
+          0.38381168016438644,
+          0.42602389622632053,
+          0.615657494353434,
+          0.6298700231826049,
+          0.6856450601636632,
+          0.8137169997634042,
+          1.4032009108740406,
+          1.5074025541189628,
+          1.5235832473002995,
+          1.5478182423908653,
+          1.6421749490330837,
+          1.727809046996969,
+          1.7785461519115968,
+          1.8598676942422647,
+          1.865658003683053,
+          1.9735107072116571,
+          2.0829321729764594,
+          2.140998877275287,
+          2.167713540821373,
+          2.1741050352523805,
+          2.227580207103117
+        ]
+      },
+      "dimension": 6,
+      "multiplicity": 3,
+      "raw_identified_execution": {
+        "accuracy": 0.125,
+        "target_cosine": 0.03245064032105851
+      },
+      "sample_factor_times_dimension": 1.0,
+      "samples_per_operator": 6,
+      "seed": 130,
+      "trajectory_output_noise": 0.05
+    },
+    {
+      "compiled_shared_execution": null,
+      "compiled_shared_polar_execution": null,
+      "compiler": {
+        "accepted": false,
+        "best": {
+          "approx_commutant_dim": 4,
+          "block_dim": 3,
+          "gap_ratio": 1.1835435887000159,
+          "high_cluster_min": 0.7949079817042747,
+          "low_cluster_max": 0.6716338876689688,
+          "multiplicity": 2
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 3,
+            "gap_ratio": 1.1835435887000159,
+            "high_cluster_min": 0.7949079817042747,
+            "low_cluster_max": 0.6716338876689688,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 9,
+            "block_dim": 2,
+            "gap_ratio": 1.0162474280849307,
+            "high_cluster_min": 1.4541733999690378,
+            "low_cluster_max": 1.4309245561480608,
+            "multiplicity": 3
+          }
+        ],
+        "gap_threshold": 5.0,
+        "smallest_singular_values": [
+          4.533481031283193e-16,
+          0.3875065443206182,
+          0.6566713210042372,
+          0.6716338876689688,
+          0.7949079817042747,
+          1.0642829505741287,
+          1.1596210572359829,
+          1.2116531221609181,
+          1.4309245561480608,
+          1.4541733999690378,
+          1.5730684434291156,
+          1.5964635379747925,
+          1.7190289666472822,
+          1.7502242992619979,
+          1.8516431300357499,
+          1.967090646842905,
+          2.0113676856588953,
+          2.1161843436839667,
+          2.1857706909423342,
+          2.2410953550321895,
+          2.3633765950134706,
+          2.4487328149155827,
+          2.5173564477144863,
+          2.66265562844423
+        ]
+      },
+      "dimension": 6,
+      "multiplicity": 3,
+      "raw_identified_execution": {
+        "accuracy": 0.09716796875,
+        "target_cosine": -0.024108902445541418
+      },
+      "sample_factor_times_dimension": 1.0,
+      "samples_per_operator": 6,
+      "seed": 130,
+      "trajectory_output_noise": 0.1
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9976014903998434
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9995045547701444
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.019492309792600346,
+          0.01742182263875831
+        ],
+        "best": {
+          "approx_commutant_dim": 9,
+          "block_dim": 2,
+          "gap_ratio": 20.701095476102022,
+          "high_cluster_min": 1.6755427220763845,
+          "low_cluster_max": 0.08093980939369524,
+          "multiplicity": 3
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 3,
+            "gap_ratio": 1.038272926998272,
+            "high_cluster_min": 0.05722130280248188,
+            "low_cluster_max": 0.05511200505623615,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 9,
+            "block_dim": 2,
+            "gap_ratio": 20.701095476102022,
+            "high_cluster_min": 1.6755427220763845,
+            "low_cluster_max": 0.08093980939369524,
+            "multiplicity": 3
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.038643097339619834,
+          0.03711493381172387
+        ],
+        "noisy_operator_fit_shared": [
+          0.036647431664163566,
+          0.029052318030766352
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.03775802279119858,
+          0.029613971639852785
+        ],
+        "separator_min_between_gap": 1.3560729161315586,
+        "separator_within_eigen_spread": 0.006624998812211902,
+        "smallest_singular_values": [
+          2.3422806231657935e-16,
+          0.03853110725318388,
+          0.0482232423403449,
+          0.05511200505623615,
+          0.05722130280248188,
+          0.06411597239059813,
+          0.06631261593042886,
+          0.07368005619810171,
+          0.08093980939369524,
+          1.6755427220763845,
+          1.7075478146329217,
+          1.7087209850734444,
+          1.714301996965426,
+          1.7157096098785627,
+          1.7398218593624857,
+          1.7461845265661222,
+          1.7480953796755399,
+          1.7542085508665113,
+          1.9583653531218244,
+          1.9801222959655227,
+          1.9819290719916853,
+          1.985637013492099,
+          1.9873944061442168,
+          2.006941489737628
+        ]
+      },
+      "dimension": 6,
+      "multiplicity": 3,
+      "raw_identified_execution": {
+        "accuracy": 0.26513671875,
+        "target_cosine": 0.042552293125346426
+      },
+      "sample_factor_times_dimension": 2.0,
+      "samples_per_operator": 12,
+      "seed": 130,
+      "trajectory_output_noise": 0.05
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9892143113035488
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9978761795744528
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.038833121208242526,
+          0.033330320207599066
+        ],
+        "best": {
+          "approx_commutant_dim": 9,
+          "block_dim": 2,
+          "gap_ratio": 10.028041633594011,
+          "high_cluster_min": 1.6177993659532963,
+          "low_cluster_max": 0.16132754779693545,
+          "multiplicity": 3
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 3,
+            "gap_ratio": 1.0433616581468985,
+            "high_cluster_min": 0.11520672178510157,
+            "low_cluster_max": 0.11041878037738015,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 9,
+            "block_dim": 2,
+            "gap_ratio": 10.028041633594011,
+            "high_cluster_min": 1.6177993659532963,
+            "low_cluster_max": 0.16132754779693545,
+            "multiplicity": 3
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.0860660810413672,
+          0.07573799070282664
+        ],
+        "noisy_operator_fit_shared": [
+          0.07356753193957086,
+          0.057746881485331955
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.07626452258111366,
+          0.058975731326740236
+        ],
+        "separator_min_between_gap": 1.390561558197874,
+        "separator_within_eigen_spread": 0.012594308554873646,
+        "smallest_singular_values": [
+          1.8793725673469375e-16,
+          0.07783575390286664,
+          0.09835062998719643,
+          0.11041878037738015,
+          0.11520672178510157,
+          0.12690359139573446,
+          0.13219908510320147,
+          0.1470175332461902,
+          0.16132754779693545,
+          1.6177993659532963,
+          1.6797421215549397,
+          1.6841919970176817,
+          1.6929788838535842,
+          1.698089007708348,
+          1.741538412553712,
+          1.7520056286832981,
+          1.7620998877238314,
+          1.772007960387098,
+          1.9231056893383134,
+          1.9592894336858662,
+          1.9661419181109712,
+          1.9707927445621334,
+          1.9781783345432278,
+          2.015922309320866
+        ]
+      },
+      "dimension": 6,
+      "multiplicity": 3,
+      "raw_identified_execution": {
+        "accuracy": 0.1328125,
+        "target_cosine": 0.018103773012878153
+      },
+      "sample_factor_times_dimension": 2.0,
+      "samples_per_operator": 12,
+      "seed": 130,
+      "trajectory_output_noise": 0.1
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9964343816253767
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9999249384280154
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.008420227883327903,
+          0.011566869566343894
+        ],
+        "best": {
+          "approx_commutant_dim": 9,
+          "block_dim": 2,
+          "gap_ratio": 35.53199675223634,
+          "high_cluster_min": 1.7053384223590455,
+          "low_cluster_max": 0.04799444383186019,
+          "multiplicity": 3
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 3,
+            "gap_ratio": 1.048583008901983,
+            "high_cluster_min": 0.0276594022190107,
+            "low_cluster_max": 0.026377885188101673,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 9,
+            "block_dim": 2,
+            "gap_ratio": 35.53199675223634,
+            "high_cluster_min": 1.7053384223590455,
+            "low_cluster_max": 0.04799444383186019,
+            "multiplicity": 3
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.02240285494658217,
+          0.016066903747314693
+        ],
+        "noisy_operator_fit_shared": [
+          0.02048412733664073,
+          0.021600382025328223
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.02185588810865297,
+          0.02223474206348931
+        ],
+        "separator_min_between_gap": 1.495647994545,
+        "separator_within_eigen_spread": 0.006355399462905975,
+        "smallest_singular_values": [
+          2.8602750074125985e-16,
+          0.018514884998083132,
+          0.02393278988498594,
+          0.026377885188101673,
+          0.0276594022190107,
+          0.038251658763901894,
+          0.042314748112202615,
+          0.046134507147307234,
+          0.04799444383186019,
+          1.7053384223590455,
+          1.7162696726727533,
+          1.7163586504642114,
+          1.7227475116628133,
+          1.7229892644641098,
+          1.7262500365856657,
+          1.733455923384392,
+          1.7341627978886593,
+          1.7397767366371764,
+          1.9793742136181853,
+          1.9842612830440398,
+          1.9852094169891907,
+          1.9904136219284292,
+          2.0043789490734527,
+          2.004819966443832
+        ]
+      },
+      "dimension": 6,
+      "multiplicity": 3,
+      "raw_identified_execution": {
+        "accuracy": 0.32177734375,
+        "target_cosine": 0.4146844846818486
+      },
+      "sample_factor_times_dimension": 4.0,
+      "samples_per_operator": 24,
+      "seed": 130,
+      "trajectory_output_noise": 0.05
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9856148745742669
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9996715506451477
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.016288266148435367,
+          0.023329981170438063
+        ],
+        "best": {
+          "approx_commutant_dim": 9,
+          "block_dim": 2,
+          "gap_ratio": 17.36943375376237,
+          "high_cluster_min": 1.6763076317414005,
+          "low_cluster_max": 0.09650905467072568,
+          "multiplicity": 3
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 3,
+            "gap_ratio": 1.049559530078164,
+            "high_cluster_min": 0.055388136527300416,
+            "low_cluster_max": 0.05277274412741076,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 9,
+            "block_dim": 2,
+            "gap_ratio": 17.36943375376237,
+            "high_cluster_min": 1.6763076317414005,
+            "low_cluster_max": 0.09650905467072568,
+            "multiplicity": 3
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.04610214157529121,
+          0.031180995282651763
+        ],
+        "noisy_operator_fit_shared": [
+          0.041451252457495646,
+          0.04317269537542292
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.04461754995568812,
+          0.04451577653347016
+        ],
+        "separator_min_between_gap": 1.4609369137039474,
+        "separator_within_eigen_spread": 0.012256187325418777,
+        "smallest_singular_values": [
+          2.933472828116945e-16,
+          0.03723787120056732,
+          0.047852440807821806,
+          0.05277274412741076,
+          0.055388136527300416,
+          0.07670908092928355,
+          0.08516846465144319,
+          0.09251405069429688,
+          0.09650905467072568,
+          1.6763076317414005,
+          1.6971514177345592,
+          1.6976464840545369,
+          1.7107345561688558,
+          1.7117329698555435,
+          1.7136087907286008,
+          1.730296478266775,
+          1.7334244687842715,
+          1.7437171490015608,
+          1.9579475802200064,
+          1.9662618838028336,
+          1.97032480804444,
+          1.97972717481794,
+          2.0059974249251593,
+          2.0075501111848837
+        ]
+      },
+      "dimension": 6,
+      "multiplicity": 3,
+      "raw_identified_execution": {
+        "accuracy": 0.2578125,
+        "target_cosine": -0.0022280174054239506
+      },
+      "sample_factor_times_dimension": 4.0,
+      "samples_per_operator": 24,
+      "seed": 130,
+      "trajectory_output_noise": 0.1
+    },
+    {
+      "compiled_shared_execution": null,
+      "compiled_shared_polar_execution": null,
+      "compiler": {
+        "accepted": false,
+        "best": {
+          "approx_commutant_dim": 16,
+          "block_dim": 2,
+          "gap_ratio": 2.9952776449584637,
+          "high_cluster_min": 1.5613571157355408,
+          "low_cluster_max": 0.521272917174659,
+          "multiplicity": 4
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 4,
+            "gap_ratio": 1.1097750130025645,
+            "high_cluster_min": 0.15090651953168915,
+            "low_cluster_max": 0.13597938119313238,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 16,
+            "block_dim": 2,
+            "gap_ratio": 2.9952776449584637,
+            "high_cluster_min": 1.5613571157355408,
+            "low_cluster_max": 0.521272917174659,
+            "multiplicity": 4
+          }
+        ],
+        "gap_threshold": 5.0,
+        "smallest_singular_values": [
+          3.313014084873223e-16,
+          0.07809924083024017,
+          0.1284662163273221,
+          0.13597938119313238,
+          0.15090651953168915,
+          0.15839193534884122,
+          0.1924650948343527,
+          0.20693481340211464,
+          0.22920611170551108,
+          0.24302527494415332,
+          0.3732975729047421,
+          0.4002625266498754,
+          0.4108752284732452,
+          0.41988019229769974,
+          0.4910187509762263,
+          0.521272917174659,
+          1.5613571157355408,
+          1.6104908443136727,
+          1.6478663044708497,
+          1.6595267901872295,
+          1.6760208435449193,
+          1.677406921829237,
+          1.738112724047061,
+          1.7409528591741519
+        ]
+      },
+      "dimension": 8,
+      "multiplicity": 4,
+      "raw_identified_execution": {
+        "accuracy": 0.00927734375,
+        "target_cosine": -0.20007842110257076
+      },
+      "sample_factor_times_dimension": 1.0,
+      "samples_per_operator": 8,
+      "seed": 130,
+      "trajectory_output_noise": 0.05
+    },
+    {
+      "compiled_shared_execution": null,
+      "compiled_shared_polar_execution": null,
+      "compiler": {
+        "accepted": false,
+        "best": {
+          "approx_commutant_dim": 16,
+          "block_dim": 2,
+          "gap_ratio": 1.4937174446194867,
+          "high_cluster_min": 1.373179740807092,
+          "low_cluster_max": 0.919303544156505,
+          "multiplicity": 4
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 4,
+            "gap_ratio": 1.0995409874360318,
+            "high_cluster_min": 0.29235429472183505,
+            "low_cluster_max": 0.26588758223880526,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 16,
+            "block_dim": 2,
+            "gap_ratio": 1.4937174446194867,
+            "high_cluster_min": 1.373179740807092,
+            "low_cluster_max": 0.919303544156505,
+            "multiplicity": 4
+          }
+        ],
+        "gap_threshold": 5.0,
+        "smallest_singular_values": [
+          3.801501812603617e-16,
+          0.15160752732701518,
+          0.25149259696392434,
+          0.26588758223880526,
+          0.29235429472183505,
+          0.3201802210113595,
+          0.3906653804934056,
+          0.4143926662992924,
+          0.46042492226792264,
+          0.47820607272977783,
+          0.6729412817880179,
+          0.7246598482107487,
+          0.7437152159358346,
+          0.7754080319838795,
+          0.8132263462373761,
+          0.919303544156505,
+          1.373179740807092,
+          1.45972309563855,
+          1.560537351861626,
+          1.5998869394591335,
+          1.6190138914317413,
+          1.6464829658850277,
+          1.6998766376852696,
+          1.7131064985931774
+        ]
+      },
+      "dimension": 8,
+      "multiplicity": 4,
+      "raw_identified_execution": {
+        "accuracy": 0.09033203125,
+        "target_cosine": 0.007283712318119419
+      },
+      "sample_factor_times_dimension": 1.0,
+      "samples_per_operator": 8,
+      "seed": 130,
+      "trajectory_output_noise": 0.1
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9987255341701888
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9991858428927296
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.01866510548978313,
+          0.01939740810247627
+        ],
+        "best": {
+          "approx_commutant_dim": 16,
+          "block_dim": 2,
+          "gap_ratio": 15.95950746423565,
+          "high_cluster_min": 1.6623683044852173,
+          "low_cluster_max": 0.10416162956222116,
+          "multiplicity": 4
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 4,
+            "gap_ratio": 1.0092656242995488,
+            "high_cluster_min": 0.05569817426338264,
+            "low_cluster_max": 0.05518683379515509,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 16,
+            "block_dim": 2,
+            "gap_ratio": 15.95950746423565,
+            "high_cluster_min": 1.6623683044852173,
+            "low_cluster_max": 0.10416162956222116,
+            "multiplicity": 4
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.03370328039585425,
+          0.030705419448957338,
+          0.019453312654804357
+        ],
+        "noisy_operator_fit_shared": [
+          0.05520055703375753,
+          0.03911113884993101
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.055975069942347466,
+          0.039977163706283035
+        ],
+        "separator_min_between_gap": 0.5307752392175213,
+        "separator_within_eigen_spread": 0.007318250964757189,
+        "smallest_singular_values": [
+          3.9662673524513034e-16,
+          0.04227068560485481,
+          0.04790738525555361,
+          0.05518683379515509,
+          0.05569817426338264,
+          0.0608866131316058,
+          0.06362483629026303,
+          0.06631739208747682,
+          0.06908003973279914,
+          0.08026567990854536,
+          0.08128092291932906,
+          0.08257670697684634,
+          0.08890062752718253,
+          0.09526718520084489,
+          0.10361965891844997,
+          0.10416162956222116,
+          1.6623683044852173,
+          1.6931986398152348,
+          1.696971855279975,
+          1.7163169793276898,
+          1.7181296144169682,
+          1.7268282221559852,
+          1.7275726102098723,
+          1.7295933849198832
+        ]
+      },
+      "dimension": 8,
+      "multiplicity": 4,
+      "raw_identified_execution": {
+        "accuracy": 0.26025390625,
+        "target_cosine": 0.26579406159432556
+      },
+      "sample_factor_times_dimension": 2.0,
+      "samples_per_operator": 16,
+      "seed": 130,
+      "trajectory_output_noise": 0.05
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9967240227710733
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9985873367693578
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.04810927551295842,
+          0.037497752928939754
+        ],
+        "best": {
+          "approx_commutant_dim": 16,
+          "block_dim": 2,
+          "gap_ratio": 7.652835657043506,
+          "high_cluster_min": 1.5906298149725597,
+          "low_cluster_max": 0.2078484219778819,
+          "multiplicity": 4
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 4,
+            "gap_ratio": 1.0113244283019416,
+            "high_cluster_min": 0.11130403976024761,
+            "low_cluster_max": 0.11005769923617094,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 16,
+            "block_dim": 2,
+            "gap_ratio": 7.652835657043506,
+            "high_cluster_min": 1.5906298149725597,
+            "low_cluster_max": 0.2078484219778819,
+            "multiplicity": 4
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.11284834328139859,
+          0.0930352398918909,
+          0.08868746414590906
+        ],
+        "noisy_operator_fit_shared": [
+          0.09315518643043474,
+          0.07497092418233875
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.09491348936964758,
+          0.07698976432134882
+        ],
+        "separator_min_between_gap": 1.1570294382890884,
+        "separator_within_eigen_spread": 0.02999080051127967,
+        "smallest_singular_values": [
+          4.220809176982433e-16,
+          0.0843071086748553,
+          0.0951772016252969,
+          0.11005769923617094,
+          0.11130403976024761,
+          0.12131168674549903,
+          0.1270968401691104,
+          0.13247952367764504,
+          0.13785341755441732,
+          0.1604756672490698,
+          0.1624741472653561,
+          0.16531136587776948,
+          0.17775201917388225,
+          0.19035303385093347,
+          0.20633542178811648,
+          0.2078484219778819,
+          1.5906298149725597,
+          1.6471678293245466,
+          1.6611159268179148,
+          1.6941977308863982,
+          1.7003555542571038,
+          1.7132267543916342,
+          1.7165724388464174,
+          1.7243794927687295
+        ]
+      },
+      "dimension": 8,
+      "multiplicity": 4,
+      "raw_identified_execution": {
+        "accuracy": 0.23828125,
+        "target_cosine": 0.1535112915334365
+      },
+      "sample_factor_times_dimension": 2.0,
+      "samples_per_operator": 16,
+      "seed": 130,
+      "trajectory_output_noise": 0.1
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.992129417810435
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9928653724539851
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.012475760078213018,
+          0.011806197609981028
+        ],
+        "best": {
+          "approx_commutant_dim": 16,
+          "block_dim": 2,
+          "gap_ratio": 29.741950470538796,
+          "high_cluster_min": 1.7171967952666847,
+          "low_cluster_max": 0.05773652259180756,
+          "multiplicity": 4
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 4,
+            "gap_ratio": 1.019748814558017,
+            "high_cluster_min": 0.030228447494212527,
+            "low_cluster_max": 0.029643032737737718,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 16,
+            "block_dim": 2,
+            "gap_ratio": 29.741950470538796,
+            "high_cluster_min": 1.7171967952666847,
+            "low_cluster_max": 0.05773652259180756,
+            "multiplicity": 4
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.033475699925322226,
+          0.027268245008790437,
+          0.023221505234321444
+        ],
+        "noisy_operator_fit_shared": [
+          0.026549137377673386,
+          0.025520522532655254
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.02673947892985007,
+          0.026481115324206952
+        ],
+        "separator_min_between_gap": 0.678145934092494,
+        "separator_within_eigen_spread": 0.0031379460408258453,
+        "smallest_singular_values": [
+          5.051524493849286e-16,
+          0.025375771909569383,
+          0.029044572799401015,
+          0.029643032737737718,
+          0.030228447494212527,
+          0.037474870842976356,
+          0.038638343364492574,
+          0.040661272406387644,
+          0.04155108361064182,
+          0.04307038036836903,
+          0.04565527416173945,
+          0.04843256696138951,
+          0.05096006456264679,
+          0.05344886176043765,
+          0.054526725694104376,
+          0.05773652259180756,
+          1.7171967952666847,
+          1.7218423437869865,
+          1.7223902814546774,
+          1.7268278907300958,
+          1.7275304586020417,
+          1.7276921410463795,
+          1.7322212888169806,
+          1.7327295842896837
+        ]
+      },
+      "dimension": 8,
+      "multiplicity": 4,
+      "raw_identified_execution": {
+        "accuracy": 0.60205078125,
+        "target_cosine": 0.5285055448841955
+      },
+      "sample_factor_times_dimension": 4.0,
+      "samples_per_operator": 32,
+      "seed": 130,
+      "trajectory_output_noise": 0.05
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9688467529687235
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9718042298259272
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.02312115999002619,
+          0.01989420837205912
+        ],
+        "best": {
+          "approx_commutant_dim": 16,
+          "block_dim": 2,
+          "gap_ratio": 14.73908374637848,
+          "high_cluster_min": 1.6978870855444432,
+          "low_cluster_max": 0.11519624386160562,
+          "multiplicity": 4
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 4,
+            "gap_ratio": 1.018361779646463,
+            "high_cluster_min": 0.060169981628066214,
+            "low_cluster_max": 0.05908507450952742,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 16,
+            "block_dim": 2,
+            "gap_ratio": 14.73908374637848,
+            "high_cluster_min": 1.6978870855444432,
+            "low_cluster_max": 0.11519624386160562,
+            "multiplicity": 4
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.03129648571445246,
+          0.0385330258119549,
+          0.043699606821781714
+        ],
+        "noisy_operator_fit_shared": [
+          0.051555505632410986,
+          0.05114214464552316
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.05205156767922513,
+          0.05335740715674932
+        ],
+        "separator_min_between_gap": 0.9829430307827622,
+        "separator_within_eigen_spread": 0.014194575711431234,
+        "smallest_singular_values": [
+          3.2505275915287834e-16,
+          0.05103124235139199,
+          0.05771444948906882,
+          0.05908507450952742,
+          0.060169981628066214,
+          0.07481535476119831,
+          0.0769582470499817,
+          0.081038940292961,
+          0.08297429079803233,
+          0.08569775380029288,
+          0.0907711955521136,
+          0.09686181903029595,
+          0.10148484952362462,
+          0.10640754842496299,
+          0.10877120936386302,
+          0.11519624386160562,
+          1.6978870855444432,
+          1.7071735664857786,
+          1.7093995718642676,
+          1.7178881139229365,
+          1.718712592775118,
+          1.7195755401890778,
+          1.7283031637896709,
+          1.730580651099728
+        ]
+      },
+      "dimension": 8,
+      "multiplicity": 4,
+      "raw_identified_execution": {
+        "accuracy": 0.2958984375,
+        "target_cosine": 0.3824450557652802
+      },
+      "sample_factor_times_dimension": 4.0,
+      "samples_per_operator": 32,
+      "seed": 130,
+      "trajectory_output_noise": 0.1
+    },
+    {
+      "compiled_shared_execution": null,
+      "compiled_shared_polar_execution": null,
+      "compiler": {
+        "accepted": false,
+        "best": {
+          "approx_commutant_dim": 4,
+          "block_dim": 3,
+          "gap_ratio": 1.0967360386325828,
+          "high_cluster_min": 0.994289114266199,
+          "low_cluster_max": 0.9065892605351829,
+          "multiplicity": 2
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 3,
+            "gap_ratio": 1.0967360386325828,
+            "high_cluster_min": 0.994289114266199,
+            "low_cluster_max": 0.9065892605351829,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 9,
+            "block_dim": 2,
+            "gap_ratio": 1.0128175133763588,
+            "high_cluster_min": 1.4667529176859389,
+            "low_cluster_max": 1.448190713839779,
+            "multiplicity": 3
+          }
+        ],
+        "gap_threshold": 5.0,
+        "smallest_singular_values": [
+          4.565292172881272e-16,
+          0.22696139436202825,
+          0.4859919178199284,
+          0.9065892605351829,
+          0.994289114266199,
+          1.1654867233950106,
+          1.1883043896700085,
+          1.3452093241715466,
+          1.448190713839779,
+          1.4667529176859389,
+          1.6351107395036966,
+          1.691138245239717,
+          1.74814167937148,
+          1.8117547288528446,
+          1.8996382771098954,
+          1.9330011856367375,
+          1.9468838464485552,
+          2.130656209026996,
+          2.4105316548597098,
+          2.6135490042805007,
+          2.7183641815957595,
+          2.8396192969058967,
+          3.0079484471518936,
+          3.062350986825637
+        ]
+      },
+      "dimension": 6,
+      "multiplicity": 3,
+      "raw_identified_execution": {
+        "accuracy": 0.1171875,
+        "target_cosine": 0.0006314848808214547
+      },
+      "sample_factor_times_dimension": 1.0,
+      "samples_per_operator": 6,
+      "seed": 131,
+      "trajectory_output_noise": 0.05
+    },
+    {
+      "compiled_shared_execution": null,
+      "compiled_shared_polar_execution": null,
+      "compiler": {
+        "accepted": false,
+        "best": {
+          "approx_commutant_dim": 4,
+          "block_dim": 3,
+          "gap_ratio": 1.155828508087342,
+          "high_cluster_min": 1.1170073905505498,
+          "low_cluster_max": 0.9664127357430963,
+          "multiplicity": 2
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 3,
+            "gap_ratio": 1.155828508087342,
+            "high_cluster_min": 1.1170073905505498,
+            "low_cluster_max": 0.9664127357430963,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 9,
+            "block_dim": 2,
+            "gap_ratio": 1.0417095798495557,
+            "high_cluster_min": 1.5110723210483736,
+            "low_cluster_max": 1.4505696695873753,
+            "multiplicity": 3
+          }
+        ],
+        "gap_threshold": 5.0,
+        "smallest_singular_values": [
+          1.0137430087107372e-15,
+          0.3467854736986687,
+          0.7286237681427313,
+          0.9664127357430963,
+          1.1170073905505498,
+          1.157355997905956,
+          1.3505374525323346,
+          1.3621481259486365,
+          1.4505696695873753,
+          1.5110723210483736,
+          1.5709274083744538,
+          1.760167223912026,
+          1.790935762157579,
+          1.8473189893987088,
+          1.8989206308038422,
+          2.0301341663082986,
+          2.068647930292607,
+          2.306703621058501,
+          4.420448686171997,
+          4.643334711846088,
+          4.687905379143452,
+          4.844441787832124,
+          4.973829652410921,
+          5.1902839721219145
+        ]
+      },
+      "dimension": 6,
+      "multiplicity": 3,
+      "raw_identified_execution": {
+        "accuracy": 0.10546875,
+        "target_cosine": -0.018825622265594033
+      },
+      "sample_factor_times_dimension": 1.0,
+      "samples_per_operator": 6,
+      "seed": 131,
+      "trajectory_output_noise": 0.1
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9873519661062229
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9933447146732086
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.02347213052179431,
+          0.01841562639560897
+        ],
+        "best": {
+          "approx_commutant_dim": 9,
+          "block_dim": 2,
+          "gap_ratio": 19.50500853441394,
+          "high_cluster_min": 1.6924501822699145,
+          "low_cluster_max": 0.08677003033778816,
+          "multiplicity": 3
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 3,
+            "gap_ratio": 1.2170769518169402,
+            "high_cluster_min": 0.060605912988783234,
+            "low_cluster_max": 0.049796286831581486,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 9,
+            "block_dim": 2,
+            "gap_ratio": 19.50500853441394,
+            "high_cluster_min": 1.6924501822699145,
+            "low_cluster_max": 0.08677003033778816,
+            "multiplicity": 3
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.038042197497111095,
+          0.05083973604422467
+        ],
+        "noisy_operator_fit_shared": [
+          0.03655366655443307,
+          0.03898728451456234
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.03949322264908333,
+          0.04242514421949879
+        ],
+        "separator_min_between_gap": 1.3661955514463604,
+        "separator_within_eigen_spread": 0.008452770587867309,
+        "smallest_singular_values": [
+          2.738367228227313e-16,
+          0.033303509230307005,
+          0.041319568600611215,
+          0.049796286831581486,
+          0.060605912988783234,
+          0.06611874830839672,
+          0.07554223173894345,
+          0.08320112921294176,
+          0.08677003033778816,
+          1.6924501822699145,
+          1.7077016377775258,
+          1.7134637349777382,
+          1.7278282275642485,
+          1.737189649048515,
+          1.7391116264376913,
+          1.7542002474522729,
+          1.7563773558292115,
+          1.783293779100387,
+          1.980081702108006,
+          1.9842498423527088,
+          1.984822578285316,
+          1.9886178942231851,
+          1.991737674292499,
+          1.9940086590058717
+        ]
+      },
+      "dimension": 6,
+      "multiplicity": 3,
+      "raw_identified_execution": {
+        "accuracy": 0.00048828125,
+        "target_cosine": -0.5288891399589729
+      },
+      "sample_factor_times_dimension": 2.0,
+      "samples_per_operator": 12,
+      "seed": 131,
+      "trajectory_output_noise": 0.05
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 0.99853515625,
+        "target_cosine": 0.9512631871490074
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9742917208914357
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.046136912953172536,
+          0.03741028419688723
+        ],
+        "best": {
+          "approx_commutant_dim": 9,
+          "block_dim": 2,
+          "gap_ratio": 9.563569753586519,
+          "high_cluster_min": 1.6425184474036099,
+          "low_cluster_max": 0.17174742169759724,
+          "multiplicity": 3
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 3,
+            "gap_ratio": 1.2167057892340538,
+            "high_cluster_min": 0.11992294956301641,
+            "low_cluster_max": 0.09856363849350208,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 9,
+            "block_dim": 2,
+            "gap_ratio": 9.563569753586519,
+            "high_cluster_min": 1.6425184474036099,
+            "low_cluster_max": 0.17174742169759724,
+            "multiplicity": 3
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.07478596727181928,
+          0.10289835141515888
+        ],
+        "noisy_operator_fit_shared": [
+          0.07256951191346867,
+          0.07822119871469987
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.07804943770763866,
+          0.08504222460071278
+        ],
+        "separator_min_between_gap": 1.2956969688666078,
+        "separator_within_eigen_spread": 0.020221792681039297,
+        "smallest_singular_values": [
+          2.6380288091265437e-16,
+          0.06454937013463954,
+          0.08108068230366942,
+          0.09856363849350208,
+          0.11992294956301641,
+          0.1314336070824621,
+          0.15017739250468434,
+          0.16499068519929966,
+          0.17174742169759724,
+          1.6425184474036099,
+          1.6718867021762627,
+          1.6900025694187295,
+          1.7133697613304226,
+          1.7339345791408955,
+          1.741180966342663,
+          1.76574463064638,
+          1.7745589980072647,
+          1.830428875350586,
+          1.9596277860308322,
+          1.969534019749775,
+          1.9721963720359863,
+          1.977401723339786,
+          1.9862603528821028,
+          1.995215535302048
+        ]
+      },
+      "dimension": 6,
+      "multiplicity": 3,
+      "raw_identified_execution": {
+        "accuracy": 0.36376953125,
+        "target_cosine": 0.44820884661077687
+      },
+      "sample_factor_times_dimension": 2.0,
+      "samples_per_operator": 12,
+      "seed": 131,
+      "trajectory_output_noise": 0.1
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9982053142849718
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9998698796446195
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.014862121705708343,
+          0.011564916583662694
+        ],
+        "best": {
+          "approx_commutant_dim": 9,
+          "block_dim": 2,
+          "gap_ratio": 36.55912612901548,
+          "high_cluster_min": 1.7115825928066422,
+          "low_cluster_max": 0.04681683546719759,
+          "multiplicity": 3
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 3,
+            "gap_ratio": 1.0833790674657513,
+            "high_cluster_min": 0.03527055389417552,
+            "low_cluster_max": 0.032556059973247106,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 9,
+            "block_dim": 2,
+            "gap_ratio": 36.55912612901548,
+            "high_cluster_min": 1.7115825928066422,
+            "low_cluster_max": 0.04681683546719759,
+            "multiplicity": 3
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.020014757862278458,
+          0.027869506438880007
+        ],
+        "noisy_operator_fit_shared": [
+          0.023309504496135548,
+          0.0202281392746139
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.023914893277817553,
+          0.020872583426927677
+        ],
+        "separator_min_between_gap": 1.807852300782553,
+        "separator_within_eigen_spread": 0.00186562084060804,
+        "smallest_singular_values": [
+          3.2711429320392713e-16,
+          0.026478012184273883,
+          0.02958550429830347,
+          0.032556059973247106,
+          0.03527055389417552,
+          0.038306050171598265,
+          0.04270334194872789,
+          0.0450187731937193,
+          0.04681683546719759,
+          1.7115825928066422,
+          1.7164886645717092,
+          1.7168914525774244,
+          1.7211737099512658,
+          1.7307760998734416,
+          1.7310976201392647,
+          1.7347030199263154,
+          1.7356519929194876,
+          1.7481790895499019,
+          1.9825353927072302,
+          1.9913520358687338,
+          1.991598101008027,
+          2.0019271977113537,
+          2.004906219791563,
+          2.005572668997661
+        ]
+      },
+      "dimension": 6,
+      "multiplicity": 3,
+      "raw_identified_execution": {
+        "accuracy": 0.8828125,
+        "target_cosine": 0.6682993038224048
+      },
+      "sample_factor_times_dimension": 4.0,
+      "samples_per_operator": 24,
+      "seed": 131,
+      "trajectory_output_noise": 0.05
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9929319514625513
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9994639570870135
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.02911354978870608,
+          0.022960299435413153
+        ],
+        "best": {
+          "approx_commutant_dim": 9,
+          "block_dim": 2,
+          "gap_ratio": 18.07413862640676,
+          "high_cluster_min": 1.6858023855781281,
+          "low_cluster_max": 0.09327152017718451,
+          "multiplicity": 3
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 3,
+            "gap_ratio": 1.0864979708300664,
+            "high_cluster_min": 0.07046914369189952,
+            "low_cluster_max": 0.06485897404673685,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 9,
+            "block_dim": 2,
+            "gap_ratio": 18.07413862640676,
+            "high_cluster_min": 1.6858023855781281,
+            "low_cluster_max": 0.09327152017718451,
+            "multiplicity": 3
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.037814961792230574,
+          0.05589496896809843
+        ],
+        "noisy_operator_fit_shared": [
+          0.04690135817387617,
+          0.040619967221563566
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.04838003415579631,
+          0.04175857501980523
+        ],
+        "separator_min_between_gap": 1.764446388389262,
+        "separator_within_eigen_spread": 0.005458655216650898,
+        "smallest_singular_values": [
+          4.386017237791201e-16,
+          0.052715510826794085,
+          0.059040167038289876,
+          0.06485897404673685,
+          0.07046914369189952,
+          0.07644924051305999,
+          0.08487814996593343,
+          0.08979774129539397,
+          0.09327152017718451,
+          1.6858023855781281,
+          1.6972433811543597,
+          1.6986538394267316,
+          1.7070950744293416,
+          1.7260130512532623,
+          1.7273473007370408,
+          1.7330580367839317,
+          1.736797115227174,
+          1.7589731334173535,
+          1.9652468903086024,
+          1.9796827207051015,
+          1.9807059231656017,
+          2.001366199248964,
+          2.0062935892850824,
+          2.008976142001426
+        ]
+      },
+      "dimension": 6,
+      "multiplicity": 3,
+      "raw_identified_execution": {
+        "accuracy": 0.283203125,
+        "target_cosine": 0.41064921718403685
+      },
+      "sample_factor_times_dimension": 4.0,
+      "samples_per_operator": 24,
+      "seed": 131,
+      "trajectory_output_noise": 0.1
+    },
+    {
+      "compiled_shared_execution": null,
+      "compiled_shared_polar_execution": null,
+      "compiler": {
+        "accepted": false,
+        "best": {
+          "approx_commutant_dim": 16,
+          "block_dim": 2,
+          "gap_ratio": 1.203037144555615,
+          "high_cluster_min": 1.4671560207846341,
+          "low_cluster_max": 1.2195434092989548,
+          "multiplicity": 4
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 4,
+            "gap_ratio": 1.1531227969374207,
+            "high_cluster_min": 0.4305247326513004,
+            "low_cluster_max": 0.37335549500428855,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 16,
+            "block_dim": 2,
+            "gap_ratio": 1.203037144555615,
+            "high_cluster_min": 1.4671560207846341,
+            "low_cluster_max": 1.2195434092989548,
+            "multiplicity": 4
+          }
+        ],
+        "gap_threshold": 5.0,
+        "smallest_singular_values": [
+          6.583277343351501e-16,
+          0.19697252847922847,
+          0.30490116366545256,
+          0.37335549500428855,
+          0.4305247326513004,
+          0.5516362247071458,
+          0.6305169475231449,
+          0.6656186846983703,
+          0.7628462512090207,
+          0.8029231501439721,
+          0.8651873676836973,
+          0.8796973954736387,
+          0.9416948490083674,
+          1.0082642978600285,
+          1.0373798145882405,
+          1.2195434092989548,
+          1.4671560207846341,
+          1.4791155671161997,
+          1.5462323336878674,
+          1.6120540979617604,
+          1.6452771613423556,
+          1.6534908450544383,
+          1.710236777911173,
+          1.7422196568071557
+        ]
+      },
+      "dimension": 8,
+      "multiplicity": 4,
+      "raw_identified_execution": {
+        "accuracy": 0.07373046875,
+        "target_cosine": -0.004425602730787359
+      },
+      "sample_factor_times_dimension": 1.0,
+      "samples_per_operator": 8,
+      "seed": 131,
+      "trajectory_output_noise": 0.05
+    },
+    {
+      "compiled_shared_execution": null,
+      "compiled_shared_polar_execution": null,
+      "compiler": {
+        "accepted": false,
+        "best": {
+          "approx_commutant_dim": 4,
+          "block_dim": 4,
+          "gap_ratio": 1.2325868597783103,
+          "high_cluster_min": 0.662505023072408,
+          "low_cluster_max": 0.5374915510551235,
+          "multiplicity": 2
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 4,
+            "gap_ratio": 1.2325868597783103,
+            "high_cluster_min": 0.662505023072408,
+            "low_cluster_max": 0.5374915510551235,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 16,
+            "block_dim": 2,
+            "gap_ratio": 1.039552479292005,
+            "high_cluster_min": 1.461577254530871,
+            "low_cluster_max": 1.4059677444339214,
+            "multiplicity": 4
+          }
+        ],
+        "gap_threshold": 5.0,
+        "smallest_singular_values": [
+          8.249342345968855e-16,
+          0.30992660172109776,
+          0.5024812353450461,
+          0.5374915510551235,
+          0.662505023072408,
+          0.7069341250311939,
+          0.8269437624959157,
+          0.8884282728647058,
+          0.9363654267367226,
+          1.013518974742043,
+          1.0587550897970965,
+          1.0906124439161824,
+          1.1197331925769745,
+          1.2498425577302066,
+          1.2744219812689033,
+          1.4059677444339214,
+          1.461577254530871,
+          1.5006631240549422,
+          1.592904610407583,
+          1.6406084352539452,
+          1.6835192383976847,
+          1.7277518401056706,
+          1.7443051160328953,
+          1.7954719185530916
+        ]
+      },
+      "dimension": 8,
+      "multiplicity": 4,
+      "raw_identified_execution": {
+        "accuracy": 0.087890625,
+        "target_cosine": 0.004315350005320916
+      },
+      "sample_factor_times_dimension": 1.0,
+      "samples_per_operator": 8,
+      "seed": 131,
+      "trajectory_output_noise": 0.1
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9962915958363403
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9976826715099839
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.020873632140515505,
+          0.012663385788078067
+        ],
+        "best": {
+          "approx_commutant_dim": 16,
+          "block_dim": 2,
+          "gap_ratio": 21.263846646404247,
+          "high_cluster_min": 1.6925212206579852,
+          "low_cluster_max": 0.07959619201562448,
+          "multiplicity": 4
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 4,
+            "gap_ratio": 1.1427255869729882,
+            "high_cluster_min": 0.046646998836594136,
+            "low_cluster_max": 0.0408208229240401,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 16,
+            "block_dim": 2,
+            "gap_ratio": 21.263846646404247,
+            "high_cluster_min": 1.6925212206579852,
+            "low_cluster_max": 0.07959619201562448,
+            "multiplicity": 4
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.042372785286785085,
+          0.04852149771891803,
+          0.05972739736941901
+        ],
+        "noisy_operator_fit_shared": [
+          0.05407995331751193,
+          0.03115146424121119
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.05670890264451226,
+          0.03167451120516076
+        ],
+        "separator_min_between_gap": 0.7514828266647637,
+        "separator_within_eigen_spread": 0.012664075428473254,
+        "smallest_singular_values": [
+          3.004230582283185e-16,
+          0.031908458393376145,
+          0.03863811336383786,
+          0.0408208229240401,
+          0.046646998836594136,
+          0.053585835045301414,
+          0.05438602784709799,
+          0.05573894962927686,
+          0.05612418980188852,
+          0.06071980061635619,
+          0.06354947043503933,
+          0.06449708766904522,
+          0.06920633520894307,
+          0.0711664315872975,
+          0.07332452885800862,
+          0.07959619201562448,
+          1.6925212206579852,
+          1.7192316831951735,
+          1.7198777313163827,
+          1.7236955103613154,
+          1.724295146816745,
+          1.7384838520267507,
+          1.739359868499262,
+          1.7464917825051705
+        ]
+      },
+      "dimension": 8,
+      "multiplicity": 4,
+      "raw_identified_execution": {
+        "accuracy": 0.49853515625,
+        "target_cosine": 0.41818715272739243
+      },
+      "sample_factor_times_dimension": 2.0,
+      "samples_per_operator": 16,
+      "seed": 131,
+      "trajectory_output_noise": 0.05
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9860268935481525
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9908485437835899
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.02964881846345626,
+          0.019912091914497772
+        ],
+        "best": {
+          "approx_commutant_dim": 16,
+          "block_dim": 2,
+          "gap_ratio": 10.346410666397329,
+          "high_cluster_min": 1.6510286065280515,
+          "low_cluster_max": 0.15957501202713692,
+          "multiplicity": 4
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 4,
+            "gap_ratio": 1.1613731389613426,
+            "high_cluster_min": 0.09478605456692094,
+            "low_cluster_max": 0.08161550442925818,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 16,
+            "block_dim": 2,
+            "gap_ratio": 10.346410666397329,
+            "high_cluster_min": 1.6510286065280515,
+            "low_cluster_max": 0.15957501202713692,
+            "multiplicity": 4
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.027929967217000216,
+          0.05160718067251812,
+          0.040733428361203056
+        ],
+        "noisy_operator_fit_shared": [
+          0.08766571440922362,
+          0.05862949585055167
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.09407428359178004,
+          0.05990068538513968
+        ],
+        "separator_min_between_gap": 1.3174042977148999,
+        "separator_within_eigen_spread": 0.03684119177245693,
+        "smallest_singular_values": [
+          4.953852164567594e-16,
+          0.06435562232522833,
+          0.07809803922798561,
+          0.08161550442925818,
+          0.09478605456692094,
+          0.10782606202717807,
+          0.1085068201970766,
+          0.11195763316762347,
+          0.11350792073397033,
+          0.1222654777022285,
+          0.1283568914485555,
+          0.12981077057381474,
+          0.1391992105501179,
+          0.1419734723704921,
+          0.14751569882605853,
+          0.15957501202713692,
+          1.6510286065280515,
+          1.7033977470709523,
+          1.7058199315305176,
+          1.7133074206740495,
+          1.7157478953276641,
+          1.7445228524611884,
+          1.7479398827170947,
+          1.7575071113688077
+        ]
+      },
+      "dimension": 8,
+      "multiplicity": 4,
+      "raw_identified_execution": {
+        "accuracy": 0.46728515625,
+        "target_cosine": 0.3995838551491384
+      },
+      "sample_factor_times_dimension": 2.0,
+      "samples_per_operator": 16,
+      "seed": 131,
+      "trajectory_output_noise": 0.1
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9977143688079381
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9993006790061173
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.013591312085368318,
+          0.009434060810376501
+        ],
+        "best": {
+          "approx_commutant_dim": 16,
+          "block_dim": 2,
+          "gap_ratio": 31.88608936208701,
+          "high_cluster_min": 1.7130435959198729,
+          "low_cluster_max": 0.05372385357348665,
+          "multiplicity": 4
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 4,
+            "gap_ratio": 1.071310794254062,
+            "high_cluster_min": 0.032271468033317215,
+            "low_cluster_max": 0.030123348151072597,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 16,
+            "block_dim": 2,
+            "gap_ratio": 31.88608936208701,
+            "high_cluster_min": 1.7130435959198729,
+            "low_cluster_max": 0.05372385357348665,
+            "multiplicity": 4
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.035888235244500744,
+          0.022485796650614093,
+          0.021133998336532057
+        ],
+        "noisy_operator_fit_shared": [
+          0.029513469820700692,
+          0.022320040154603756
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.029695369427973503,
+          0.023100671512336
+        ],
+        "separator_min_between_gap": 0.8957125473563221,
+        "separator_within_eigen_spread": 0.0039039791324464446,
+        "smallest_singular_values": [
+          3.417104496894124e-16,
+          0.020295558025324095,
+          0.024699155254299117,
+          0.030123348151072597,
+          0.032271468033317215,
+          0.03277638057497377,
+          0.03359074431287768,
+          0.03551724545794292,
+          0.03832742994160395,
+          0.039904340180560084,
+          0.041964561707361306,
+          0.04219847670753918,
+          0.045013248044548954,
+          0.04834571597854919,
+          0.05159607253711294,
+          0.05372385357348665,
+          1.7130435959198729,
+          1.719492124003178,
+          1.7198201215763882,
+          1.7233836299666954,
+          1.7239020141658528,
+          1.7251909193894441,
+          1.7292200170367469,
+          1.7293513185372544
+        ]
+      },
+      "dimension": 8,
+      "multiplicity": 4,
+      "raw_identified_execution": {
+        "accuracy": 0.40478515625,
+        "target_cosine": 0.43613029187894087
+      },
+      "sample_factor_times_dimension": 4.0,
+      "samples_per_operator": 32,
+      "seed": 131,
+      "trajectory_output_noise": 0.05
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9912880599694085
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9977001016805565
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.02623903908899817,
+          0.019988744859467236
+        ],
+        "best": {
+          "approx_commutant_dim": 16,
+          "block_dim": 2,
+          "gap_ratio": 15.806320599415498,
+          "high_cluster_min": 1.689474719169332,
+          "low_cluster_max": 0.1068860212307605,
+          "multiplicity": 4
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 4,
+            "gap_ratio": 1.0754509732820232,
+            "high_cluster_min": 0.06448552621520882,
+            "low_cluster_max": 0.05996138161316101,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 16,
+            "block_dim": 2,
+            "gap_ratio": 15.806320599415498,
+            "high_cluster_min": 1.689474719169332,
+            "low_cluster_max": 0.1068860212307605,
+            "multiplicity": 4
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.041652852935129187,
+          0.034432797458081206,
+          0.05052686716035324
+        ],
+        "noisy_operator_fit_shared": [
+          0.04967698220477294,
+          0.04424242896050689
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.050124359493731147,
+          0.046195473324981695
+        ],
+        "separator_min_between_gap": 1.5092545286202903,
+        "separator_within_eigen_spread": 0.017037972615606245,
+        "smallest_singular_values": [
+          3.832733120429213e-16,
+          0.04081373139427841,
+          0.049185689294556585,
+          0.05996138161316101,
+          0.06448552621520882,
+          0.06544373067946894,
+          0.06679747942800662,
+          0.07050462313024179,
+          0.07643136566288831,
+          0.07943027535908952,
+          0.08362141277375226,
+          0.08406205267605393,
+          0.08919523702572009,
+          0.0959377008441046,
+          0.10244691469168715,
+          0.1068860212307605,
+          1.689474719169332,
+          1.7032502813639576,
+          1.7046117838763215,
+          1.711535967615068,
+          1.7135374120083828,
+          1.7144228276052094,
+          1.7232991400983229,
+          1.723640441368423
+        ]
+      },
+      "dimension": 8,
+      "multiplicity": 4,
+      "raw_identified_execution": {
+        "accuracy": 0.185546875,
+        "target_cosine": 0.07247587224743066
+      },
+      "sample_factor_times_dimension": 4.0,
+      "samples_per_operator": 32,
+      "seed": 131,
+      "trajectory_output_noise": 0.1
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9768526311962912
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9884423304019636
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.06380033130689644,
+          0.03529569370504643
+        ],
+        "best": {
+          "approx_commutant_dim": 9,
+          "block_dim": 2,
+          "gap_ratio": 8.253116970465253,
+          "high_cluster_min": 1.5923700165945656,
+          "low_cluster_max": 0.19294165129284466,
+          "multiplicity": 3
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 3,
+            "gap_ratio": 1.036700059051878,
+            "high_cluster_min": 0.13753948196270077,
+            "low_cluster_max": 0.13267046795433635,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 9,
+            "block_dim": 2,
+            "gap_ratio": 8.253116970465253,
+            "high_cluster_min": 1.5923700165945656,
+            "low_cluster_max": 0.19294165129284466,
+            "multiplicity": 3
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.12687470146046886,
+          0.051444300985536325
+        ],
+        "noisy_operator_fit_shared": [
+          0.09745892688222538,
+          0.0738626684379689
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.10462847830000563,
+          0.07537048386378739
+        ],
+        "separator_min_between_gap": 1.1367860742367641,
+        "separator_within_eigen_spread": 0.01401989883966226,
+        "smallest_singular_values": [
+          2.8923798556214106e-16,
+          0.06452140165257833,
+          0.10718557017270794,
+          0.13267046795433635,
+          0.13753948196270077,
+          0.1552579932048755,
+          0.16389312044002935,
+          0.17902351682996787,
+          0.19294165129284466,
+          1.5923700165945656,
+          1.670893902185089,
+          1.6719187373753794,
+          1.685652380070372,
+          1.6925807304408624,
+          1.7486583953306507,
+          1.7613989320696588,
+          1.7678823327130893,
+          1.7775260123977177,
+          1.944545563936415,
+          1.9824881401762822,
+          1.987786791308729,
+          2.0166640756366814,
+          2.0214210175763854,
+          2.032534309602372
+        ]
+      },
+      "dimension": 6,
+      "multiplicity": 3,
+      "raw_identified_execution": {
+        "accuracy": 0.14697265625,
+        "target_cosine": 0.16208381558606372
+      },
+      "sample_factor_times_dimension": 1.0,
+      "samples_per_operator": 6,
+      "seed": 132,
+      "trajectory_output_noise": 0.05
+    },
+    {
+      "compiled_shared_execution": null,
+      "compiled_shared_polar_execution": null,
+      "compiler": {
+        "accepted": false,
+        "best": {
+          "approx_commutant_dim": 9,
+          "block_dim": 2,
+          "gap_ratio": 3.788576015470015,
+          "high_cluster_min": 1.4802401368764775,
+          "low_cluster_max": 0.3907114786220905,
+          "multiplicity": 3
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 3,
+            "gap_ratio": 1.028851411727913,
+            "high_cluster_min": 0.2713895911479367,
+            "low_cluster_max": 0.2637791891563323,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 9,
+            "block_dim": 2,
+            "gap_ratio": 3.788576015470015,
+            "high_cluster_min": 1.4802401368764775,
+            "low_cluster_max": 0.3907114786220905,
+            "multiplicity": 3
+          }
+        ],
+        "gap_threshold": 5.0,
+        "smallest_singular_values": [
+          3.600906201006167e-16,
+          0.12735210927696888,
+          0.2076714096572163,
+          0.2637791891563323,
+          0.2713895911479367,
+          0.3065246967260045,
+          0.32634204770828523,
+          0.35502629973809624,
+          0.3907114786220905,
+          1.4802401368764775,
+          1.6180331788317026,
+          1.6217169075613036,
+          1.6446376340804423,
+          1.6732830205200817,
+          1.7548165053708766,
+          1.774866256937178,
+          1.802913273902203,
+          1.8206464319929285,
+          1.9063507278083778,
+          1.9735953730451559,
+          1.9964467770310745,
+          2.051578468958692,
+          2.0654469557805735,
+          2.0865057643321947
+        ]
+      },
+      "dimension": 6,
+      "multiplicity": 3,
+      "raw_identified_execution": {
+        "accuracy": 0.12841796875,
+        "target_cosine": 0.034809264257491625
+      },
+      "sample_factor_times_dimension": 1.0,
+      "samples_per_operator": 6,
+      "seed": 132,
+      "trajectory_output_noise": 0.1
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9978739562796207
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9997950840478367
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.014512503130955486,
+          0.017101912601982253
+        ],
+        "best": {
+          "approx_commutant_dim": 9,
+          "block_dim": 2,
+          "gap_ratio": 17.783402869854264,
+          "high_cluster_min": 1.6929002796509636,
+          "low_cluster_max": 0.09519551977988996,
+          "multiplicity": 3
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 3,
+            "gap_ratio": 1.0796517106887469,
+            "high_cluster_min": 0.06736663451526721,
+            "low_cluster_max": 0.06239663573754885,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 9,
+            "block_dim": 2,
+            "gap_ratio": 17.783402869854264,
+            "high_cluster_min": 1.6929002796509636,
+            "low_cluster_max": 0.09519551977988996,
+            "multiplicity": 3
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.02277351432887057,
+          0.03742096492927074
+        ],
+        "noisy_operator_fit_shared": [
+          0.041907742996292005,
+          0.03431033587717788
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.0421136011141067,
+          0.03477581091564531
+        ],
+        "separator_min_between_gap": 1.6700133040122864,
+        "separator_within_eigen_spread": 0.008105661230915606,
+        "smallest_singular_values": [
+          2.946845983187603e-16,
+          0.03577977746748442,
+          0.04530903328622117,
+          0.06239663573754885,
+          0.06736663451526721,
+          0.07750814355410428,
+          0.0848390254642417,
+          0.08869639459389694,
+          0.09519551977988996,
+          1.6929002796509636,
+          1.7131569537383788,
+          1.7177753681338828,
+          1.72137218862199,
+          1.7264047961333733,
+          1.7385847238162775,
+          1.7428769363044074,
+          1.747951675557378,
+          1.7522420378156391,
+          1.9705172117001866,
+          1.970766143914035,
+          1.9812170066982604,
+          1.981696655740334,
+          2.0133003235082714,
+          2.01433953064477
+        ]
+      },
+      "dimension": 6,
+      "multiplicity": 3,
+      "raw_identified_execution": {
+        "accuracy": 0.33740234375,
+        "target_cosine": 0.20375335940464415
+      },
+      "sample_factor_times_dimension": 2.0,
+      "samples_per_operator": 12,
+      "seed": 132,
+      "trajectory_output_noise": 0.05
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9919531563813618
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9993587237054878
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.02938137024138542,
+          0.03466326998404419
+        ],
+        "best": {
+          "approx_commutant_dim": 9,
+          "block_dim": 2,
+          "gap_ratio": 8.647907771220316,
+          "high_cluster_min": 1.641871153260804,
+          "low_cluster_max": 0.18985761604961215,
+          "multiplicity": 3
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 3,
+            "gap_ratio": 1.075590418251772,
+            "high_cluster_min": 0.13313683329761306,
+            "low_cluster_max": 0.1237802336636739,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 9,
+            "block_dim": 2,
+            "gap_ratio": 8.647907771220316,
+            "high_cluster_min": 1.641871153260804,
+            "low_cluster_max": 0.18985761604961215,
+            "multiplicity": 3
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.0449676122140583,
+          0.07530144210309474
+        ],
+        "noisy_operator_fit_shared": [
+          0.0836011642541514,
+          0.06857344937815928
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.0840491980589921,
+          0.0695179856830338
+        ],
+        "separator_min_between_gap": 1.6823574762137126,
+        "separator_within_eigen_spread": 0.018951484448268552,
+        "smallest_singular_values": [
+          3.2240775656747925e-16,
+          0.06931935617151858,
+          0.09041930212692817,
+          0.1237802336636739,
+          0.13313683329761306,
+          0.154072417900021,
+          0.169119018576355,
+          0.17684480977645067,
+          0.18985761604961215,
+          1.641871153260804,
+          1.6769596330514958,
+          1.6980721369517928,
+          1.703083747681688,
+          1.7195423229743523,
+          1.7363291625286175,
+          1.7457562584405941,
+          1.7622679056103123,
+          1.7674988528433029,
+          1.9403670065811327,
+          1.9416068253166323,
+          1.9793053183178626,
+          1.9850085326602205,
+          2.02587473951032,
+          2.027205018889843
+        ]
+      },
+      "dimension": 6,
+      "multiplicity": 3,
+      "raw_identified_execution": {
+        "accuracy": 0.23486328125,
+        "target_cosine": 0.0953633786406816
+      },
+      "sample_factor_times_dimension": 2.0,
+      "samples_per_operator": 12,
+      "seed": 132,
+      "trajectory_output_noise": 0.1
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9925181421104124
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9999448054647514
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.01278642754407537,
+          0.0047308900570966865
+        ],
+        "best": {
+          "approx_commutant_dim": 9,
+          "block_dim": 2,
+          "gap_ratio": 34.121639658530775,
+          "high_cluster_min": 1.71078369947833,
+          "low_cluster_max": 0.050137792808283635,
+          "multiplicity": 3
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 3,
+            "gap_ratio": 1.1387021718091737,
+            "high_cluster_min": 0.03692788670767581,
+            "low_cluster_max": 0.032429802648926774,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 9,
+            "block_dim": 2,
+            "gap_ratio": 34.121639658530775,
+            "high_cluster_min": 1.71078369947833,
+            "low_cluster_max": 0.050137792808283635,
+            "multiplicity": 3
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.01458624902302414,
+          0.023437865827447887
+        ],
+        "noisy_operator_fit_shared": [
+          0.02581558139852927,
+          0.019134092458696423
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.025925671835421864,
+          0.02172040648323694
+        ],
+        "separator_min_between_gap": 1.4537184194974495,
+        "separator_within_eigen_spread": 0.00768777171657823,
+        "smallest_singular_values": [
+          4.579349095784414e-16,
+          0.019701708739692094,
+          0.028943081609921647,
+          0.032429802648926774,
+          0.03692788670767581,
+          0.041000325366048695,
+          0.04337577465598992,
+          0.04790182650847285,
+          0.050137792808283635,
+          1.71078369947833,
+          1.7215478082724647,
+          1.722110145411724,
+          1.7289708492908118,
+          1.7297967591056087,
+          1.7311302451346946,
+          1.741095647711785,
+          1.741240110689346,
+          1.7475978891453283,
+          1.9833123568504871,
+          1.9889511997551221,
+          1.9907110995525896,
+          1.9963502807048326,
+          1.997579251578126,
+          1.9977584516053135
+        ]
+      },
+      "dimension": 6,
+      "multiplicity": 3,
+      "raw_identified_execution": {
+        "accuracy": 0.33251953125,
+        "target_cosine": -0.13269209059193715
+      },
+      "sample_factor_times_dimension": 4.0,
+      "samples_per_operator": 24,
+      "seed": 132,
+      "trajectory_output_noise": 0.05
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9702289038724992
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9997878420220583
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.02547196048231112,
+          0.009774324518365449
+        ],
+        "best": {
+          "approx_commutant_dim": 9,
+          "block_dim": 2,
+          "gap_ratio": 16.884128193121583,
+          "high_cluster_min": 1.6861318698080099,
+          "low_cluster_max": 0.09986490569853186,
+          "multiplicity": 3
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 3,
+            "gap_ratio": 1.135964580982582,
+            "high_cluster_min": 0.07401635946998646,
+            "low_cluster_max": 0.06515727753233652,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 9,
+            "block_dim": 2,
+            "gap_ratio": 16.884128193121583,
+            "high_cluster_min": 1.6861318698080099,
+            "low_cluster_max": 0.09986490569853186,
+            "multiplicity": 3
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.05756697821044372,
+          0.0454847258922461
+        ],
+        "noisy_operator_fit_shared": [
+          0.05178487206683743,
+          0.03846582536085636
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.052153853483504056,
+          0.04384960292920422
+        ],
+        "separator_min_between_gap": 1.4753687470134376,
+        "separator_within_eigen_spread": 0.01607954428296797,
+        "smallest_singular_values": [
+          3.5203399987398114e-16,
+          0.039580261887907246,
+          0.05774859307868326,
+          0.06515727753233652,
+          0.07401635946998646,
+          0.08202285993986087,
+          0.08666952130395435,
+          0.09512648870030505,
+          0.09986490569853186,
+          1.6861318698080099,
+          1.7067557863640408,
+          1.709111828096397,
+          1.720991629638021,
+          1.7235695275474683,
+          1.7244312422989507,
+          1.7473360372335456,
+          1.7480496029985861,
+          1.7576322418819659,
+          1.9645812173764245,
+          1.9745672162306516,
+          1.9816523623186428,
+          1.9904307319587788,
+          1.992690801051525,
+          1.9944299271560482
+        ]
+      },
+      "dimension": 6,
+      "multiplicity": 3,
+      "raw_identified_execution": {
+        "accuracy": 0.65576171875,
+        "target_cosine": 0.6381754136801713
+      },
+      "sample_factor_times_dimension": 4.0,
+      "samples_per_operator": 24,
+      "seed": 132,
+      "trajectory_output_noise": 0.1
+    },
+    {
+      "compiled_shared_execution": null,
+      "compiled_shared_polar_execution": null,
+      "compiler": {
+        "accepted": false,
+        "best": {
+          "approx_commutant_dim": 16,
+          "block_dim": 2,
+          "gap_ratio": 1.4005961925967403,
+          "high_cluster_min": 1.0899797065744774,
+          "low_cluster_max": 0.7782255244844182,
+          "multiplicity": 4
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 4,
+            "gap_ratio": 1.3645548081111032,
+            "high_cluster_min": 0.35592136220410153,
+            "low_cluster_max": 0.2608333209398813,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 16,
+            "block_dim": 2,
+            "gap_ratio": 1.4005961925967403,
+            "high_cluster_min": 1.0899797065744774,
+            "low_cluster_max": 0.7782255244844182,
+            "multiplicity": 4
+          }
+        ],
+        "gap_threshold": 5.0,
+        "smallest_singular_values": [
+          4.512506409964902e-16,
+          0.20010589538665713,
+          0.2440194468428592,
+          0.2608333209398813,
+          0.35592136220410153,
+          0.38753842963164686,
+          0.48694543934961054,
+          0.5051661149606856,
+          0.5459935331154047,
+          0.5515874993192695,
+          0.5906428446662557,
+          0.5947022606019948,
+          0.6219883536853972,
+          0.6458151277343245,
+          0.7453388178150279,
+          0.7782255244844182,
+          1.0899797065744774,
+          1.404932807061042,
+          1.45151776521886,
+          1.4936875407788393,
+          1.5201482638876174,
+          1.547064323307032,
+          1.5841166674851999,
+          1.5862879151869391
+        ]
+      },
+      "dimension": 8,
+      "multiplicity": 4,
+      "raw_identified_execution": {
+        "accuracy": 0.0810546875,
+        "target_cosine": 0.0022976469175388066
+      },
+      "sample_factor_times_dimension": 1.0,
+      "samples_per_operator": 8,
+      "seed": 132,
+      "trajectory_output_noise": 0.05
+    },
+    {
+      "compiled_shared_execution": null,
+      "compiled_shared_polar_execution": null,
+      "compiler": {
+        "accepted": false,
+        "best": {
+          "approx_commutant_dim": 4,
+          "block_dim": 4,
+          "gap_ratio": 1.3812349386138094,
+          "high_cluster_min": 0.5947172985652819,
+          "low_cluster_max": 0.4305692550480463,
+          "multiplicity": 2
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 4,
+            "gap_ratio": 1.3812349386138094,
+            "high_cluster_min": 0.5947172985652819,
+            "low_cluster_max": 0.4305692550480463,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 16,
+            "block_dim": 2,
+            "gap_ratio": 1.0817381201658833,
+            "high_cluster_min": 1.3070518696529283,
+            "low_cluster_max": 1.2082886285383871,
+            "multiplicity": 4
+          }
+        ],
+        "gap_threshold": 5.0,
+        "smallest_singular_values": [
+          5.082530707099895e-16,
+          0.35963819459113133,
+          0.38846389395499,
+          0.4305692550480463,
+          0.5947172985652819,
+          0.6408114289285197,
+          0.7434858952251729,
+          0.7857176449112275,
+          0.8139856481951404,
+          0.8719519299234342,
+          0.9075364797937825,
+          0.948015767788761,
+          0.9722381423653542,
+          1.0410745376910306,
+          1.1164223616383135,
+          1.2082886285383871,
+          1.3070518696529283,
+          1.3613492784699062,
+          1.4783023635940666,
+          1.5022051586058436,
+          1.5679223575307708,
+          1.585449391622137,
+          1.6374323850203425,
+          1.675836976884903
+        ]
+      },
+      "dimension": 8,
+      "multiplicity": 4,
+      "raw_identified_execution": {
+        "accuracy": 0.078125,
+        "target_cosine": 7.841756644066163e-05
+      },
+      "sample_factor_times_dimension": 1.0,
+      "samples_per_operator": 8,
+      "seed": 132,
+      "trajectory_output_noise": 0.1
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9924682438434907
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9983326658642022
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.026677521581908312,
+          0.019216266452189268
+        ],
+        "best": {
+          "approx_commutant_dim": 16,
+          "block_dim": 2,
+          "gap_ratio": 17.591037841350833,
+          "high_cluster_min": 1.7112589668644225,
+          "low_cluster_max": 0.09728015949359207,
+          "multiplicity": 4
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 4,
+            "gap_ratio": 1.0845111745127822,
+            "high_cluster_min": 0.05146491932971901,
+            "low_cluster_max": 0.0474544850612901,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 16,
+            "block_dim": 2,
+            "gap_ratio": 17.591037841350833,
+            "high_cluster_min": 1.7112589668644225,
+            "low_cluster_max": 0.09728015949359207,
+            "multiplicity": 4
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.05713287163152996,
+          0.03188755990294808,
+          0.06414157185919743
+        ],
+        "noisy_operator_fit_shared": [
+          0.04860748448704205,
+          0.03841513786018471
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.04914130582528717,
+          0.03970238849483171
+        ],
+        "separator_min_between_gap": 1.6197973675133337,
+        "separator_within_eigen_spread": 0.01797458749229275,
+        "smallest_singular_values": [
+          4.103784475375126e-16,
+          0.03959453627287445,
+          0.04423034478134862,
+          0.0474544850612901,
+          0.05146491932971901,
+          0.05947978484590467,
+          0.06145571786019555,
+          0.06435099638432538,
+          0.06899493488014255,
+          0.07366975996535374,
+          0.07970278807333864,
+          0.08363786046543849,
+          0.08843021462591691,
+          0.09066744564512924,
+          0.09515927273307302,
+          0.09728015949359207,
+          1.7112589668644225,
+          1.71798646700162,
+          1.7183050036991399,
+          1.7223913265821416,
+          1.7322618722898484,
+          1.7328011827667904,
+          1.7387723456271142,
+          1.7397099007720906
+        ]
+      },
+      "dimension": 8,
+      "multiplicity": 4,
+      "raw_identified_execution": {
+        "accuracy": 0.26513671875,
+        "target_cosine": 0.4291532034296156
+      },
+      "sample_factor_times_dimension": 2.0,
+      "samples_per_operator": 16,
+      "seed": 132,
+      "trajectory_output_noise": 0.05
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9703808693515737
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9931572538939561
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.03867853655613186,
+          0.03266669748368945
+        ],
+        "best": {
+          "approx_commutant_dim": 16,
+          "block_dim": 2,
+          "gap_ratio": 8.661661047076114,
+          "high_cluster_min": 1.686839792612172,
+          "low_cluster_max": 0.19474784148723903,
+          "multiplicity": 4
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 4,
+            "gap_ratio": 1.0822744126720487,
+            "high_cluster_min": 0.10218868792315723,
+            "low_cluster_max": 0.09442031219315401,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 16,
+            "block_dim": 2,
+            "gap_ratio": 8.661661047076114,
+            "high_cluster_min": 1.686839792612172,
+            "low_cluster_max": 0.19474784148723903,
+            "multiplicity": 4
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.08800201176803456,
+          0.06582543635062066,
+          0.06355118320128413
+        ],
+        "noisy_operator_fit_shared": [
+          0.09645800895225512,
+          0.08141456792529762
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.09721280473701994,
+          0.08395892019345995
+        ],
+        "separator_min_between_gap": 0.755236458248582,
+        "separator_within_eigen_spread": 0.024799176327961803,
+        "smallest_singular_values": [
+          4.262973257098892e-16,
+          0.07843870813217724,
+          0.0883612472768471,
+          0.09442031219315401,
+          0.10218868792315723,
+          0.11773325252989351,
+          0.1225463138190738,
+          0.12890223038333767,
+          0.13693445160270845,
+          0.1478020490687659,
+          0.15869355431330973,
+          0.16733644248843302,
+          0.17648148007729575,
+          0.18169815410723822,
+          0.18939271517496936,
+          0.19474784148723903,
+          1.686839792612172,
+          1.6970257796751318,
+          1.7009735341913603,
+          1.702625988684259,
+          1.7296373360684818,
+          1.7313121534892073,
+          1.739294045817667,
+          1.7447141959282608
+        ]
+      },
+      "dimension": 8,
+      "multiplicity": 4,
+      "raw_identified_execution": {
+        "accuracy": 0.22802734375,
+        "target_cosine": 0.3096576707768143
+      },
+      "sample_factor_times_dimension": 2.0,
+      "samples_per_operator": 16,
+      "seed": 132,
+      "trajectory_output_noise": 0.1
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9974941993193545
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9983129639787598
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.010413266639711186,
+          0.009614042026340251
+        ],
+        "best": {
+          "approx_commutant_dim": 16,
+          "block_dim": 2,
+          "gap_ratio": 32.06951544333037,
+          "high_cluster_min": 1.7147139803694067,
+          "low_cluster_max": 0.053468658838935555,
+          "multiplicity": 4
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 4,
+            "gap_ratio": 1.155908618800226,
+            "high_cluster_min": 0.023980772857611327,
+            "low_cluster_max": 0.02074625317916752,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 16,
+            "block_dim": 2,
+            "gap_ratio": 32.06951544333037,
+            "high_cluster_min": 1.7147139803694067,
+            "low_cluster_max": 0.053468658838935555,
+            "multiplicity": 4
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.016429515830048577,
+          0.019437835999832263,
+          0.013926476204111537
+        ],
+        "noisy_operator_fit_shared": [
+          0.022507575937688377,
+          0.020895165136965873
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.02302506261307088,
+          0.021656101734509818
+        ],
+        "separator_min_between_gap": 1.2239612585178419,
+        "separator_within_eigen_spread": 0.007970049709009608,
+        "smallest_singular_values": [
+          4.1108532627520903e-16,
+          0.016444188155474437,
+          0.01892126244305935,
+          0.02074625317916752,
+          0.023980772857611327,
+          0.02510920029609449,
+          0.027227380402710895,
+          0.030293033100902707,
+          0.031241363381665246,
+          0.03739630439789072,
+          0.040449862928191783,
+          0.04381517312978689,
+          0.04438215612412089,
+          0.04924892822669078,
+          0.05172673536319733,
+          0.053468658838935555,
+          1.7147139803694067,
+          1.721090885041081,
+          1.7214368643622655,
+          1.7220937100484381,
+          1.7224920530349468,
+          1.727958574950885,
+          1.728738688696922,
+          1.7289294200862253
+        ]
+      },
+      "dimension": 8,
+      "multiplicity": 4,
+      "raw_identified_execution": {
+        "accuracy": 0.45068359375,
+        "target_cosine": 0.6041347790480337
+      },
+      "sample_factor_times_dimension": 4.0,
+      "samples_per_operator": 32,
+      "seed": 132,
+      "trajectory_output_noise": 0.05
+    },
+    {
+      "compiled_shared_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.9901315004564355
+      },
+      "compiled_shared_polar_execution": {
+        "accuracy": 1.0,
+        "target_cosine": 0.993258026372693
+      },
+      "compiler": {
+        "accepted": true,
+        "aligned_block_relative_spread": [
+          0.02158993586921494,
+          0.015923870189857622
+        ],
+        "best": {
+          "approx_commutant_dim": 16,
+          "block_dim": 2,
+          "gap_ratio": 15.8154991108834,
+          "high_cluster_min": 1.6927447221539427,
+          "low_cluster_max": 0.10703074941144819,
+          "multiplicity": 4
+        },
+        "candidates": [
+          {
+            "approx_commutant_dim": 4,
+            "block_dim": 4,
+            "gap_ratio": 1.1537462897037336,
+            "high_cluster_min": 0.04779265872834755,
+            "low_cluster_max": 0.041423889424268535,
+            "multiplicity": 2
+          },
+          {
+            "approx_commutant_dim": 16,
+            "block_dim": 2,
+            "gap_ratio": 15.8154991108834,
+            "high_cluster_min": 1.6927447221539427,
+            "low_cluster_max": 0.10703074941144819,
+            "multiplicity": 4
+          }
+        ],
+        "gap_threshold": 5.0,
+        "intertwiner_residuals": [
+          0.0,
+          0.022935287227775356,
+          0.03806644507968374,
+          0.03812237202195066
+        ],
+        "noisy_operator_fit_shared": [
+          0.044752228104576096,
+          0.04112225553047623
+        ],
+        "noisy_operator_fit_shared_polar": [
+          0.04559800508844304,
+          0.042880989475179376
+        ],
+        "separator_min_between_gap": 1.4873471523638035,
+        "separator_within_eigen_spread": 0.025160290367430393,
+        "smallest_singular_values": [
+          4.262390726004457e-16,
+          0.032912946760350836,
+          0.03801133120042963,
+          0.041423889424268535,
+          0.04779265872834755,
+          0.05033293607641296,
+          0.05455609438643504,
+          0.060745721072371875,
+          0.06232762694111441,
+          0.07492016641695375,
+          0.08079439960917828,
+          0.0878794263246004,
+          0.0889848122781134,
+          0.09874287892061326,
+          0.10401128037705805,
+          0.10703074941144819,
+          1.6927447221539427,
+          1.7054076480138887,
+          1.7062326376210608,
+          1.7080609677596625,
+          1.70948734623302,
+          1.7203137840708762,
+          1.7215264928559129,
+          1.7222285901454473
+        ]
+      },
+      "dimension": 8,
+      "multiplicity": 4,
+      "raw_identified_execution": {
+        "accuracy": 0.28125,
+        "target_cosine": 0.38751831123532265
+      },
+      "sample_factor_times_dimension": 4.0,
+      "samples_per_operator": 32,
+      "seed": 132,
+      "trajectory_output_noise": 0.1
+    }
+  ]
+}

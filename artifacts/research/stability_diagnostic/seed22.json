@@ -1,0 +1,114 @@
+{
+  "experiment": "diagnostic_recurrent_transition_stability",
+  "rows": [
+    {
+      "arm": "structured_normed",
+      "metrics": {
+        "closure_angle_max_rad": 0.0019531252328306437,
+        "closure_angle_mean_rad": 0.0005271516856737435,
+        "closure_angle_p95_rad": 0.0015440810238942504,
+        "local_gain_max": 0.9994222521781921,
+        "local_gain_mean": 0.7328400015830994,
+        "local_gain_p95": 0.9608036279678345,
+        "perturb_eps": 0.01,
+        "trajectory": {
+          "1": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 0.9999998807907104
+          },
+          "12": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 0.9999814629554749
+          },
+          "16": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 0.9999674558639526
+          },
+          "2": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 0.9999994039535522
+          },
+          "24": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 0.999927818775177
+          },
+          "32": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 0.999872624874115
+          },
+          "4": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 0.9999976754188538
+          },
+          "48": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 0.9997138381004333
+          },
+          "64": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 0.9994930028915405
+          },
+          "8": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 0.9999915957450867
+          }
+        }
+      }
+    },
+    {
+      "arm": "flexible_penalty",
+      "metrics": {
+        "closure_angle_max_rad": 0.22136972844600677,
+        "closure_angle_mean_rad": 0.06840340048074722,
+        "closure_angle_p95_rad": 0.1973164677619934,
+        "local_gain_max": 1.4657557010650635,
+        "local_gain_mean": 1.0002074241638184,
+        "local_gain_p95": 1.1390753984451294,
+        "perturb_eps": 0.01,
+        "trajectory": {
+          "1": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 0.9958593249320984
+          },
+          "12": {
+            "accuracy": 0.986572265625,
+            "target_cosine_mean": 0.7705438137054443
+          },
+          "16": {
+            "accuracy": 0.753173828125,
+            "target_cosine_mean": 0.6337441205978394
+          },
+          "2": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 0.9904671907424927
+          },
+          "24": {
+            "accuracy": 0.063232421875,
+            "target_cosine_mean": 0.36096224188804626
+          },
+          "32": {
+            "accuracy": 0.000244140625,
+            "target_cosine_mean": 0.11745485663414001
+          },
+          "4": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 0.9699956178665161
+          },
+          "48": {
+            "accuracy": 0.0,
+            "target_cosine_mean": -0.2718025743961334
+          },
+          "64": {
+            "accuracy": 0.0,
+            "target_cosine_mean": -0.46890535950660706
+          },
+          "8": {
+            "accuracy": 1.0,
+            "target_cosine_mean": 0.8895995616912842
+          }
+        }
+      }
+    }
+  ],
+  "seed": 22
+}

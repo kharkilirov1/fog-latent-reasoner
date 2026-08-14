@@ -1,0 +1,48 @@
+{
+  "seed": 0,
+  "steps": 150,
+  "training": [
+    {
+      "step": 1,
+      "depth": 2,
+      "loss": 17.50000762939453
+    },
+    {
+      "step": 100,
+      "depth": 2,
+      "loss": 1.4010640370543115e-05
+    }
+  ],
+  "evaluation": {
+    "1": {
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_generated_operator_mass": 0.6462339535355568
+    },
+    "2": {
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_generated_operator_mass": 0.7081549093127251
+    },
+    "3": {
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_generated_operator_mass": 0.7284270375967026
+    },
+    "4": {
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_generated_operator_mass": 0.7426747903227806
+    },
+    "6": {
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_generated_operator_mass": 0.7558391280472279
+    },
+    "8": {
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_generated_operator_mass": 0.7630623737350106
+    }
+  }
+}

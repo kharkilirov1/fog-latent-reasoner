@@ -1,0 +1,893 @@
+{
+  "experiment": "exp_028_structural_completion_sample_threshold",
+  "protocol": {
+    "latent_dimension": 30,
+    "operator_class": "approximately orthogonal shared linear actions",
+    "prediction": "ambiguity group O(30-k)",
+    "program_depth": 16
+  },
+  "rows": [
+    {
+      "base": {
+        "code_effective_rank": 30.000003814697266,
+        "heldout_add_accuracy": 0.0,
+        "heldout_count": 3,
+        "heldout_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 0.046875,
+        "observed_add_accuracy": 1.0,
+        "observed_mul_accuracy": 1.0,
+        "semidirect_cosine": 0.6664147973060608
+      },
+      "closure_projection": {
+        "generator_add_accuracy": 0.9032257795333862,
+        "generator_mul_accuracy": 0.7096773982048035,
+        "mixed_program_accuracy": 0.0078125,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": -0.008011288940906525
+      },
+      "determinants": {
+        "A": 0.9999997008853372,
+        "M": -1.000000216690644
+      },
+      "heldout_ids": [
+        16,
+        27,
+        15
+      ],
+      "motif_discovery": {
+        "A_diagonal_energy_fraction": 1.0,
+        "A_reconstruction_imaginary_fraction": 6.031575608181557e-16,
+        "A_reconstruction_relative_error": 2.3090540446995824e-15,
+        "A_sparse_support": 30,
+        "M_col_top1_energy_fraction_mean": 0.27992805190658804,
+        "M_col_top1_energy_fraction_min": 0.14970463761613875,
+        "M_kept_energy_fraction": 0.27992805243094276,
+        "M_reconstruction_imaginary_fraction": 5.9461674016817e-16,
+        "M_reconstruction_relative_error": 0.848570507520392,
+        "M_row_effective_support_mean": 7.560219388465284,
+        "M_row_top1_energy_fraction_mean": 0.2865971184694446,
+        "M_row_top1_energy_fraction_min": 0.14877775191324077,
+        "M_sparse_support": 30,
+        "eigenvector_condition_number": 1.0000008713697535,
+        "spectral_matrix_entries_per_operator": 900
+      },
+      "observed_states": 28,
+      "seed": 90,
+      "support_projection": {
+        "generator_add_accuracy": 0.9032257795333862,
+        "generator_mul_accuracy": 0.774193525314331,
+        "mixed_program_accuracy": 0.0234375,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 0.0010899817571043968
+      },
+      "trace": [
+        {
+          "add_loss": 0.9702681303024292,
+          "isotropy_loss": 0.9151468276977539,
+          "loss": 2.9092769622802734,
+          "mul_loss": 1.023861050605774,
+          "step": 1
+        },
+        {
+          "add_loss": 2.079776322716498e-06,
+          "isotropy_loss": 3.1394445159094175e-06,
+          "loss": 0.000290284602669999,
+          "mul_loss": 1.7540795624881866e-06,
+          "step": 300
+        },
+        {
+          "add_loss": -3.618853483544626e-08,
+          "isotropy_loss": 3.3156645429244236e-08,
+          "loss": 2.9962774306113715e-07,
+          "mul_loss": -4.0446007432137776e-08,
+          "step": 600
+        },
+        {
+          "add_loss": -4.0446007432137776e-08,
+          "isotropy_loss": 1.9794428682967657e-12,
+          "loss": -7.873403973235327e-08,
+          "mul_loss": -3.831727113379202e-08,
+          "step": 900
+        },
+        {
+          "add_loss": -5.960464477539063e-08,
+          "isotropy_loss": 2.150117411859557e-14,
+          "loss": -1.0643684333899728e-07,
+          "mul_loss": -4.6832219879888726e-08,
+          "step": 1200
+        },
+        {
+          "add_loss": -5.747590847704487e-08,
+          "isotropy_loss": 2.438906349555743e-14,
+          "loss": -1.1069432304111615e-07,
+          "mul_loss": -5.3218432327639675e-08,
+          "step": 1500
+        }
+      ],
+      "unobserved_complement_dimension": 2
+    },
+    {
+      "base": {
+        "code_effective_rank": 30.00000762939453,
+        "heldout_add_accuracy": 1.0,
+        "heldout_count": 2,
+        "heldout_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "observed_add_accuracy": 1.0,
+        "observed_mul_accuracy": 1.0,
+        "semidirect_cosine": 1.0
+      },
+      "closure_projection": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 1.0
+      },
+      "determinants": {
+        "A": 0.9999999730318322,
+        "M": -0.9999998736329478
+      },
+      "heldout_ids": [
+        27,
+        15
+      ],
+      "motif_discovery": {
+        "A_diagonal_energy_fraction": 1.0,
+        "A_reconstruction_imaginary_fraction": 5.57688062756128e-16,
+        "A_reconstruction_relative_error": 2.2278522358256862e-15,
+        "A_sparse_support": 30,
+        "M_col_top1_energy_fraction_mean": 0.9999999999997599,
+        "M_col_top1_energy_fraction_min": 0.9999999999994775,
+        "M_kept_energy_fraction": 0.9999999999997599,
+        "M_reconstruction_imaginary_fraction": 5.426644621321384e-16,
+        "M_reconstruction_relative_error": 4.900484163780301e-07,
+        "M_row_effective_support_mean": 1.0000000000004805,
+        "M_row_top1_energy_fraction_mean": 0.9999999999997599,
+        "M_row_top1_energy_fraction_min": 0.9999999999996387,
+        "M_sparse_support": 30,
+        "eigenvector_condition_number": 1.0000008177732305,
+        "spectral_matrix_entries_per_operator": 900
+      },
+      "observed_states": 29,
+      "seed": 90,
+      "support_projection": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 1.0
+      },
+      "trace": [
+        {
+          "add_loss": 0.9796683192253113,
+          "isotropy_loss": 0.9151468276977539,
+          "loss": 2.9224185943603516,
+          "mul_loss": 1.0276026725769043,
+          "step": 1
+        },
+        {
+          "add_loss": 2.341023900953587e-06,
+          "isotropy_loss": 6.74602551953285e-06,
+          "loss": 0.00018952402751892805,
+          "mul_loss": 2.0820518784603337e-06,
+          "step": 300
+        },
+        {
+          "add_loss": 8.632396486518701e-08,
+          "isotropy_loss": 2.354045847141606e-07,
+          "loss": 1.0146270597033435e-06,
+          "mul_loss": -2.8774655547181283e-08,
+          "step": 600
+        },
+        {
+          "add_loss": -6.1659974903705e-08,
+          "isotropy_loss": 3.5195124592490856e-11,
+          "loss": -1.211313929161406e-07,
+          "mul_loss": -5.960464477539063e-08,
+          "step": 900
+        },
+        {
+          "add_loss": -5.5493980966048184e-08,
+          "isotropy_loss": 2.4879470161029253e-14,
+          "loss": -1.0276660589170206e-07,
+          "mul_loss": -4.7272649794649624e-08,
+          "step": 1200
+        },
+        {
+          "add_loss": -5.1383313603992065e-08,
+          "isotropy_loss": 2.3978406676135496e-14,
+          "loss": -1.0687727325375818e-07,
+          "mul_loss": -5.5493980966048184e-08,
+          "step": 1500
+        }
+      ],
+      "unobserved_complement_dimension": 1
+    },
+    {
+      "base": {
+        "code_effective_rank": 30.00000762939453,
+        "heldout_add_accuracy": 1.0,
+        "heldout_count": 1,
+        "heldout_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "observed_add_accuracy": 1.0,
+        "observed_mul_accuracy": 1.0,
+        "semidirect_cosine": 1.0
+      },
+      "closure_projection": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 1.0
+      },
+      "determinants": {
+        "A": 0.9999974704117712,
+        "M": -0.9999997502652146
+      },
+      "heldout_ids": [
+        15
+      ],
+      "motif_discovery": {
+        "A_diagonal_energy_fraction": 1.0,
+        "A_reconstruction_imaginary_fraction": 5.897945656647217e-16,
+        "A_reconstruction_relative_error": 2.2701559794513635e-15,
+        "A_sparse_support": 30,
+        "M_col_top1_energy_fraction_mean": 0.9999999997625202,
+        "M_col_top1_energy_fraction_min": 0.9999999993911223,
+        "M_kept_energy_fraction": 0.9999999997625201,
+        "M_reconstruction_imaginary_fraction": 5.818054780457076e-16,
+        "M_reconstruction_relative_error": 1.5410392562639066e-05,
+        "M_row_effective_support_mean": 1.0000000004749598,
+        "M_row_top1_energy_fraction_mean": 0.9999999997625201,
+        "M_row_top1_energy_fraction_min": 0.9999999994834892,
+        "M_sparse_support": 30,
+        "eigenvector_condition_number": 1.0000307694024746,
+        "spectral_matrix_entries_per_operator": 900
+      },
+      "observed_states": 30,
+      "seed": 90,
+      "support_projection": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 1.0
+      },
+      "trace": [
+        {
+          "add_loss": 0.9782829284667969,
+          "isotropy_loss": 0.9151468276977539,
+          "loss": 2.9226057529449463,
+          "mul_loss": 1.0291752815246582,
+          "step": 1
+        },
+        {
+          "add_loss": 1.2914340175029793e-07,
+          "isotropy_loss": 9.441556017009134e-07,
+          "loss": 2.066745400952641e-05,
+          "mul_loss": 4.5696893380409165e-07,
+          "step": 300
+        },
+        {
+          "add_loss": -6.953874986947994e-08,
+          "isotropy_loss": 3.3428038982707964e-12,
+          "loss": -1.3503475315701507e-07,
+          "mul_loss": -6.556511067401516e-08,
+          "step": 600
+        },
+        {
+          "add_loss": -5.7617821624944554e-08,
+          "isotropy_loss": 5.421120976710665e-14,
+          "loss": -1.2119060954773886e-07,
+          "mul_loss": -6.357829107628277e-08,
+          "step": 900
+        },
+        {
+          "add_loss": -6.159146437312302e-08,
+          "isotropy_loss": 3.8363213159583326e-14,
+          "loss": -1.211950291235553e-07,
+          "mul_loss": -5.960464477539063e-08,
+          "step": 1200
+        },
+        {
+          "add_loss": -5.7617821624944554e-08,
+          "isotropy_loss": 2.974155616881566e-14,
+          "loss": -1.0728811616900202e-07,
+          "mul_loss": -4.967053612858763e-08,
+          "step": 1500
+        }
+      ],
+      "unobserved_complement_dimension": 0
+    },
+    {
+      "base": {
+        "code_effective_rank": 30.00000762939453,
+        "heldout_add_accuracy": 0.3333333432674408,
+        "heldout_count": 3,
+        "heldout_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 0.0234375,
+        "observed_add_accuracy": 1.0,
+        "observed_mul_accuracy": 1.0,
+        "semidirect_cosine": 0.7084728479385376
+      },
+      "closure_projection": {
+        "generator_add_accuracy": 0.9354838728904724,
+        "generator_mul_accuracy": 0.7096773982048035,
+        "mixed_program_accuracy": 0.0546875,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": -0.001755021046847105
+      },
+      "determinants": {
+        "A": -0.9999948848503483,
+        "M": -0.9999977285987611
+      },
+      "heldout_ids": [
+        19,
+        14,
+        12
+      ],
+      "motif_discovery": {
+        "A_diagonal_energy_fraction": 1.0,
+        "A_reconstruction_imaginary_fraction": 5.667260074437306e-16,
+        "A_reconstruction_relative_error": 2.440702682906025e-15,
+        "A_sparse_support": 30,
+        "M_col_top1_energy_fraction_mean": 0.3958242430152658,
+        "M_col_top1_energy_fraction_min": 0.06594282317527254,
+        "M_kept_energy_fraction": 0.3958237526518335,
+        "M_reconstruction_imaginary_fraction": 0.11170647509872529,
+        "M_reconstruction_relative_error": 0.7772863676594881,
+        "M_row_effective_support_mean": 5.398364221906877,
+        "M_row_top1_energy_fraction_mean": 0.3953509924226648,
+        "M_row_top1_energy_fraction_min": 0.10841400891424172,
+        "M_sparse_support": 30,
+        "eigenvector_condition_number": 1.0000973637813195,
+        "spectral_matrix_entries_per_operator": 900
+      },
+      "observed_states": 28,
+      "seed": 91,
+      "support_projection": {
+        "generator_add_accuracy": 0.9354838728904724,
+        "generator_mul_accuracy": 0.7096773982048035,
+        "mixed_program_accuracy": 0.0625,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 0.010479087010025978
+      },
+      "trace": [
+        {
+          "add_loss": 0.9699610471725464,
+          "isotropy_loss": 0.8815589547157288,
+          "loss": 2.8626155853271484,
+          "mul_loss": 1.011094331741333,
+          "step": 1
+        },
+        {
+          "add_loss": 1.8051692904919037e-06,
+          "isotropy_loss": 6.663240583293373e-06,
+          "loss": 0.00039937614928931,
+          "mul_loss": 1.8200704516857513e-06,
+          "step": 300
+        },
+        {
+          "add_loss": 6.38621200366174e-09,
+          "isotropy_loss": 2.936975249667739e-07,
+          "loss": 0.00010721432772697881,
+          "mul_loss": 2.107450001176403e-07,
+          "step": 600
+        },
+        {
+          "add_loss": -4.896095973094816e-08,
+          "isotropy_loss": 1.9341712675924327e-09,
+          "loss": -9.353342278473065e-08,
+          "mul_loss": -6.59908536704279e-08,
+          "step": 900
+        },
+        {
+          "add_loss": -9.366443975977745e-08,
+          "isotropy_loss": 3.237244727925109e-14,
+          "loss": -1.830713358685898e-07,
+          "mul_loss": -8.940696716308594e-08,
+          "step": 1200
+        },
+        {
+          "add_loss": -6.386211737208214e-08,
+          "isotropy_loss": 4.7069119435416695e-14,
+          "loss": -1.1282065770501504e-07,
+          "mul_loss": -4.896095973094816e-08,
+          "step": 1500
+        }
+      ],
+      "unobserved_complement_dimension": 2
+    },
+    {
+      "base": {
+        "code_effective_rank": 30.00000762939453,
+        "heldout_add_accuracy": 1.0,
+        "heldout_count": 2,
+        "heldout_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "observed_add_accuracy": 1.0,
+        "observed_mul_accuracy": 1.0,
+        "semidirect_cosine": 1.0
+      },
+      "closure_projection": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 1.0
+      },
+      "determinants": {
+        "A": 1.000000000789883,
+        "M": -0.9999997248177797
+      },
+      "heldout_ids": [
+        14,
+        12
+      ],
+      "motif_discovery": {
+        "A_diagonal_energy_fraction": 1.0,
+        "A_reconstruction_imaginary_fraction": 5.561632368154354e-16,
+        "A_reconstruction_relative_error": 2.1191925262522062e-15,
+        "A_sparse_support": 30,
+        "M_col_top1_energy_fraction_mean": 0.9999999999912744,
+        "M_col_top1_energy_fraction_min": 0.9999999999800396,
+        "M_kept_energy_fraction": 0.9999999999912744,
+        "M_reconstruction_imaginary_fraction": 5.328688529655867e-16,
+        "M_reconstruction_relative_error": 2.953919451163421e-06,
+        "M_row_effective_support_mean": 1.0000000000174514,
+        "M_row_top1_energy_fraction_mean": 0.9999999999912743,
+        "M_row_top1_energy_fraction_min": 0.9999999999786856,
+        "M_sparse_support": 30,
+        "eigenvector_condition_number": 1.000005814445625,
+        "spectral_matrix_entries_per_operator": 900
+      },
+      "observed_states": 29,
+      "seed": 91,
+      "support_projection": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 1.0
+      },
+      "trace": [
+        {
+          "add_loss": 0.9676366448402405,
+          "isotropy_loss": 0.8815589547157288,
+          "loss": 2.8476786613464355,
+          "mul_loss": 0.998481810092926,
+          "step": 1
+        },
+        {
+          "add_loss": 1.2331994980741e-07,
+          "isotropy_loss": 5.904533963985159e-07,
+          "loss": 0.00022845470812171698,
+          "mul_loss": 2.2814191424913588e-07,
+          "step": 300
+        },
+        {
+          "add_loss": 2.6719323642510062e-08,
+          "isotropy_loss": 2.9958968639220984e-08,
+          "loss": 9.052055247593671e-06,
+          "mul_loss": -4.7272649794649624e-08,
+          "step": 600
+        },
+        {
+          "add_loss": -4.9327983475677684e-08,
+          "isotropy_loss": 7.346199928752462e-13,
+          "loss": -1.1500191021696082e-07,
+          "mul_loss": -6.577064226576113e-08,
+          "step": 900
+        },
+        {
+          "add_loss": -4.110665230427912e-08,
+          "isotropy_loss": 4.554041808913466e-14,
+          "loss": -9.043088766702567e-08,
+          "mul_loss": -4.9327983475677684e-08,
+          "step": 1200
+        },
+        {
+          "add_loss": -6.371531213744674e-08,
+          "isotropy_loss": 2.6928315805495318e-14,
+          "loss": -1.007112544471056e-07,
+          "mul_loss": -3.6995984942223004e-08,
+          "step": 1500
+        }
+      ],
+      "unobserved_complement_dimension": 1
+    },
+    {
+      "base": {
+        "code_effective_rank": 30.000001907348633,
+        "heldout_add_accuracy": 1.0,
+        "heldout_count": 1,
+        "heldout_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "observed_add_accuracy": 1.0,
+        "observed_mul_accuracy": 1.0,
+        "semidirect_cosine": 1.0
+      },
+      "closure_projection": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 1.0
+      },
+      "determinants": {
+        "A": 0.9999994333208297,
+        "M": -0.9999994590190521
+      },
+      "heldout_ids": [
+        12
+      ],
+      "motif_discovery": {
+        "A_diagonal_energy_fraction": 0.9999999999999999,
+        "A_reconstruction_imaginary_fraction": 4.870472063727044e-16,
+        "A_reconstruction_relative_error": 2.3595196400963264e-15,
+        "A_sparse_support": 30,
+        "M_col_top1_energy_fraction_mean": 0.9999999999997939,
+        "M_col_top1_energy_fraction_min": 0.9999999999997311,
+        "M_kept_energy_fraction": 0.9999999999997942,
+        "M_reconstruction_imaginary_fraction": 4.795345600065903e-16,
+        "M_reconstruction_relative_error": 4.5398187606509895e-07,
+        "M_row_effective_support_mean": 1.0000000000004123,
+        "M_row_top1_energy_fraction_mean": 0.9999999999997939,
+        "M_row_top1_energy_fraction_min": 0.9999999999996937,
+        "M_sparse_support": 30,
+        "eigenvector_condition_number": 1.000000819356882,
+        "spectral_matrix_entries_per_operator": 900
+      },
+      "observed_states": 30,
+      "seed": 91,
+      "support_projection": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 1.0
+      },
+      "trace": [
+        {
+          "add_loss": 0.9639934301376343,
+          "isotropy_loss": 0.8815589547157288,
+          "loss": 2.8401119709014893,
+          "mul_loss": 0.9945585131645203,
+          "step": 1
+        },
+        {
+          "add_loss": 3.099441414633475e-07,
+          "isotropy_loss": 1.4539028825311107e-06,
+          "loss": 1.5585223081870936e-05,
+          "mul_loss": 2.9007594548602356e-07,
+          "step": 300
+        },
+        {
+          "add_loss": -5.563100202721216e-08,
+          "isotropy_loss": 1.9634556567421635e-12,
+          "loss": -1.2713185526536108e-07,
+          "mul_loss": -7.152557657263969e-08,
+          "step": 600
+        },
+        {
+          "add_loss": -4.967053612858763e-08,
+          "isotropy_loss": 2.5028932512704063e-14,
+          "loss": -1.1920926112907182e-07,
+          "mul_loss": -6.953874986947994e-08,
+          "step": 900
+        },
+        {
+          "add_loss": -4.5696893380409165e-08,
+          "isotropy_loss": 2.0020399590535073e-14,
+          "loss": -9.735423134316079e-08,
+          "mul_loss": -5.16573592790337e-08,
+          "step": 1200
+        },
+        {
+          "add_loss": -4.967053612858763e-08,
+          "isotropy_loss": 2.4512447396852176e-14,
+          "loss": -9.536740464000104e-08,
+          "mul_loss": -4.5696893380409165e-08,
+          "step": 1500
+        }
+      ],
+      "unobserved_complement_dimension": 0
+    },
+    {
+      "base": {
+        "code_effective_rank": 30.00000762939453,
+        "heldout_add_accuracy": 0.3333333432674408,
+        "heldout_count": 3,
+        "heldout_mul_accuracy": 0.3333333432674408,
+        "mixed_program_accuracy": 0.0390625,
+        "observed_add_accuracy": 1.0,
+        "observed_mul_accuracy": 1.0,
+        "semidirect_cosine": 0.7280190587043762
+      },
+      "closure_projection": {
+        "generator_add_accuracy": 0.9354838728904724,
+        "generator_mul_accuracy": 0.8387096524238586,
+        "mixed_program_accuracy": 0.046875,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": -0.011940980330109596
+      },
+      "determinants": {
+        "A": -1.0002053725328104,
+        "M": 1.0000304763329066
+      },
+      "heldout_ids": [
+        22,
+        5,
+        16
+      ],
+      "motif_discovery": {
+        "A_diagonal_energy_fraction": 0.9999999999999999,
+        "A_reconstruction_imaginary_fraction": 5.50705740654548e-16,
+        "A_reconstruction_relative_error": 2.179364870073186e-15,
+        "A_sparse_support": 30,
+        "M_col_top1_energy_fraction_mean": 0.31046159600122414,
+        "M_col_top1_energy_fraction_min": 0.18228115036182377,
+        "M_kept_energy_fraction": 0.3104552552467811,
+        "M_reconstruction_imaginary_fraction": 0.1438275571955734,
+        "M_reconstruction_relative_error": 0.8303820809179443,
+        "M_row_effective_support_mean": 6.394619083698947,
+        "M_row_top1_energy_fraction_mean": 0.3112594724440473,
+        "M_row_top1_energy_fraction_min": 0.20465838536231024,
+        "M_sparse_support": 30,
+        "eigenvector_condition_number": 1.000847276410483,
+        "spectral_matrix_entries_per_operator": 900
+      },
+      "observed_states": 28,
+      "seed": 92,
+      "support_projection": {
+        "generator_add_accuracy": 0.9354838728904724,
+        "generator_mul_accuracy": 0.8064516186714172,
+        "mixed_program_accuracy": 0.015625,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": -0.04316428676247597
+      },
+      "trace": [
+        {
+          "add_loss": 1.00790274143219,
+          "isotropy_loss": 0.945745050907135,
+          "loss": 2.9439964294433594,
+          "mul_loss": 0.9903473854064941,
+          "step": 1
+        },
+        {
+          "add_loss": 3.512416526518791e-07,
+          "isotropy_loss": 1.9007686660188483e-06,
+          "loss": 0.0002825145493261516,
+          "mul_loss": 1.9222497940063477e-06,
+          "step": 300
+        },
+        {
+          "add_loss": -6.38621200366174e-09,
+          "isotropy_loss": 5.010333836708014e-08,
+          "loss": 3.3686314964143094e-06,
+          "mul_loss": -2.9802322387695312e-08,
+          "step": 600
+        },
+        {
+          "add_loss": -7.663454226758404e-08,
+          "isotropy_loss": 7.163609982985264e-12,
+          "loss": -1.530681146277857e-07,
+          "mul_loss": -7.663454226758404e-08,
+          "step": 900
+        },
+        {
+          "add_loss": -4.896095973094816e-08,
+          "isotropy_loss": 6.036721903607267e-12,
+          "loss": -6.738437718922796e-08,
+          "mul_loss": -1.915863556689601e-08,
+          "step": 1200
+        },
+        {
+          "add_loss": -3.618853483544626e-08,
+          "isotropy_loss": 2.6693322031923206e-12,
+          "loss": -8.292574449342283e-08,
+          "mul_loss": -4.6832219879888726e-08,
+          "step": 1500
+        }
+      ],
+      "unobserved_complement_dimension": 2
+    },
+    {
+      "base": {
+        "code_effective_rank": 30.00000762939453,
+        "heldout_add_accuracy": 1.0,
+        "heldout_count": 2,
+        "heldout_mul_accuracy": 0.0,
+        "mixed_program_accuracy": 0.015625,
+        "observed_add_accuracy": 1.0,
+        "observed_mul_accuracy": 1.0,
+        "semidirect_cosine": 0.8666667342185974
+      },
+      "closure_projection": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 1.0
+      },
+      "determinants": {
+        "A": 1.000000131329353,
+        "M": 1.0000006310576353
+      },
+      "heldout_ids": [
+        5,
+        16
+      ],
+      "motif_discovery": {
+        "A_diagonal_energy_fraction": 1.0,
+        "A_reconstruction_imaginary_fraction": 4.693882420531731e-16,
+        "A_reconstruction_relative_error": 2.1785416184019222e-15,
+        "A_sparse_support": 30,
+        "M_col_top1_energy_fraction_mean": 0.8731182754752069,
+        "M_col_top1_energy_fraction_min": 0.7591616124151029,
+        "M_kept_energy_fraction": 0.8731182809190903,
+        "M_reconstruction_imaginary_fraction": 4.559196271596867e-16,
+        "M_reconstruction_relative_error": 0.35620457964373037,
+        "M_row_effective_support_mean": 1.345465429633131,
+        "M_row_top1_energy_fraction_mean": 0.8731182753228545,
+        "M_row_top1_energy_fraction_min": 0.7591615214350963,
+        "M_sparse_support": 30,
+        "eigenvector_condition_number": 1.0000010814157592,
+        "spectral_matrix_entries_per_operator": 900
+      },
+      "observed_states": 29,
+      "seed": 92,
+      "support_projection": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 0.996756374835968
+      },
+      "trace": [
+        {
+          "add_loss": 1.0119272470474243,
+          "isotropy_loss": 0.945745050907135,
+          "loss": 2.9435057640075684,
+          "mul_loss": 0.985832154750824,
+          "step": 1
+        },
+        {
+          "add_loss": 6.392084515027818e-07,
+          "isotropy_loss": 4.785126748174662e-07,
+          "loss": 0.00018583491328172386,
+          "mul_loss": 2.4458458369736036e-07,
+          "step": 300
+        },
+        {
+          "add_loss": -3.9051318623251063e-08,
+          "isotropy_loss": 2.1203382516432612e-07,
+          "loss": 6.595349077542778e-06,
+          "mul_loss": 2.754145782546402e-07,
+          "step": 600
+        },
+        {
+          "add_loss": -5.3438647285020124e-08,
+          "isotropy_loss": 1.3204236315456086e-10,
+          "loss": -1.1611536621103369e-07,
+          "mul_loss": -6.371531213744674e-08,
+          "step": 900
+        },
+        {
+          "add_loss": -3.6995984942223004e-08,
+          "isotropy_loss": 5.066256658983748e-13,
+          "loss": -1.0067368805266597e-07,
+          "mul_loss": -6.371531213744674e-08,
+          "step": 1200
+        },
+        {
+          "add_loss": -6.988130962781725e-08,
+          "isotropy_loss": 1.9141443665564653e-14,
+          "loss": -1.3976260504477978e-07,
+          "mul_loss": -6.988130962781725e-08,
+          "step": 1500
+        }
+      ],
+      "unobserved_complement_dimension": 1
+    },
+    {
+      "base": {
+        "code_effective_rank": 30.000001907348633,
+        "heldout_add_accuracy": 1.0,
+        "heldout_count": 1,
+        "heldout_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "observed_add_accuracy": 1.0,
+        "observed_mul_accuracy": 1.0,
+        "semidirect_cosine": 0.9999997615814209
+      },
+      "closure_projection": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 1.0
+      },
+      "determinants": {
+        "A": 1.0000002681011473,
+        "M": -1.0002550036103321
+      },
+      "heldout_ids": [
+        16
+      ],
+      "motif_discovery": {
+        "A_diagonal_energy_fraction": 1.0,
+        "A_reconstruction_imaginary_fraction": 5.870838181979517e-16,
+        "A_reconstruction_relative_error": 2.1520769733670053e-15,
+        "A_sparse_support": 30,
+        "M_col_top1_energy_fraction_mean": 0.9999997304911799,
+        "M_col_top1_energy_fraction_min": 0.9999993976448881,
+        "M_kept_energy_fraction": 0.9999997304948921,
+        "M_reconstruction_imaginary_fraction": 5.671459169506597e-16,
+        "M_reconstruction_relative_error": 0.0005191347532321313,
+        "M_row_effective_support_mean": 1.0000005390217839,
+        "M_row_top1_energy_fraction_mean": 0.9999997304892432,
+        "M_row_top1_energy_fraction_min": 0.9999993364232234,
+        "M_sparse_support": 30,
+        "eigenvector_condition_number": 1.0002093705040374,
+        "spectral_matrix_entries_per_operator": 900
+      },
+      "observed_states": 30,
+      "seed": 92,
+      "support_projection": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 0.9999999403953552
+      },
+      "trace": [
+        {
+          "add_loss": 1.0122559070587158,
+          "isotropy_loss": 0.945745050907135,
+          "loss": 2.939412832260132,
+          "mul_loss": 0.981410562992096,
+          "step": 1
+        },
+        {
+          "add_loss": 2.3841858265427618e-08,
+          "isotropy_loss": 2.3113192071377853e-07,
+          "loss": 3.8074176700320095e-06,
+          "mul_loss": -3.973643192267673e-09,
+          "step": 300
+        },
+        {
+          "add_loss": -4.967053612858763e-08,
+          "isotropy_loss": 1.041263646486823e-12,
+          "loss": -8.93929126277726e-08,
+          "mul_loss": -3.973643103449831e-08,
+          "step": 600
+        },
+        {
+          "add_loss": -3.774960788405224e-08,
+          "isotropy_loss": 2.2178860310806403e-12,
+          "loss": -1.1469489180626624e-07,
+          "mul_loss": -7.748603536583687e-08,
+          "step": 900
+        },
+        {
+          "add_loss": -1.7881394143159923e-08,
+          "isotropy_loss": 3.88830634356907e-12,
+          "loss": -5.7015025589635115e-08,
+          "mul_loss": -3.973643103449831e-08,
+          "step": 1200
+        },
+        {
+          "add_loss": -5.7617821624944554e-08,
+          "isotropy_loss": 2.1359990165503717e-11,
+          "loss": 3.155224703732529e-08,
+          "mul_loss": 8.742014756535355e-08,
+          "step": 1500
+        }
+      ],
+      "unobserved_complement_dimension": 0
+    }
+  ]
+}

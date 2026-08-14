@@ -1,0 +1,182 @@
+{
+  "experiment": "exp_024_motif_projection_denoising",
+  "protocol": {
+    "base_model": "EXP-022 d=30 isotropic learned affine representation",
+    "closure_projection": "support projection + A^31=I root snapping + unit-magnitude M coefficients",
+    "examples": 64,
+    "hand_written_fourier_basis": false,
+    "noise": "Gaussian weight noise scaled by 1/sqrt(d)",
+    "program_depth": 32,
+    "support_projection": "A spectral diagonal + discovered monomial M support"
+  },
+  "rows": [
+    {
+      "closure_projection": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 32,
+        "mixed_program_target_cosine": 1.0
+      },
+      "dense": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 32,
+        "mixed_program_target_cosine": 1.0
+      },
+      "discovery": {
+        "A_diagonal_energy_fraction": 1.0,
+        "A_reconstruction_imaginary_fraction": 6.099458122601698e-16,
+        "A_reconstruction_relative_error": 2.278134198208772e-15,
+        "A_sparse_support": 30,
+        "M_col_top1_energy_fraction_mean": 0.9999999999512043,
+        "M_col_top1_energy_fraction_min": 0.9999999998457474,
+        "M_kept_energy_fraction": 0.9999999999512044,
+        "M_reconstruction_imaginary_fraction": 5.743058212360767e-16,
+        "M_reconstruction_relative_error": 6.985385760614479e-06,
+        "M_row_effective_support_mean": 1.000000000097591,
+        "M_row_top1_energy_fraction_mean": 0.9999999999512045,
+        "M_row_top1_energy_fraction_min": 0.9999999998932527,
+        "M_sparse_support": 30,
+        "eigenvector_condition_number": 1.0000078494917093,
+        "spectral_matrix_entries_per_operator": 900
+      },
+      "noise_sigma": 0.0,
+      "seed": 75,
+      "support_projection": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 32,
+        "mixed_program_target_cosine": 1.0
+      }
+    },
+    {
+      "closure_projection": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 32,
+        "mixed_program_target_cosine": 0.9973825812339783
+      },
+      "dense": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 32,
+        "mixed_program_target_cosine": 0.6985597610473633
+      },
+      "discovery": {
+        "A_diagonal_energy_fraction": 1.0,
+        "A_reconstruction_imaginary_fraction": 5.401094745765601e-16,
+        "A_reconstruction_relative_error": 2.2462610076087344e-15,
+        "A_sparse_support": 30,
+        "M_col_top1_energy_fraction_mean": 0.9938871082408964,
+        "M_col_top1_energy_fraction_min": 0.99148245178638,
+        "M_kept_energy_fraction": 0.9938875045256206,
+        "M_reconstruction_imaginary_fraction": 5.219994690725503e-16,
+        "M_reconstruction_relative_error": 0.07841836839546207,
+        "M_row_effective_support_mean": 1.012335515184412,
+        "M_row_top1_energy_fraction_mean": 0.9938908961246787,
+        "M_row_top1_energy_fraction_min": 0.990509777376105,
+        "M_sparse_support": 30,
+        "eigenvector_condition_number": 1.1566100383085556,
+        "spectral_matrix_entries_per_operator": 900
+      },
+      "noise_sigma": 0.03,
+      "seed": 75,
+      "support_projection": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 32,
+        "mixed_program_target_cosine": 0.8233983516693115
+      }
+    },
+    {
+      "closure_projection": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 32,
+        "mixed_program_target_cosine": 0.9926414489746094
+      },
+      "dense": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 0.6875,
+        "mixed_program_depth": 32,
+        "mixed_program_target_cosine": 0.39688804745674133
+      },
+      "discovery": {
+        "A_diagonal_energy_fraction": 1.0,
+        "A_reconstruction_imaginary_fraction": 5.983497342373763e-16,
+        "A_reconstruction_relative_error": 2.548049524858085e-15,
+        "A_sparse_support": 30,
+        "M_col_top1_energy_fraction_mean": 0.9824074642802804,
+        "M_col_top1_energy_fraction_min": 0.9730549344809557,
+        "M_kept_energy_fraction": 0.9824082785892203,
+        "M_reconstruction_imaginary_fraction": 5.769435288862924e-16,
+        "M_reconstruction_relative_error": 0.13341806137102585,
+        "M_row_effective_support_mean": 1.036120698390112,
+        "M_row_top1_energy_fraction_mean": 0.9824134879296198,
+        "M_row_top1_energy_fraction_min": 0.9730022187749784,
+        "M_sparse_support": 30,
+        "eigenvector_condition_number": 1.2289942864073593,
+        "spectral_matrix_entries_per_operator": 900
+      },
+      "noise_sigma": 0.05,
+      "seed": 75,
+      "support_projection": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 0.90625,
+        "mixed_program_depth": 32,
+        "mixed_program_target_cosine": 0.6213387846946716
+      }
+    },
+    {
+      "closure_projection": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 32,
+        "mixed_program_target_cosine": 0.9752926826477051
+      },
+      "dense": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 0.046875,
+        "mixed_program_depth": 32,
+        "mixed_program_target_cosine": 0.04905751720070839
+      },
+      "discovery": {
+        "A_diagonal_energy_fraction": 1.0,
+        "A_reconstruction_imaginary_fraction": 5.632111937035462e-16,
+        "A_reconstruction_relative_error": 2.440810287663007e-15,
+        "A_sparse_support": 30,
+        "M_col_top1_energy_fraction_mean": 0.9381851581329801,
+        "M_col_top1_energy_fraction_min": 0.8991952835620244,
+        "M_kept_energy_fraction": 0.9379997207927687,
+        "M_reconstruction_imaginary_fraction": 5.404665375107901e-16,
+        "M_reconstruction_relative_error": 0.2587525846834811,
+        "M_row_effective_support_mean": 1.1365272322632938,
+        "M_row_top1_energy_fraction_mean": 0.9382009607966708,
+        "M_row_top1_energy_fraction_min": 0.895765084743332,
+        "M_sparse_support": 30,
+        "eigenvector_condition_number": 1.5979748357814552,
+        "spectral_matrix_entries_per_operator": 900
+      },
+      "noise_sigma": 0.1,
+      "seed": 75,
+      "support_projection": {
+        "generator_add_accuracy": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "mixed_program_accuracy": 0.453125,
+        "mixed_program_depth": 32,
+        "mixed_program_target_cosine": 0.27298444509506226
+      }
+    }
+  ]
+}

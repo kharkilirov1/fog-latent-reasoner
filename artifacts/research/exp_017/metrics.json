@@ -1,0 +1,125 @@
+{
+  "experiment": "exp_017",
+  "rows": [
+    {
+      "add_full_group_accuracy": 1.0,
+      "episode_metrics": [
+        {
+          "answer_accuracy": 0.987,
+          "demonstrations": 1,
+          "episodes": 3000,
+          "mean_score_margin": 1.003585758660299,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 0.9866666666666667,
+          "score_ambiguous_fraction": 0.033666666666666664,
+          "semantic_ambiguous_fraction": 0.033666666666666664
+        },
+        {
+          "answer_accuracy": 0.9996666666666667,
+          "demonstrations": 2,
+          "episodes": 3000,
+          "mean_score_margin": 1.003049642361002,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 0.9996666666666667,
+          "score_ambiguous_fraction": 0.0006666666666666666,
+          "semantic_ambiguous_fraction": 0.0006666666666666666
+        },
+        {
+          "answer_accuracy": 1.0,
+          "demonstrations": 3,
+          "episodes": 3000,
+          "mean_score_margin": 1.0006495621895624,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 1.0,
+          "score_ambiguous_fraction": 0.0003333333333333333,
+          "semantic_ambiguous_fraction": 0.0003333333333333333
+        }
+      ],
+      "mul_exponent_group_accuracy": 1.0,
+      "seed": 50
+    },
+    {
+      "add_full_group_accuracy": 1.0,
+      "episode_metrics": [
+        {
+          "answer_accuracy": 0.9863333333333333,
+          "demonstrations": 1,
+          "episodes": 3000,
+          "mean_score_margin": 0.9938564332928003,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 0.9856666666666667,
+          "score_ambiguous_fraction": 0.032,
+          "semantic_ambiguous_fraction": 0.032
+        },
+        {
+          "answer_accuracy": 0.9986666666666667,
+          "demonstrations": 2,
+          "episodes": 3000,
+          "mean_score_margin": 0.9957665349660926,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 0.9986666666666667,
+          "score_ambiguous_fraction": 0.0023333333333333335,
+          "semantic_ambiguous_fraction": 0.0023333333333333335
+        },
+        {
+          "answer_accuracy": 1.0,
+          "demonstrations": 3,
+          "episodes": 3000,
+          "mean_score_margin": 0.998081878783242,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 1.0,
+          "score_ambiguous_fraction": 0.0003333333333333333,
+          "semantic_ambiguous_fraction": 0.0003333333333333333
+        }
+      ],
+      "mul_exponent_group_accuracy": 1.0,
+      "seed": 51
+    },
+    {
+      "add_full_group_accuracy": 1.0,
+      "episode_metrics": [
+        {
+          "answer_accuracy": 0.982,
+          "demonstrations": 1,
+          "episodes": 3000,
+          "mean_score_margin": 0.8748536936913928,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 0.9813333333333333,
+          "score_ambiguous_fraction": 0.033666666666666664,
+          "semantic_ambiguous_fraction": 0.033666666666666664
+        },
+        {
+          "answer_accuracy": 0.9983333333333333,
+          "demonstrations": 2,
+          "episodes": 3000,
+          "mean_score_margin": 0.8607375880392889,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 0.9983333333333333,
+          "score_ambiguous_fraction": 0.0023333333333333335,
+          "semantic_ambiguous_fraction": 0.0023333333333333335
+        },
+        {
+          "answer_accuracy": 1.0,
+          "demonstrations": 3,
+          "episodes": 3000,
+          "mean_score_margin": 0.8653998684576817,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 1.0,
+          "score_ambiguous_fraction": 0.0,
+          "semantic_ambiguous_fraction": 0.0
+        }
+      ],
+      "mul_exponent_group_accuracy": 1.0,
+      "seed": 52
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "config": {
+    "harmonics": 6,
+    "head_scale": 20.0,
+    "modulus": 31,
+    "separation_weight": 0.05
+  },
+  "experiment": "exp_010_learned_cyclic_chart",
+  "full_binary_table_size": 961,
+  "rows": [
+    {
+      "arm": "closed_cycle_root",
+      "evaluation": {
+        "all_binary_addition_accuracy": 1.0,
+        "arm": "closed_cycle_root",
+        "closure_edge_accuracy": 1.0,
+        "heldout_binary_pair_accuracy_b_ne_1": 1.0,
+        "mean_pth_root_residual": 0.004453799221664667,
+        "recurrence": [
+          {
+            "depth": 2,
+            "final_accuracy": 1.0,
+            "minimum_hop_accuracy": 1.0
+          },
+          {
+            "depth": 4,
+            "final_accuracy": 0.310546875,
+            "minimum_hop_accuracy": 0.310546875
+          },
+          {
+            "depth": 8,
+            "final_accuracy": 0.0,
+            "minimum_hop_accuracy": 0.0
+          },
+          {
+            "depth": 16,
+            "final_accuracy": 0.0,
+            "minimum_hop_accuracy": 0.0
+          },
+          {
+            "depth": 32,
+            "final_accuracy": 0.0,
+            "minimum_hop_accuracy": 0.0
+          },
+          {
+            "depth": 64,
+            "final_accuracy": 0.0,
+            "minimum_hop_accuracy": 0.0
+          }
+        ],
+        "self_decode_accuracy": 1.0,
+        "successor_accuracy_all_edges": 1.0
+      },
+      "seed": 0,
+      "trace": [
+        {
+          "loss": 1.924431562423706,
+          "root_loss": 1.052844524383545,
+          "root_weight": 1.0,
+          "separation_loss": 0.0041182031854987144,
+          "step": 1,
+          "transition_loss": 0.8713811039924622
+        },
+        {
+          "loss": 0.07412666082382202,
+          "root_loss": 0.0017532805213704705,
+          "root_weight": 1.0,
+          "separation_loss": 0.0030215217266231775,
+          "step": 60,
+          "transition_loss": 0.07222230732440948
+        },
+        {
+          "loss": 0.03664414584636688,
+          "root_loss": 1.3480584129865747e-05,
+          "root_weight": 1.0,
+          "separation_loss": 0.0022876053117215633,
+          "step": 120,
+          "transition_loss": 0.036516282707452774
+        },
+        {
+          "loss": 0.026244601234793663,
+          "root_loss": 1.3848145499650855e-05,
+          "root_weight": 1.0,
+          "separation_loss": 0.00039143473259173334,
+          "step": 180,
+          "transition_loss": 0.02621118165552616
+        },
+        {
+          "loss": 0.021244468167424202,
+          "root_loss": 1.4473994269792456e-05,
+          "root_weight": 1.0,
+          "separation_loss": 7.449300755979493e-05,
+          "step": 240,
+          "transition_loss": 0.021226268261671066
+        },
+        {
+          "loss": 0.018653543666005135,
+          "root_loss": 1.4742215171281714e-05,
+          "root_weight": 1.0,
+          "separation_loss": 2.928254980361089e-05,
+          "step": 300,
+          "transition_loss": 0.018637336790561676
+        },
+        {
+          "loss": 0.017133168876171112,
+          "root_loss": 1.479188631492434e-05,
+          "root_weight": 1.0,
+          "separation_loss": 1.6766029148129746e-05,
+          "step": 360,
+          "transition_loss": 0.017117539420723915
+        },
+        {
+          "loss": 0.01612832397222519,
+          "root_loss": 1.4851490959699731e-05,
+          "root_weight": 1.0,
+          "separation_loss": 1.2563022210088093e-05,
+          "step": 420,
+          "transition_loss": 0.01611284539103508
+        },
+        {
+          "loss": 0.01636514626443386,
+          "root_loss": 0.0010687311878427863,
+          "root_weight": 1.0,
+          "separation_loss": 1.0851817933144048e-05,
+          "step": 480,
+          "transition_loss": 0.015295872464776039
+        },
+        {
+          "loss": 0.014944009482860565,
+          "root_loss": 1.7484029740444385e-05,
+          "root_weight": 1.0,
+          "separation_loss": 9.963529919332359e-06,
+          "step": 540,
+          "transition_loss": 0.01492602750658989
+        },
+        {
+          "loss": 0.01461691502481699,
+          "root_loss": 1.4940897926862817e-05,
+          "root_weight": 1.0,
+          "separation_loss": 9.409792255610228e-06,
+          "step": 600,
+          "transition_loss": 0.014601503498852253
+        }
+      ]
+    }
+  ],
+  "training_facts_closed_cycle": 31
+}

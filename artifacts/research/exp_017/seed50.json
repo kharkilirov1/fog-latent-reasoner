@@ -1,0 +1,47 @@
+{
+  "experiment": "exp_017_robust_operator_grammar",
+  "explicit_operation_label_at_evaluation": false,
+  "operator_modules": "learned generator-orbit + matching closure; no arbitrary binary pair labels",
+  "rows": [
+    {
+      "add_full_group_accuracy": 1.0,
+      "episode_metrics": [
+        {
+          "answer_accuracy": 0.987,
+          "demonstrations": 1,
+          "episodes": 3000,
+          "mean_score_margin": 1.003585758660299,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 0.9866666666666667,
+          "score_ambiguous_fraction": 0.033666666666666664,
+          "semantic_ambiguous_fraction": 0.033666666666666664
+        },
+        {
+          "answer_accuracy": 0.9996666666666667,
+          "demonstrations": 2,
+          "episodes": 3000,
+          "mean_score_margin": 1.003049642361002,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 0.9996666666666667,
+          "score_ambiguous_fraction": 0.0006666666666666666,
+          "semantic_ambiguous_fraction": 0.0006666666666666666
+        },
+        {
+          "answer_accuracy": 1.0,
+          "demonstrations": 3,
+          "episodes": 3000,
+          "mean_score_margin": 1.0006495621895624,
+          "nonambiguous_answer_accuracy": 1.0,
+          "nonambiguous_route_accuracy": 1.0,
+          "route_accuracy": 1.0,
+          "score_ambiguous_fraction": 0.0003333333333333333,
+          "semantic_ambiguous_fraction": 0.0003333333333333333
+        }
+      ],
+      "mul_exponent_group_accuracy": 1.0,
+      "seed": 50
+    }
+  ]
+}

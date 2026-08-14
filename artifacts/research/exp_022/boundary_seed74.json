@@ -1,0 +1,209 @@
+{
+  "config": {
+    "head_scale": 20.0,
+    "orthogonality_weight": 0.1,
+    "separation_weight": 0.05
+  },
+  "experiment": "exp_022_isotropic_affine_representation",
+  "rows": [
+    {
+      "dimension": 28,
+      "metrics": {
+        "all_add_power_accuracy_mean": 0.45577522727750963,
+        "all_add_power_accuracy_min": 0.06451612710952759,
+        "all_mul_power_accuracy_mean": 0.9290322562058767,
+        "all_mul_power_accuracy_min": 0.6129032373428345,
+        "code_effective_rank": 27.977313995361328,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 0.9880149364471436,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 0.9948692917823792,
+        "mixed_program_accuracy": 0.0322265625,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 0.0015809066826477647,
+        "semidirect_cosine": 0.8376726508140564
+      },
+      "seed": 74,
+      "trace": [
+        {
+          "add_loss": 0.9783570170402527,
+          "isotropy_loss": 0.942081868648529,
+          "loss": 2.9372825622558594,
+          "mul_loss": 1.0168431997299194,
+          "step": 1
+        },
+        {
+          "add_loss": 0.011708817444741726,
+          "isotropy_loss": 0.0033238546457141638,
+          "loss": 0.024764547124505043,
+          "mul_loss": 0.007729926612228155,
+          "step": 240
+        },
+        {
+          "add_loss": 0.014880362898111343,
+          "isotropy_loss": 0.003798010293394327,
+          "loss": 0.02711840718984604,
+          "mul_loss": 0.006136676762253046,
+          "step": 480
+        },
+        {
+          "add_loss": 0.012046300806105137,
+          "isotropy_loss": 0.0033604674972593784,
+          "loss": 0.022717658430337906,
+          "mul_loss": 0.004979525692760944,
+          "step": 720
+        },
+        {
+          "add_loss": 0.009905640035867691,
+          "isotropy_loss": 0.003677605651319027,
+          "loss": 0.02072964981198311,
+          "mul_loss": 0.004761899821460247,
+          "step": 960
+        },
+        {
+          "add_loss": 0.012085170485079288,
+          "isotropy_loss": 0.0036628388334065676,
+          "loss": 0.022945193573832512,
+          "mul_loss": 0.005156915169209242,
+          "step": 1200
+        }
+      ]
+    },
+    {
+      "dimension": 29,
+      "metrics": {
+        "all_add_power_accuracy_mean": 1.0,
+        "all_add_power_accuracy_min": 1.0,
+        "all_mul_power_accuracy_mean": 0.9634408553441366,
+        "all_mul_power_accuracy_min": 0.8387096524238586,
+        "code_effective_rank": 28.989723205566406,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 0.997229814529419,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 0.9956379532814026,
+        "mixed_program_accuracy": 0.068359375,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 0.052178092300891876,
+        "semidirect_cosine": 0.9837131500244141
+      },
+      "seed": 74,
+      "trace": [
+        {
+          "add_loss": 1.0039087533950806,
+          "isotropy_loss": 0.9972261190414429,
+          "loss": 2.998162269592285,
+          "mul_loss": 0.9970248341560364,
+          "step": 1
+        },
+        {
+          "add_loss": 0.008609235286712646,
+          "isotropy_loss": 0.0018465615576133132,
+          "loss": 0.016027243807911873,
+          "mul_loss": 0.004614939447492361,
+          "step": 240
+        },
+        {
+          "add_loss": 0.005619414616376162,
+          "isotropy_loss": 0.001552485628053546,
+          "loss": 0.013048579916357994,
+          "mul_loss": 0.004258329048752785,
+          "step": 480
+        },
+        {
+          "add_loss": 0.002728731371462345,
+          "isotropy_loss": 0.0017392162699252367,
+          "loss": 0.011890583671629429,
+          "mul_loss": 0.006316884886473417,
+          "step": 720
+        },
+        {
+          "add_loss": 0.002302177483215928,
+          "isotropy_loss": 0.001956130377948284,
+          "loss": 0.009434418752789497,
+          "mul_loss": 0.00402437848970294,
+          "step": 960
+        },
+        {
+          "add_loss": 0.0027932371012866497,
+          "isotropy_loss": 0.0015197922475636005,
+          "loss": 0.00938313640654087,
+          "mul_loss": 0.00431281141936779,
+          "step": 1200
+        }
+      ]
+    },
+    {
+      "dimension": 30,
+      "metrics": {
+        "all_add_power_accuracy_mean": 1.0,
+        "all_add_power_accuracy_min": 1.0,
+        "all_mul_power_accuracy_mean": 1.0,
+        "all_mul_power_accuracy_min": 1.0,
+        "code_effective_rank": 30.0,
+        "generator_add_accuracy": 1.0,
+        "generator_add_cosine": 1.0,
+        "generator_mul_accuracy": 1.0,
+        "generator_mul_cosine": 1.0,
+        "mixed_program_accuracy": 1.0,
+        "mixed_program_depth": 16,
+        "mixed_program_target_cosine": 0.9999959468841553,
+        "semidirect_cosine": 1.0
+      },
+      "seed": 74,
+      "trace": [
+        {
+          "add_loss": 0.9581283926963806,
+          "isotropy_loss": 0.9351537823677063,
+          "loss": 2.8486857414245605,
+          "mul_loss": 0.9554030895233154,
+          "step": 1
+        },
+        {
+          "add_loss": 2.6918225870531387e-08,
+          "isotropy_loss": 7.365705556594548e-08,
+          "loss": 1.22083447422483e-05,
+          "mul_loss": 4.614553006376809e-08,
+          "step": 240
+        },
+        {
+          "add_loss": -5.7681912579710115e-08,
+          "isotropy_loss": 3.028623901148164e-13,
+          "loss": -1.2301786966872896e-07,
+          "mul_loss": -6.537283780971848e-08,
+          "step": 480
+        },
+        {
+          "add_loss": -4.614553006376809e-08,
+          "isotropy_loss": 2.853022451534265e-14,
+          "loss": -1.0190468913151562e-07,
+          "mul_loss": -5.5759183936743284e-08,
+          "step": 720
+        },
+        {
+          "add_loss": -4.614553006376809e-08,
+          "isotropy_loss": 1.0360806044487289e-13,
+          "loss": -9.997216210422266e-08,
+          "mul_loss": -5.3836451741062774e-08,
+          "step": 960
+        },
+        {
+          "add_loss": -4.614553006376809e-08,
+          "isotropy_loss": 2.482731685168882e-12,
+          "loss": -9.390073785198183e-08,
+          "mul_loss": -4.80682622594486e-08,
+          "step": 1200
+        }
+      ]
+    }
+  ],
+  "training": {
+    "arbitrary_operand_transition_labels": false,
+    "geometric_constraint": "centered isotropic code covariance",
+    "lr": 0.02,
+    "semantic_transition_labels": [
+      "x->x+1",
+      "x->3x"
+    ],
+    "steps": 1200
+  }
+}

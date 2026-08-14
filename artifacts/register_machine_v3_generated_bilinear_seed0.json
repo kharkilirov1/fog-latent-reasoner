@@ -1,0 +1,58 @@
+{
+  "seed": 0,
+  "steps": 300,
+  "training": [
+    {
+      "step": 1,
+      "depth": 2,
+      "loss": 17.49871826171875
+    },
+    {
+      "step": 100,
+      "depth": 2,
+      "loss": 2.316082000732422
+    },
+    {
+      "step": 200,
+      "depth": 1,
+      "loss": 4.430599212646484
+    },
+    {
+      "step": 300,
+      "depth": 2,
+      "loss": 1.6988871097564697
+    }
+  ],
+  "evaluation": {
+    "1": {
+      "accuracy": 0.69091796875,
+      "mean_target_cosine": 0.48365815356373787,
+      "mean_generated_operator_mass": 0.8677080646157265
+    },
+    "2": {
+      "accuracy": 0.3525390625,
+      "mean_target_cosine": 0.3070918843150139,
+      "mean_generated_operator_mass": 0.9453433193266392
+    },
+    "3": {
+      "accuracy": 0.271484375,
+      "mean_target_cosine": 0.28567276522517204,
+      "mean_generated_operator_mass": 0.9574672107895216
+    },
+    "4": {
+      "accuracy": 0.24609375,
+      "mean_target_cosine": 0.2819828800857067,
+      "mean_generated_operator_mass": 0.9709156043827534
+    },
+    "6": {
+      "accuracy": 0.2041015625,
+      "mean_target_cosine": 0.2679842710494995,
+      "mean_generated_operator_mass": 0.9760733669002851
+    },
+    "8": {
+      "accuracy": 0.1904296875,
+      "mean_target_cosine": 0.26098016649484634,
+      "mean_generated_operator_mass": 0.9766733217984438
+    }
+  }
+}

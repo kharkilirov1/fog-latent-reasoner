@@ -1,0 +1,32 @@
+{
+  "successor_only": {
+    "successor_accuracy_mean": 1.0,
+    "binary_accuracy_by_seed": [
+      0.3329864740371704
+    ],
+    "recurrent_final_by_seed": [
+      0.046875
+    ],
+    "commutativity_error_by_seed": [
+      0.3469682037830353
+    ],
+    "associativity_error_by_seed": [
+      0.8509125113487244
+    ]
+  },
+  "algebraic": {
+    "successor_accuracy_mean": 1.0,
+    "binary_accuracy_by_seed": [
+      1.0
+    ],
+    "recurrent_final_by_seed": [
+      0.609375
+    ],
+    "commutativity_error_by_seed": [
+      3.090826794505119e-08
+    ],
+    "associativity_error_by_seed": [
+      3.5669654607772827e-07
+    ]
+  }
+}

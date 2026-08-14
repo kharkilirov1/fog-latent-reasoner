@@ -1,0 +1,90 @@
+{
+  "seed": 1,
+  "steps": 150,
+  "training": [
+    {
+      "step": 1,
+      "depth": 3,
+      "loss": 17.499988555908203
+    },
+    {
+      "step": 100,
+      "depth": 2,
+      "loss": 5.432373654912226e-06
+    }
+  ],
+  "evaluation": {
+    "1": {
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_nontrivial_operator_mass": 0.7413363754749298,
+      "selected_operator_fraction": {
+        "READ": 0.11083984375,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.88916015625,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    "2": {
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_nontrivial_operator_mass": 0.8135910667479038,
+      "selected_operator_fraction": {
+        "READ": 0.07470703125,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.92529296875,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    "3": {
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_nontrivial_operator_mass": 0.8540952652692795,
+      "selected_operator_fraction": {
+        "READ": 0.047037760416666664,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.9529622395833334,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    "4": {
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_nontrivial_operator_mass": 0.8688426464796066,
+      "selected_operator_fraction": {
+        "READ": 0.0394287109375,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.9605712890625,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    "6": {
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_nontrivial_operator_mass": 0.8911793703834215,
+      "selected_operator_fraction": {
+        "READ": 0.024169921875,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.975830078125,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    },
+    "8": {
+      "accuracy": 1.0,
+      "mean_target_cosine": 1.0,
+      "mean_nontrivial_operator_mass": 0.9001826280727983,
+      "selected_operator_fraction": {
+        "READ": 0.0179443359375,
+        "IDENTITY": 0.0,
+        "BLOCK_PRODUCT": 0.9820556640625,
+        "FLEX_0": 0.0,
+        "FLEX_1": 0.0
+      }
+    }
+  }
+}

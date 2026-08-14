@@ -1,0 +1,51 @@
+{
+  "experiment": "exp_029_canonical_gauge_interoperability",
+  "pairs": [
+    {
+      "canonical_code_cosine_mean": 0.999999904587945,
+      "canonical_code_cosine_min": 0.9999998650182201,
+      "cross_model_program": {
+        "accuracy": 1.0,
+        "bridge_imaginary_fraction": 1.0963853803986204e-15,
+        "target_cosine": 0.9999995827674866
+      },
+      "direct_bridge_imaginary_fraction": 1.1039807691790617e-15,
+      "direct_state_transfer_accuracy": 1.0,
+      "source_seed": 73,
+      "target_seed": 74
+    },
+    {
+      "canonical_code_cosine_mean": 0.9999999999952228,
+      "canonical_code_cosine_min": 0.9999999999905589,
+      "cross_model_program": {
+        "accuracy": 1.0,
+        "bridge_imaginary_fraction": 1.1347102665315922e-15,
+        "target_cosine": 1.0
+      },
+      "direct_bridge_imaginary_fraction": 1.1247683902208371e-15,
+      "direct_state_transfer_accuracy": 1.0,
+      "source_seed": 73,
+      "target_seed": 75
+    },
+    {
+      "canonical_code_cosine_mean": 0.9999999044416475,
+      "canonical_code_cosine_min": 0.9999998651630215,
+      "cross_model_program": {
+        "accuracy": 1.0,
+        "bridge_imaginary_fraction": 1.0541419733084776e-15,
+        "target_cosine": 0.9999995827674866
+      },
+      "direct_bridge_imaginary_fraction": 1.048292445008615e-15,
+      "direct_state_transfer_accuracy": 1.0,
+      "source_seed": 74,
+      "target_seed": 75
+    }
+  ],
+  "protocol": {
+    "bridge_training": false,
+    "paired_nonanchor_identities_used_for_bridge": false,
+    "phase_anchor": "shared E(0) only",
+    "post_depth": 32,
+    "pre_depth": 32
+  }
+}

@@ -38,10 +38,12 @@ from fog_lmw import (
     FOG_10M_PARAMETER_COUNT,
     FOG_10M_VOCAB_SIZE,
     FOG_BINDING_V2_10M_PARAMETER_COUNT,
+    FOG_MACHINE_V3_10M_PARAMETER_COUNT,
     FOGReasonerConfig,
     FOGLatentReasoner,
     fog_10m_config,
     fog_binding_v2_10m_config,
+    fog_machine_v3_10m_config,
 )
 from fog_lmw.checkpoint import (
     load_training_checkpoint,
@@ -316,6 +318,7 @@ def new_model_config(
     factory = {
         "legacy_v1": fog_10m_config,
         "query_bound_v2": fog_binding_v2_10m_config,
+        "register_machine_v3": fog_machine_v3_10m_config,
     }.get(architecture)
     if factory is None:
         raise ValueError(f"unsupported architecture {architecture!r}")
@@ -442,11 +445,11 @@ def init_model(args: argparse.Namespace) -> None:
     model = FOGLatentReasoner(config)
     count = unique_parameter_count(model)
     if tokenizer.vocab_size == FOG_10M_VOCAB_SIZE and args.max_seq_len == 512:
-        expected = (
-            FOG_BINDING_V2_10M_PARAMETER_COUNT
-            if config.architecture_version == "query_bound_v2"
-            else FOG_10M_PARAMETER_COUNT
-        )
+        expected = {
+            "legacy_v1": FOG_10M_PARAMETER_COUNT,
+            "query_bound_v2": FOG_BINDING_V2_10M_PARAMETER_COUNT,
+            "register_machine_v3": FOG_MACHINE_V3_10M_PARAMETER_COUNT,
+        }[config.architecture_version]
         if count != expected:
             raise AssertionError(
                 f"10M parameter contract failed for "
@@ -1064,7 +1067,7 @@ def add_training_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--init-checkpoint")
     parser.add_argument(
         "--architecture",
-        choices=("auto", "legacy_v1", "query_bound_v2"),
+        choices=("auto", "legacy_v1", "query_bound_v2", "register_machine_v3"),
         default="auto",
         help="new model architecture; auto follows a checkpoint or selects query_bound_v2",
     )
@@ -1114,7 +1117,7 @@ def parser() -> argparse.ArgumentParser:
     initial.add_argument("--reasoning-steps", type=int, default=4)
     initial.add_argument(
         "--architecture",
-        choices=("legacy_v1", "query_bound_v2"),
+        choices=("legacy_v1", "query_bound_v2", "register_machine_v3"),
         default="query_bound_v2",
     )
     initial.add_argument("--dropout", type=float, default=0.1)

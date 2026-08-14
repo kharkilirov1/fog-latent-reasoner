@@ -45,6 +45,7 @@ def test_old_config_without_architecture_fields_stays_legacy():
         "readout_mode",
         "protected_binding_slots",
         "binding_offsets",
+        "binding_query_update",
     ):
         config.pop(name)
     # Simulate the old format by setting no new keys on a genuinely legacy
@@ -127,6 +128,43 @@ def test_cosine_tied_readout_exactly_copies_every_tiny_vocab_code():
     assert torch.equal(predicted, token_ids)
 
 
+def test_recurrent_binding_query_is_opt_in_and_legacy_rejects_it():
+    static = tiny_v2().cfg
+    assert static.binding_query_update == "static"
+    config = asdict(static)
+    config["binding_query_update"] = "primary_recurrent"
+    recurrent = FOGReasonerConfig(**config)
+    recurrent.validate()
+    legacy = asdict(recurrent)
+    legacy.update(
+        architecture_version="legacy_v1",
+        binding_mode="summary_slots",
+        readout_mode="bos_decoder",
+        protected_binding_slots=0,
+        binding_offsets=(),
+    )
+    with pytest.raises(ValueError, match="legacy_v1 requires"):
+        FOGReasonerConfig(**legacy).validate()
+
+
+@torch.inference_mode()
+def test_primary_recurrent_binding_query_uses_previous_primary():
+    torch.manual_seed(91)
+    model = tiny_v2(steps=3, memory_slots=2, binding_offsets=(1,)).eval()
+    model.cfg.binding_query_update = "primary_recurrent"
+    prompt = torch.tensor([[4, 5, 6, 7], [8, 9, 10, 11]])
+    _, aux = model.reason(prompt, return_diagnostics=True)
+    history = aux["history"]
+    raw_query = model.token(prompt[:, -1])
+    torch.testing.assert_close(history[0]["binding_query_state"], raw_query)
+    torch.testing.assert_close(
+        history[1]["binding_query_state"], history[0]["latent"][:, 0]
+    )
+    torch.testing.assert_close(
+        history[2]["binding_query_state"], history[1]["latent"][:, 0]
+    )
+
+
 @torch.inference_mode()
 def test_v2_padding_invariance_for_memory_and_first_token():
     torch.manual_seed(3)
@@ -177,3 +215,25 @@ def test_primary_binding_is_row_permutation_and_masked_separator_invariant():
         primary, logits = primary_and_logits(variant)
         torch.testing.assert_close(primary, reference_primary, rtol=1e-5, atol=1e-6)
         torch.testing.assert_close(logits, reference_logits, rtol=1e-5, atol=1e-6)
+
+
+def test_transition_memory_matches_reasoning_loop_and_is_jvp_probeable():
+    from fog_lmw.structural import jvp_gain_stats
+
+    torch.manual_seed(123)
+    model = tiny_v2(steps=2, memory_slots=2, binding_offsets=(1,)).eval()
+    model.cfg.binding_query_update = "primary_recurrent"
+    prompt = torch.tensor([[4, 5, 6, 7], [8, 9, 10, 11]])
+    expected, _ = model.reason(prompt, reasoning_steps=2)
+    first, _ = model.transition_memory(prompt, None)
+    second, aux = model.transition_memory(prompt, first)
+    torch.testing.assert_close(second, expected, rtol=1e-5, atol=1e-6)
+    torch.testing.assert_close(aux["binding_query_state"], first[:, 0])
+
+    def transition(memory: torch.Tensor) -> torch.Tensor:
+        return model.transition_memory(prompt, memory)[0]
+
+    stats = jvp_gain_stats(transition, first.detach(), probes=3, seed=5)
+    assert stats.probes == 3
+    assert torch.isfinite(torch.tensor([stats.mean, stats.p95, stats.maximum])).all()
+    assert stats.maximum > 0

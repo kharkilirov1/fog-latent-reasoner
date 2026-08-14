@@ -1,0 +1,355 @@
+{
+  "checkpoint": null,
+  "decisive_evidence": false,
+  "experiment": "exp_002_production_recurrent_token_composition",
+  "model_config": {
+    "architecture_version": "query_bound_v2",
+    "binding_mode": "query_conditioned",
+    "binding_offsets": [
+      8
+    ],
+    "binding_query_update": "primary_recurrent",
+    "compare_rank": 80,
+    "d_ff": 1344,
+    "d_model": 320,
+    "diversity_weight": 0.001,
+    "dropout": 0.0,
+    "initializer_range": 0.02,
+    "latent_slots": 4,
+    "max_seq_len": 128,
+    "memory_slots": 4,
+    "n_heads": 5,
+    "n_layers": 4,
+    "n_reasoning_modes": 8,
+    "planner_ff": 2330,
+    "protected_binding_slots": 1,
+    "readout_mode": "direct_latent",
+    "reasoning_steps": 4,
+    "route_entropy_weight": 0.0,
+    "vocab_size": 8192
+  },
+  "protocol": {
+    "bucket_rule": "blake2b(mapping) % 10: train=0..7, validation=8, test=9",
+    "checked_examples": {
+      "test": 32,
+      "train": 512,
+      "validation": 32
+    },
+    "overlap": {
+      "train_test": 0,
+      "train_validation": 0,
+      "validation_test": 0
+    },
+    "partition_key": "mapping permutation only",
+    "unique_mappings": {
+      "test": 32,
+      "train": 510,
+      "validation": 32
+    }
+  },
+  "results": {
+    "recurrent": [
+      {
+        "accuracy": 1.0,
+        "correct": 32,
+        "count": 32,
+        "depth": 1,
+        "hops": [
+          {
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 1.0,
+            "hop": 1,
+            "oracle_cosine": 1.0
+          }
+        ],
+        "intervention": "normal",
+        "mode": "recurrent",
+        "nll": 2.9440532671287656e-05,
+        "split": "validation",
+        "stream_sha256": "d00b4b839b4bbb0f719351148f2e4ef4cac255a9efbb6abf5b75f1f993231790"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 32,
+        "count": 32,
+        "depth": 2,
+        "hops": [
+          {
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 1.0,
+            "hop": 1,
+            "oracle_cosine": 1.0
+          },
+          {
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.9999999403953552,
+            "hop": 2,
+            "oracle_cosine": 1.0
+          }
+        ],
+        "intervention": "normal",
+        "mode": "recurrent",
+        "nll": 2.9496412025764585e-05,
+        "split": "validation",
+        "stream_sha256": "d00b4b839b4bbb0f719351148f2e4ef4cac255a9efbb6abf5b75f1f993231790"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 32,
+        "count": 32,
+        "depth": 3,
+        "hops": [
+          {
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 1.0,
+            "hop": 1,
+            "oracle_cosine": 1.0
+          },
+          {
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.9999999403953552,
+            "hop": 2,
+            "oracle_cosine": 1.0
+          },
+          {
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.9999999403953552,
+            "hop": 3,
+            "oracle_cosine": 1.0
+          }
+        ],
+        "intervention": "normal",
+        "mode": "recurrent",
+        "nll": 2.9459160032274667e-05,
+        "split": "validation",
+        "stream_sha256": "d00b4b839b4bbb0f719351148f2e4ef4cac255a9efbb6abf5b75f1f993231790"
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 32,
+        "count": 32,
+        "depth": 4,
+        "hops": [
+          {
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 1.0,
+            "hop": 1,
+            "oracle_cosine": 1.0
+          },
+          {
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.9999999403953552,
+            "hop": 2,
+            "oracle_cosine": 1.0
+          },
+          {
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.9999999403953552,
+            "hop": 3,
+            "oracle_cosine": 1.0
+          },
+          {
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 1.0,
+            "hop": 4,
+            "oracle_cosine": 1.0
+          }
+        ],
+        "intervention": "normal",
+        "mode": "recurrent",
+        "nll": 2.9466613341355696e-05,
+        "split": "validation",
+        "stream_sha256": "d00b4b839b4bbb0f719351148f2e4ef4cac255a9efbb6abf5b75f1f993231790"
+      }
+    ],
+    "recurrent_corrupt_after_2": [
+      {
+        "accuracy": 0.1875,
+        "correct": 6,
+        "count": 32,
+        "depth": 3,
+        "hops": [
+          {
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 1.0,
+            "hop": 1,
+            "oracle_cosine": 1.0
+          },
+          {
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.9999999403953552,
+            "hop": 2,
+            "oracle_cosine": 1.0
+          },
+          {
+            "address_hit_accuracy": 0.1875,
+            "correct_address_mass": 0.1874999925494194,
+            "hop": 3,
+            "oracle_cosine": 0.19250017404556274
+          }
+        ],
+        "intervention": "corrupt_after_2",
+        "mode": "recurrent",
+        "nll": 16.1500244140625,
+        "split": "validation",
+        "stream_sha256": "d00b4b839b4bbb0f719351148f2e4ef4cac255a9efbb6abf5b75f1f993231790"
+      },
+      {
+        "accuracy": 0.1875,
+        "correct": 6,
+        "count": 32,
+        "depth": 4,
+        "hops": [
+          {
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 1.0,
+            "hop": 1,
+            "oracle_cosine": 1.0
+          },
+          {
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 0.9999999403953552,
+            "hop": 2,
+            "oracle_cosine": 1.0
+          },
+          {
+            "address_hit_accuracy": 0.1875,
+            "correct_address_mass": 0.1874999925494194,
+            "hop": 3,
+            "oracle_cosine": 0.19250017404556274
+          },
+          {
+            "address_hit_accuracy": 0.1875,
+            "correct_address_mass": 0.1875,
+            "hop": 4,
+            "oracle_cosine": 0.1826617419719696
+          }
+        ],
+        "intervention": "corrupt_after_2",
+        "mode": "recurrent",
+        "nll": 16.346795082092285,
+        "split": "validation",
+        "stream_sha256": "d00b4b839b4bbb0f719351148f2e4ef4cac255a9efbb6abf5b75f1f993231790"
+      }
+    ],
+    "static": [
+      {
+        "accuracy": 1.0,
+        "correct": 32,
+        "count": 32,
+        "depth": 1,
+        "hops": [
+          {
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 1.0,
+            "hop": 1,
+            "oracle_cosine": 1.0
+          }
+        ],
+        "intervention": "normal",
+        "mode": "static",
+        "nll": 2.9440532671287656e-05,
+        "split": "validation",
+        "stream_sha256": "d00b4b839b4bbb0f719351148f2e4ef4cac255a9efbb6abf5b75f1f993231790"
+      },
+      {
+        "accuracy": 0.03125,
+        "correct": 1,
+        "count": 32,
+        "depth": 2,
+        "hops": [
+          {
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 1.0,
+            "hop": 1,
+            "oracle_cosine": 1.0
+          },
+          {
+            "address_hit_accuracy": 0.03125,
+            "correct_address_mass": 0.03125000396579791,
+            "hop": 2,
+            "oracle_cosine": 0.03604198107495904
+          }
+        ],
+        "intervention": "normal",
+        "mode": "static",
+        "nll": 19.27918815612793,
+        "split": "validation",
+        "stream_sha256": "d00b4b839b4bbb0f719351148f2e4ef4cac255a9efbb6abf5b75f1f993231790"
+      },
+      {
+        "accuracy": 0.09375,
+        "correct": 3,
+        "count": 32,
+        "depth": 3,
+        "hops": [
+          {
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 1.0,
+            "hop": 1,
+            "oracle_cosine": 1.0
+          },
+          {
+            "address_hit_accuracy": 0.03125,
+            "correct_address_mass": 0.03125000396579791,
+            "hop": 2,
+            "oracle_cosine": 0.03604198107495904
+          },
+          {
+            "address_hit_accuracy": 0.09375,
+            "correct_address_mass": 0.09374999796561267,
+            "hop": 3,
+            "oracle_cosine": 0.08042953349649906
+          }
+        ],
+        "intervention": "normal",
+        "mode": "static",
+        "nll": 18.391437530517578,
+        "split": "validation",
+        "stream_sha256": "d00b4b839b4bbb0f719351148f2e4ef4cac255a9efbb6abf5b75f1f993231790"
+      },
+      {
+        "accuracy": 0.15625,
+        "correct": 5,
+        "count": 32,
+        "depth": 4,
+        "hops": [
+          {
+            "address_hit_accuracy": 1.0,
+            "correct_address_mass": 1.0,
+            "hop": 1,
+            "oracle_cosine": 1.0
+          },
+          {
+            "address_hit_accuracy": 0.03125,
+            "correct_address_mass": 0.03125000396579791,
+            "hop": 2,
+            "oracle_cosine": 0.03604198107495904
+          },
+          {
+            "address_hit_accuracy": 0.09375,
+            "correct_address_mass": 0.09374999796561267,
+            "hop": 3,
+            "oracle_cosine": 0.08042953349649906
+          },
+          {
+            "address_hit_accuracy": 0.15625,
+            "correct_address_mass": 0.15625,
+            "hop": 4,
+            "oracle_cosine": 0.14483466744422913
+          }
+        ],
+        "intervention": "normal",
+        "mode": "static",
+        "nll": 17.1033353805542,
+        "split": "validation",
+        "stream_sha256": "d00b4b839b4bbb0f719351148f2e4ef4cac255a9efbb6abf5b75f1f993231790"
+      }
+    ]
+  },
+  "source_kind": "fresh_10m_geometry_smoke_only",
+  "split": "validation",
+  "task_config": {
+    "table_size": 8
+  }
+}

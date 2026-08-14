@@ -1,0 +1,246 @@
+{
+  "binary_pair_targets_seen_in_training": false,
+  "config": {
+    "algebraic_weight": 0.5,
+    "harmonics": 4,
+    "head_scale": 20.0,
+    "modulus": 31,
+    "separation_weight": 0.05
+  },
+  "experiment": "exp_012_joint_chart_operator",
+  "rows": [
+    {
+      "arm": "successor_only",
+      "evaluation": {
+        "all_binary_addition_accuracy": 0.06555671244859695,
+        "associativity_error": 0.8100736141204834,
+        "commutativity_error": 0.7388218641281128,
+        "recurrent_depth": 16,
+        "recurrent_final_accuracy": 0.03125,
+        "recurrent_minimum_hop_accuracy": 0.01171875,
+        "successor_accuracy": 1.0
+      },
+      "seed": 1,
+      "trace": [
+        {
+          "associativity_loss": 0.0,
+          "commutativity_loss": 0.0,
+          "identity_loss": 0.0,
+          "loss": 0.9874595999717712,
+          "separation_loss": 0.011312850750982761,
+          "step": 1,
+          "successor_loss": 0.9868939518928528
+        },
+        {
+          "associativity_loss": 0.0,
+          "commutativity_loss": 0.0,
+          "identity_loss": 0.0,
+          "loss": 0.20755651593208313,
+          "separation_loss": 0.16843274235725403,
+          "step": 100,
+          "successor_loss": 0.19913487136363983
+        },
+        {
+          "associativity_loss": 0.0,
+          "commutativity_loss": 0.0,
+          "identity_loss": 0.0,
+          "loss": 0.10197412967681885,
+          "separation_loss": 0.37502217292785645,
+          "step": 200,
+          "successor_loss": 0.08322302252054214
+        },
+        {
+          "associativity_loss": 0.0,
+          "commutativity_loss": 0.0,
+          "identity_loss": 0.0,
+          "loss": 0.08989812433719635,
+          "separation_loss": 0.3881436586380005,
+          "step": 300,
+          "successor_loss": 0.07049094140529633
+        },
+        {
+          "associativity_loss": 0.0,
+          "commutativity_loss": 0.0,
+          "identity_loss": 0.0,
+          "loss": 0.08427783101797104,
+          "separation_loss": 0.3918560743331909,
+          "step": 400,
+          "successor_loss": 0.06468502432107925
+        },
+        {
+          "associativity_loss": 0.0,
+          "commutativity_loss": 0.0,
+          "identity_loss": 0.0,
+          "loss": 0.07890720665454865,
+          "separation_loss": 0.31232360005378723,
+          "step": 500,
+          "successor_loss": 0.0632910281419754
+        },
+        {
+          "associativity_loss": 0.0,
+          "commutativity_loss": 0.0,
+          "identity_loss": 0.0,
+          "loss": 0.06075119599699974,
+          "separation_loss": 0.2665155231952667,
+          "step": 600,
+          "successor_loss": 0.047425419092178345
+        },
+        {
+          "associativity_loss": 0.0,
+          "commutativity_loss": 0.0,
+          "identity_loss": 0.0,
+          "loss": 0.0450260229408741,
+          "separation_loss": 0.24236595630645752,
+          "step": 700,
+          "successor_loss": 0.032907724380493164
+        },
+        {
+          "associativity_loss": 0.0,
+          "commutativity_loss": 0.0,
+          "identity_loss": 0.0,
+          "loss": 0.03433270752429962,
+          "separation_loss": 0.25842610001564026,
+          "step": 800,
+          "successor_loss": 0.021411404013633728
+        },
+        {
+          "associativity_loss": 0.0,
+          "commutativity_loss": 0.0,
+          "identity_loss": 0.0,
+          "loss": 0.031243111938238144,
+          "separation_loss": 0.2746487259864807,
+          "step": 900,
+          "successor_loss": 0.01751067489385605
+        },
+        {
+          "associativity_loss": 0.0,
+          "commutativity_loss": 0.0,
+          "identity_loss": 0.0,
+          "loss": 0.02945789135992527,
+          "separation_loss": 0.28612634539604187,
+          "step": 1000,
+          "successor_loss": 0.015151574276387691
+        }
+      ]
+    },
+    {
+      "arm": "algebraic",
+      "evaluation": {
+        "all_binary_addition_accuracy": 0.38605618476867676,
+        "associativity_error": 7.07071740180254e-06,
+        "commutativity_error": 3.493274562060833e-06,
+        "recurrent_depth": 16,
+        "recurrent_final_accuracy": 0.03125,
+        "recurrent_minimum_hop_accuracy": 0.01171875,
+        "successor_accuracy": 1.0
+      },
+      "seed": 1,
+      "trace": [
+        {
+          "associativity_loss": 0.7549043297767639,
+          "commutativity_loss": 0.5755825042724609,
+          "identity_loss": 2.1329989433288574,
+          "loss": 2.7192025184631348,
+          "separation_loss": 0.011312850750982761,
+          "step": 1,
+          "successor_loss": 0.9868939518928528
+        },
+        {
+          "associativity_loss": 0.014299025759100914,
+          "commutativity_loss": 0.0029202145524322987,
+          "identity_loss": 0.054413482546806335,
+          "loss": 0.33865973353385925,
+          "separation_loss": 0.022507868707180023,
+          "step": 100,
+          "successor_loss": 0.30171796679496765
+        },
+        {
+          "associativity_loss": 0.0005669726524502039,
+          "commutativity_loss": 0.00018287543207406998,
+          "identity_loss": 0.0023300820030272007,
+          "loss": 0.11925479769706726,
+          "separation_loss": 0.010865379124879837,
+          "step": 200,
+          "successor_loss": 0.11717156320810318
+        },
+        {
+          "associativity_loss": 8.922605775296688e-05,
+          "commutativity_loss": 8.444231934845448e-05,
+          "identity_loss": 0.0003902162134181708,
+          "loss": 0.07963017374277115,
+          "separation_loss": 0.0027762914542108774,
+          "step": 300,
+          "successor_loss": 0.07920941710472107
+        },
+        {
+          "associativity_loss": 0.00017899833619594574,
+          "commutativity_loss": 0.0001787890214473009,
+          "identity_loss": 0.0018334176857024431,
+          "loss": 0.05407552793622017,
+          "separation_loss": 0.0030725179240107536,
+          "step": 400,
+          "successor_loss": 0.05282629653811455
+        },
+        {
+          "associativity_loss": 0.0002610764931887388,
+          "commutativity_loss": 0.00017810030840337276,
+          "identity_loss": 0.0012719342485070229,
+          "loss": 0.036242496222257614,
+          "separation_loss": 0.004140298347920179,
+          "step": 500,
+          "successor_loss": 0.035179927945137024
+        },
+        {
+          "associativity_loss": 3.924639895558357e-05,
+          "commutativity_loss": 3.871601074934006e-05,
+          "identity_loss": 0.00039528647903352976,
+          "loss": 0.030548954382538795,
+          "separation_loss": 0.003204986685886979,
+          "step": 600,
+          "successor_loss": 0.030152080580592155
+        },
+        {
+          "associativity_loss": 8.123018778860569e-05,
+          "commutativity_loss": 3.132550045847893e-05,
+          "identity_loss": 0.00044271445949561894,
+          "loss": 0.02711416594684124,
+          "separation_loss": 0.0019668119493871927,
+          "step": 700,
+          "successor_loss": 0.02673819102346897
+        },
+        {
+          "associativity_loss": 0.00013900874182581902,
+          "commutativity_loss": 3.3864984288811684e-05,
+          "identity_loss": 0.000529902579728514,
+          "loss": 0.025079121813178062,
+          "separation_loss": 0.0012647386174649,
+          "step": 800,
+          "successor_loss": 0.02466449700295925
+        },
+        {
+          "associativity_loss": 5.022995173931122e-05,
+          "commutativity_loss": 1.8083956092596054e-05,
+          "identity_loss": 0.0003640920913312584,
+          "loss": 0.023994185030460358,
+          "separation_loss": 0.001166829257272184,
+          "step": 900,
+          "successor_loss": 0.02371964044868946
+        },
+        {
+          "associativity_loss": 7.326947525143623e-06,
+          "commutativity_loss": 4.0156301110982895e-06,
+          "identity_loss": 0.00016142668027896434,
+          "loss": 0.023493574932217598,
+          "separation_loss": 0.0011253191623836756,
+          "step": 1000,
+          "successor_loss": 0.023350924253463745
+        }
+      ]
+    }
+  ],
+  "successor_depths_seen": [
+    1,
+    2,
+    3
+  ]
+}
