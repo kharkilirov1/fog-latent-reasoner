@@ -11,7 +11,6 @@ from pathlib import Path
 import json
 
 # 2. Configuration for the 50k "Gold" Pretraining
-# We define a high-capacity FOG v3 backbone
 CONFIG = {
     "vocab_size": 8192,
     "d_model": 512,
@@ -40,41 +39,47 @@ CONFIG = {
 
 # 3. Kaggle Training Script Logic
 def run_training():
-    # Note: In a real Kaggle environment, we would clone the repo or upload scripts
-    # For this script, we assume the environment is set up with the Fog-latent-reasoner files
+    print("Cloning repository...")
+    repo_url = "https://github.com/kharkilirov1/fog-latent-reasoner.git"
+    # Clone into a subdirectory to avoid mixing with Kaggle working dir
+    subprocess.run(["git", "clone", repo_url, "repo"], check=True)
+    os.chdir("repo")
     
     print("Starting Scale-Up Pretraining (50,000 steps)...")
     
     # Command to run the pretraining
-    # We use a larger batch size (e.g., 4) and seq_len (1024) for the "Gold" run
     cmd = [
         sys.executable, "train_real.py", "pretrain",
         "--architecture", "register_machine_v3",
-        "--tokenizer", "tokenizer/tinystories_3k_bpe.json", # Using the existing tokenizer for consistency
-        "--checkpoint-dir", "checkpoints/gold_pretrain",
+        "--tokenizer", "tokenizer/tinystories_3k_bpe.json",
+        "--checkpoint-dir", "/kaggle/working/checkpoints/gold_pretrain",
         "--device", "cuda",
         "--precision", "bf16",
         "--max-steps", "50000",
         "--batch-size", "4",
-        "--gradient-accumulation", "16", # Effective batch size = 64
+        "--gradient-accumulation", "16",
         "--sequence-length", "1024",
         "--lr", "0.0004",
         "--warmup-steps", "2000",
         "--eval-every", "5000",
         "--save-every", "5000",
         "--log-every", "10",
-        "--dataset-id", "HuggingFaceFW/fineweb-edu", # Primary source
+        "--dataset-id", "HuggingFaceFW/fineweb-edu",
         "--dataset-config", "sample-10BT",
         "--shuffle-buffer", "5000"
     ]
     
     print(f"Executing: {' '.join(cmd)}")
-    subprocess.run(cmd)
+    # Run and ensure output is visible
+    process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+    for line in process.stdout:
+        print(line, end="")
+    process.wait()
 
 if __name__ == "__main__":
-    # Save the config for reference
-    os.makedirs("configs", exist_ok=True)
-    with open("configs/v3_backbone_50k.json", "w") as f:
+    # Save the config in the Kaggle output directory
+    os.makedirs("/kaggle/working/configs", exist_ok=True)
+    with open("/kaggle/working/configs/v3_backbone_50k.json", "w") as f:
         json.dump(CONFIG, f, indent=4)
         
     run_training()
