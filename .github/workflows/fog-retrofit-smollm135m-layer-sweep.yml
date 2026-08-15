@@ -1,0 +1,42 @@
+name: FOG retrofit SmolLM2 layer sweep
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/fog-retrofit-smollm135m-layer-sweep.yml'
+      - 'experiments/fog_retrofit_smollm135m_layer_sweep.py'
+
+concurrency:
+  group: fog-retrofit-smollm135m-layer-sweep
+  cancel-in-progress: true
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install 'transformers>=4.45,<5' 'numpy>=1.26'
+      - name: Run layer sweep
+        env:
+          TOKENIZERS_PARALLELISM: 'false'
+        run: |
+          set -o pipefail
+          python experiments/fog_retrofit_smollm135m_layer_sweep.py 2>&1 | tee layer_sweep.log
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fog-retrofit-smollm135m-layer-sweep
+          path: |
+            layer_sweep.log
+            retrofit_layer_sweep.json
+          if-no-files-found: warn
