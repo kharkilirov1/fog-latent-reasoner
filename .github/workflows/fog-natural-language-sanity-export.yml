@@ -1,0 +1,21 @@
+name: FOG natural-language sanity export
+on:
+  push:
+    branches: [agent/fog-v2-natural-language-audit]
+    paths: ['research/retrofit/export_qwen_sanity_features.py']
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'torch>=2.4' 'transformers>=4.45,<6' accelerate safetensors
+      - run: python research/retrofit/export_qwen_sanity_features.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fog-qwen-sanity-features
+          path: qwen_sanity_features.pt
+          retention-days: 7
