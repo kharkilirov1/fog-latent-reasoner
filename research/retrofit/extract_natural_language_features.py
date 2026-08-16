@@ -17,6 +17,28 @@ LAYERS = [2, 0, 1]
 OUT = Path("natural_language_qwen_features.pt")
 META = Path("natural_language_qwen_features.json")
 
+# Post-audit diagnostics only. These are NOT a new locked test and never affect
+# weights. They separate runtime-reconstruction errors from sensitivity to the
+# synthetic instruction frame used by the original training/locked benchmark.
+DIAGNOSTIC_TEXTS = [
+    # Exact examples from the original locked TEST template family.
+    "Before executing any instruction, the cyclic register contains seventeen.",
+    "The computation opens at state seventeen; wrap every result around modulo 31.",
+    "Program instruction: Move eleven steps forward on the number cycle.",
+    "Program instruction: Stretch the quantity to five times what it is now.",
+    "Program instruction: Move twelve steps backward on the number cycle.",
+    "The valid program ends here. Keep the current state and halt.",
+    # Same new audit wording with only the training-time instruction frame added.
+    "Program instruction: Give the running number eleven extra units.",
+    "Program instruction: Make it five times as large as it is now.",
+    "Program instruction: Take twelve away from what remains.",
+    "Program instruction: Add another seven.",
+    "Program instruction: Triple the result.",
+    # Same start semantics with stronger machine/modulus framing.
+    "Suppose the modulo-31 cyclic register begins with seventeen.",
+    "Set the modulo-31 starting register to seventeen.",
+]
+
 
 def collect_texts():
     texts=[]
@@ -25,6 +47,7 @@ def collect_texts():
         texts.extend(x[0] for x in c.instructions)
         texts.append(c.stop)
         texts.append(full_prompt(c))
+    texts.extend(DIAGNOSTIC_TEXTS)
     # Stable deduplication, preserving evaluator order.
     return list(dict.fromkeys(texts))
 
@@ -52,7 +75,7 @@ def main():
                 rows[text]={"features":feat,"mask":torch.ones(n,dtype=torch.bool),"input_ids":enc["input_ids"][i,:n].cpu()}
             print(f"encoded {min(st+len(batch),len(texts))}/{len(texts)}",flush=True)
     torch.save({"model":MODEL,"layers":LAYERS,"texts":rows},OUT)
-    META.write_text(json.dumps({"model":MODEL,"layers":LAYERS,"n_texts":len(texts),"texts":texts},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    META.write_text(json.dumps({"model":MODEL,"layers":LAYERS,"n_texts":len(texts),"texts":texts,"diagnostic_texts":DIAGNOSTIC_TEXTS},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(f"saved {OUT} ({OUT.stat().st_size} bytes)",flush=True)
 
 if __name__=="__main__": main()
