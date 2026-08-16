@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Evaluation-only feature export. No training; push below intentionally triggers CI.
 from __future__ import annotations
 import json
 from pathlib import Path
