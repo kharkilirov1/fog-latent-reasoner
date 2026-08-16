@@ -1,0 +1,36 @@
+name: FOG natural-language feature export
+
+on:
+  push:
+    branches:
+      - agent/fog-v2-natural-language-audit
+    paths:
+      - 'research/retrofit/export_qwen_natural_language_features.py'
+      - '.github/workflows/fog-natural-language-feature-export.yml'
+  workflow_dispatch:
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - name: Install runtime
+        run: |
+          python -m pip install --upgrade pip
+          pip install 'torch>=2.4' 'transformers>=4.45,<6' accelerate safetensors
+      - name: Export frozen Qwen hidden states
+        run: python research/retrofit/export_qwen_natural_language_features.py
+      - name: Upload audit features
+        uses: actions/upload-artifact@v4
+        with:
+          name: fog-natural-language-qwen-features
+          path: |
+            qwen_natural_language_features.pt
+            qwen_natural_language_features_manifest.json
+          if-no-files-found: error
+          retention-days: 7
