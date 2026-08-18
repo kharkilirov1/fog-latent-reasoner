@@ -1,0 +1,1 @@
+30e323f8ac604433ba3e9da8074ef42e179dbb0c669987711b21fb30c26273f5  /home/ubuntu/logic_v7_results/fog_logic_v7.pt
