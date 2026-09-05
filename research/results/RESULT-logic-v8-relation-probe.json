@@ -1,0 +1,1512 @@
+{
+  "protocol": "FOG_RELATION_PROBE_V1",
+  "candidates": [
+    {
+      "train": {
+        "accuracy": 0.8948019801980198,
+        "count": 1616,
+        "errors": [
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Store a north edge from Alice toward Bob.",
+            "predicted": "imports",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Move one linked location north.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Replace the current entity by its north target.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Move one linked location north.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Move one linked location north.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Move one linked location north.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Move one linked location north.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Replace the current entity by its north target.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Move one linked location north.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Move one linked location north.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Move one linked location north.",
+            "predicted": "calls",
+            "expected": "north"
+          }
+        ]
+      },
+      "dev": {
+        "accuracy": 0.8723404255319149,
+        "count": 376,
+        "errors": [
+          {
+            "text": "Memorize a north edge leading from Alice to Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Memorize a north edge leading from Alice to Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Memorize a north edge leading from Alice to Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Memorize a north edge leading from Alice to Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Memorize a north edge leading from Alice to Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Memorize a north edge leading from Alice to Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Memorize a north edge leading from Alice to Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Memorize a north edge leading from Alice to Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Memorize a north edge leading from Alice to Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Memorize a north edge leading from Alice to Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Memorize a north edge leading from Alice to Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Memorize a north edge leading from Alice to Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Memorize a north edge leading from Alice to Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Memorize a north edge leading from Alice to Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "From Alice, moving north reaches Bob.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Move one linked location north.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Take one north hop from here.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Move one linked location north.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Move one linked location north.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Take one north hop from here.",
+            "predicted": "calls",
+            "expected": "north"
+          },
+          {
+            "text": "Move one linked location north.",
+            "predicted": "calls",
+            "expected": "north"
+          }
+        ]
+      }
+    },
+    {
+      "train": {
+        "accuracy": 0.9789603960396039,
+        "count": 1616,
+        "errors": [
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Create the fact Alice --north--> Bob.",
+            "predicted": "owner",
+            "expected": "north"
+          },
+          {
+            "text": "Go where the current entity points by manager.",
+            "predicted": "parent",
+            "expected": "manager"
+          },
+          {
+            "text": "Go where the current entity points by manager.",
+            "predicted": "parent",
+            "expected": "manager"
+          }
+        ]
+      },
+      "dev": {
+        "accuracy": 0.9946808510638298,
+        "count": 376,
+        "errors": [
+          {
+            "text": "Traverse the current entity's manager link.",
+            "predicted": "parent",
+            "expected": "manager"
+          },
+          {
+            "text": "Traverse the current entity's manager link.",
+            "predicted": "parent",
+            "expected": "manager"
+          }
+        ]
+      }
+    }
+  ],
+  "selected": 1,
+  "model_updated": false,
+  "old_test_status": "Previously viewed test; regression only, not a new blind locked score.",
+  "eligible_for_integration": false,
+  "fresh_relation_only": {
+    "accuracy": 1.0,
+    "count": 36,
+    "errors": []
+  },
+  "fresh_full_instruction": {
+    "opcode": 1.0,
+    "e1": 0.5833333333333334,
+    "rel": 1.0,
+    "e2": 0.5833333333333334,
+    "joint": 0.7222222222222222,
+    "heldout": {
+      "follow_calls": {
+        "joint": 1.0,
+        "count": 2
+      },
+      "compare_kai": {
+        "joint": null,
+        "count": 0
+      },
+      "select_pair": {
+        "joint": null,
+        "count": 0
+      }
+    },
+    "by_opcode": {
+      "BIND": {
+        "joint": 0.5833333333333334,
+        "count": 24
+      },
+      "LOAD": {
+        "joint": null,
+        "count": 0
+      },
+      "FOLLOW": {
+        "joint": 1.0,
+        "count": 12
+      },
+      "COMPARE": {
+        "joint": null,
+        "count": 0
+      },
+      "SELECT": {
+        "joint": null,
+        "count": 0
+      },
+      "HALT": {
+        "joint": null,
+        "count": 0
+      }
+    }
+  },
+  "fresh_instruction_errors": [
+    {
+      "text": "Lena is in charge of Iris.",
+      "predicted": [
+        0,
+        10,
+        0,
+        8
+      ],
+      "expected": [
+        0,
+        8,
+        0,
+        10
+      ]
+    },
+    {
+      "text": "Lena is a parent of Iris.",
+      "predicted": [
+        0,
+        10,
+        1,
+        8
+      ],
+      "expected": [
+        0,
+        8,
+        1,
+        10
+      ]
+    },
+    {
+      "text": "Lena is the mother or father of Iris.",
+      "predicted": [
+        0,
+        10,
+        1,
+        8
+      ],
+      "expected": [
+        0,
+        8,
+        1,
+        10
+      ]
+    },
+    {
+      "text": "Lena is the owner of Iris.",
+      "predicted": [
+        0,
+        10,
+        2,
+        8
+      ],
+      "expected": [
+        0,
+        8,
+        2,
+        10
+      ]
+    },
+    {
+      "text": "Lena holds ownership of Iris.",
+      "predicted": [
+        0,
+        10,
+        2,
+        8
+      ],
+      "expected": [
+        0,
+        8,
+        2,
+        10
+      ]
+    },
+    {
+      "text": "Lena lies directly north of Iris.",
+      "predicted": [
+        0,
+        10,
+        3,
+        8
+      ],
+      "expected": [
+        0,
+        8,
+        3,
+        10
+      ]
+    },
+    {
+      "text": "Lena is the northern neighbor of Iris.",
+      "predicted": [
+        0,
+        10,
+        3,
+        8
+      ],
+      "expected": [
+        0,
+        8,
+        3,
+        10
+      ]
+    },
+    {
+      "text": "Function Lena is invoked by function Iris.",
+      "predicted": [
+        0,
+        10,
+        4,
+        8
+      ],
+      "expected": [
+        0,
+        8,
+        4,
+        10
+      ]
+    },
+    {
+      "text": "Module Lena is imported by module Iris.",
+      "predicted": [
+        0,
+        10,
+        5,
+        8
+      ],
+      "expected": [
+        0,
+        8,
+        5,
+        10
+      ]
+    },
+    {
+      "text": "Lena is the module that Iris imports.",
+      "predicted": [
+        0,
+        10,
+        5,
+        8
+      ],
+      "expected": [
+        0,
+        8,
+        5,
+        10
+      ]
+    }
+  ],
+  "runtime_seconds": 86.6887104511261
+}
