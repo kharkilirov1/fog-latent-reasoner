@@ -32,7 +32,7 @@ jobs:
           python -m pip freeze > relation-evidence/environment.txt
       - uses: actions/download-artifact@v4
         with:
-          name: logic-v8-2-locked-9cd8b2b5c721645f8998d2a881189499aa9f4646
+          name: logic-v8-2-locked-2d51a0fc1fc7d2e0c3474113869ee6565fa1b911
           run-id: 33991379408
           github-token: ${{ github.token }}
           path: trained
@@ -45,7 +45,7 @@ jobs:
       - name: Regression tests and frozen relation probe
         run: |
           set -o pipefail
-          echo '8fcf38e39d3fc843ed12b2274a3525e05020f4e7f4298590e55863717f056f7c8  trained/logic-v8-artifacts/fog_logic_v8_2.pt' | sha256sum -c
+          echo '0105b7e3b89660bf58679e6c23d6c40af251d7d90d27b61ec897cddf1d581d31  trained/logic-v8-artifacts/fog_logic_v8_2.pt' | sha256sum -c
           python -m pytest research/logic_v8 -q --junitxml=relation-evidence/junit.xml
           python -u research/logic_v8/relation_probe.py --checkpoint trained/logic-v8-artifacts/fog_logic_v8_2.pt --features features/logic-v8-features.pt --config relation-evidence/relation-reader.json --output relation-evidence/results.json 2>&1 | tee relation-evidence/run.log
       - uses: actions/upload-artifact@v4
