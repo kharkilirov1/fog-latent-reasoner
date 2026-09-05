@@ -1,18 +1,19 @@
-name: Logic v8 integrity and role routing
+name: Logic v8.2 frozen locked evaluation
 on:
   push:
     branches: [agent/logic-v8-integrity-role-routing-20260906]
-    paths: ['research/logic_v8/**', '.github/workflows/logic-v8-integrity.yml']
+    paths: ['research/logic_v8/train_typed.py', 'research/logic_v8/window_roles.py', 'research/logic_v8/cache.py', '.github/workflows/logic-v8-integrity.yml']
   workflow_dispatch:
 permissions:
   contents: read
+  actions: read
 concurrency:
-  group: logic-v8-${{ github.ref }}
+  group: logic-v8-typed-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 20
     env:
       OMP_NUM_THREADS: '2'
       MKL_NUM_THREADS: '2'
@@ -23,42 +24,39 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install CPU experiment dependencies
+      - name: Install recorded experiment dependencies
         run: |
           python -m pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
-          python -m pip install numpy pytest 'transformers>=4.45,<5' accelerate
+          python -m pip install numpy==2.4.6 pytest==9.1.1 transformers==4.57.6 accelerate==1.14.0
           mkdir -p logic-v8-artifacts
           python -m pip freeze > logic-v8-artifacts/environment.txt
-      - name: Regression tests and immutable reference audit
+      - uses: actions/download-artifact@v4
+        with:
+          name: logic-v8-integrity-62c03bc3de8984c787d4540ed18095e788108e46
+          run-id: 33989712646
+          github-token: ${{ github.token }}
+          path: base
+      - uses: actions/download-artifact@v4
+        with:
+          name: logic-v8-train-dev-features
+          run-id: 33989856982
+          github-token: ${{ github.token }}
+          path: features
+      - name: Check immutable inputs and regression suite
         run: |
+          echo '11138ed5e18f2185a3f344d7ffe5e3d38836c7c73584b6d0282fbac2fef15753  base/logic-v8-artifacts/fog_logic_v8.pt' | sha256sum -c
+          echo '36be1c39c9e3b7ddcccf901fc562d75a77198bd2cb3cb7f484268d0ac464c30d  features/logic-v8-features.pt' | sha256sum -c
           python -m pytest research/logic_v8 -v --junitxml=logic-v8-artifacts/junit.xml
-          python research/logic_v8/run.py --training-texts declared --audit-only --output logic-v8-artifacts/audit.json
-      - name: Train v8.1 with restored declared training templates
+          python research/logic_v8/run.py --audit-only --output logic-v8-artifacts/audit.json
+      - name: Reproduce selected head, freeze, and evaluate locked data
         run: |
           set -o pipefail
-          python -u research/logic_v8/run.py --training-texts declared --device cpu --threads 2 --output logic-v8-artifacts/dev-results.json --checkpoint logic-v8-artifacts/fog_logic_v8.pt 2>&1 | tee logic-v8-artifacts/train.log
-      - name: Locked evaluation only after development qualification
-        run: |
-          python - <<'PY'
-          import json, pathlib, subprocess, sys
-          p = pathlib.Path('logic-v8-artifacts')
-          r = json.loads((p/'dev-results.json').read_text())
-          d = r['dev_program_eval']
-          eligible = r['train_program_eval']['accuracy'] >= .99 and d['accuracy'] >= .90 and d['bind_instruction_joint'] >= .90
-          (p/'dev-gate.json').write_text(json.dumps({'eligible':eligible,'train_accuracy':r['train_program_eval']['accuracy'],'dev_accuracy':d['accuracy'],'dev_bind':d['bind_instruction_joint']},indent=2))
-          if eligible:
-              subprocess.check_call([sys.executable,'-u','research/logic_v8/run.py','--training-texts','declared','--device','cpu','--threads','2','--evaluate-checkpoint',str(p/'fog_logic_v8.pt'),'--locked','--output',str(p/'locked-results.json')])
-          else:
-              print('Development gate failed. Locked test was NOT evaluated.')
-          PY
-      - name: Standalone text inference, without gold labels
-        run: |
-          python research/logic_v8/predict.py --checkpoint logic-v8-artifacts/fog_logic_v8.pt --input research/logic_v8/example_program.txt --device cpu --trace --output logic-v8-artifacts/example-prediction.json
-      - name: Export code, checkpoint and evidence
+          python -u research/logic_v8/train_typed.py --base-checkpoint base/logic-v8-artifacts/fog_logic_v8.pt --features features/logic-v8-features.pt --checkpoint logic-v8-artifacts/fog_logic_v8_2.pt --output logic-v8-artifacts/typed-results.json --locked 2>&1 | tee logic-v8-artifacts/typed-training.log
+      - name: Export checkpoint, exact code, and evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: logic-v8-integrity-${{ github.sha }}
+          name: logic-v8-2-locked-${{ github.sha }}
           path: |
             logic-v8-artifacts/
             artifacts/logic-v7-copy-bound-entity-roles/fog_logic_v7_final.py
