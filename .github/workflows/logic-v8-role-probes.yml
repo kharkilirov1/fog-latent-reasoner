@@ -1,0 +1,50 @@
+name: Logic v8 frozen semantic role probes
+on:
+  push:
+    branches: [agent/logic-v8-integrity-role-routing-20260906]
+    paths: ['tools/logic_v8_probe_roles.py', '.github/workflows/logic-v8-role-probes.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  probes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OMP_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+      TOKENIZERS_PARALLELISM: 'false'
+      HF_HUB_DISABLE_XET: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          python -m pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install numpy 'transformers>=4.45,<5' accelerate
+      - uses: actions/download-artifact@v4
+        with:
+          name: logic-v8-train-dev-features
+          run-id: 33989856982
+          github-token: ${{ github.token }}
+          path: features
+      - uses: actions/download-artifact@v4
+        with:
+          name: logic-v8-integrity-62c03bc3de8984c787d4540ed18095e788108e46
+          run-id: 33989712646
+          github-token: ${{ github.token }}
+          path: trained
+      - name: Probe predicted relations without labels
+        run: |
+          set -o pipefail
+          python -u tools/logic_v8_probe_roles.py --features features/logic-v8-features.pt --checkpoint trained/logic-v8-artifacts/fog_logic_v8.pt --output role-probes.json | tee role-probes.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: logic-v8-role-probes
+          path: |
+            role-probes.json
+            role-probes.log
+          retention-days: 14
