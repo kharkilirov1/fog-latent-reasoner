@@ -16,50 +16,42 @@ jobs:
     env:
       OMP_NUM_THREADS: '2'
       MKL_NUM_THREADS: '2'
+      TOKENIZERS_PARALLELISM: 'false'
+      HF_HUB_DISABLE_XET: '1'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install CPU test dependencies
+      - name: Install CPU experiment dependencies
         run: |
           python -m pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
-          python -m pip install numpy pytest
-      - name: Audit immutable v7 reference
-        run: |
+          python -m pip install numpy pytest 'transformers>=4.45,<5' accelerate
           mkdir -p logic-v8-artifacts
-          python - <<'PY'
-          import ast, hashlib, json, pathlib, sys, types
-          p = pathlib.Path('artifacts/logic-v7-copy-bound-entity-roles/fog_logic_v7_final.py')
-          tree = ast.parse(p.read_text())
-          # Do not execute v7's import-time package installation or CLI.
-          tree.body = [n for n in tree.body if not isinstance(n, (ast.Try, ast.If))]
-          m = types.ModuleType('v7_reference'); sys.modules[m.__name__] = m
-          exec(compile(tree, str(p), 'exec'), m.__dict__)
-          train = m.generate_programs(m.SEED+100, (1,2,3,4), 72, train=True)
-          dev = m.generate_programs(m.SEED+200, (1,2,3,4), 24, train=True)
-          test = m.generate_programs(m.SEED+9000, (1,2,3,4,5,6,8), 72, train=False)
-          leaks = []
-          for pi, program in enumerate(train):
-              halted = False
-              for si, ins in enumerate(program.instructions):
-                  if ins.op == m.OID['FOLLOW'] and ins.rel == m.RID['calls']:
-                      leaks.append({'program':pi, 'step':si, 'after_halt':halted})
-                  halted |= ins.op == m.OID['HALT']
-          full = m._deranged_mapping(test, 'full')
-          report = {'reference_sha256':hashlib.sha256(p.read_bytes()).hexdigest(), 'phrase_manifest':m.PhraseSpec().manifest(), 'program_counts':{'train':len(train),'dev':len(dev),'test':len(test)}, 'supervised_follow_calls_in_train':len(leaks), 'leak_details':leaks, 'v7_full_shuffle_fixed_points':sum(k==v for k,v in full.items()), 'oracle_correct':sum(m.execute_oracle(x)==x.answer for x in train+dev+test), 'oracle_total':len(train+dev+test)}
-          pathlib.Path('logic-v8-artifacts/reference-audit.json').write_text(json.dumps(report,indent=2))
-          print(json.dumps(report, indent=2))
-          PY
-      - name: Run v8 regression tests when present
+          python -m pip freeze > logic-v8-artifacts/environment.txt
+      - name: Regression tests and immutable reference audit
         run: |
-          if test -f research/logic_v8/test_integrity.py; then
-            python -m pytest research/logic_v8 -v --junitxml=logic-v8-artifacts/junit.xml
-          fi
-          if test -f research/logic_v8/run.py; then
-            python research/logic_v8/run.py --audit-only --output logic-v8-artifacts/v8-audit.json
-          fi
-      - name: Export reference, tests and machine-readable evidence
+          python -m pytest research/logic_v8 -v --junitxml=logic-v8-artifacts/junit.xml
+          python research/logic_v8/run.py --audit-only --output logic-v8-artifacts/audit.json
+      - name: Train and evaluate development split only
+        run: |
+          set -o pipefail
+          python -u research/logic_v8/run.py --device cpu --threads 2 --output logic-v8-artifacts/dev-results.json --checkpoint logic-v8-artifacts/fog_logic_v8.pt 2>&1 | tee logic-v8-artifacts/train.log
+      - name: Locked evaluation of frozen checkpoint only after development gate
+        run: |
+          python - <<'PY'
+          import json, pathlib, subprocess, sys
+          p = pathlib.Path('logic-v8-artifacts')
+          r = json.loads((p/'dev-results.json').read_text())
+          d = r['dev_program_eval']
+          eligible = r['train_program_eval']['accuracy'] >= .99 and d['accuracy'] >= .90 and d['bind_instruction_joint'] >= .90
+          (p/'dev-gate.json').write_text(json.dumps({'eligible':eligible,'train_accuracy':r['train_program_eval']['accuracy'],'dev_accuracy':d['accuracy'],'dev_bind':d['bind_instruction_joint']},indent=2))
+          if eligible:
+              subprocess.check_call([sys.executable,'-u','research/logic_v8/run.py','--device','cpu','--threads','2','--evaluate-checkpoint',str(p/'fog_logic_v8.pt'),'--locked','--output',str(p/'locked-results.json')])
+          else:
+              print('Development gate failed. Locked test was NOT evaluated.')
+          PY
+      - name: Export code, checkpoint and evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
