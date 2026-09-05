@@ -1,0 +1,73 @@
+name: Logic v8 integrity and role routing
+on:
+  push:
+    branches: [agent/logic-v8-integrity-role-routing-20260906]
+    paths: ['research/logic_v8/**', '.github/workflows/logic-v8-integrity.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: logic-v8-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      OMP_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install CPU test dependencies
+        run: |
+          python -m pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install numpy pytest
+      - name: Audit immutable v7 reference
+        run: |
+          mkdir -p logic-v8-artifacts
+          python - <<'PY'
+          import ast, hashlib, json, pathlib, sys, types
+          p = pathlib.Path('artifacts/logic-v7-copy-bound-entity-roles/fog_logic_v7_final.py')
+          tree = ast.parse(p.read_text())
+          # Do not execute v7's import-time package installation or CLI.
+          tree.body = [n for n in tree.body if not isinstance(n, (ast.Try, ast.If))]
+          m = types.ModuleType('v7_reference'); sys.modules[m.__name__] = m
+          exec(compile(tree, str(p), 'exec'), m.__dict__)
+          train = m.generate_programs(m.SEED+100, (1,2,3,4), 72, train=True)
+          dev = m.generate_programs(m.SEED+200, (1,2,3,4), 24, train=True)
+          test = m.generate_programs(m.SEED+9000, (1,2,3,4,5,6,8), 72, train=False)
+          leaks = []
+          for pi, program in enumerate(train):
+              halted = False
+              for si, ins in enumerate(program.instructions):
+                  if ins.op == m.OID['FOLLOW'] and ins.rel == m.RID['calls']:
+                      leaks.append({'program':pi, 'step':si, 'after_halt':halted})
+                  halted |= ins.op == m.OID['HALT']
+          full = m._deranged_mapping(test, 'full')
+          report = {'reference_sha256':hashlib.sha256(p.read_bytes()).hexdigest(), 'phrase_manifest':m.PhraseSpec().manifest(), 'program_counts':{'train':len(train),'dev':len(dev),'test':len(test)}, 'supervised_follow_calls_in_train':len(leaks), 'leak_details':leaks, 'v7_full_shuffle_fixed_points':sum(k==v for k,v in full.items()), 'oracle_correct':sum(m.execute_oracle(x)==x.answer for x in train+dev+test), 'oracle_total':len(train+dev+test)}
+          pathlib.Path('logic-v8-artifacts/reference-audit.json').write_text(json.dumps(report,indent=2))
+          print(json.dumps(report, indent=2))
+          PY
+      - name: Run v8 regression tests when present
+        run: |
+          if test -f research/logic_v8/test_integrity.py; then
+            python -m pytest research/logic_v8 -v --junitxml=logic-v8-artifacts/junit.xml
+          fi
+          if test -f research/logic_v8/run.py; then
+            python research/logic_v8/run.py --audit-only --output logic-v8-artifacts/v8-audit.json
+          fi
+      - name: Export reference, tests and machine-readable evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: logic-v8-integrity-${{ github.sha }}
+          path: |
+            logic-v8-artifacts/
+            artifacts/logic-v7-copy-bound-entity-roles/fog_logic_v7_final.py
+            artifacts/logic-v7-copy-bound-entity-roles/fog_logic_v7_results.json
+            artifacts/logic-v7-copy-bound-entity-roles/LOGIC_V7_PROTOCOL.md
+            research/logic_v8/
+          retention-days: 14
