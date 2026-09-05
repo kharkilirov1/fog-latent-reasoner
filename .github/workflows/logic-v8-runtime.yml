@@ -1,0 +1,66 @@
+name: Logic v8.2 frozen runtime and stress
+on:
+  push:
+    branches: [agent/logic-v8-integrity-role-routing-20260906]
+    paths: ['research/logic_v8/predict.py', 'research/logic_v8/stress*.py', 'research/logic_v8/test_typed.py', '.github/workflows/logic-v8-runtime.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OMP_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+      TOKENIZERS_PARALLELISM: 'false'
+      HF_HUB_DISABLE_XET: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          python -m pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -r research/logic_v8/requirements.txt
+          mkdir -p runtime-evidence
+      - uses: actions/download-artifact@v4
+        with:
+          name: logic-v8-train-dev-features
+          run-id: 33989856982
+          github-token: ${{ github.token }}
+          path: features
+      - uses: actions/download-artifact@v4
+        with:
+          name: logic-v8-2-locked-2d51a0fc1fc7d2e0c3474113869ee6565fa1b911
+          run-id: 33991379408
+          github-token: ${{ github.token }}
+          path: typed
+      - name: Regression suite and independent composition stress
+        run: |
+          python -m pytest research/logic_v8 -v --junitxml=runtime-evidence/junit.xml
+          python research/logic_v8/stress.py --checkpoint typed/logic-v8-artifacts/fog_logic_v8_2.pt --features features/logic-v8-features.pt --output runtime-evidence/length-stress.json
+          python research/logic_v8/stress_entities.py --checkpoint typed/logic-v8-artifacts/fog_logic_v8_2.pt --features features/logic-v8-features.pt --output runtime-evidence/entity-stress.json
+      - name: Real standalone text inference without gold labels
+        run: |
+          python research/logic_v8/predict.py --checkpoint typed/logic-v8-artifacts/fog_logic_v8_2.pt --input research/logic_v8/example_program.txt --device cpu --trace --output runtime-evidence/example.json
+          python research/logic_v8/predict.py --checkpoint typed/logic-v8-artifacts/fog_logic_v8_2.pt --input research/logic_v8/example_custom_program.txt --entities research/logic_v8/example_custom_entities.json --device cpu --trace --output runtime-evidence/custom-example.json
+          python - <<'PY'
+          import hashlib,json,pathlib
+          root=pathlib.Path('runtime-evidence')
+          assert json.loads((root/'example.json').read_text())['answer']=='Iris'
+          assert json.loads((root/'custom-example.json').read_text())['answer']=='Иван'
+          assert json.loads((root/'length-stress.json').read_text())['normal']['correct']==480
+          assert json.loads((root/'entity-stress.json').read_text())['correct']==96
+          checkpoint=pathlib.Path('typed/logic-v8-artifacts/fog_logic_v8_2.pt')
+          assert hashlib.sha256(checkpoint.read_bytes()).hexdigest()=='0105b7e3b89660bf58679e6c23d6c40af251d7d90d27b61ec897cddf1d581d31'
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: logic-v8-2-runtime
+          path: |
+            runtime-evidence/
+            research/logic_v8/
+          retention-days: 14

@@ -8,7 +8,7 @@ from torch import nn
 import torch.nn.functional as F
 from integrity import LexicalSlots, forbidden_holdout
 
-LAYERS = (0, 1, 2, 22, 23)  # v7's train/scan-selected layers, not test-selected.
+LAYERS = (0, 1, 2, 22, 23)
 MAX_SLOTS = 4
 
 @dataclass(frozen=True)
@@ -17,8 +17,8 @@ class TextRef:
     payload: tuple[int, ...]
 
 class TextBank:
-    def __init__(self, entities: Sequence[str]):
-        self.lexical = LexicalSlots(entities)
+    def __init__(self, entities: Sequence[str], canonical_names: Sequence[str] | None = None):
+        self.lexical = LexicalSlots(entities, canonical_names=canonical_names)
         self.texts, self.spans, self.index = [], [], {}
         self.features = self.mask = self.mentions = self.valid = None
     def add(self, text: str) -> TextRef:

@@ -21,7 +21,6 @@ def load_reference(root: Path | None = None):
     if digest != REFERENCE_SHA256:
         raise ValueError(f'Unexpected v7 reference hash: {digest}; refusing protocol drift')
     tree = ast.parse(source, filename=str(path))
-    # Skip import-time installers and the CLI guard; preserve all definitions.
     tree.body = [n for n in tree.body if not isinstance(n, (ast.Try, ast.If))]
     mod = types.ModuleType('_fog_v7_reference')
     mod.__file__ = str(path)
@@ -76,10 +75,13 @@ class LexicalSlots:
     Slot assignment is first-mention order. No opcode, relation, answer, or
     source/target label is accepted. Repeated occurrences share a payload.
     """
-    def __init__(self, entities: Sequence[str]):
-        if not entities or len(set(entities)) != len(entities):
+    def __init__(self, entities: Sequence[str], canonical_names: Sequence[str] | None = None):
+        if not entities or any(not isinstance(x, str) or not x.strip() for x in entities) or len(set(entities)) != len(entities):
             raise ValueError('Entity names must be unique and nonempty')
         self.entities = tuple(entities)
+        self.canonical_names = tuple(canonical_names) if canonical_names is not None else self.entities
+        if not self.canonical_names or len(set(self.canonical_names)) != len(self.canonical_names):
+            raise ValueError('Canonical aliases must be nonempty and unique')
         self.ids = {x: i for i, x in enumerate(entities)}
         self.pattern = re.compile(r'(?<!\w)(?:' + '|'.join(map(re.escape, sorted(entities, key=len, reverse=True))) + r')(?!\w)')
     def encode(self, text: str) -> tuple[str, tuple[int, ...], tuple[tuple[tuple[int, int], ...], ...]]:
@@ -95,7 +97,9 @@ class LexicalSlots:
                 mapping[name] = len(mapping)
                 payloads.append(self.ids[name]); spans.append([])
             slot = mapping[name]
-            alias = self.entities[slot]
+            if slot >= len(self.canonical_names):
+                raise ValueError('Too many distinct mentions for the available canonical aliases')
+            alias = self.canonical_names[slot]
             parts.append(alias)
             spans[slot].append((newpos, newpos+len(alias)))
             newpos += len(alias); oldpos = match.end()
