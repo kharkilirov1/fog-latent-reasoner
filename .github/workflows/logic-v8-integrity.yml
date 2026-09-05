@@ -32,12 +32,12 @@ jobs:
       - name: Regression tests and immutable reference audit
         run: |
           python -m pytest research/logic_v8 -v --junitxml=logic-v8-artifacts/junit.xml
-          python research/logic_v8/run.py --audit-only --output logic-v8-artifacts/audit.json
-      - name: Train and evaluate development split only
+          python research/logic_v8/run.py --training-texts declared --audit-only --output logic-v8-artifacts/audit.json
+      - name: Train v8.1 with restored declared training templates
         run: |
           set -o pipefail
-          python -u research/logic_v8/run.py --device cpu --threads 2 --output logic-v8-artifacts/dev-results.json --checkpoint logic-v8-artifacts/fog_logic_v8.pt 2>&1 | tee logic-v8-artifacts/train.log
-      - name: Locked evaluation of frozen checkpoint only after development gate
+          python -u research/logic_v8/run.py --training-texts declared --device cpu --threads 2 --output logic-v8-artifacts/dev-results.json --checkpoint logic-v8-artifacts/fog_logic_v8.pt 2>&1 | tee logic-v8-artifacts/train.log
+      - name: Locked evaluation only after development qualification
         run: |
           python - <<'PY'
           import json, pathlib, subprocess, sys
@@ -47,10 +47,13 @@ jobs:
           eligible = r['train_program_eval']['accuracy'] >= .99 and d['accuracy'] >= .90 and d['bind_instruction_joint'] >= .90
           (p/'dev-gate.json').write_text(json.dumps({'eligible':eligible,'train_accuracy':r['train_program_eval']['accuracy'],'dev_accuracy':d['accuracy'],'dev_bind':d['bind_instruction_joint']},indent=2))
           if eligible:
-              subprocess.check_call([sys.executable,'-u','research/logic_v8/run.py','--device','cpu','--threads','2','--evaluate-checkpoint',str(p/'fog_logic_v8.pt'),'--locked','--output',str(p/'locked-results.json')])
+              subprocess.check_call([sys.executable,'-u','research/logic_v8/run.py','--training-texts','declared','--device','cpu','--threads','2','--evaluate-checkpoint',str(p/'fog_logic_v8.pt'),'--locked','--output',str(p/'locked-results.json')])
           else:
               print('Development gate failed. Locked test was NOT evaluated.')
           PY
+      - name: Standalone text inference, without gold labels
+        run: |
+          python research/logic_v8/predict.py --checkpoint logic-v8-artifacts/fog_logic_v8.pt --input research/logic_v8/example_program.txt --device cpu --trace --output logic-v8-artifacts/example-prediction.json
       - name: Export code, checkpoint and evidence
         if: always()
         uses: actions/upload-artifact@v4

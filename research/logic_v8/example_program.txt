@@ -1,0 +1,8 @@
+Bob manages Alice.
+Carla manages Bob.
+Focus on Alice.
+Follow the manager relation from the current entity.
+Follow the manager relation from the current entity.
+Check whether the current entity is Carla.
+If the comparison is true choose Iris; otherwise choose Lena.
+Stop execution and return the current entity.

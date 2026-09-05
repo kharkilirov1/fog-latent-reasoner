@@ -1,6 +1,7 @@
 """Leak-free, copy-equivariant continuation of the frozen-Qwen Logic-v7 task.
 
-The reference generator, phrase split, depths, seeds and thresholds are unchanged.
+Original program generation, locked texts, depths and thresholds are unchanged.
+Training-text expansion is separately versioned and never silently enabled.
 """
 from __future__ import annotations
 import argparse
@@ -183,13 +184,19 @@ def run(args):
     if audit['masked_holdout_targets']:
         raise AssertionError('Active training corpus violates holdouts')
     spec = ref.PhraseSpec()
+    training_texts = {'variant': 'legacy', 'original_manifest': spec.manifest()}
+    if args.training_texts == 'declared':
+        from training_texts import augment_declared
+        training_texts = augment_declared(spec, ref, train)
     out = {'protocol': 'FOG_LOGIC_V8_COPY_EQUIVARIANT_JOINT_ROLES', 'base_commit': 'acc05871bfc5b135e8b5e39c86e8c43e8a56c05b',
            'reference_sha256': REFERENCE_SHA256, 'phrase_manifest': spec.manifest(), 'training_audit': audit,
            'dataset_hashes': {k: dataset_witness(v) for k, v in [('train', train), ('dev', dev), ('test', test)]},
            'program_counts': {'train': len(train), 'dev': len(dev), 'test': len(test)},
            'train_depths': [1, 2, 3, 4], 'test_depths': [1, 2, 3, 4, 5, 6, 8],
            'model_seed': args.seed, 'locked_test_evaluated': False,
-           'training_view': 'prefix_through_first_gold_halt_for_all_losses', 'config': vars(args)}
+           'training_view': 'prefix_through_first_gold_halt_for_all_losses', 'training_texts': training_texts, 'config': vars(args)}
+    if args.training_texts == 'declared':
+        out['protocol'] = 'FOG_LOGIC_V8_1_DECLARED_TRAIN_TEMPLATE_REPAIR'
     if args.audit_only:
         oracle = evaluate_predictions([x for p in train+dev+test for x in p.instructions], train+dev+test, ref)
         out['tensor_oracle'] = oracle
@@ -199,7 +206,7 @@ def run(args):
     if device.type == 'cuda': torch.cuda.manual_seed_all(args.seed)
     saved = torch.load(args.evaluate_checkpoint, map_location=device, weights_only=True) if args.evaluate_checkpoint else None
     if saved is not None:
-        if saved['reference_sha256'] != REFERENCE_SHA256 or saved['dataset_hashes'] != out['dataset_hashes'] or saved['model'] != args.model:
+        if saved['reference_sha256'] != REFERENCE_SHA256 or saved['dataset_hashes'] != out['dataset_hashes'] or saved['model'] != args.model or saved.get('training_texts_variant', 'legacy') != args.training_texts:
             raise ValueError('Checkpoint provenance does not match this experiment')
     from transformers import AutoModelForCausalLM, AutoTokenizer
     tokenizer = AutoTokenizer.from_pretrained(args.model, use_fast=True, revision=saved.get('backbone_revision') if saved else None)
@@ -242,7 +249,8 @@ def run(args):
         torch.save({'state_dict': model.state_dict(), 'hidden_size': backbone.config.hidden_size,
                     'model': args.model, 'backbone_revision': getattr(backbone.config, '_commit_hash', None),
                     'layers': LAYERS, 'reference_sha256': REFERENCE_SHA256,
-                    'protocol': out['protocol'], 'seed': args.seed, 'dataset_hashes': out['dataset_hashes']}, args.checkpoint)
+                    'protocol': out['protocol'], 'seed': args.seed, 'dataset_hashes': out['dataset_hashes'],
+                    'training_texts_variant': args.training_texts, 'training_phrase_manifest': spec.manifest()}, args.checkpoint)
     out['checkpoint_sha256'] = hashlib.sha256(Path(args.evaluate_checkpoint or args.checkpoint).read_bytes()).hexdigest()
     print(json.dumps({'train': out['train_program_eval'], 'dev': out['dev_program_eval']}), flush=True)
     if args.locked:
@@ -271,6 +279,7 @@ def run(args):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--training-texts', choices=['legacy', 'declared'], default='legacy', help='Versioned reachability repair of declared TRAIN templates')
     parser.add_argument('--audit-only', action='store_true')
     parser.add_argument('--locked', action='store_true', help='Evaluate locked test once, after checkpoint freeze')
     parser.add_argument('--model', default='Qwen/Qwen2.5-0.5B-Instruct')
