@@ -233,7 +233,9 @@ def main():
     ap.add_argument("--optim", default="mx6", choices=["mx6", "adamw"], help="decoder linears: mx6 latent grid or AdamW")
     ap.add_argument("--steps", type=int, default=600)
     ap.add_argument("--bs", type=int, default=16)
-    ap.add_argument("--lr", type=float, default=1e-3, help="mx6 counter lr (or AdamW lr of the decoder with --optim adamw)")
+    ap.add_argument("--lr", type=float, default=2e-5,
+                    help="mx6 counter lr (or AdamW lr of the decoder with --optim adamw). The RMS-normalised lg step moves "
+                         "every weight by ~lr per step, like Adam: fine-tuning needs Adam-scale lr (3e-4 wrecked Qwen3.5)")
     ap.add_argument("--head-lr", type=float, default=1e-3)
     ap.add_argument("--small-lr", type=float, default=1e-5, help="AdamW lr of norms / conv / gates")
     ap.add_argument("--mom-dtype", default="bf16", choices=["bf16", "fp8", "fp32"])
@@ -246,6 +248,9 @@ def main():
     ap.add_argument("--dtype", default="bf16", choices=["bf16", "fp32"])
     ap.add_argument("--out", default="artifacts/latent-loop-qwen35")
     ap.add_argument("--tiny", action="store_true", help="CPU smoke test: random tiny Qwen3.5 text model")
+    ap.add_argument("--grad-ckpt", action="store_true", help="activation checkpointing per decoder layer (latent loop: T+1 "
+                    "full-sequence forwards with grad)")
+    ap.add_argument("--eval-before", action="store_true", help="text arms: evaluate the untouched model first")
     a = ap.parse_args()
     torch.manual_seed(a.seed)
     random.seed(a.seed)
@@ -313,6 +318,15 @@ def main():
         evalset[f"id_R{d}"] = [make_ex(erng, d, erng.choice(STYLES_TRAIN)) for _ in range(a.eval_n)]
         evalset[f"held_R{d}"] = [make_ex(erng, d, STYLE_HELD) for _ in range(a.eval_n)]
 
+    pre = {}
+    if a.eval_before and net is None:
+        model.eval()
+        for k in [k for k in evalset if k.endswith(("R1", "R2", "R4"))]:
+            pre[k] = text_eval(model, tok, evalset[k], a.arm, dev)
+            print("BEFORE", k, json.dumps(pre[k]), flush=True)
+    if a.grad_ckpt:
+        model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
+        model.config.use_cache = False
     model.train()
     t0, log = time.time(), []
     warm = max(1, a.steps // 20)
@@ -357,7 +371,7 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     tag = f"{a.arm}_{a.optim}_s{a.seed}"
     (out / f"result_{tag}.json").write_text(json.dumps(
-        {"args": vars(a), "mx6": {k: v for k, v in rep.items() if k != "state"}, "train_log": log, "eval": res,
+        {"args": vars(a), "before": pre, "mx6": {k: v for k, v in rep.items() if k != "state"}, "train_log": log, "eval": res,
          "seconds": round(time.time() - t0, 1)}, indent=1))
     print("DONE", tag, round(time.time() - t0, 1), "s", flush=True)
 
