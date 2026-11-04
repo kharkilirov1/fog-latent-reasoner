@@ -38,7 +38,8 @@ from torch import nn
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from latent_loop_llm_experiment import P, STYLE_HELD, STYLES_TRAIN, make_ex, prompt_text  # noqa: E402
 
-LATENT_ARMS = ("cont", "cap", "cap_mid", "snap")
+LATENT_ARMS = ("cont", "cap", "cap_mid", "snap", "mcap", "msnap")
+MARKOV_ARMS = ("mcap", "msnap")
 TEXT_ARMS = ("direct", "cot")
 
 
@@ -136,7 +137,7 @@ class Loop(nn.Module):
         p = F.softmax(self.beta * c, -1)
         self.last_p = p.detach()
         soft = self.rescale(p @ self.rescale(self.C))
-        if self.arm == "snap":                                         # hard code, straight-through gradient
+        if self.arm in ("snap", "msnap"):                              # hard code, straight-through gradient
             return self.rescale(self.C)[c.argmax(-1)] + soft - soft.detach()
         return soft
 
@@ -193,6 +194,69 @@ class Loop(nn.Module):
         self.last_ents = ents
         return torch.stack(logits_all, 1), xs
 
+
+
+def prompt_ops(e):
+    """Markov prompt: the operations only. The start value is NOT in the text: it enters as the latent code x_0."""
+    from latent_loop_llm_experiment import op_text
+    s = f"Work modulo {P}. "
+    s += "".join(f"Step {i + 1}: {op_text(k, a, e['style'])} " for i, (k, a) in enumerate(e["ops"]))
+    return s + "Think silently, one step at a time."
+
+
+class MarkovLoop(Loop):
+    """Recurrent-validity setting of the paper: h_{t+1} = T(h_t, C). Every step re-reads ONLY [ops prompt][(text value)]
+    [" Step t:"][x_t]: no earlier thoughts, no start value in the text, so the current value can only come from x_t.
+    x_0 = code of the start value; step 0 reads it back, step t >= 1 applies operation t.
+    text_p: probability that the gold current value is ALSO written as text (" Value: 17.") before the marker. Annealed
+    1 -> 0: the model first solves one step the way it already can (text), then must rely on the latent alone."""
+
+    def __init__(self, *a, **k):
+        super().__init__(*a, **k)
+        self.text_p = 0.0
+
+    def forward(self, exs, T, track=False, swap=None):
+        embed = self.model.get_input_embeddings()
+        pad = self.tok.pad_token_id if self.tok.pad_token_id is not None else self.tok.eos_token_id
+        B = len(exs)
+        base = [self.tok.encode(prompt_ops(e), add_special_tokens=False) for e in exs]
+        gold = torch.tensor([e["vals"] for e in exs], device=self.dev)
+        C = self.rescale(self.C)
+        x = C[gold[:, 0]]
+        logits_all, xs, ents = [], [], []
+        dt = embed.weight.dtype
+        for t in range(T + 1):
+            if swap is not None and t == swap[0]:
+                x = C[swap[1].to(self.dev)]
+            elif self.training and self.tf > 0 and t >= 1:
+                m = (torch.rand(B, 1, device=self.dev) < self.tf).float()
+                x = m * C[gold[:, t - 1]] + (1 - m) * x
+            rows = []
+            for i, e in enumerate(exs):
+                r = list(base[i])
+                if self.training and self.text_p > 0 and random.random() < self.text_p:
+                    r += self.tok.encode(f" Value: {e['vals'][max(t - 1, 0)]}.", add_special_tokens=False)
+                r += self.marker(t).tolist()
+                rows.append(r)
+            L = max(map(len, rows))
+            inp = torch.full((B, L), pad, dtype=torch.long, device=self.dev)
+            am = torch.zeros((B, L + 1), dtype=torch.long, device=self.dev)
+            for i, r in enumerate(rows):
+                inp[i, L - len(r):] = torch.tensor(r, device=self.dev)
+                am[i, L - len(r):] = 1
+            seq = torch.cat([embed(inp), x.to(dt).unsqueeze(1)], 1)
+            out = self.model.model(inputs_embeds=seq, attention_mask=am, use_cache=False)
+            h = out.last_hidden_state[:, -1]
+            c = self.cos(h)
+            logits_all.append(c * self.log_s.exp())
+            if track:
+                xs.append(x.detach())
+            x = self.feedback(h, c)
+            if track:
+                p = self.last_p
+                ents.append((-(p * (p + 1e-12).log()).sum(-1)).mean().item())
+        self.last_ents = ents
+        return torch.stack(logits_all, 1), xs
 
 # ── text arms ─────────────────────────────────────────────────────────────────────────────────────────────────────────
 
@@ -302,6 +366,8 @@ def main():
     ap.add_argument("--max-train-depth", type=int, default=6)
     ap.add_argument("--beta-max", type=float, default=30.0)
     ap.add_argument("--code-init", default="orth", choices=["orth", "digits"])
+    ap.add_argument("--text-anneal", type=float, default=1.0, help="markov arms: initial prob of also writing the gold "
+                    "current value as text; decays to 0 at 60%% of training")
     ap.add_argument("--tf", type=float, default=0.0, help="teacher forcing prob at the start, decays linearly to 0 at 70%%")
     ap.add_argument("--tap", type=int, default=-1, help="cap_mid: hidden_states index (default 2/3 of the depth)")
     ap.add_argument("--eval-n", type=int, default=64)
@@ -362,7 +428,8 @@ def main():
         small = [p for p in small if all(p is not w for w in dec_linear)]
     for p in small + dec_linear:
         p.requires_grad_(True)
-    net = Loop(model, tok, a.arm, tap, dev, code_init=a.code_init) if a.arm in LATENT_ARMS else None
+    cls = MarkovLoop if a.arm in MARKOV_ARMS else Loop
+    net = cls(model, tok, a.arm, tap, dev, code_init=a.code_init) if a.arm in LATENT_ARMS else None
     if net is not None:
         print("codes", json.dumps(net.code_geometry()), flush=True)
     groups = [{"params": small, "lr": a.small_lr}]
@@ -405,6 +472,8 @@ def main():
         b = [make_ex(rng, d, rng.choice(STYLES_TRAIN)) for _ in range(a.bs)]
         if net is not None:
             net.tf = a.tf * max(0.0, 1.0 - frac / 0.7)
+            if isinstance(net, MarkovLoop):
+                net.text_p = a.text_anneal * max(0.0, 1.0 - frac / 0.6)
         if net is not None and a.arm != "cont":
             net.beta = 1.0 + (a.beta_max - 1.0) * min(1.0, frac / 0.6)
         ctx = lg_accumulate(model, 1) if a.optim == "mx6" else None
@@ -425,7 +494,8 @@ def main():
                    "peak_gb": round(torch.cuda.max_memory_allocated() / 2 ** 30, 1) if dev == "cuda" else 0,
                    "lg_updates": rep["state"].n_updates if rep else None,
                    "codes": net.code_geometry() if net is not None else None,
-                   "tf": round(net.tf, 3) if net is not None else None}
+                   "tf": round(net.tf, 3) if net is not None else None,
+                   "text_p": round(getattr(net, "text_p", 0.0), 3) if net is not None else None}
             log.append(rec)
             print(json.dumps(rec), flush=True)
 
@@ -437,7 +507,7 @@ def main():
         print(k, json.dumps(r), flush=True)
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
-    tag = f"{a.arm}_{a.optim}_tf{a.tf}_{a.code_init}_s{a.seed}"
+    tag = f"{a.arm}_{a.optim}_tf{a.tf}_{a.code_init}{'_ta' + str(a.text_anneal) if a.arm in MARKOV_ARMS else ''}_s{a.seed}"
     (out / f"result_{tag}.json").write_text(json.dumps(
         {"args": vars(a), "before": pre, "mx6": {k: v for k, v in rep.items() if k != "state"}, "train_log": log, "eval": res,
          "seconds": round(time.time() - t0, 1)}, indent=1))
