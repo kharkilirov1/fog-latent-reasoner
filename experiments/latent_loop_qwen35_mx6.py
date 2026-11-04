@@ -38,7 +38,7 @@ from torch import nn
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from latent_loop_llm_experiment import P, STYLE_HELD, STYLES_TRAIN, make_ex, prompt_text  # noqa: E402
 
-LATENT_ARMS = ("cont", "cap", "cap_mid")
+LATENT_ARMS = ("cont", "cap", "cap_mid", "snap")
 TEXT_ARMS = ("direct", "cot")
 
 
@@ -90,7 +90,7 @@ def set_counter_lr(model, lr: float):
 # ── latent loop ───────────────────────────────────────────────────────────────────────────────────────────────────────
 
 class Loop(nn.Module):
-    def __init__(self, model, tok, arm: str, tap: int, dev, code_dim: int = 128):
+    def __init__(self, model, tok, arm: str, tap: int, dev, code_dim: int = 128, code_init: str = "orth", tf: float = 0.0):
         super().__init__()
         self.model, self.tok, self.arm, self.dev = model, tok, arm, dev
         emb = model.get_input_embeddings().weight
@@ -100,9 +100,17 @@ class Loop(nn.Module):
         self.U = nn.Linear(H, code_dim, bias=False)
         self.K = nn.Parameter(torch.randn(P, code_dim) / math.sqrt(code_dim))
         self.log_s = nn.Parameter(torch.tensor(math.log(10.0)))          # CE temperature of the cosine read-out
-        # value codes C_v: initialised from the embeddings of the number tokens " 0" .. " 30"
-        ids = [tok.encode(f" {v}", add_special_tokens=False)[0] for v in range(P)]
-        self.C = nn.Parameter(emb[ids].detach().float().clone())
+        # value codes C_v. NOT the first number token: the Qwen tokenizer splits " 17" into ' ', '1', '7', so the first
+        # token is the same space for all 31 values (a run with that init started from 31 IDENTICAL codes, Delta = 0).
+        if code_init == "orth":            # orthonormal (max code gap), scaled to the embedding norm
+            q, _ = torch.linalg.qr(torch.randn(H, P, generator=torch.Generator().manual_seed(1234)))
+            C0 = q.t().contiguous() * self.emb_norm
+        else:                              # "digits": tens-digit embedding + rotated units-digit embedding
+            dig = [emb[tok.encode(str(k), add_special_tokens=False)[0]].detach().float() for k in range(10)]
+            rot = torch.linalg.qr(torch.randn(H, H, generator=torch.Generator().manual_seed(99)))[0].to(dig[0].device)
+            C0 = torch.stack([dig[v // 10] + rot @ dig[v % 10] for v in range(P)])
+        self.C = nn.Parameter(C0.to(emb.device))
+        self.tf = tf                       # teacher forcing probability (set per step by the training loop)
         self.begin = nn.Parameter(emb[tok.encode(" Start", add_special_tokens=False)[0]].detach().float().clone())
         self.W = nn.Linear(H, H)
         nn.init.eye_(self.W.weight)
@@ -126,9 +134,27 @@ class Loop(nn.Module):
         if self.arm == "cont":
             return self.rescale(self.W(h.float()))
         p = F.softmax(self.beta * c, -1)
-        return self.rescale(p @ self.rescale(self.C))
+        self.last_p = p.detach()
+        soft = self.rescale(p @ self.rescale(self.C))
+        if self.arm == "snap":                                         # hard code, straight-through gradient
+            return self.rescale(self.C)[c.argmax(-1)] + soft - soft.detach()
+        return soft
 
-    def forward(self, exs, T, track=False):
+    def code_geometry(self):
+        """Gap of the (rescaled) code book, relative to the embedding norm: rho = half the min pairwise distance,
+        Delta = R0^2 - max <c_i, c_j> (R0 = 1 after dividing by emb_norm)."""
+        with torch.no_grad():
+            c = self.rescale(self.C) / self.emb_norm
+            g = c @ c.t()
+            g.fill_diagonal_(-2.0)
+            delta = 1.0 - g.max().item()
+            sq = (c * c).sum(1)
+            d = (sq[:, None] + sq[None] - 2 * (c @ c.t())).clamp(min=0).sqrt()
+            d.fill_diagonal_(float("inf"))
+            return {"Delta": round(delta, 4), "rho": round(d.min().item() / 2, 4)}
+
+    def forward(self, exs, T, track=False, swap=None):
+        """swap = (t, values [B]): the latent INPUT of step t is replaced by the code of `values` (does the model read it?)."""
         embed = self.model.get_input_embeddings()
         pad = self.tok.pad_token_id if self.tok.pad_token_id is not None else self.tok.eos_token_id
         ids = [self.tok.encode(prompt_text(e), add_special_tokens=False) for e in exs]
@@ -142,8 +168,14 @@ class Loop(nn.Module):
         seq = embed(inp)
         B = len(exs)
         x = self.rescale(self.begin.float()).expand(B, -1)
-        logits_all, xs = [], []
+        logits_all, xs, ents = [], [], []
+        gold = torch.tensor([e["vals"] for e in exs], device=self.dev) if (self.training and self.tf > 0) else None
         for t in range(T + 1):
+            if swap is not None and t == swap[0]:
+                x = self.rescale(self.C)[swap[1].to(self.dev)]
+            elif gold is not None and t >= 1:                              # teacher forcing: the true previous code
+                m = (torch.rand(B, 1, device=self.dev) < self.tf).float()
+                x = m * self.rescale(self.C)[gold[:, t - 1]] + (1 - m) * x
             mk = embed(self.marker(t)).unsqueeze(0).expand(B, -1, -1)
             seq = torch.cat([seq, mk, x.to(dt).unsqueeze(1)], 1)
             am = torch.cat([am, torch.ones(B, mk.shape[1] + 1, dtype=am.dtype, device=self.dev)], 1)
@@ -155,6 +187,10 @@ class Loop(nn.Module):
             if track:
                 xs.append(x.detach())
             x = self.feedback(h, c)
+            if track and self.arm != "cont":
+                p = self.last_p
+                ents.append((-(p * (p + 1e-12).log()).sum(-1)).mean().item())
+        self.last_ents = ents
         return torch.stack(logits_all, 1), xs
 
 
@@ -196,7 +232,7 @@ def text_eval(model, tok, exs, arm, dev, bs=32):
     for i in range(0, len(exs), bs):
         b = exs[i:i + bs]
         enc = tok([prompt_text(e) for e in b], return_tensors="pt", padding=True, add_special_tokens=False).to(dev)
-        n_new = 8 if arm == "direct" else 7 * (b[0]["depth"] + 1) + 8
+        n_new = 10 if arm == "direct" else 11 * (b[0]["depth"] + 1) + 12   # digits are single tokens: ~9 per step
         out = model.generate(**enc, max_new_tokens=n_new, do_sample=False, pad_token_id=tok.pad_token_id)
         for e, row in zip(b, out[:, enc["input_ids"].shape[1]:]):
             m = re.search(r"Answer:\s*(\d+)", tok.decode(row, skip_special_tokens=True))
@@ -209,6 +245,7 @@ def latent_eval(net, exs, bs=32):
     d = exs[0]["depth"]
     ok = allok = 0
     tube = [0.0] * (d + 1)
+    step_ok = [0.0] * (d + 1)
     C = net.rescale(net.C)
     for i in range(0, len(exs), bs):
         b = exs[i:i + bs]
@@ -217,10 +254,33 @@ def latent_eval(net, exs, bs=32):
         gold = torch.tensor([e["vals"] for e in b])
         ok += (pred[:, -1] == gold[:, -1]).sum().item()
         allok += (pred == gold).all(-1).sum().item()
+        for t in range(d + 1):
+            step_ok[t] += (pred[:, t] == gold[:, t]).sum().item()
         for t in range(1, d + 1):                    # fed-back state vs the code of the previous step's value
             tube[t] += ((xs[t].float() - C[gold[:, t - 1].to(C.device)]).norm(dim=-1) / net.emb_norm).sum().item()
     n = len(exs)
-    return {"final": ok / n, "all_steps": allok / n, "tube": [round(v / n, 4) for v in tube]}
+    res = {"final": ok / n, "all_steps": allok / n, "tube": [round(v / n, 4) for v in tube]}
+    if net.arm != "cont":
+        res["entropy"] = [round(v, 3) for v in net.last_ents]     # last batch, nats (uniform = 3.43)
+    res["step_acc"] = [round(v / n, 3) for v in step_ok]
+    if d >= 2:                                    # swap control: replace the input of step 2 by a wrong value's code
+        follow = keep = 0
+        g = torch.Generator().manual_seed(5)
+        for i in range(0, len(exs), bs):
+            b = exs[i:i + bs]
+            true1 = torch.tensor([e["vals"][1] for e in b])
+            w = (true1 + torch.randint(1, P, (len(b),), generator=g)) % P
+            logits, _ = net(b, d, swap=(2, w))
+            pred = logits[:, -1].argmax(-1).cpu()
+            for e, wv, pv in zip(b, w.tolist(), pred.tolist()):
+                cur = wv
+                for kind, k in e["ops"][1:]:
+                    cur = (cur + k) % P if kind == "add" else (cur - k) % P if kind == "sub" else (cur * k) % P
+                follow += int(pv == cur)
+                keep += int(pv == e["vals"][-1])
+        res["swap_follows_latent"] = round(follow / n, 3)       # high = the model computes FROM the latent
+        res["swap_keeps_true"] = round(keep / n, 3)             # high = it ignores the latent (recomputes from the prompt)
+    return res
 
 
 # ── main ──────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -241,6 +301,8 @@ def main():
     ap.add_argument("--mom-dtype", default="bf16", choices=["bf16", "fp8", "fp32"])
     ap.add_argument("--max-train-depth", type=int, default=6)
     ap.add_argument("--beta-max", type=float, default=30.0)
+    ap.add_argument("--code-init", default="orth", choices=["orth", "digits"])
+    ap.add_argument("--tf", type=float, default=0.0, help="teacher forcing prob at the start, decays linearly to 0 at 70%%")
     ap.add_argument("--tap", type=int, default=-1, help="cap_mid: hidden_states index (default 2/3 of the depth)")
     ap.add_argument("--eval-n", type=int, default=64)
     ap.add_argument("--eval-depths", default="1,2,4,6,8,12,16")
@@ -300,7 +362,9 @@ def main():
         small = [p for p in small if all(p is not w for w in dec_linear)]
     for p in small + dec_linear:
         p.requires_grad_(True)
-    net = Loop(model, tok, a.arm, tap, dev) if a.arm in LATENT_ARMS else None
+    net = Loop(model, tok, a.arm, tap, dev, code_init=a.code_init) if a.arm in LATENT_ARMS else None
+    if net is not None:
+        print("codes", json.dumps(net.code_geometry()), flush=True)
     groups = [{"params": small, "lr": a.small_lr}]
     if dec_linear:
         groups.append({"params": dec_linear, "lr": a.lr})
@@ -339,6 +403,8 @@ def main():
             g["lr"] = base * lr_mult
         d = rng.randint(1, min(a.max_train_depth, 1 + int(a.max_train_depth * min(1.0, 1.5 * frac))))
         b = [make_ex(rng, d, rng.choice(STYLES_TRAIN)) for _ in range(a.bs)]
+        if net is not None:
+            net.tf = a.tf * max(0.0, 1.0 - frac / 0.7)
         if net is not None and a.arm != "cont":
             net.beta = 1.0 + (a.beta_max - 1.0) * min(1.0, frac / 0.6)
         ctx = lg_accumulate(model, 1) if a.optim == "mx6" else None
@@ -357,7 +423,9 @@ def main():
             rec = {"step": step, "depth": d, "loss": round(loss.item(), 4), "acc": round(acc_v, 4),
                    "beta": round(net.beta, 2) if net else None, "t": round(time.time() - t0, 1),
                    "peak_gb": round(torch.cuda.max_memory_allocated() / 2 ** 30, 1) if dev == "cuda" else 0,
-                   "lg_updates": rep["state"].n_updates if rep else None}
+                   "lg_updates": rep["state"].n_updates if rep else None,
+                   "codes": net.code_geometry() if net is not None else None,
+                   "tf": round(net.tf, 3) if net is not None else None}
             log.append(rec)
             print(json.dumps(rec), flush=True)
 
@@ -369,7 +437,7 @@ def main():
         print(k, json.dumps(r), flush=True)
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
-    tag = f"{a.arm}_{a.optim}_s{a.seed}"
+    tag = f"{a.arm}_{a.optim}_tf{a.tf}_{a.code_init}_s{a.seed}"
     (out / f"result_{tag}.json").write_text(json.dumps(
         {"args": vars(a), "before": pre, "mx6": {k: v for k, v in rep.items() if k != "state"}, "train_log": log, "eval": res,
          "seconds": round(time.time() - t0, 1)}, indent=1))
