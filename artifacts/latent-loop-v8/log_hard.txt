@@ -1,0 +1,61 @@
+Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]Loading weights:  18%|█▊        | 49/272 [00:00<00:00, 482.27it/s]Loading weights:  36%|███▌      | 98/272 [00:00<00:00, 255.83it/s]Loading weights:  48%|████▊     | 130/272 [00:00<00:00, 206.07it/s]Loading weights:  57%|█████▋    | 154/272 [00:00<00:00, 209.32it/s]Loading weights:  65%|██████▌   | 178/272 [00:00<00:00, 206.67it/s]Loading weights:  74%|███████▎  | 200/272 [00:00<00:00, 207.71it/s]Loading weights: 100%|██████████| 272/272 [00:00<00:00, 282.15it/s]
+arm=hard trainable=2810911
+step 20 R=1 loss=3.545 stepacc=0.000 t=58s
+step 40 R=1 loss=3.563 stepacc=0.000 t=111s
+step 60 R=1 loss=2.924 stepacc=0.188 t=166s
+step 80 R=1 loss=1.792 stepacc=0.500 t=221s
+step 100 R=1 loss=1.776 stepacc=0.562 t=274s
+step 120 R=1 loss=1.799 stepacc=0.500 t=328s
+step 140 R=1 loss=1.696 stepacc=0.500 t=383s
+step 160 R=1 loss=1.557 stepacc=0.594 t=447s
+step 180 R=2 loss=2.198 stepacc=0.396 t=516s
+step 200 R=1 loss=1.668 stepacc=0.531 t=584s
+step 220 R=2 loss=2.335 stepacc=0.375 t=650s
+step 240 R=2 loss=2.306 stepacc=0.375 t=716s
+step 260 R=2 loss=2.134 stepacc=0.417 t=787s
+step 280 R=2 loss=2.047 stepacc=0.438 t=849s
+step 300 R=3 loss=2.526 stepacc=0.266 t=917s
+step 320 R=3 loss=2.348 stepacc=0.344 t=1009s
+step 340 R=1 loss=1.601 stepacc=0.594 t=1107s
+step 360 R=2 loss=2.183 stepacc=0.375 t=1190s
+step 380 R=2 loss=2.219 stepacc=0.375 t=1274s
+step 400 R=3 loss=2.557 stepacc=0.312 t=1365s
+step 420 R=2 loss=2.216 stepacc=0.375 t=1450s
+step 440 R=2 loss=2.159 stepacc=0.396 t=1535s
+step 460 R=4 loss=2.572 stepacc=0.275 t=1649s
+step 480 R=2 loss=1.978 stepacc=0.396 t=1751s
+step 500 R=3 loss=2.269 stepacc=0.375 t=1864s
+step 520 R=2 loss=2.183 stepacc=0.375 t=1958s
+step 540 R=4 loss=2.556 stepacc=0.325 t=2069s
+step 560 R=4 loss=2.464 stepacc=0.300 t=2169s
+step 580 R=1 loss=1.039 stepacc=0.625 t=2274s
+step 600 R=4 loss=2.486 stepacc=0.275 t=2376s
+step 620 R=4 loss=2.400 stepacc=0.350 t=2482s
+step 640 R=1 loss=0.577 stepacc=0.844 t=2588s
+step 660 R=3 loss=2.180 stepacc=0.312 t=2684s
+step 680 R=3 loss=2.080 stepacc=0.422 t=2778s
+step 700 R=1 loss=0.737 stepacc=0.812 t=2879s
+step 720 R=4 loss=2.345 stepacc=0.312 t=3003s
+step 740 R=2 loss=1.385 stepacc=0.646 t=3099s
+step 760 R=4 loss=2.293 stepacc=0.325 t=3204s
+step 780 R=2 loss=1.515 stepacc=0.542 t=3311s
+step 800 R=4 loss=2.414 stepacc=0.312 t=3400s
+step 820 R=4 loss=2.269 stepacc=0.338 t=3514s
+step 840 R=3 loss=1.965 stepacc=0.375 t=3612s
+step 860 R=3 loss=1.940 stepacc=0.422 t=3712s
+step 880 R=2 loss=1.317 stepacc=0.562 t=3805s
+step 900 R=4 loss=2.194 stepacc=0.350 t=3906s
+id_R1 {"final": 0.4167, "all_steps": 0.4167, "tube": [0.0, 0.0]}
+held_R1 {"final": 0.5, "all_steps": 0.5, "tube": [0.0, 0.0]}
+id_R2 {"final": 0.1875, "all_steps": 0.1667, "tube": [0.0, 0.0, 0.702]}
+held_R2 {"final": 0.0833, "all_steps": 0.0833, "tube": [0.0, 0.0, 0.729]}
+id_R3 {"final": 0.0208, "all_steps": 0.0, "tube": [0.0, 0.0, 0.819, 1.214]}
+held_R3 {"final": 0.0833, "all_steps": 0.0208, "tube": [0.0, 0.0, 0.702, 1.268]}
+id_R4 {"final": 0.0833, "all_steps": 0.0, "tube": [0.0, 0.0, 0.469, 1.21, 1.328]}
+held_R4 {"final": 0.0625, "all_steps": 0.0, "tube": [0.0, 0.0, 0.702, 1.172, 1.299]}
+id_R5 {"final": 0.0417, "all_steps": 0.0, "tube": [0.0, 0.0, 0.698, 1.349, 1.296, 1.301]}
+held_R5 {"final": 0.0208, "all_steps": 0.0, "tube": [0.0, 0.0, 0.734, 1.199, 1.392, 1.407]}
+id_R6 {"final": 0.0208, "all_steps": 0.0, "tube": [0.0, 0.0, 0.705, 1.321, 1.356, 1.354, 1.298]}
+held_R6 {"final": 0.0208, "all_steps": 0.0, "tube": [0.0, 0.0, 0.757, 1.322, 1.36, 1.391, 1.357]}
+id_R8 {"final": 0.0, "all_steps": 0.0, "tube": [0.0, 0.0, 0.613, 1.206, 1.355, 1.328, 1.422, 1.358, 1.361]}
+held_R8 {"final": 0.0625, "all_steps": 0.0, "tube": [0.0, 0.0, 0.764, 1.216, 1.382, 1.267, 1.392, 1.362, 1.412]}
