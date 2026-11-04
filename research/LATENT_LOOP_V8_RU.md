@@ -2,7 +2,7 @@
 
 Дата: 2026-11-04. Связанные файлы: `research/notes/NOTE-016-attractor-capture-replaces-discrete-executor.md`,
 `experiments/capture_theorem_check.py`, `experiments/capture_learned_operator_experiment.py` (EXP-040),
-`experiments/fog_latent_loop_v8.py` (EXP-039).
+`experiments/latent_loop_llm_experiment.py` (EXP-039).
 
 ## 1. Диагноз: почему дискретный процессор стал тупиком
 
@@ -80,7 +80,7 @@ hard-ST operator routing, символический ALU.
 исполнителя. При β=4 (ниже порога `β*≈22`) цикл коллапсирует, как и предсказывает теорема:
 до порога гарантий нет.
 
-### 4.3 EXP-039: латентный цикл внутри SmolLM2-135M (`fog_latent_loop_v8.py`)
+### 4.3 EXP-039: латентный цикл внутри SmolLM2-135M (`latent_loop_llm_experiment.py`)
 
 Архитектура: замороженный промпт (KV-кэш, без градиента), затем латентные thought-токены
 `[" Step t:"][x_t]` с thought-mode LoRA (r=8, 2.8M параметров). Это **собственные слои LLM**,

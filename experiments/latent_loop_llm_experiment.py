@@ -1,9 +1,8 @@
-"""FOG v8 — Latent-Loop Reasoner (LLR): no discrete executor.
+"""Latent-loop reasoning inside a pretrained LLM (no external executor).
 
-The discrete typed register machine / hard operator grammar used in the
-retrofit and Logic-v6/v7 experiments is removed.  The pretrained LLM itself
-executes the program in its own residual stream through a recurrent loop of
-*latent thought tokens*:
+No external executor or symbolic parser is used. The pretrained LLM executes
+the program in its own residual stream through a recurrent loop of latent
+thought tokens:
 
     prompt (frozen LLM, no grad, KV cached)
       -> [" Step t:" marker tokens][latent token x_t]   (thought-mode LoRA on)
@@ -12,7 +11,7 @@ executes the program in its own residual stream through a recurrent loop of
 
 Nothing symbolic is parsed: no opcode classifier, no value register, no ALU.
 The only supervision is a *shared* linear readout D(h_t) of the intermediate
-value (gauge fixing, NOTE in research/notes/NOTE-016).
+value (gauge fixing, research/notes/NOTE-016).
 
 Arms (Feedback):
   cont   : x = rescale(W h)                      continuous (Coconut-like)
@@ -196,7 +195,7 @@ def main():
     ap.add_argument("--eval_n", type=int, default=48)
     ap.add_argument("--eval_depths", default="1,2,3,4,5,6,8")
     ap.add_argument("--seed", type=int, default=0)
-    ap.add_argument("--out", default="artifacts/latent-loop-v8")
+    ap.add_argument("--out", default="artifacts/latent-loop-llm")
     a = ap.parse_args()
     torch.manual_seed(a.seed); random.seed(a.seed); torch.set_num_threads(int(__import__("os").environ.get("NT", "4")))
 

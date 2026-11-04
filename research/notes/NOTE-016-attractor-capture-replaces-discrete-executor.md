@@ -1,7 +1,7 @@
 # NOTE-016 — Attractor capture replaces the discrete executor
 
 Status: proved (Theorems A, A′, Props B–E). Experimental check is
-`experiments/fog_latent_loop_v8.py` (EXP-039).
+`experiments/latent_loop_llm_experiment.py` (EXP-039).
 
 ## Motivation
 
