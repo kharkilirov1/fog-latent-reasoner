@@ -45,6 +45,22 @@ Reading:
 - mx6 in the latent loop: only tested with teacher forcing and one lr; it learned far worse than AdamW. Untested: mx6 + snap
   without teacher forcing, lower counter lr. Not a conclusion about mx6 yet.
 
+## Mechanistic shaping (Goodfire 2026, expression shaping), `ll8`
+
+NON-Markov loop (start value in the prompt, the shortcut is available), hard snap, AdamW, 600 steps. An online linear probe
+reads the START value from the thought-position hidden state at layer 16 (of 32) for steps >= 2; the model is penalised by
+lambda * p_probe(start). Baseline without shaping (`ll3` snap): depth 2 = 0.91, swap follows latent 0.03, keeps true 0.78.
+
+| lambda | depth 1 | 2 | 4 | 8 | swap follows latent (d=2) | swap keeps true (d=2) | probe acc at eval (reused probe) |
+|---|---|---|---|---|---|---|---|
+| 1 | 0.63 / 0.73 | 0.55 / 0.45 | 0.13 / 0.14 | 0.05 / 0.05 | 0.02 / 0.03 | 0.52 / 0.42 | 0.30 (d=2) |
+| 5 | 0.50 / 0.45 | 0.27 / 0.25 | 0.02 / 0.03 | 0.02 / 0.03 | 0.02 / 0.03 | 0.25 / 0.17 | 0.28 (d=2) |
+
+(id / held). The penalty suppresses the probe at layer 16 (p_start ~0.04-0.10 during training) but the model does NOT
+start reading the latent: swapping it still leaves the answer on the true value (0.52 at lambda 1) -- the shortcut survives
+elsewhere (other layers / positions; Goodfire's monitorability levels L2-L4), and accuracy only drops. Expression shaping of a
+single-layer start-value probe is not a substitute for the Markov restriction here (one seed, two lambdas).
+
 ## Open
 
 - Raise one-step accuracy (the envelope): longer training, depth-1 emphasis, second seed.
