@@ -90,6 +90,16 @@ def set_counter_lr(model, lr: float):
 
 # ── latent loop ───────────────────────────────────────────────────────────────────────────────────────────────────────
 
+
+def fourier_codes():
+    """[P, P-1] unit vectors: (cos 2 pi k v / P, sin 2 pi k v / P), k = 1..(P-1)/2. Gram = -1/(P-1) off the diagonal
+    (regular simplex)."""
+    v = torch.arange(P, dtype=torch.float64)[:, None]
+    k = torch.arange(1, (P - 1) // 2 + 1, dtype=torch.float64)[None]
+    a = 2 * math.pi * v * k / P
+    f = torch.cat([a.cos(), a.sin()], 1)
+    return (f / f.norm(dim=1, keepdim=True)).float()
+
 class Loop(nn.Module):
     def __init__(self, model, tok, arm: str, tap: int, dev, code_dim: int = 128, code_init: str = "orth", tf: float = 0.0):
         super().__init__()
@@ -98,19 +108,34 @@ class Loop(nn.Module):
         H = emb.shape[1]
         self.emb_norm = emb.float().norm(dim=-1).mean().item()
         self.tap = tap if arm == "cap_mid" else -1
+        f = fourier_codes()                                                # [P, P-1], the full additive-character chart
+        if code_init == "fourier":
+            code_dim = P - 1
         self.U = nn.Linear(H, code_dim, bias=False)
-        self.K = nn.Parameter(torch.randn(P, code_dim) / math.sqrt(code_dim))
+        if code_init == "fourier":
+            # read-out keys = the SAME Fourier chart the codes are written in (one chart for read and write), fixed
+            self.register_buffer("K", f.clone())
+        else:
+            self.K = nn.Parameter(torch.randn(P, code_dim) / math.sqrt(code_dim))
         self.log_s = nn.Parameter(torch.tensor(math.log(10.0)))          # CE temperature of the cosine read-out
         # value codes C_v. NOT the first number token: the Qwen tokenizer splits " 17" into ' ', '1', '7', so the first
         # token is the same space for all 31 values (a run with that init started from 31 IDENTICAL codes, Delta = 0).
-        if code_init == "orth":            # orthonormal (max code gap), scaled to the embedding norm
+        if code_init == "fourier":         # FOG sec.10: operator-compatible chart. Full Fourier chart over Z_31 (30 dims =
+            # p-1, Theorem 1) = a regular simplex (max gap); +k is a rotation per frequency, *g permutes frequencies.
+            # Embedded in the hidden space by a fixed orthonormal map; FIXED (law by construction, not learned).
+            Q, _ = torch.linalg.qr(torch.randn(H, P - 1, generator=torch.Generator().manual_seed(4321)))
+            C0 = (f @ Q.t()) * self.emb_norm
+        elif code_init == "orth":          # orthonormal (max code gap), scaled to the embedding norm
             q, _ = torch.linalg.qr(torch.randn(H, P, generator=torch.Generator().manual_seed(1234)))
             C0 = q.t().contiguous() * self.emb_norm
         else:                              # "digits": tens-digit embedding + rotated units-digit embedding
             dig = [emb[tok.encode(str(k), add_special_tokens=False)[0]].detach().float() for k in range(10)]
             rot = torch.linalg.qr(torch.randn(H, H, generator=torch.Generator().manual_seed(99)))[0].to(dig[0].device)
             C0 = torch.stack([dig[v // 10] + rot @ dig[v % 10] for v in range(P)])
-        self.C = nn.Parameter(C0.to(emb.device))
+        if code_init == "fourier":
+            self.register_buffer("C", C0.to(emb.device))
+        else:
+            self.C = nn.Parameter(C0.to(emb.device))
         self.tf = tf                       # teacher forcing probability (set per step by the training loop)
         # mechanistic shaping (Goodfire 2026, expression shaping): an online linear probe reads the START value from the
         # hidden state of thought steps t >= 2 at layer shape_layer; the model is penalised for expressing it there
@@ -380,7 +405,9 @@ def main():
     ap.add_argument("--mom-dtype", default="bf16", choices=["bf16", "fp8", "fp32"])
     ap.add_argument("--max-train-depth", type=int, default=6)
     ap.add_argument("--beta-max", type=float, default=30.0)
-    ap.add_argument("--code-init", default="orth", choices=["orth", "digits"])
+    ap.add_argument("--code-init", default="orth", choices=["orth", "digits", "fourier"])
+    ap.add_argument("--onestep-steps", type=int, default=0, help="first N optimizer steps: depth-1 programs only (learn "
+                    "the one-step table before recurrence, FOG EXP-005 style)")
     ap.add_argument("--shape-lambda", type=float, default=0.0, help="mechanistic (expression) shaping weight")
     ap.add_argument("--shape-layer", type=int, default=-1, help="hidden_states index for the probe (default: middle)")
     ap.add_argument("--text-anneal", type=float, default=1.0, help="markov arms: initial prob of also writing the gold "
@@ -492,7 +519,11 @@ def main():
             set_counter_lr(model, a.lr * lr_mult)
         for g, base in zip(opt.param_groups, [a.small_lr] + ([a.lr] if dec_linear else []) + ([a.head_lr] if net else [])):
             g["lr"] = base * lr_mult
-        d = rng.randint(1, min(a.max_train_depth, 1 + int(a.max_train_depth * min(1.0, 1.5 * frac))))
+        if step <= a.onestep_steps:
+            d = 1
+        else:
+            f2 = (step - a.onestep_steps) / max(1, a.steps - a.onestep_steps)
+            d = rng.randint(1, min(a.max_train_depth, 1 + int(a.max_train_depth * min(1.0, 1.5 * f2))))
         b = [make_ex(rng, d, rng.choice(STYLES_TRAIN)) for _ in range(a.bs)]
         if net is not None:
             net.tf = a.tf * max(0.0, 1.0 - frac / 0.7)
@@ -535,7 +566,7 @@ def main():
         print(k, json.dumps(r), flush=True)
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
-    tag = f"{a.arm}_{a.optim}{'_shape' + str(a.shape_lambda) if a.shape_lambda else ''}_tf{a.tf}_{a.code_init}{'_ta' + str(a.text_anneal) if a.arm in MARKOV_ARMS else ''}_s{a.seed}"
+    tag = f"{a.arm}_{a.optim}{'_os' + str(a.onestep_steps) if a.onestep_steps else ''}{'_shape' + str(a.shape_lambda) if a.shape_lambda else ''}_tf{a.tf}_{a.code_init}{'_ta' + str(a.text_anneal) if a.arm in MARKOV_ARMS else ''}_s{a.seed}"
     (out / f"result_{tag}.json").write_text(json.dumps(
         {"args": vars(a), "before": pre, "mx6": {k: v for k, v in rep.items() if k != "state"}, "train_log": log, "eval": res,
          "seconds": round(time.time() - t0, 1)}, indent=1))
