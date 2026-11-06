@@ -1,0 +1,276 @@
+
+$ cd /content/fog && git fetch -q origin latent-loop-qwen35 && git checkout -q FETCH_HEAD && git log --oneline -1
+687a34b latent loop qwen35: Adam-scale default lr (3e-4 wrecked the model), activation checkpointing, eval-before for text arms
+[rc=0]
+
+$ nvidia-smi --query-gpu=memory.used --format=csv
+memory.used [MiB]
+0 MiB
+[rc=0]
+
+$ mkdir -p /content/ll2/p1e-5
+
+[rc=0]
+
+$ cd /content/fog && python -u experiments/latent_loop_qwen35_mx6.py --mx6 /content/mn/research/mxfp4-native-no-state/mxfp4-native --out /content/ll2/p1e-5 --arm cot --lr 1e-5 --steps 400 --eval-n 32 --eval-depths 1,2,4 --
+
+[rc=0]
+
+$ grep -E '_R|BEFORE|"step": (20|400),|Error' /content/ll2/probe_cot_1e-5.log | tail -12
+BEFORE id_R2 {"final": 0.0}
+BEFORE held_R2 {"final": 0.0}
+BEFORE id_R4 {"final": 0.0}
+BEFORE held_R4 {"final": 0.0}
+{"step": 20, "depth": 1, "loss": 0.0406, "acc": NaN, "beta": null, "t": 3.7, "peak_gb": 18.3, "lg_updates": 4960}
+{"step": 400, "depth": 2, "loss": 0.0, "acc": NaN, "beta": null, "t": 93.2, "peak_gb": 33.4, "lg_updates": 99200}
+id_R1 {"final": 1.0}
+held_R1 {"final": 0.71875}
+id_R2 {"final": 1.0}
+held_R2 {"final": 0.5}
+id_R4 {"final": 1.0}
+held_R4 {"final": 0.15625}
+[rc=0]
+
+$ mkdir -p /content/ll2/p3e-5
+
+[rc=0]
+
+$ cd /content/fog && python -u experiments/latent_loop_qwen35_mx6.py --mx6 /content/mn/research/mxfp4-native-no-state/mxfp4-native --out /content/ll2/p3e-5 --arm cot --lr 3e-5 --steps 400 --eval-n 32 --eval-depths 1,2,4  >
+
+[rc=0]
+
+$ grep -E '_R|BEFORE|"step": (20|400),|Error' /content/ll2/probe_cot_3e-5.log | tail -12
+{"step": 20, "depth": 1, "loss": 0.0191, "acc": NaN, "beta": null, "t": 4.1, "peak_gb": 18.3, "lg_updates": 4960}
+{"step": 400, "depth": 2, "loss": 0.5975, "acc": NaN, "beta": null, "t": 93.8, "peak_gb": 33.4, "lg_updates": 99200}
+id_R1 {"final": 0.0}
+held_R1 {"final": 0.0}
+id_R2 {"final": 0.0}
+held_R2 {"final": 0.0}
+id_R4 {"final": 0.0}
+held_R4 {"final": 0.0}
+[rc=0]
+
+$ mkdir -p /content/ll2/p1e-4
+
+[rc=0]
+
+$ cd /content/fog && python -u experiments/latent_loop_qwen35_mx6.py --mx6 /content/mn/research/mxfp4-native-no-state/mxfp4-native --out /content/ll2/p1e-4 --arm cot --lr 1e-4 --steps 400 --eval-n 32 --eval-depths 1,2,4  >
+
+[rc=0]
+
+$ grep -E '_R|BEFORE|"step": (20|400),|Error' /content/ll2/probe_cot_1e-4.log | tail -12
+{"step": 20, "depth": 1, "loss": 0.9816, "acc": NaN, "beta": null, "t": 4.0, "peak_gb": 18.3, "lg_updates": 4960}
+{"step": 400, "depth": 2, "loss": 0.5897, "acc": NaN, "beta": null, "t": 93.7, "peak_gb": 33.4, "lg_updates": 99200}
+id_R1 {"final": 0.0625}
+held_R1 {"final": 0.0}
+id_R2 {"final": 0.0625}
+held_R2 {"final": 0.03125}
+id_R4 {"final": 0.0}
+held_R4 {"final": 0.0}
+[rc=0]
+PROBE {'1e-5': 0.7291666666666666, '3e-5': 0.0, '1e-4': 0.026041666666666668} 6.8 min
+BEST LR 1e-5
+
+$ cd /content/fog && python -u experiments/latent_loop_qwen35_mx6.py --mx6 /content/mn/research/mxfp4-native-no-state/mxfp4-native --out /content/ll2 --arm cap --grad-ckpt --lr 1e-5 --steps 600 > /content/ll2/cap.log 2>&1;
+rc=0
+[rc=0]
+
+$ grep -v -i -E 'warn|falling back' /content/ll2/cap.log | grep -E 'mx6:|arm=|"step": (1|20|100|200|300|400|500|600),|_R|BEFORE|DONE|Error|Traceback' | tail -40
+mx6: 248 decoder linears -> latent grid (3.57B params), momentum 6.65 GB (bf16, sparse+reuse)
+arm=cap optim=mx6 tap=- small=961536 adamw_dec=0
+{"step": 1, "depth": 1, "loss": 3.8562, "acc": 0.0, "beta": 1.08, "t": 1.0, "peak_gb": 18.2, "lg_updates": 248}
+{"step": 20, "depth": 1, "loss": 3.4835, "acc": 0.0312, "beta": 2.61, "t": 8.6, "peak_gb": 18.2, "lg_updates": 4960}
+{"step": 100, "depth": 1, "loss": 2.3662, "acc": 0.375, "beta": 9.06, "t": 43.1, "peak_gb": 18.2, "lg_updates": 24800}
+{"step": 200, "depth": 3, "loss": 2.4128, "acc": 0.375, "beta": 17.11, "t": 106.2, "peak_gb": 18.2, "lg_updates": 49600}
+{"step": 300, "depth": 2, "loss": 2.128, "acc": 0.4167, "beta": 25.17, "t": 197.9, "peak_gb": 18.2, "lg_updates": 74400}
+{"step": 400, "depth": 2, "loss": 1.2688, "acc": 0.6875, "beta": 30.0, "t": 314.7, "peak_gb": 18.2, "lg_updates": 99200}
+{"step": 500, "depth": 2, "loss": 1.2935, "acc": 0.6458, "beta": 30.0, "t": 448.2, "peak_gb": 18.2, "lg_updates": 124000}
+{"step": 600, "depth": 2, "loss": 1.0965, "acc": 0.6875, "beta": 30.0, "t": 571.1, "peak_gb": 18.2, "lg_updates": 148800}
+id_R1 {"final": 0.96875, "all_steps": 0.96875, "tube": [0.0, 0.0]}
+held_R1 {"final": 0.625, "all_steps": 0.625, "tube": [0.0, 0.0]}
+id_R2 {"final": 0.125, "all_steps": 0.125, "tube": [0.0, 0.0, 0.0072]}
+held_R2 {"final": 0.03125, "all_steps": 0.03125, "tube": [0.0, 0.0, 0.26]}
+id_R4 {"final": 0.015625, "all_steps": 0.0, "tube": [0.0, 0.0, 0.0086, 0.5409, 0.5446]}
+held_R4 {"final": 0.03125, "all_steps": 0.0, "tube": [0.0, 0.0, 0.3424, 0.5227, 0.5141]}
+id_R6 {"final": 0.03125, "all_steps": 0.0, "tube": [0.0, 0.0, 0.0112, 0.54, 0.5335, 0.5086, 0.5306]}
+held_R6 {"final": 0.03125, "all_steps": 0.0, "tube": [0.0, 0.0, 0.3147, 0.5129, 0.5354, 0.5165, 0.51]}
+id_R8 {"final": 0.0, "all_steps": 0.0, "tube": [0.0, 0.0, 0.0154, 0.5222, 0.5221, 0.5111, 0.5552, 0.5069, 0.5411]}
+held_R8 {"final": 0.03125, "all_steps": 0.0, "tube": [0.0, 0.0, 0.2245, 0.5253, 0.5212, 0.5137, 0.5282, 0.5409, 0.5038]}
+id_R12 {"final": 0.03125, "all_steps": 0.0, "tube": [0.0, 0.0, 0.0201, 0.5248, 0.5264, 0.5308, 0.5304, 0.5331, 0.5364, 0.5237, 0.5208, 0.5195, 0.5603]}
+held_R12 {"final": 0.046875, "all_steps": 0.0, "tube": [0.0, 0.0112, 0.3002, 0.5467, 0.4958, 0.5357, 0.518, 0.5222, 0.5564, 0.5111, 0.5092, 0.5487, 0.551]}
+id_R16 {"final": 0.0, "all_steps": 0.0, "tube": [0.0, 0.0112, 0.0444, 0.5429, 0.5454, 0.554, 0.5458, 0.5407, 0.5231, 0.4993, 0.532, 0.5242, 0.5892, 0.5403, 0.5298, 0.5437, 0.5169]}
+held_R16 {"final": 0.03125, "all_steps": 0.0, "tube": [0.0, 0.0001, 0.2831, 0.5193, 0.5147, 0.5155, 0.5262, 0.5447, 0.5473, 0.5331, 0.5012, 0.5324, 0.5215, 0.5036, 0.5009, 0.5242, 0.5433]}
+DONE cap_mx6_s0 635.3 s
+[rc=0]
+cap done at 17.9 min
+
+$ cd /content/fog && python -u experiments/latent_loop_qwen35_mx6.py --mx6 /content/mn/research/mxfp4-native-no-state/mxfp4-native --out /content/ll2 --arm cont --grad-ckpt --lr 1e-5 --steps 600 > /content/ll2/cont.log 2>&
+rc=0
+[rc=0]
+
+$ grep -v -i -E 'warn|falling back' /content/ll2/cont.log | grep -E 'mx6:|arm=|"step": (1|20|100|200|300|400|500|600),|_R|BEFORE|DONE|Error|Traceback' | tail -40
+mx6: 248 decoder linears -> latent grid (3.57B params), momentum 6.65 GB (bf16, sparse+reuse)
+arm=cont optim=mx6 tap=- small=961536 adamw_dec=0
+{"step": 1, "depth": 1, "loss": 3.9683, "acc": 0.0, "beta": 1.0, "t": 1.0, "peak_gb": 18.2, "lg_updates": 248}
+{"step": 20, "depth": 1, "loss": 3.5304, "acc": 0.0625, "beta": 1.0, "t": 8.7, "peak_gb": 18.2, "lg_updates": 4960}
+{"step": 100, "depth": 1, "loss": 3.5367, "acc": 0.0938, "beta": 1.0, "t": 43.1, "peak_gb": 18.2, "lg_updates": 24800}
+{"step": 200, "depth": 3, "loss": 3.4737, "acc": 0.0312, "beta": 1.0, "t": 106.2, "peak_gb": 18.2, "lg_updates": 49600}
+{"step": 300, "depth": 2, "loss": 3.4377, "acc": 0.0, "beta": 1.0, "t": 197.8, "peak_gb": 18.2, "lg_updates": 74400}
+{"step": 400, "depth": 2, "loss": 3.4441, "acc": 0.0625, "beta": 1.0, "t": 314.6, "peak_gb": 18.2, "lg_updates": 99200}
+{"step": 500, "depth": 2, "loss": 3.4417, "acc": 0.0625, "beta": 1.0, "t": 447.9, "peak_gb": 18.2, "lg_updates": 124000}
+{"step": 600, "depth": 2, "loss": 3.4288, "acc": 0.0417, "beta": 1.0, "t": 570.6, "peak_gb": 18.2, "lg_updates": 148800}
+id_R1 {"final": 0.015625, "all_steps": 0.0, "tube": [0.0, 1.3289]}
+held_R1 {"final": 0.03125, "all_steps": 0.0, "tube": [0.0, 1.3289]}
+id_R2 {"final": 0.015625, "all_steps": 0.0, "tube": [0.0, 1.3289, 1.3296]}
+held_R2 {"final": 0.03125, "all_steps": 0.0, "tube": [0.0, 1.3289, 1.3296]}
+id_R4 {"final": 0.03125, "all_steps": 0.0, "tube": [0.0, 1.329, 1.3297, 1.3294, 1.3294]}
+held_R4 {"final": 0.0625, "all_steps": 0.0, "tube": [0.0, 1.3289, 1.3297, 1.3294, 1.3294]}
+id_R6 {"final": 0.0, "all_steps": 0.0, "tube": [0.0, 1.329, 1.3297, 1.3295, 1.3295, 1.3295, 1.3296]}
+held_R6 {"final": 0.046875, "all_steps": 0.0, "tube": [0.0, 1.329, 1.3297, 1.3295, 1.3295, 1.3295, 1.3296]}
+id_R8 {"final": 0.0, "all_steps": 0.0, "tube": [0.0, 1.329, 1.3297, 1.3295, 1.3295, 1.3296, 1.3296, 1.3296, 1.3296]}
+held_R8 {"final": 0.03125, "all_steps": 0.0, "tube": [0.0, 1.329, 1.3297, 1.3295, 1.3295, 1.3295, 1.3296, 1.3296, 1.3296]}
+id_R12 {"final": 0.046875, "all_steps": 0.0, "tube": [0.0, 1.329, 1.3297, 1.3296, 1.3296, 1.3296, 1.3297, 1.3297, 1.3297, 1.3297, 1.3297, 1.3298, 1.3298]}
+held_R12 {"final": 0.0625, "all_steps": 0.0, "tube": [0.0, 1.3289, 1.3297, 1.3296, 1.3296, 1.3296, 1.3296, 1.3296, 1.3297, 1.3297, 1.3297, 1.3298, 1.3298]}
+id_R16 {"final": 0.03125, "all_steps": 0.0, "tube": [0.0, 1.329, 1.3297, 1.3297, 1.3297, 1.3297, 1.3297, 1.3297, 1.3297, 1.3298, 1.3298, 1.3298, 1.3298, 1.3299, 1.3299, 1.3299, 1.3299]}
+held_R16 {"final": 0.046875, "all_steps": 0.0, "tube": [0.0, 1.329, 1.3298, 1.3296, 1.3296, 1.3297, 1.3297, 1.3297, 1.3297, 1.3298, 1.3298, 1.3298, 1.3299, 1.3299, 1.3299, 1.3299, 1.3299]}
+DONE cont_mx6_s0 623.7 s
+[rc=0]
+cont done at 28.9 min
+
+$ cd /content/fog && python -u experiments/latent_loop_qwen35_mx6.py --mx6 /content/mn/research/mxfp4-native-no-state/mxfp4-native --out /content/ll2 --arm cap_mid --grad-ckpt --lr 1e-5 --steps 600 > /content/ll2/cap_mid.l
+rc=0
+[rc=0]
+
+$ grep -v -i -E 'warn|falling back' /content/ll2/cap_mid.log | grep -E 'mx6:|arm=|"step": (1|20|100|200|300|400|500|600),|_R|BEFORE|DONE|Error|Traceback' | tail -40
+mx6: 248 decoder linears -> latent grid (3.57B params), momentum 6.65 GB (bf16, sparse+reuse)
+arm=cap_mid optim=mx6 tap=21 small=961536 adamw_dec=0
+{"step": 1, "depth": 1, "loss": 3.837, "acc": 0.0625, "beta": 1.08, "t": 0.9, "peak_gb": 18.2, "lg_updates": 163}
+{"step": 20, "depth": 1, "loss": 3.5769, "acc": 0.0, "beta": 2.61, "t": 6.8, "peak_gb": 18.2, "lg_updates": 3260}
+{"step": 100, "depth": 1, "loss": 2.0327, "acc": 0.5, "beta": 9.06, "t": 32.6, "peak_gb": 18.2, "lg_updates": 16300}
+{"step": 200, "depth": 3, "loss": 2.9684, "acc": 0.2188, "beta": 17.11, "t": 79.9, "peak_gb": 18.2, "lg_updates": 32600}
+{"step": 300, "depth": 2, "loss": 2.3398, "acc": 0.3333, "beta": 25.17, "t": 148.3, "peak_gb": 18.2, "lg_updates": 48900}
+{"step": 400, "depth": 2, "loss": 2.3598, "acc": 0.3333, "beta": 30.0, "t": 235.2, "peak_gb": 18.2, "lg_updates": 65200}
+{"step": 500, "depth": 2, "loss": 3.5046, "acc": 0.0625, "beta": 30.0, "t": 334.5, "peak_gb": 18.2, "lg_updates": 81500}
+{"step": 600, "depth": 2, "loss": 3.4417, "acc": 0.0, "beta": 30.0, "t": 426.0, "peak_gb": 18.2, "lg_updates": 97800}
+id_R1 {"final": 0.03125, "all_steps": 0.0, "tube": [0.0, 0.6076]}
+held_R1 {"final": 0.03125, "all_steps": 0.0, "tube": [0.0, 0.6166]}
+id_R2 {"final": 0.03125, "all_steps": 0.0, "tube": [0.0, 0.6239, 0.6212]}
+held_R2 {"final": 0.03125, "all_steps": 0.0, "tube": [0.0, 0.6188, 0.6191]}
+id_R4 {"final": 0.0625, "all_steps": 0.0, "tube": [0.0, 0.6267, 0.6227, 0.6191, 0.6013]}
+held_R4 {"final": 0.015625, "all_steps": 0.0, "tube": [0.0, 0.6128, 0.6079, 0.6048, 0.6018]}
+id_R6 {"final": 0.03125, "all_steps": 0.0, "tube": [0.0, 0.6434, 0.627, 0.634, 0.6311, 0.6244, 0.6341]}
+held_R6 {"final": 0.015625, "all_steps": 0.0, "tube": [0.0, 0.6377, 0.6066, 0.6227, 0.6141, 0.5862, 0.6115]}
+id_R8 {"final": 0.0, "all_steps": 0.0, "tube": [0.0, 0.6108, 0.6206, 0.6234, 0.6015, 0.6166, 0.6409, 0.6206, 0.6047]}
+held_R8 {"final": 0.03125, "all_steps": 0.0, "tube": [0.0, 0.6151, 0.5895, 0.6292, 0.6178, 0.6221, 0.6156, 0.6098, 0.643]}
+id_R12 {"final": 0.046875, "all_steps": 0.0, "tube": [0.0, 0.6367, 0.5963, 0.6519, 0.6388, 0.624, 0.6236, 0.6282, 0.6349, 0.5957, 0.6343, 0.605, 0.6213]}
+held_R12 {"final": 0.046875, "all_steps": 0.0, "tube": [0.0, 0.6279, 0.6157, 0.6326, 0.6091, 0.6228, 0.6073, 0.6291, 0.6301, 0.6221, 0.6179, 0.6135, 0.6041]}
+id_R16 {"final": 0.0625, "all_steps": 0.0, "tube": [0.0, 0.6226, 0.6008, 0.6239, 0.6174, 0.6241, 0.6181, 0.6141, 0.6149, 0.6199, 0.6054, 0.6336, 0.6359, 0.6394, 0.6086, 0.644, 0.6283]}
+held_R16 {"final": 0.03125, "all_steps": 0.0, "tube": [0.0, 0.6412, 0.6403, 0.6223, 0.6237, 0.6298, 0.6083, 0.6497, 0.6356, 0.6168, 0.6132, 0.6232, 0.6153, 0.6015, 0.5913, 0.6126, 0.6304]}
+DONE cap_mid_mx6_s0 479.1 s
+[rc=0]
+cap_mid done at 37.5 min
+
+$ cd /content/fog && python -u experiments/latent_loop_qwen35_mx6.py --mx6 /content/mn/research/mxfp4-native-no-state/mxfp4-native --out /content/ll2 --arm cot --lr 1e-5 --steps 600 > /content/ll2/cot.log 2>&1; echo rc=$?
+rc=0
+[rc=0]
+
+$ grep -v -i -E 'warn|falling back' /content/ll2/cot.log | grep -E 'mx6:|arm=|"step": (1|20|100|200|300|400|500|600),|_R|BEFORE|DONE|Error|Traceback' | tail -40
+mx6: 248 decoder linears -> latent grid (3.57B params), momentum 6.65 GB (bf16, sparse+reuse)
+arm=cot optim=mx6 tap=- small=961536 adamw_dec=0
+{"step": 1, "depth": 1, "loss": 1.9299, "acc": NaN, "beta": null, "t": 0.7, "peak_gb": 18.2, "lg_updates": 248}
+{"step": 20, "depth": 1, "loss": 0.0958, "acc": NaN, "beta": null, "t": 4.1, "peak_gb": 18.3, "lg_updates": 4960}
+{"step": 100, "depth": 1, "loss": 0.1231, "acc": NaN, "beta": null, "t": 18.5, "peak_gb": 21.3, "lg_updates": 24800}
+{"step": 200, "depth": 3, "loss": 0.0081, "acc": NaN, "beta": null, "t": 38.9, "peak_gb": 24.4, "lg_updates": 49600}
+{"step": 300, "depth": 2, "loss": 0.0002, "acc": NaN, "beta": null, "t": 62.3, "peak_gb": 30.1, "lg_updates": 74400}
+{"step": 400, "depth": 2, "loss": 0.0001, "acc": NaN, "beta": null, "t": 87.9, "peak_gb": 33.3, "lg_updates": 99200}
+{"step": 500, "depth": 2, "loss": 0.0001, "acc": NaN, "beta": null, "t": 115.0, "peak_gb": 33.3, "lg_updates": 124000}
+{"step": 600, "depth": 2, "loss": 0.0, "acc": NaN, "beta": null, "t": 141.2, "peak_gb": 33.3, "lg_updates": 148800}
+id_R1 {"final": 1.0}
+held_R1 {"final": 0.265625}
+id_R2 {"final": 1.0}
+held_R2 {"final": 0.125}
+id_R4 {"final": 1.0}
+held_R4 {"final": 0.046875}
+id_R6 {"final": 1.0}
+held_R6 {"final": 0.0625}
+id_R8 {"final": 1.0}
+held_R8 {"final": 0.0}
+id_R12 {"final": 0.03125}
+held_R12 {"final": 0.0}
+id_R16 {"final": 0.0}
+held_R16 {"final": 0.015625}
+DONE cot_mx6_s0 191.9 s
+[rc=0]
+cot done at 41.3 min
+
+$ cd /content/fog && python -u experiments/latent_loop_qwen35_mx6.py --mx6 /content/mn/research/mxfp4-native-no-state/mxfp4-native --out /content/ll2 --arm direct --lr 1e-5 --steps 600 > /content/ll2/direct.log 2>&1; echo 
+rc=0
+[rc=0]
+
+$ grep -v -i -E 'warn|falling back' /content/ll2/direct.log | grep -E 'mx6:|arm=|"step": (1|20|100|200|300|400|500|600),|_R|BEFORE|DONE|Error|Traceback' | tail -40
+mx6: 248 decoder linears -> latent grid (3.57B params), momentum 6.65 GB (bf16, sparse+reuse)
+arm=direct optim=mx6 tap=- small=961536 adamw_dec=0
+{"step": 1, "depth": 1, "loss": 2.3513, "acc": NaN, "beta": null, "t": 0.7, "peak_gb": 18.2, "lg_updates": 248}
+{"step": 20, "depth": 1, "loss": 0.0508, "acc": NaN, "beta": null, "t": 3.9, "peak_gb": 18.2, "lg_updates": 4960}
+{"step": 100, "depth": 1, "loss": 0.5445, "acc": NaN, "beta": null, "t": 17.3, "peak_gb": 18.8, "lg_updates": 24800}
+{"step": 200, "depth": 3, "loss": 0.5264, "acc": NaN, "beta": null, "t": 35.1, "peak_gb": 20.5, "lg_updates": 49600}
+{"step": 300, "depth": 2, "loss": 0.5142, "acc": NaN, "beta": null, "t": 54.8, "peak_gb": 23.6, "lg_updates": 74400}
+{"step": 400, "depth": 2, "loss": 0.5168, "acc": NaN, "beta": null, "t": 75.7, "peak_gb": 25.7, "lg_updates": 99200}
+{"step": 500, "depth": 2, "loss": 0.5206, "acc": NaN, "beta": null, "t": 97.5, "peak_gb": 25.7, "lg_updates": 124000}
+{"step": 600, "depth": 2, "loss": 0.5128, "acc": NaN, "beta": null, "t": 118.8, "peak_gb": 25.7, "lg_updates": 148800}
+id_R1 {"final": 0.03125}
+held_R1 {"final": 0.0625}
+id_R2 {"final": 0.015625}
+held_R2 {"final": 0.03125}
+id_R4 {"final": 0.03125}
+held_R4 {"final": 0.015625}
+id_R6 {"final": 0.03125}
+held_R6 {"final": 0.03125}
+id_R8 {"final": 0.03125}
+held_R8 {"final": 0.046875}
+id_R12 {"final": 0.015625}
+held_R12 {"final": 0.03125}
+id_R16 {"final": 0.015625}
+held_R16 {"final": 0.015625}
+DONE direct_mx6_s0 128.9 s
+[rc=0]
+direct done at 44.0 min
+
+$ cd /content/fog && python -u experiments/latent_loop_qwen35_mx6.py --mx6 /content/mn/research/mxfp4-native-no-state/mxfp4-native --out /content/ll2 --arm cap --grad-ckpt --optim adamw --lr 1e-5 --steps 600 > /content/ll2
+rc=0
+[rc=0]
+
+$ grep -v -i -E 'warn|falling back' /content/ll2/cap_adamw.log | grep -E 'mx6:|arm=|"step": (1|20|100|200|300|400|500|600),|_R|BEFORE|DONE|Error|Traceback' | tail -40
+arm=cap optim=adamw tap=- small=961536 adamw_dec=3569090560
+{"step": 1, "depth": 1, "loss": 3.8579, "acc": 0.0312, "beta": 1.08, "t": 1.1, "peak_gb": 34.9, "lg_updates": null}
+{"step": 20, "depth": 1, "loss": 3.0972, "acc": 0.3125, "beta": 2.61, "t": 8.9, "peak_gb": 34.9, "lg_updates": null}
+{"step": 100, "depth": 1, "loss": 0.1925, "acc": 0.9375, "beta": 9.06, "t": 43.8, "peak_gb": 34.9, "lg_updates": null}
+{"step": 200, "depth": 3, "loss": 0.8059, "acc": 0.7812, "beta": 17.11, "t": 105.9, "peak_gb": 34.9, "lg_updates": null}
+{"step": 300, "depth": 2, "loss": 0.6167, "acc": 0.8542, "beta": 25.17, "t": 194.8, "peak_gb": 35.0, "lg_updates": null}
+{"step": 400, "depth": 2, "loss": 0.3515, "acc": 0.9167, "beta": 30.0, "t": 307.3, "peak_gb": 35.0, "lg_updates": null}
+{"step": 500, "depth": 2, "loss": 0.4108, "acc": 0.8958, "beta": 30.0, "t": 435.4, "peak_gb": 35.0, "lg_updates": null}
+{"step": 600, "depth": 2, "loss": 0.3657, "acc": 0.9167, "beta": 30.0, "t": 553.5, "peak_gb": 35.0, "lg_updates": null}
+id_R1 {"final": 0.921875, "all_steps": 0.921875, "tube": [0.0, 0.0]}
+held_R1 {"final": 0.875, "all_steps": 0.875, "tube": [0.0, 0.0]}
+id_R2 {"final": 0.84375, "all_steps": 0.75, "tube": [0.0, 0.0, 0.0768]}
+held_R2 {"final": 0.703125, "all_steps": 0.703125, "tube": [0.0, 0.0, 0.0]}
+id_R4 {"final": 0.171875, "all_steps": 0.140625, "tube": [0.0, 0.0, 0.0362, 0.2114, 0.4082]}
+held_R4 {"final": 0.21875, "all_steps": 0.15625, "tube": [0.0, 0.0, 0.0103, 0.1955, 0.4385]}
+id_R6 {"final": 0.140625, "all_steps": 0.015625, "tube": [0.0, 0.0, 0.0623, 0.1817, 0.417, 0.5041, 0.6223]}
+held_R6 {"final": 0.0625, "all_steps": 0.015625, "tube": [0.0, 0.0, 0.0275, 0.2053, 0.3763, 0.5441, 0.5982]}
+id_R8 {"final": 0.078125, "all_steps": 0.0, "tube": [0.0, 0.0, 0.0311, 0.1855, 0.3658, 0.5242, 0.5837, 0.6264, 0.6231]}
+held_R8 {"final": 0.015625, "all_steps": 0.0, "tube": [0.0, 0.0, 0.0493, 0.2284, 0.4486, 0.5534, 0.6102, 0.6241, 0.6224]}
+id_R12 {"final": 0.0, "all_steps": 0.0, "tube": [0.0, 0.0, 0.0213, 0.2302, 0.4062, 0.5925, 0.5596, 0.6295, 0.6157, 0.6131, 0.6154, 0.6005, 0.6111]}
+held_R12 {"final": 0.015625, "all_steps": 0.0, "tube": [0.0, 0.0, 0.0615, 0.2168, 0.4797, 0.5561, 0.648, 0.6293, 0.6192, 0.6123, 0.5949, 0.6074, 0.6091]}
+id_R16 {"final": 0.0625, "all_steps": 0.0, "tube": [0.0, 0.0, 0.0105, 0.1957, 0.4386, 0.5909, 0.634, 0.6471, 0.6137, 0.6039, 0.6131, 0.6065, 0.6043, 0.6049, 0.6102, 0.6084, 0.6103]}
+held_R16 {"final": 0.015625, "all_steps": 0.0, "tube": [0.0, 0.0, 0.0756, 0.1892, 0.4662, 0.6177, 0.601, 0.6236, 0.6086, 0.6084, 0.6158, 0.6205, 0.6302, 0.6091, 0.6135, 0.6096, 0.6057]}
+DONE cap_adamw_s0 605.0 s
+[rc=0]
+cap_adamw done at 54.2 min
+RESULT result_cap_adamw_s0.json {"id_R1": 0.921875, "held_R1": 0.875, "id_R2": 0.84375, "held_R2": 0.703125, "id_R4": 0.171875, "held_R4": 0.21875, "id_R6": 0.140625, "held_R6": 0.0625, "id_R8": 0.078125, "held_R8": 0.015625, "id_R12": 0.0, "held_R12": 0.015625, "id_R16": 0.0625, "held_R16": 0.015625} 605.0
+RESULT result_cap_mid_mx6_s0.json {"id_R1": 0.03125, "held_R1": 0.03125, "id_R2": 0.03125, "held_R2": 0.03125, "id_R4": 0.0625, "held_R4": 0.015625, "id_R6": 0.03125, "held_R6": 0.015625, "id_R8": 0.0, "held_R8": 0.03125, "id_R12": 0.046875, "held_R12": 0.046875, "id_R16": 0.0625, "held_R16": 0.03125} 479.1
+RESULT result_cap_mx6_s0.json {"id_R1": 0.96875, "held_R1": 0.625, "id_R2": 0.125, "held_R2": 0.03125, "id_R4": 0.015625, "held_R4": 0.03125, "id_R6": 0.03125, "held_R6": 0.03125, "id_R8": 0.0, "held_R8": 0.03125, "id_R12": 0.03125, "held_R12": 0.046875, "id_R16": 0.0, "held_R16": 0.03125} 635.3
+RESULT result_cont_mx6_s0.json {"id_R1": 0.015625, "held_R1": 0.03125, "id_R2": 0.015625, "held_R2": 0.03125, "id_R4": 0.03125, "held_R4": 0.0625, "id_R6": 0.0, "held_R6": 0.046875, "id_R8": 0.0, "held_R8": 0.03125, "id_R12": 0.046875, "held_R12": 0.0625, "id_R16": 0.03125, "held_R16": 0.046875} 623.7
+RESULT result_cot_mx6_s0.json {"id_R1": 1.0, "held_R1": 0.265625, "id_R2": 1.0, "held_R2": 0.125, "id_R4": 1.0, "held_R4": 0.046875, "id_R6": 1.0, "held_R6": 0.0625, "id_R8": 1.0, "held_R8": 0.0, "id_R12": 0.03125, "held_R12": 0.0, "id_R16": 0.0, "held_R16": 0.015625} 191.9
+RESULT result_direct_mx6_s0.json {"id_R1": 0.03125, "held_R1": 0.0625, "id_R2": 0.015625, "held_R2": 0.03125, "id_R4": 0.03125, "held_R4": 0.015625, "id_R6": 0.03125, "held_R6": 0.03125, "id_R8": 0.03125, "held_R8": 0.046875, "id_R12": 0.015625, "held_R12": 0.03125, "id_R16": 0.015625, "held_R16": 0.015625} 128.9
+ALL_DONE 54.2 min

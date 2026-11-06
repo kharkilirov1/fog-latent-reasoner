@@ -1,0 +1,30 @@
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 14297.51it/s]
+model Qwen/Qwen3.5-4B: Qwen3_5ForCausalLM params=4.21B missing=0 unexpected=0
+codes {"Delta": 1.0, "rho": 0.7071}
+arm=msnap optim=adamw tap=- small=961536 adamw_dec=3569090560
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+{"step": 1, "depth": 1, "loss": 3.6005, "acc": 0.0312, "beta": 1.06, "t": 1.0, "peak_gb": 34.9, "lg_updates": null, "codes": {"Delta": 0.9998, "rho": 0.707}, "tf": 0.0, "text_p": 0.998}
+{"step": 20, "depth": 1, "loss": 3.1524, "acc": 0.25, "beta": 2.21, "t": 8.8, "peak_gb": 34.9, "lg_updates": null, "codes": {"Delta": 0.9909, "rho": 0.7039}, "tf": 0.0, "text_p": 0.958}
+{"step": 40, "depth": 1, "loss": 3.4698, "acc": 0.1875, "beta": 3.42, "t": 16.8, "peak_gb": 34.9, "lg_updates": null, "codes": {"Delta": 0.9387, "rho": 0.6851}, "tf": 0.0, "text_p": 0.917}
+{"step": 60, "depth": 1, "loss": 1.979, "acc": 0.5312, "beta": 4.62, "t": 24.8, "peak_gb": 34.9, "lg_updates": null, "codes": {"Delta": 0.8755, "rho": 0.6616}, "tf": 0.0, "text_p": 0.875}
+{"step": 80, "depth": 1, "loss": 2.0423, "acc": 0.4062, "beta": 5.83, "t": 32.8, "peak_gb": 34.9, "lg_updates": null, "codes": {"Delta": 0.8663, "rho": 0.6582}, "tf": 0.0, "text_p": 0.833}
+{"step": 100, "depth": 2, "loss": 2.314, "acc": 0.4167, "beta": 7.04, "t": 41.7, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.8777, "rho": 0.6625}, "tf": 0.0, "text_p": 0.792}
+{"step": 120, "depth": 2, "loss": 2.3155, "acc": 0.3542, "beta": 8.25, "t": 52.0, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.8488, "rho": 0.6514}, "tf": 0.0, "text_p": 0.75}
+{"step": 140, "depth": 1, "loss": 1.785, "acc": 0.5, "beta": 9.46, "t": 62.1, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.8442, "rho": 0.6497}, "tf": 0.0, "text_p": 0.708}
+{"step": 160, "depth": 1, "loss": 1.5856, "acc": 0.5312, "beta": 10.67, "t": 72.7, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.848, "rho": 0.6512}, "tf": 0.0, "text_p": 0.667}
+{"step": 180, "depth": 3, "loss": 2.4892, "acc": 0.3438, "beta": 11.88, "t": 84.0, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.8541, "rho": 0.6535}, "tf": 0.0, "text_p": 0.625}
+{"step": 200, "depth": 2, "loss": 1.89, "acc": 0.4792, "beta": 13.08, "t": 96.8, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.8555, "rho": 0.654}, "tf": 0.0, "text_p": 0.583}
+{"step": 220, "depth": 3, "loss": 2.447, "acc": 0.3281, "beta": 14.29, "t": 109.6, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.8594, "rho": 0.6555}, "tf": 0.0, "text_p": 0.542}
+{"step": 240, "depth": 2, "loss": 2.0693, "acc": 0.4583, "beta": 15.5, "t": 123.6, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.8524, "rho": 0.6528}, "tf": 0.0, "text_p": 0.5}
+{"step": 260, "depth": 1, "loss": 1.2615, "acc": 0.6875, "beta": 16.71, "t": 135.0, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.8501, "rho": 0.6519}, "tf": 0.0, "text_p": 0.458}
+{"step": 280, "depth": 4, "loss": 2.56, "acc": 0.325, "beta": 17.92, "t": 149.6, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.8414, "rho": 0.6486}, "tf": 0.0, "text_p": 0.417}
+{"step": 300, "depth": 3, "loss": 2.2719, "acc": 0.3594, "beta": 19.12, "t": 163.0, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.8338, "rho": 0.6457}, "tf": 0.0, "text_p": 0.375}
+{"step": 320, "depth": 4, "loss": 2.4647, "acc": 0.4125, "beta": 20.33, "t": 177.4, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.8339, "rho": 0.6457}, "tf": 0.0, "text_p": 0.333}
+{"step": 340, "depth": 4, "loss": 2.1405, "acc": 0.425, "beta": 21.54, "t": 191.1, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.8375, "rho": 0.6471}, "tf": 0.0, "text_p": 0.292}
+{"step": 360, "depth": 5, "loss": 2.3008, "acc": 0.3958, "beta": 22.75, "t": 207.6, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.8335, "rho": 0.6456}, "tf": 0.0, "text_p": 0.25}
+{"step": 380, "depth": 1, "loss": 0.2348, "acc": 0.9375, "beta": 23.96, "t": 230.8, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.8388, "rho": 0.6476}, "tf": 0.0, "text_p": 0.208}
+{"step": 400, "depth": 4, "loss": 1.4086, "acc": 0.65, "beta": 25.17, "t": 248.4, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.8412, "rho": 0.6485}, "tf": 0.0, "text_p": 0.167}
+{"step": 420, "depth": 1, "loss": 0.406, "acc": 0.8438, "beta": 26.38, "t": 268.5, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.8442, "rho": 0.6497}, "tf": 0.0, "text_p": 0.125}
+{"step": 440, "depth": 3, "loss": 1.1662, "acc": 0.7812, "beta": 27.58, "t": 288.6, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.8539, "rho": 0.6534}, "tf": 0.0, "text_p": 0.083}
+{"step": 460, "depth": 6, "loss": 1.8221, "acc": 0.5536, "beta": 28.79, "t": 311.9, "peak_gb": 35.1, "lg_updates": null, "codes": {"Delta": 0.8547, "rho": 0.6537}, "tf": 0.0, "text_p": 0.042}
+{"step": 480, "depth": 2, "loss": 0.5425, "acc": 0.875, "beta": 30.0, "t": 330.8, "peak_gb": 35.1, "lg_updates": null, "codes": {"Delta": 0.8602, "rho": 0.6558}, "tf": 0.0, "text_p": 0.0}

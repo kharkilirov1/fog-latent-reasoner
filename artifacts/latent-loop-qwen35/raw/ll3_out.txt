@@ -1,0 +1,42 @@
+
+$ rm -rf /content/mn && git clone -q --depth 1 --branch research/mxfp4-native-no-state --filter=blob:none --sparse https://github.com/kharkilirov1/memory-native /content/mn && cd /content/mn && git sparse-checkout set rese
+b1597bf mx6: reuse mode for sparse momentum accumulation - a layer may run several backwards per micro-batch (looped / latent-thought graphs), one update at context exit
+[rc=0]
+
+$ rm -rf /content/fog && git clone -q --depth 1 --branch latent-loop-qwen35 https://github.com/kharkilirov1/fog-latent-reasoner /content/fog && cd /content/fog && git log --oneline -1
+49270e7 latent loop qwen35: fix code init (Qwen splits numbers into digits: all 31 codes started identical, Delta=0); orth/digits codes, code-gap logging, snap arm, teacher forcing, capture entropy, per-step acc, swap control; fix CoT eval truncation at depth>=12
+[rc=0]
+
+$ pip install -q -U flash-linear-attention hf_transfer 2>&1 | tail -2; python -c 'import fla; print("fla ok")'
+fla ok
+[rc=0]
+
+$ HF_HUB_ENABLE_HF_TRANSFER=1 python -c "from huggingface_hub import snapshot_download as s; print(s('Qwen/Qwen3.5-4B'))" 2>&1 | tail -1
+/root/.cache/huggingface/hub/models--Qwen--Qwen3.5-4B/snapshots/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a
+[rc=0]
+
+$ cd /content/fog && python -u experiments/latent_loop_qwen35_mx6.py --mx6 /content/mn/research/mxfp4-native-no-state/mxfp4-native --out /content/ll3 --lr 1e-5 --steps 600 --arm cap --grad-ckpt --optim adamw > /content/ll3
+rc=0
+[rc=0]
+
+$ grep -v -i -E 'warn|falling back' /content/ll3/cap_adamw.log | grep -E '^codes|"step": (1|200|400|600),|_R(1|2|4|8|16) |DONE|Error|Traceback' | cut -c1-600 | tail -20
+codes {"Delta": 1.0, "rho": 0.7071}
+{"step": 1, "depth": 1, "loss": 3.966, "acc": 0.0, "beta": 1.08, "t": 38.9, "peak_gb": 34.9, "lg_updates": null, "codes": {"Delta": 0.9998, "rho": 0.7071}, "tf": 0.0}
+{"step": 200, "depth": 3, "loss": 1.9406, "acc": 0.5, "beta": 17.11, "t": 144.6, "peak_gb": 34.9, "lg_updates": null, "codes": {"Delta": 0.6045, "rho": 0.5498}, "tf": 0.0}
+{"step": 400, "depth": 2, "loss": 0.8887, "acc": 0.75, "beta": 30.0, "t": 358.5, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.6819, "rho": 0.5839}, "tf": 0.0}
+{"step": 600, "depth": 2, "loss": 0.6879, "acc": 0.8333, "beta": 30.0, "t": 605.4, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.7289, "rho": 0.6037}, "tf": 0.0}
+id_R1 {"final": 0.875, "all_steps": 0.875, "tube": [0.0, 0.0], "entropy": [0.0, 0.128], "step_acc": [1.0, 0.875]}
+held_R1 {"final": 0.921875, "all_steps": 0.921875, "tube": [0.0, 0.0], "entropy": [0.0, 0.071], "step_acc": [1.0, 0.922]}
+id_R2 {"final": 0.6875, "all_steps": 0.65625, "tube": [0.0, 0.0, 0.0593], "entropy": [0.0, 0.131, 0.413], "step_acc": [1.0, 0.953, 0.688], "swap_follows_latent": 0.031, "swap_keeps_true": 0.641}
+held_R2 {"final": 0.59375, "all_steps": 0.59375, "tube": [0.0, 0.0, 0.0882], "entropy": [0.0, 0.122, 0.508], "step_acc": [1.0, 0.938, 0.594], "swap_follows_latent": 0.031, "swap_keeps_true": 0.484}
+id_R4 {"final": 0.21875, "all_steps": 0.15625, "tube": [0.0, 0.0, 0.0877, 0.4627, 0.8418], "entropy": [0.0, 0.173, 0.454, 1.478, 2.331], "step_acc": [1.0, 0.938, 0.641, 0.359, 0.219], "swap_follows_latent": 0.031, "swap_keeps_true": 0.188}
+held_R4 {"final": 0.078125, "all_steps": 0.046875, "tube": [0.0, 0.0, 0.0682, 0.5641, 0.9766], "entropy": [0.0, 0.054, 0.755, 1.965, 2.463], "step_acc": [1.0, 0.953, 0.625, 0.234, 0.078], "swap_follows_latent": 0.031, "swap_keeps_true": 0.141}
+id_R8 {"final": 0.03125, "all_steps": 0.0, "tube": [0.0, 0.0, 0.1898, 0.4254, 0.8718, 1.1441, 1.1593, 1.2293, 1.2312], "entropy": [0.0, 0.233, 0.574, 1.484, 2.342, 2.618, 2.773, 2.864, 2.949], "step_acc": [1.0, 0.844, 0.672, 0.344, 0.125, 0.094, 0.047, 0.031, 0.031], "swap_follows_latent": 0.031, "swap_keeps_true": 0.031}
+held_R8 {"final": 0.046875, "all_steps": 0.0, "tube": [0.0, 0.0, 0.1409, 0.674, 1.0426, 1.1616, 1.2453, 1.2353, 1.2199], "entropy": [0.0, 0.314, 1.11, 1.973, 2.683, 2.821, 2.853, 2.92, 3.115], "step_acc": [1.0, 0.891, 0.547, 0.203, 0.125, 0.031, 0.047, 0.016, 0.047], "swap_follows_latent": 0.031, "swap_keeps_true": 0.031}
+id_R16 {"final": 0.046875, "all_steps": 0.0, "tube": [0.0, 0.0, 0.0663, 0.5892, 1.0554, 1.1956, 1.2339, 1.2258, 1.2338, 1.2355, 1.2187, 1.2046, 1.2372, 1.2264, 1.2327, 1.2268, 1.21], "entropy": [0.0, 0.136, 0.873, 1.75, 2.514, 2.811, 2.862, 2.862, 2.837, 2.93, 3.006, 2.879, 2.884, 2.824, 2.766, 2.758, 3.175], "step_acc": [1.0, 0.953, 0.594, 0.219, 0.094, 0.047, 0.031, 0.047, 0.047, 0.031, 0.016, 0
+held_R16 {"final": 0.0625, "all_steps": 0.0, "tube": [0.0, 0.0, 0.0535, 0.5568, 1.0455, 1.2123, 1.2009, 1.2493, 1.2473, 1.228, 1.2509, 1.259, 1.2666, 1.2338, 1.2417, 1.2552, 1.2736], "entropy": [0.0, 0.171, 0.813, 1.907, 2.543, 2.781, 2.951, 2.843, 2.848, 2.885, 2.895, 2.705, 2.769, 2.591, 2.451, 2.414, 3.119], "step_acc": [1.0, 0.969, 0.594, 0.203, 0.062, 0.094, 0.016, 0.031, 0.062, 0.047, 0.0, 0
+DONE cap_adamw_tf0.0_orth_s0 731.5 s
+[rc=0]
+cap_adamw done at 13.3 min
+
+$ cd /content/fog && python -u experiments/latent_loop_qwen35_mx6.py --mx6 /content/mn/research/mxfp4-native-no-state/mxfp4-native --out /content/ll3 --lr 1e-5 --steps 600 --arm snap --grad-ckpt --optim adamw > /content/ll

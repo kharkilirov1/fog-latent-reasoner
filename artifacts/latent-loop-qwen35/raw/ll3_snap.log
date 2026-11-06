@@ -1,0 +1,48 @@
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 15201.93it/s]
+model Qwen/Qwen3.5-4B: Qwen3_5ForCausalLM params=4.21B missing=0 unexpected=0
+codes {"Delta": 1.0, "rho": 0.7071}
+arm=snap optim=adamw tap=- small=961536 adamw_dec=3569090560
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+{"step": 1, "depth": 1, "loss": 3.9157, "acc": 0.0, "beta": 1.08, "t": 1.0, "peak_gb": 34.9, "lg_updates": null, "codes": {"Delta": 0.9998, "rho": 0.707}, "tf": 0.0}
+{"step": 20, "depth": 1, "loss": 3.6063, "acc": 0.0938, "beta": 2.61, "t": 8.8, "peak_gb": 34.9, "lg_updates": null, "codes": {"Delta": 0.982, "rho": 0.7007}, "tf": 0.0}
+{"step": 40, "depth": 1, "loss": 2.2178, "acc": 0.5, "beta": 4.22, "t": 16.9, "peak_gb": 34.9, "lg_updates": null, "codes": {"Delta": 0.9132, "rho": 0.6757}, "tf": 0.0}
+{"step": 60, "depth": 1, "loss": 2.1, "acc": 0.4375, "beta": 5.83, "t": 24.9, "peak_gb": 34.9, "lg_updates": null, "codes": {"Delta": 0.8564, "rho": 0.6544}, "tf": 0.0}
+{"step": 80, "depth": 1, "loss": 1.3208, "acc": 0.7188, "beta": 7.44, "t": 34.0, "peak_gb": 34.9, "lg_updates": null, "codes": {"Delta": 0.7743, "rho": 0.6222}, "tf": 0.0}
+{"step": 100, "depth": 1, "loss": 0.971, "acc": 0.75, "beta": 9.06, "t": 44.0, "peak_gb": 34.9, "lg_updates": null, "codes": {"Delta": 0.7289, "rho": 0.6037}, "tf": 0.0}
+{"step": 120, "depth": 1, "loss": 0.674, "acc": 0.8438, "beta": 10.67, "t": 53.9, "peak_gb": 34.9, "lg_updates": null, "codes": {"Delta": 0.6961, "rho": 0.59}, "tf": 0.0}
+{"step": 140, "depth": 3, "loss": 1.9149, "acc": 0.4844, "beta": 12.28, "t": 65.4, "peak_gb": 34.9, "lg_updates": null, "codes": {"Delta": 0.7327, "rho": 0.6052}, "tf": 0.0}
+{"step": 160, "depth": 2, "loss": 1.5353, "acc": 0.625, "beta": 13.89, "t": 79.3, "peak_gb": 34.9, "lg_updates": null, "codes": {"Delta": 0.7666, "rho": 0.6191}, "tf": 0.0}
+{"step": 180, "depth": 2, "loss": 0.9664, "acc": 0.75, "beta": 15.5, "t": 91.9, "peak_gb": 34.9, "lg_updates": null, "codes": {"Delta": 0.768, "rho": 0.6197}, "tf": 0.0}
+{"step": 200, "depth": 3, "loss": 1.2958, "acc": 0.6094, "beta": 17.11, "t": 106.5, "peak_gb": 34.9, "lg_updates": null, "codes": {"Delta": 0.6303, "rho": 0.5614}, "tf": 0.0}
+{"step": 220, "depth": 3, "loss": 1.1891, "acc": 0.6875, "beta": 18.72, "t": 120.9, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.6429, "rho": 0.5669}, "tf": 0.0}
+{"step": 240, "depth": 2, "loss": 0.7727, "acc": 0.8333, "beta": 20.33, "t": 136.5, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.713, "rho": 0.5971}, "tf": 0.0}
+{"step": 260, "depth": 2, "loss": 0.4501, "acc": 0.9167, "beta": 21.94, "t": 154.4, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.7407, "rho": 0.6086}, "tf": 0.0}
+{"step": 280, "depth": 3, "loss": 0.9438, "acc": 0.7344, "beta": 23.56, "t": 175.4, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.7373, "rho": 0.6072}, "tf": 0.0}
+{"step": 300, "depth": 2, "loss": 0.4097, "acc": 0.9167, "beta": 25.17, "t": 195.7, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.7668, "rho": 0.6192}, "tf": 0.0}
+{"step": 320, "depth": 3, "loss": 0.6299, "acc": 0.8438, "beta": 26.78, "t": 213.0, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.771, "rho": 0.6209}, "tf": 0.0}
+{"step": 340, "depth": 2, "loss": 0.1792, "acc": 0.9375, "beta": 28.39, "t": 238.3, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.7731, "rho": 0.6217}, "tf": 0.0}
+{"step": 360, "depth": 4, "loss": 1.1828, "acc": 0.6625, "beta": 30.0, "t": 264.7, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.7691, "rho": 0.6201}, "tf": 0.0}
+{"step": 380, "depth": 6, "loss": 1.6534, "acc": 0.5446, "beta": 30.0, "t": 286.3, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.7611, "rho": 0.6169}, "tf": 0.0}
+{"step": 400, "depth": 2, "loss": 0.2488, "acc": 0.9375, "beta": 30.0, "t": 308.4, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.7609, "rho": 0.6168}, "tf": 0.0}
+{"step": 420, "depth": 3, "loss": 0.5582, "acc": 0.8438, "beta": 30.0, "t": 331.9, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.7591, "rho": 0.6161}, "tf": 0.0}
+{"step": 440, "depth": 6, "loss": 1.9091, "acc": 0.5, "beta": 30.0, "t": 357.4, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.7596, "rho": 0.6163}, "tf": 0.0}
+{"step": 460, "depth": 2, "loss": 0.0855, "acc": 1.0, "beta": 30.0, "t": 382.6, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.7591, "rho": 0.6161}, "tf": 0.0}
+{"step": 480, "depth": 3, "loss": 0.6007, "acc": 0.8281, "beta": 30.0, "t": 412.2, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.7597, "rho": 0.6163}, "tf": 0.0}
+{"step": 500, "depth": 2, "loss": 0.1623, "acc": 0.9375, "beta": 30.0, "t": 436.8, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.7595, "rho": 0.6163}, "tf": 0.0}
+{"step": 520, "depth": 2, "loss": 0.1005, "acc": 0.9792, "beta": 30.0, "t": 462.7, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.76, "rho": 0.6164}, "tf": 0.0}
+{"step": 540, "depth": 1, "loss": 0.0045, "acc": 1.0, "beta": 30.0, "t": 485.4, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.762, "rho": 0.6172}, "tf": 0.0}
+{"step": 560, "depth": 4, "loss": 1.0403, "acc": 0.7125, "beta": 30.0, "t": 507.7, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.7616, "rho": 0.6171}, "tf": 0.0}
+{"step": 580, "depth": 4, "loss": 1.0096, "acc": 0.725, "beta": 30.0, "t": 530.6, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.7609, "rho": 0.6168}, "tf": 0.0}
+{"step": 600, "depth": 2, "loss": 0.1909, "acc": 0.9167, "beta": 30.0, "t": 555.1, "peak_gb": 35.0, "lg_updates": null, "codes": {"Delta": 0.7605, "rho": 0.6166}, "tf": 0.0}
+id_R1 {"final": 1.0, "all_steps": 1.0, "tube": [0.0, 0.0], "entropy": [0.0, 0.001], "step_acc": [1.0, 1.0]}
+held_R1 {"final": 1.0, "all_steps": 1.0, "tube": [0.0, 0.0], "entropy": [0.0, 0.001], "step_acc": [1.0, 1.0]}
+id_R2 {"final": 0.90625, "all_steps": 0.90625, "tube": [0.0, 0.0, 0.0], "entropy": [0.0, 0.0, 0.116], "step_acc": [1.0, 1.0, 0.906], "swap_follows_latent": 0.031, "swap_keeps_true": 0.781}
+held_R2 {"final": 0.78125, "all_steps": 0.78125, "tube": [0.0, 0.0, 0.0], "entropy": [0.0, 0.0, 0.199], "step_acc": [1.0, 1.0, 0.781], "swap_follows_latent": 0.062, "swap_keeps_true": 0.609}
+id_R4 {"final": 0.25, "all_steps": 0.203125, "tube": [0.0, 0.0, 0.0, 0.2104, 0.7534], "entropy": [0.0, 0.0, 0.184, 0.764, 1.642], "step_acc": [1.0, 1.0, 0.844, 0.438, 0.25], "swap_follows_latent": 0.031, "swap_keeps_true": 0.25}
+held_R4 {"final": 0.25, "all_steps": 0.234375, "tube": [0.0, 0.0, 0.0, 0.3139, 0.781], "entropy": [0.0, 0.002, 0.298, 1.167, 1.887], "step_acc": [1.0, 1.0, 0.766, 0.422, 0.25], "swap_follows_latent": 0.016, "swap_keeps_true": 0.281}
+id_R6 {"final": 0.140625, "all_steps": 0.015625, "tube": [0.0, 0.0, 0.0, 0.1903, 0.6508, 0.9265, 1.1747], "entropy": [0.0, 0.0, 0.127, 0.636, 1.388, 1.974, 2.289], "step_acc": [1.0, 1.0, 0.859, 0.516, 0.312, 0.125, 0.141], "swap_follows_latent": 0.047, "swap_keeps_true": 0.109}
+held_R6 {"final": 0.125, "all_steps": 0.0625, "tube": [0.0, 0.0, 0.0, 0.381, 0.6919, 0.9518, 1.1803], "entropy": [0.0, 0.0, 0.046, 0.652, 1.364, 1.879, 2.51], "step_acc": [1.0, 1.0, 0.719, 0.484, 0.297, 0.125, 0.125], "swap_follows_latent": 0.031, "swap_keeps_true": 0.109}
+id_R8 {"final": 0.046875, "all_steps": 0.0, "tube": [0.0, 0.0, 0.0, 0.1897, 0.6496, 0.9635, 1.0749, 1.2637, 1.279], "entropy": [0.0, 0.001, 0.143, 0.955, 1.6, 2.04, 2.271, 2.402, 2.827], "step_acc": [1.0, 1.0, 0.859, 0.516, 0.281, 0.203, 0.062, 0.047, 0.047], "swap_follows_latent": 0.031, "swap_keeps_true": 0.047}
+held_R8 {"final": 0.0625, "all_steps": 0.0, "tube": [0.0, 0.0, 0.0, 0.3151, 0.8638, 1.0107, 1.1961, 1.2615, 1.3248], "entropy": [0.0, 0.0, 0.493, 1.063, 2.134, 2.439, 2.579, 2.727, 2.987], "step_acc": [1.0, 1.0, 0.766, 0.359, 0.25, 0.109, 0.062, 0.016, 0.062], "swap_follows_latent": 0.016, "swap_keeps_true": 0.031}
+id_R12 {"final": 0.03125, "all_steps": 0.0, "tube": [0.0, 0.0, 0.0, 0.2288, 0.758, 1.071, 1.1571, 1.2448, 1.2612, 1.2601, 1.3065, 1.3057, 1.3082], "entropy": [0.0, 0.0, 0.236, 0.88, 1.727, 2.329, 2.533, 2.624, 2.691, 2.809, 2.809, 2.693, 3.07], "step_acc": [1.0, 1.0, 0.828, 0.438, 0.203, 0.141, 0.078, 0.062, 0.062, 0.031, 0.031, 0.031, 0.031], "swap_follows_latent": 0.047, "swap_keeps_true": 0.031}
+held_R12 {"final": 0.015625, "all_steps": 0.0, "tube": [0.0, 0.0, 0.0, 0.2935, 0.6944, 1.0482, 1.3025, 1.2387, 1.2825, 1.2826, 1.3046, 1.2832, 1.3087], "entropy": [0.0, 0.0, 0.11, 0.882, 1.697, 2.29, 2.8, 2.651, 2.868, 2.845, 2.894, 2.698, 2.869], "step_acc": [1.0, 1.0, 0.781, 0.484, 0.219, 0.031, 0.078, 0.047, 0.047, 0.031, 0.047, 0.031, 0.016], "swap_follows_latent": 0.0, "swap_keeps_true": 0.0}

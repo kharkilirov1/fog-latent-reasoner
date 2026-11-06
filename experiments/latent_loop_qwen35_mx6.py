@@ -112,6 +112,12 @@ class Loop(nn.Module):
             C0 = torch.stack([dig[v // 10] + rot @ dig[v % 10] for v in range(P)])
         self.C = nn.Parameter(C0.to(emb.device))
         self.tf = tf                       # teacher forcing probability (set per step by the training loop)
+        # mechanistic shaping (Goodfire 2026, expression shaping): an online linear probe reads the START value from the
+        # hidden state of thought steps t >= 2 at layer shape_layer; the model is penalised for expressing it there
+        # (the shortcut = recomputing from the prompt's start value instead of reading the latent).
+        self.shape_layer, self.shape_lambda = -1, 0.0
+        self.probe = nn.Linear(H, P)
+        self.shape_h = []
         self.begin = nn.Parameter(emb[tok.encode(" Start", add_special_tokens=False)[0]].detach().float().clone())
         self.W = nn.Linear(H, H)
         nn.init.eye_(self.W.weight)
@@ -170,6 +176,7 @@ class Loop(nn.Module):
         B = len(exs)
         x = self.rescale(self.begin.float()).expand(B, -1)
         logits_all, xs, ents = [], [], []
+        self.shape_h = []
         gold = torch.tensor([e["vals"] for e in exs], device=self.dev) if (self.training and self.tf > 0) else None
         for t in range(T + 1):
             if swap is not None and t == swap[0]:
@@ -180,9 +187,11 @@ class Loop(nn.Module):
             mk = embed(self.marker(t)).unsqueeze(0).expand(B, -1, -1)
             seq = torch.cat([seq, mk, x.to(dt).unsqueeze(1)], 1)
             am = torch.cat([am, torch.ones(B, mk.shape[1] + 1, dtype=am.dtype, device=self.dev)], 1)
-            out = self.model.model(inputs_embeds=seq, attention_mask=am, output_hidden_states=self.tap >= 0,
-                                   use_cache=False)
+            out = self.model.model(inputs_embeds=seq, attention_mask=am,
+                                   output_hidden_states=self.tap >= 0 or self.shape_layer >= 0, use_cache=False)
             h = (out.hidden_states[self.tap] if self.tap >= 0 else out.last_hidden_state)[:, -1]
+            if self.shape_layer >= 0 and t >= 2:
+                self.shape_h.append(out.hidden_states[self.shape_layer][:, -1])
             c = self.cos(h)
             logits_all.append(c * self.log_s.exp())
             if track:
@@ -310,6 +319,7 @@ def latent_eval(net, exs, bs=32):
     ok = allok = 0
     tube = [0.0] * (d + 1)
     step_ok = [0.0] * (d + 1)
+    probe_ok = 0.0
     C = net.rescale(net.C)
     for i in range(0, len(exs), bs):
         b = exs[i:i + bs]
@@ -318,6 +328,9 @@ def latent_eval(net, exs, bs=32):
         gold = torch.tensor([e["vals"] for e in b])
         ok += (pred[:, -1] == gold[:, -1]).sum().item()
         allok += (pred == gold).all(-1).sum().item()
+        if net.shape_h:
+            hs = torch.cat(net.shape_h, 0).float()
+            probe_ok += (net.probe(hs).argmax(-1).cpu() == gold[:, 0].repeat(len(net.shape_h))).float().mean().item() * len(b)
         for t in range(d + 1):
             step_ok[t] += (pred[:, t] == gold[:, t]).sum().item()
         for t in range(1, d + 1):                    # fed-back state vs the code of the previous step's value
@@ -327,6 +340,8 @@ def latent_eval(net, exs, bs=32):
     if net.arm != "cont":
         res["entropy"] = [round(v, 3) for v in net.last_ents]     # last batch, nats (uniform = 3.43)
     res["step_acc"] = [round(v / n, 3) for v in step_ok]
+    if probe_ok:
+        res["probe_start_acc"] = round(probe_ok / n, 3)        # the training probe, reused (monitorability level 1)
     if d >= 2:                                    # swap control: replace the input of step 2 by a wrong value's code
         follow = keep = 0
         g = torch.Generator().manual_seed(5)
@@ -366,6 +381,8 @@ def main():
     ap.add_argument("--max-train-depth", type=int, default=6)
     ap.add_argument("--beta-max", type=float, default=30.0)
     ap.add_argument("--code-init", default="orth", choices=["orth", "digits"])
+    ap.add_argument("--shape-lambda", type=float, default=0.0, help="mechanistic (expression) shaping weight")
+    ap.add_argument("--shape-layer", type=int, default=-1, help="hidden_states index for the probe (default: middle)")
     ap.add_argument("--text-anneal", type=float, default=1.0, help="markov arms: initial prob of also writing the gold "
                     "current value as text; decays to 0 at 60%% of training")
     ap.add_argument("--tf", type=float, default=0.0, help="teacher forcing prob at the start, decays linearly to 0 at 70%%")
@@ -436,8 +453,15 @@ def main():
     if dec_linear:
         groups.append({"params": dec_linear, "lr": a.lr})
     if net is not None:
-        groups.append({"params": [p for n, p in net.named_parameters() if not n.startswith("model.")], "lr": a.head_lr})
+        groups.append({"params": [p for n, p in net.named_parameters() if not n.startswith(("model.", "probe."))],
+                       "lr": a.head_lr})
     opt = torch.optim.AdamW(groups, weight_decay=0.0)
+    probe_opt = torch.optim.AdamW(net.probe.parameters(), lr=1e-3) if net is not None else None
+    if net is not None and a.shape_lambda > 0:
+        net.shape_layer = a.shape_layer if a.shape_layer >= 0 else round(nl / 2)
+        net.shape_lambda = a.shape_lambda
+        print(f"mechanistic shaping: expression penalty on the start value at layer {net.shape_layer}, "
+              f"lambda={a.shape_lambda}", flush=True)
     print(f"arm={a.arm} optim={a.optim} tap={tap if a.arm == 'cap_mid' else '-'} small={sum(p.numel() for p in small)} "
           f"adamw_dec={sum(p.numel() for p in dec_linear)}", flush=True)
 
@@ -488,6 +512,9 @@ def main():
         torch.nn.utils.clip_grad_norm_([p for g in opt.param_groups for p in g["params"]], 1.0)
         opt.step()
         opt.zero_grad(set_to_none=True)
+        if probe_opt is not None and net.shape_lambda > 0:
+            probe_opt.step()
+            probe_opt.zero_grad(set_to_none=True)
         if step % 20 == 0 or step == 1:
             rec = {"step": step, "depth": d, "loss": round(loss.item(), 4), "acc": round(acc_v, 4),
                    "beta": round(net.beta, 2) if net else None, "t": round(time.time() - t0, 1),
@@ -495,7 +522,8 @@ def main():
                    "lg_updates": rep["state"].n_updates if rep else None,
                    "codes": net.code_geometry() if net is not None else None,
                    "tf": round(net.tf, 3) if net is not None else None,
-                   "text_p": round(getattr(net, "text_p", 0.0), 3) if net is not None else None}
+                   "text_p": round(getattr(net, "text_p", 0.0), 3) if net is not None else None,
+                   "shape": getattr(net, "last_probe", None)}
             log.append(rec)
             print(json.dumps(rec), flush=True)
 
@@ -507,7 +535,7 @@ def main():
         print(k, json.dumps(r), flush=True)
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
-    tag = f"{a.arm}_{a.optim}_tf{a.tf}_{a.code_init}{'_ta' + str(a.text_anneal) if a.arm in MARKOV_ARMS else ''}_s{a.seed}"
+    tag = f"{a.arm}_{a.optim}{'_shape' + str(a.shape_lambda) if a.shape_lambda else ''}_tf{a.tf}_{a.code_init}{'_ta' + str(a.text_anneal) if a.arm in MARKOV_ARMS else ''}_s{a.seed}"
     (out / f"result_{tag}.json").write_text(json.dumps(
         {"args": vars(a), "before": pre, "mx6": {k: v for k, v in rep.items() if k != "state"}, "train_log": log, "eval": res,
          "seconds": round(time.time() - t0, 1)}, indent=1))
@@ -520,6 +548,15 @@ def _loss(net, model, tok, b, d, arm, dev):
     logits, _ = net(b, d)
     gold = torch.tensor([e["vals"] for e in b], device=logits.device)
     loss = F.cross_entropy(logits.reshape(-1, P), gold.reshape(-1))
+    if net.shape_h:
+        hs = torch.cat(net.shape_h, 0).float()
+        start = gold[:, 0].repeat(len(net.shape_h))
+        probe_loss = F.cross_entropy(net.probe(hs.detach()), start)          # refit the probe (no grad into the model)
+        p_true = F.softmax(F.linear(hs, net.probe.weight.detach(), net.probe.bias.detach()), -1)
+        p_true = p_true.gather(1, start[:, None]).mean()
+        net.last_probe = {"probe_acc": round((net.probe(hs.detach()).argmax(-1) == start).float().mean().item(), 3),
+                          "p_start": round(p_true.item(), 3)}
+        loss = loss + net.shape_lambda * p_true + probe_loss
     return loss, (logits.argmax(-1) == gold).float().mean().item()
 
 

@@ -1,0 +1,15 @@
+id_R1 {"final": 1.0}
+held_R1 {"final": 0.546875}
+id_R2 {"final": 1.0}
+held_R2 {"final": 0.28125}
+id_R4 {"final": 1.0}
+held_R4 {"final": 0.09375}
+id_R8 {"final": 0.984375}
+held_R8 {"final": 0.015625}
+id_R12 {"final": 0.75}
+held_R12 {"final": 0.046875}
+id_R16 {"final": 0.0}
+held_R16 {"final": 0.03125}
+DONE cot_mx6_tf0.0_orth_s0 212.2 s
+
+ALL_DONE 4.1 min
