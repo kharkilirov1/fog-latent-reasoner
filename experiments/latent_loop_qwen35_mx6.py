@@ -238,6 +238,13 @@ def prompt_ops(e):
     return s + "Think silently, one step at a time."
 
 
+def prompt_step(e, t):
+    """Per-step instruction: ONLY operation t (t = 0: read the value). Same length at every depth -> h_{t+1} = T(h_t, C_t)."""
+    from latent_loop_llm_experiment import op_text
+    now = "Read the current value." if t == 0 else op_text(*e["ops"][t - 1], e["style"])
+    return f"Work modulo {P}. Now: {now} Think silently."
+
+
 class MarkovLoop(Loop):
     """Recurrent-validity setting of the paper: h_{t+1} = T(h_t, C). Every step re-reads ONLY [ops prompt][(text value)]
     [" Step t:"][x_t]: no earlier thoughts, no start value in the text, so the current value can only come from x_t.
@@ -248,6 +255,7 @@ class MarkovLoop(Loop):
     def __init__(self, *a, **k):
         super().__init__(*a, **k)
         self.text_p = 0.0
+        self.per_step = False          # True: each step sees only its own operation + a constant marker
 
     def forward(self, exs, T, track=False, swap=None):
         embed = self.model.get_input_embeddings()
@@ -267,10 +275,10 @@ class MarkovLoop(Loop):
                 x = m * C[gold[:, t - 1]] + (1 - m) * x
             rows = []
             for i, e in enumerate(exs):
-                r = list(base[i])
+                r = (self.tok.encode(prompt_step(e, t), add_special_tokens=False) if self.per_step else list(base[i]))
                 if self.training and self.text_p > 0 and random.random() < self.text_p:
                     r += self.tok.encode(f" Value: {e['vals'][max(t - 1, 0)]}.", add_special_tokens=False)
-                r += self.marker(t).tolist()
+                r += (self.tok.encode(" Result:", add_special_tokens=False) if self.per_step else self.marker(t).tolist())
                 rows.append(r)
             L = max(map(len, rows))
             inp = torch.full((B, L), pad, dtype=torch.long, device=self.dev)
@@ -406,6 +414,8 @@ def main():
     ap.add_argument("--max-train-depth", type=int, default=6)
     ap.add_argument("--beta-max", type=float, default=30.0)
     ap.add_argument("--code-init", default="orth", choices=["orth", "digits", "fourier"])
+    ap.add_argument("--per-step-op", action="store_true", help="markov arms: each step sees only its own operation "
+                    "(constant-length input at every depth), no step numbers")
     ap.add_argument("--onestep-steps", type=int, default=0, help="first N optimizer steps: depth-1 programs only (learn "
                     "the one-step table before recurrence, FOG EXP-005 style)")
     ap.add_argument("--shape-lambda", type=float, default=0.0, help="mechanistic (expression) shaping weight")
@@ -476,6 +486,8 @@ def main():
     net = cls(model, tok, a.arm, tap, dev, code_init=a.code_init) if a.arm in LATENT_ARMS else None
     if net is not None:
         print("codes", json.dumps(net.code_geometry()), flush=True)
+        if isinstance(net, MarkovLoop):
+            net.per_step = a.per_step_op
     groups = [{"params": small, "lr": a.small_lr}]
     if dec_linear:
         groups.append({"params": dec_linear, "lr": a.lr})
@@ -566,7 +578,7 @@ def main():
         print(k, json.dumps(r), flush=True)
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
-    tag = f"{a.arm}_{a.optim}{'_os' + str(a.onestep_steps) if a.onestep_steps else ''}{'_shape' + str(a.shape_lambda) if a.shape_lambda else ''}_tf{a.tf}_{a.code_init}{'_ta' + str(a.text_anneal) if a.arm in MARKOV_ARMS else ''}_s{a.seed}"
+    tag = f"{a.arm}{'_ps' if a.per_step_op else ''}_{a.optim}{'_os' + str(a.onestep_steps) if a.onestep_steps else ''}{'_shape' + str(a.shape_lambda) if a.shape_lambda else ''}_tf{a.tf}_{a.code_init}{'_ta' + str(a.text_anneal) if a.arm in MARKOV_ARMS else ''}_s{a.seed}"
     (out / f"result_{tag}.json").write_text(json.dumps(
         {"args": vars(a), "before": pre, "mx6": {k: v for k, v in rep.items() if k != "state"}, "train_log": log, "eval": res,
          "seconds": round(time.time() - t0, 1)}, indent=1))
