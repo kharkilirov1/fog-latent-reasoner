@@ -110,7 +110,7 @@ class Loop(nn.Module):
         self.tap = tap if arm == "cap_mid" else -1
         f = fourier_codes()                                                # [P, P-1], the full additive-character chart
         if code_init == "fourier":
-            code_dim = P - 1
+            code_dim = f.shape[1]
         self.U = nn.Linear(H, code_dim, bias=False)
         if code_init == "fourier":
             # read-out keys = the SAME Fourier chart the codes are written in (one chart for read and write), fixed
@@ -123,7 +123,7 @@ class Loop(nn.Module):
         if code_init == "fourier":         # FOG sec.10: operator-compatible chart. Full Fourier chart over Z_31 (30 dims =
             # p-1, Theorem 1) = a regular simplex (max gap); +k is a rotation per frequency, *g permutes frequencies.
             # Embedded in the hidden space by a fixed orthonormal map; FIXED (law by construction, not learned).
-            Q, _ = torch.linalg.qr(torch.randn(H, P - 1, generator=torch.Generator().manual_seed(4321)))
+            Q, _ = torch.linalg.qr(torch.randn(H, f.shape[1], generator=torch.Generator().manual_seed(4321)))
             C0 = (f @ Q.t()) * self.emb_norm
         elif code_init == "orth":          # orthonormal (max code gap), scaled to the embedding norm
             q, _ = torch.linalg.qr(torch.randn(H, P, generator=torch.Generator().manual_seed(1234)))
