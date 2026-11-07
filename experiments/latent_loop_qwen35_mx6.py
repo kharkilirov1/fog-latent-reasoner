@@ -300,6 +300,41 @@ class MarkovLoop(Loop):
         self.last_ents = ents
         return torch.stack(logits_all, 1), xs
 
+
+ALL_OPS = [("add", k) for k in range(1, 9)] + [("sub", k) for k in range(1, 9)] + [("mul", k) for k in range(2, 6)]
+
+
+def apply_op(v, kind, k):
+    return (v + k) % P if kind == "add" else (v - k) % P if kind == "sub" else (v * k) % P
+
+
+@torch.no_grad()
+def table_eval(net, styles=("base", "para", "alt"), bs=64):
+    """EXHAUSTIVE one-step check of the Markov per-step loop: every start value (read-back, step 0) and every
+    (value, operation) transition (step 1), for every phrasing. With hard snap the step is a deterministic function of
+    (code, operation text): if all entries are right, programs of ANY length are right (up to batch-numerics)."""
+    cases = [(v, op, st) for st in styles for v in range(P) for op in ALL_OPS]
+    fails, n_ok0, n_ok1 = [], 0, 0
+    for i in range(0, len(cases), bs):
+        chunk = cases[i:i + bs]
+        exs = [{"start": v, "ops": [op], "vals": [v, apply_op(v, *op)], "depth": 1, "style": st} for v, op, st in chunk]
+        logits, _ = net(exs, 1)
+        pred = logits.argmax(-1).cpu()
+        for (v, op, st), e, pr in zip(chunk, exs, pred.tolist()):
+            ok0, ok1 = pr[0] == v, pr[1] == e["vals"][1]
+            n_ok0 += ok0
+            n_ok1 += ok1
+            if not (ok0 and ok1):
+                fails.append({"v": v, "op": f"{op[0]}{op[1]}", "style": st, "pred": pr, "gold": e["vals"]})
+    n = len(cases)
+    by, bys = {}, {}
+    for f in fails:
+        by[f["op"]] = by.get(f["op"], 0) + 1
+        bys[f["style"]] = bys.get(f["style"], 0) + 1
+    return {"n": n, "readback_acc": round(n_ok0 / n, 5), "step_acc": round(n_ok1 / n, 5), "n_fail": len(fails),
+            "fails_by_op": dict(sorted(by.items(), key=lambda kv: -kv[1])), "fails_by_style": bys,
+            "fails": fails[:400]}
+
 # ── text arms ─────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 def target_text(e, arm):
@@ -414,6 +449,9 @@ def main():
     ap.add_argument("--max-train-depth", type=int, default=6)
     ap.add_argument("--beta-max", type=float, default=30.0)
     ap.add_argument("--code-init", default="orth", choices=["orth", "digits", "fourier"])
+    ap.add_argument("--table-eval", action="store_true", help="markov: exhaustive one-step table check after training")
+    ap.add_argument("--repair-rounds", type=int, default=0, help="rounds of targeted training on failing transitions")
+    ap.add_argument("--repair-steps", type=int, default=100)
     ap.add_argument("--per-step-op", action="store_true", help="markov arms: each step sees only its own operation "
                     "(constant-length input at every depth), no step numbers")
     ap.add_argument("--onestep-steps", type=int, default=0, help="first N optimizer steps: depth-1 programs only (learn "
@@ -570,7 +608,55 @@ def main():
             log.append(rec)
             print(json.dumps(rec), flush=True)
 
+    def train_step(b, d):
+        ctx = lg_accumulate(model, 1) if a.optim == "mx6" else None
+        if ctx is not None:
+            with ctx as acc:
+                for _ in acc.micro_batches():
+                    loss, acc_v = _loss(net, model, tok, b, d, a.arm, dev)
+                    loss.backward()
+        else:
+            loss, acc_v = _loss(net, model, tok, b, d, a.arm, dev)
+            loss.backward()
+        torch.nn.utils.clip_grad_norm_([p for g in opt.param_groups for p in g["params"]], 1.0)
+        opt.step()
+        opt.zero_grad(set_to_none=True)
+        return loss.item(), acc_v
+
     model.eval()
+    tables = []
+    if a.table_eval and isinstance(net, MarkovLoop):
+        tb = table_eval(net)
+        tables.append({"round": 0, **{k: v for k, v in tb.items() if k != "fails"}})
+        print("TABLE r0", json.dumps({k: v for k, v in tb.items() if k != "fails"}), flush=True)
+        print("TABLE r0 fails", json.dumps(tb["fails"][:40]), flush=True)
+        # repair: targeted training on the failing transitions (hard-example replay), then re-check the whole table
+        for r in range(1, a.repair_rounds + 1):
+            if tb["n_fail"] == 0:
+                break
+            model.train()
+            net.text_p, net.tf, net.beta = 0.0, 0.0, a.beta_max
+            for g, base in zip(opt.param_groups, [a.small_lr] + ([a.lr] if dec_linear else []) + [a.head_lr]):
+                g["lr"] = base * 0.3
+            if a.optim == "mx6":
+                set_counter_lr(model, a.lr * 0.3)
+            fl = [f for f in tb["fails"] if f["style"] in STYLES_TRAIN]     # the held-out phrasing stays held out
+            if not fl:
+                break
+            for _ in range(a.repair_steps):
+                hard = [rng.choice(fl) for _ in range(a.bs // 2)]
+                b1 = [{"start": f["v"], "ops": [(f["op"][:3], int(f["op"][3:]))], "vals": f["gold"], "depth": 1,
+                       "style": f["style"]} for f in hard]
+                b1 += [make_ex(rng, 1, rng.choice(STYLES_TRAIN)) for _ in range(a.bs - len(b1))]
+                train_step(b1, 1)
+            model.eval()
+            tb = table_eval(net)
+            tables.append({"round": r, **{k: v for k, v in tb.items() if k != "fails"}})
+            print(f"TABLE r{r}", json.dumps({k: v for k, v in tb.items() if k != "fails"}), flush=True)
+        if a.repair_rounds:
+            for d in (64, 128):
+                evalset[f"id_R{d}"] = [make_ex(erng, d, erng.choice(STYLES_TRAIN)) for _ in range(a.eval_n)]
+                evalset[f"held_R{d}"] = [make_ex(erng, d, STYLE_HELD) for _ in range(a.eval_n)]
     res = {}
     for k, exs in evalset.items():
         r = latent_eval(net, exs) if net is not None else text_eval(model, tok, exs, a.arm, dev)
@@ -580,7 +666,7 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     tag = f"{a.arm}{'_ps' if a.per_step_op else ''}_{a.optim}{'_os' + str(a.onestep_steps) if a.onestep_steps else ''}{'_shape' + str(a.shape_lambda) if a.shape_lambda else ''}_tf{a.tf}_{a.code_init}{'_ta' + str(a.text_anneal) if a.arm in MARKOV_ARMS else ''}_s{a.seed}"
     (out / f"result_{tag}.json").write_text(json.dumps(
-        {"args": vars(a), "before": pre, "mx6": {k: v for k, v in rep.items() if k != "state"}, "train_log": log, "eval": res,
+        {"args": vars(a), "before": pre, "tables": tables, "mx6": {k: v for k, v in rep.items() if k != "state"}, "train_log": log, "eval": res,
          "seconds": round(time.time() - t0, 1)}, indent=1))
     print("DONE", tag, round(time.time() - t0, 1), "s", flush=True)
 
