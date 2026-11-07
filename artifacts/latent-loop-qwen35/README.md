@@ -1,4 +1,28 @@
-# Latent loop in Qwen3.5-4B (Colab G4, 2026-11-04/05)
+# Latent loop in Qwen3.5-4B (Colab G4, 2026-11-04/07)
+
+## Headline (`ll10`): exact-looking long-horizon latent computation
+
+Markov loop, **one operation per step** (each step sees only "Work modulo 31. Now: <operation t>. Think silently.
+Result:" + the latent; no operation list, no step numbers, start value only as the latent x_0), **Fourier code chart**
+(FOG sec.10: the full additive-character chart of Z_31, 30 dims = p-1, a regular simplex; fixed, read and written in the
+same chart), hard snap, 400 one-step warm-up steps then chains up to depth 6, AdamW lr 1e-5, 1200 steps, one seed.
+
+| depth | 1 | 2 | 4 | 8 | 16 | 32 |
+|---|---|---|---|---|---|---|
+| id | **1.00** | **1.00** | 0.98 | 0.95 | 0.91 | 0.83 |
+| held-out phrasing | 1.00 | 1.00 | 0.95 | 0.94 | 0.81 | 0.77 |
+| swap follows latent (id) | - | 1.00 | 0.94 | 0.94 | 0.95 | 0.80 |
+| swap keeps true | - | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+
+Trained depth <= 6; depth 32 is 5x beyond. The answer is computed THROUGH the latent (swap follows 1.00, keeps 0.00).
+The curve is the one-step envelope: per-step accuracy ~0.994 -> 0.994^32 = 0.83, measured 0.83. Explicit text CoT on the
+same model and task: 0.00 at depth 16 (`ll5`).
+
+What made the difference (each tested): Markov closure (`ll6`: the model reads the latent), constant per-step input
+(`ll9` with the whole operation list: depth 8 = 0.09-0.28, the start value read-back itself degrades on long lists),
+one-step warm-up, Fourier chart (one-step 0.92 vs 0.80 with random codes under the list prompt). Not yet run: random
+(orth) codes WITH per-step input -- the control that isolates the chart in the winning setting; a second seed; mx6.
+
 
 Script: `experiments/latent_loop_qwen35_mx6.py` (branch `latent-loop-qwen35`). Colab cells: `colab_cells/`, their full stdout
 (and a few per-run logs) in `raw/`. One seed per arm, eval n=64 per depth and style. Task: the pilot's natural-language
@@ -60,6 +84,16 @@ lambda * p_probe(start). Baseline without shaping (`ll3` snap): depth 2 = 0.91, 
 start reading the latent: swapping it still leaves the answer on the true value (0.52 at lambda 1) -- the shortcut survives
 elsewhere (other layers / positions; Goodfire's monitorability levels L2-L4), and accuracy only drops. Expression shaping of a
 single-layer start-value probe is not a substitute for the Markov restriction here (one seed, two lambdas).
+
+## Fourier chart vs random codes with the full operation list (`ll9`), msnap AdamW, 400 one-step warm-up, 1200 steps
+
+| depth | 1 | 2 | 4 | 8 | 16 |
+|---|---|---|---|---|---|
+| Fourier id / held | 0.92 / 0.91 | 0.81 / 0.73 | 0.55 / 0.38 | 0.09 / 0.14 | 0.03 / 0.00 |
+| orth id / held | 0.80 / 0.89 | 0.77 / 0.69 | 0.63 / 0.56 | 0.28 / 0.22 | 0.11 / 0.02 |
+
+Read-back of the START value (step 0) at depth 32: Fourier 0.89 / orth 0.98 -- with the full list in the prompt, depth is
+confounded with prompt length (trained lists <= 6 ops). Removing the list (`ll10`) removes the confound.
 
 ## Open
 
